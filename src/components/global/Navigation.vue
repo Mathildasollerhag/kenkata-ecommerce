@@ -2,17 +2,16 @@
     <div>
         <firstNavigation/>
         <secondNavigation />
-        <hr>
         <thirdNavigation />
     </div>
 </template>
 
 <script>
-import firstNavigation from '@/components/global/firstNavigation.vue'
-import secondNavigation from '@/components/global/secondNavigation.vue'
-import thirdNavigation from '@/components/global/thirdNavigation.vue'
+import firstNavigation from '../global/firstNavigation'
+import secondNavigation from '../global/secondNavigation'
+import thirdNavigation from '../global/thirdNavigation'
 export default {
-    name: 'Navbar',
+    name: 'Navigation',
     components: {
         firstNavigation,
         secondNavigation,

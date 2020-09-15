@@ -5,9 +5,24 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+
+
+  <Footer/>
+
   </div>
 </template>
 
 <style>
 
 </style>
+
+<script>
+
+import Footer from '@/components/global/Footer.vue'
+
+export default {
+  components: {
+    Footer,
+  }
+}
+</script>

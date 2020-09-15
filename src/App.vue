@@ -7,6 +7,7 @@
     <router-view/>
 
 
+  <Brands/>
   <Footer/>
 
   </div>
@@ -18,10 +19,12 @@
 
 <script>
 
+import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
 
 export default {
   components: {
+    Brands,
     Footer,
   }
 }

@@ -7,6 +7,11 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+
+
+  <Brands/>
+  <Footer/>
+
   </div>
 </template>
 
@@ -70,3 +75,16 @@ body {
     background-color: #20D3C2 !important;
 }
 </style>
+
+<script>
+
+import Brands from '@/components/global/Brands.vue'
+import Footer from '@/components/global/Footer.vue'
+
+export default {
+  components: {
+    Brands,
+    Footer,
+  }
+}
+</script>

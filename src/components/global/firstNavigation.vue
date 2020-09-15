@@ -62,5 +62,10 @@ export default {
 .green{
     background-color: #20D3C2;
 }
+@media(max-width: 1000px){
+    .firstnavbar{
+        display: none
+    }
+}
 
 </style>

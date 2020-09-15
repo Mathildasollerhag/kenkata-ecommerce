@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <!-- New Arrivals -->
     <div class="my-5 container">
         <div class="text-center">
@@ -11,17 +12,38 @@
         </div>
       <NewArrivals />
     </div>
+
+
+    <featuredProducts/>
+    <InfoCards />
+    <ShopByCategory />
+    <DiscountBanner />
+    <FlashBanner />
+
+
   </div>
 </template>
 
 <script>
-import NewArrivals from '@/components/home/NewArrivals'
-// @ is an alias to /src
+
+import NewArrivals from '@/components/home/NewArrivals';
+import featuredProducts from '../components/global/featuredProducts';
+import InfoCards from '../components/home/InfoCards';
+import ShopByCategory from '../components/home/ShopByCategory';
+import DiscountBanner from '../components/home/DiscountBanner';
+import FlashBanner from '../components/home/FlashBanner';
+
 
 export default {
   name: 'Home',
   components: {
-    NewArrivals
+
+    NewArrivals,
+    featuredProducts,
+    InfoCards,
+    ShopByCategory,
+    DiscountBanner,
+    FlashBanner
   }
 }
 </script>

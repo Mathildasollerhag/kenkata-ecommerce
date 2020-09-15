@@ -11,6 +11,7 @@
 </template>
 
 <script>
+
 import Navigation from '../src/components/global/Navigation'
 
 export default {
@@ -60,4 +61,12 @@ body {
   background-color: var(--gray-theme);
 }
 
+/* Owl Carousel Style */
+.carousel-height {
+    height: 380px !important;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    transition: all 0.3s ease;
+    background-color: #20D3C2 !important;
+}
 </style>

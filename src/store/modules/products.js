@@ -35,6 +35,7 @@ export default {
 
         // Get product by ID
         getProductById({ commit }, id) {
+            console.log(id);
             axios.get('http://localhost:9999/api/products/' + id).then(res => {
                 commit('SET_PRODUCT', res.data.product)
             }).catch(error => {
@@ -49,6 +50,9 @@ export default {
         },
         newArrivals(state) {
             return state.newArrivals
+        },
+        product(state) {
+            return state.product
         }
     }
 

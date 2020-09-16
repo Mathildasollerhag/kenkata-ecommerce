@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import ProductDetails from '../views/ProductDetails.vue'
+import ShoppingCart from '../views/ShoppingCart.vue'
+import Checkout from '../views/Checkout.vue'
 //Import .vue - file here
 
 Vue.use(VueRouter)
@@ -12,19 +15,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/shop',
-    name: 'Shop',
-    component: Shop
-  },
-  {
     path: '/product:id',
     name: 'ProductDetails',
     component: ProductDetails
-  },
-  {
-    path: '/quickview???',
-    name: 'QuickView',
-    component: QuickView
   },
   {
     path: '/shoppingcart',
@@ -36,51 +29,46 @@ const routes = [
     name: 'Checkout',
     component: Checkout
   },
-  {
-    path: '/account',
-    name: 'MyAccount',
-    component: MyAccount
-  },
-  {
-    path: '/wishlist',
-    name: 'Wishlist',
-    component: Wishlist
-  },
-  {
-    path: '/compare',
-    name: 'Compare',
-    component: Compare
-  },
-  {
-    path: '/404???',
-    name: '404',
-    component: 404
-  },
-  {
-    path: '/about',
-    name: 'AboutUs',
-    component: AboutUs
-  },
-  {
-    path: '/team',
-    name: 'Team',
-    component: Team
-  },
-  {
-    path: '/portfolio',
-    name: 'Portfolio',
-    component: Portfolio
-  },
-  {
-    path: '/portfolio-details???',
-    name: 'PortfolioDetails',
-    component: PortfolioDetails
-  },
-  {
-    path: '/contact',
-    name: 'ContactUs',
-    component: ContactUs
-  }
+  // {
+  //   path: '/wishlist',
+  //   name: 'Wishlist',
+  //   component: Wishlist
+  // },
+  // {
+  //   path: '/compare',
+  //   name: 'Compare',
+  //   component: Compare
+  // },
+  // {
+  //   path: '/404???',
+  //   name: '404',
+  //   component: 404
+  // },
+  // {
+  //   path: '/about',
+  //   name: 'AboutUs',
+  //   component: AboutUs
+  // },
+  // {
+  //   path: '/team',
+  //   name: 'Team',
+  //   component: Team
+  // },
+  // {
+  //   path: '/portfolio',
+  //   name: 'Portfolio',
+  //   component: Portfolio
+  // },
+  // {
+  //   path: '/portfolio-details???',
+  //   name: 'PortfolioDetails',
+  //   component: PortfolioDetails
+  // },
+  // {
+  //   path: '/contact',
+  //   name: 'ContactUs',
+  //   component: ContactUs
+  // }
 ]
 
 const router = new VueRouter({

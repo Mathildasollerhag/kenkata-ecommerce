@@ -2,11 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+import Shop from '../views/Shop.vue'
+
+
 import ProductDetails from '../views/ProductDetails.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
 
 import AboutUs from '../views/AboutUs.vue'
+
 
 //Import .vue - file here
 
@@ -20,6 +24,12 @@ const routes = [
   },
 
   {
+
+    path: '/shop',
+    name: 'Shop',
+    component: Shop
+  },
+
     path: '/product/:id',
     name: 'ProductDetails',
     component: ProductDetails,
@@ -36,11 +46,8 @@ const routes = [
     component: Checkout
   },
 
-  // {
-  //   path: '/shop',
-  //   name: 'Shop',
-  //   component: Shop
-  // },
+  
+
   // {
   //   path: '/product:id',
   //   name: 'ProductDetails',

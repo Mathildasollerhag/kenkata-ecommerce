@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import products from './modules/products'
-import users from './modules/users'
-import shoppingcart from './modules/shoppingcart'
+import products from './modules/products';
+import users from './modules/users';
+import shoppingcart from './modules/shoppingcart';
 
 Vue.use(Vuex);
 

@@ -1,5 +1,21 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <OnlineStore />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'AboutUs',
+  components: {
+    OnlineStore,
+  }
+}
+
+import OnlineStore from '../components/aboutUs/OnlineStore';
+</script>
+
+
+<style>
+
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="row mx-5 pt-5 mt-5 media-lg-block">
+  <div id="infoCards" class="row mx-5 pt-5 mt-5 media-lg-block">
             <div class="light-cyan-bg rounded col-11 col-lg ml-4" id="card-hover">
                 <div class="card-body d-flex mt-2">
                     <i class="theme-text fa-3x fas fa-box-open col-3 my-auto"></i>

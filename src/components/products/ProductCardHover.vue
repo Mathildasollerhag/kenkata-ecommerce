@@ -1,6 +1,6 @@
 <template>
    <div class="text-white">
-       <router-link class="text-white" to="/">
+       <router-link class="text-white" :to="{name: 'ProductDetails', params: {id: product._id}}">
         <div class="card-hover-body d-flex">
             <!-- Product name/price -->
             <div class="card-text-body">

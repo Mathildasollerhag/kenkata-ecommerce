@@ -15,9 +15,10 @@ const routes = [
     component: Home
   },
   {
-    path: '/product:id',
+    path: '/product/:id',
     name: 'ProductDetails',
-    component: ProductDetails
+    component: ProductDetails,
+    props: true
   },
   {
     path: '/shoppingcart',

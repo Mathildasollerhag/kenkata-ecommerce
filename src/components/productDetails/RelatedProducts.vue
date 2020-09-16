@@ -1,16 +1,15 @@
 <template>
-  <div v-if="newArrivals.length > 0" id="newArrivals" class="position-relative container my-5">
-    <div class="text-center">
+  <div v-if="newArrivals.length > 0" id="relatedProducts" class="position-relative container my-5">
+    <div class="text-center mb-4">
       <div class="d-flex justify-content-center text-uppercase">
-        <h1 id="new" class="font-weight-bold">New</h1>
-        <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Arrivals</h1>
+        <h1 id="new" class="font-weight-bold">You may</h1>
+        <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Also like</h1>
       </div>
       <img src="@/images/ZigZag.svg" alt="">
-      <p class="pt-3 mb-4">Check out our latest products from top fashion designers</p>
     </div>
 
-    <carousel :margin="25" :responsive="{0:{items:1,nav:false,dots:false},760:{items:2,nav:false,dots:true},1000:{items:3,nav:false,dots:true}}">
-      <div class="carousel-height" v-for="product in newArrivals" :key="product._id">
+    <carousel :margin="25" :responsive="{0:{items:1,nav:false,dots:false},760:{items:2,nav:false,dots:true},1000:{items:4,nav:false,dots:true}}">
+      <div v-for="product in newArrivals" :key="product._id">
         <ProductCard :product="product"/>
       </div>
       <template slot="prev"><span class="d-none d-xl-flex owl-prev"><i class="fas fa-chevron-left"></i></span></template>
@@ -22,9 +21,9 @@
 <script>
 import carousel from 'vue-owl-carousel'
 import { mapGetters } from 'vuex'
-import ProductCard from '../products/ProductCard'
+import ProductCard from '@/components/products/ProductCard'
 export default {
-    name: 'NewArrivals',
+    name: 'RelatedProducts',
     components: { carousel, ProductCard },
     created() {
       this.$store.dispatch("getProducts")

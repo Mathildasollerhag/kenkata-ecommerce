@@ -31,14 +31,16 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-body {
+html, body {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
   --theme: #20D3C2;
   --light-cyan-theme: #EDFCFA;
   --blue-theme: #0E153D;
+  --blue-theme-op: #0e153db4;
   --gray-theme: #CCCCCC;
 
 }
@@ -59,6 +61,10 @@ body {
   background-color: var(--blue-theme);
 }
 
+.blue-theme-bg-op {
+  background-color: var(--blue-theme-op);
+}
+
 .blue-theme-text {
   color: var(--blue-theme);
 }
@@ -74,6 +80,36 @@ body {
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     transition: all 0.3s ease;
     background-color: #20D3C2 !important;
+}
+
+/* Margin */
+.mb-custom {
+    margin-bottom: 5em;
+}
+
+/* Buttons */
+.btn-kenkata-blue {
+    padding: 0.4em 1em;
+    background-color: var(--theme);
+    color: white;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid;
+}
+.btn-kenkata-blue:hover {
+    background-color: white;
+    color: var(--theme);
+    border: 1px solid var(--theme);
+}
+.btn-kenkata-dark {
+    padding: 0.7em 1.5em;
+    background-color: var(--blue-theme);
+    color: white;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 </style>
 

@@ -2,6 +2,7 @@
   <div>
     <OnlineStore />
     <VideoSection />
+    <IconSection />
   </div>
 </template>
 
@@ -11,11 +12,14 @@ export default {
   components: {
     OnlineStore,
     VideoSection,
+    IconSection,
+
   }
 }
 
 import OnlineStore from '../components/aboutUs/OnlineStore';
 import VideoSection from '../components/aboutUs/VideoSection';
+import IconSection from '../components/aboutUs/IconSection';
 </script>
 
 

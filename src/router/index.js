@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Shop from '../views/Shop.vue'
+import Compare from '../views/Compare.vue'
 //Import .vue - file here
 
 Vue.use(VueRouter)
@@ -47,11 +48,11 @@ const routes = [
   //   name: 'Wishlist',
   //   component: Wishlist
   // },
-  // {
-  //   path: '/compare',
-  //   name: 'Compare',
-  //   component: Compare
-  // },
+  {
+    path: '/compare',
+    name: 'Compare',
+    component: Compare
+  },
   // {
   //   path: '/404???',
   //   name: '404',

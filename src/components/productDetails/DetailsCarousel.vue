@@ -5,8 +5,11 @@
         <img :src="product.image" alt="">
         <img :src="product.image" alt="">
         <img :src="product.image" alt="">
-
     </carousel>
+
+    <div id="enlarge" class="position-absolute c-pointer">
+        <img src="@/images/icons/Enlarge.png" alt="">
+    </div>
   </div>
 </template>
 
@@ -22,8 +25,12 @@ export default {
 </script>
 
 <style>
+#enlarge{
+    z-index: 10;
+    bottom: 1em;
+    left: 1em;    
+}
 #detailsCarousel img{
-    background-color: var(--gray-theme);
     max-height: 425px;
     background-position: center;
     background-size: contain;
@@ -47,6 +54,7 @@ export default {
 }
 #detailsCarousel .owl-theme .owl-dots .owl-dot.active span, #detailsCarousel .owl-theme .owl-dots .owl-dot:focus span {
     transition: zoom 0.3s ease;
+
     background: none !important;
     border: 1px solid var(--theme);
     outline: none;

@@ -1,7 +1,10 @@
 <template>
-  <div class="home">
 
-    <!-- New Arrivals -->
+  <div>
+    
+    <InfoCards />
+    <ShopByCategory />
+      <!-- New Arrivals -->
     <div class="my-5 container">
         <div class="text-center">
           <div class="d-flex justify-content-center text-uppercase">
@@ -12,19 +15,41 @@
         </div>
       <NewArrivals />
     </div>
-
-
-    <featuredProducts/>
-    <InfoCards />
-    <ShopByCategory />
     <DiscountBanner />
+    <featuredProducts/>
     <FlashBanner />
+
+    <TopSellers/>
+    <ReviewCarousel/>
+    <LatestBlog/>
+    <SubscribeBanner/>
+
+
+
+  
+
+  
+
+
+    
+    
+    
+    
+    
+
 
 
   </div>
 </template>
 
 <script>
+
+// @ is an alias to /src
+import TopSellers from '@/components/home/TopSellers.vue'
+import ReviewCarousel from '@/components/home/ReviewCarousel.vue'
+import LatestBlog from '@/components/home/LatestBlog.vue'
+import SubscribeBanner from '@/components/home/SubscribeBanner.vue'
+
 
 import NewArrivals from '@/components/home/NewArrivals';
 import featuredProducts from '../components/global/featuredProducts';
@@ -38,12 +63,19 @@ export default {
   name: 'Home',
   components: {
 
+    TopSellers,
+    ReviewCarousel,
+    LatestBlog,
+    SubscribeBanner,
+
+
     NewArrivals,
     featuredProducts,
     InfoCards,
     ShopByCategory,
     DiscountBanner,
     FlashBanner
+
   }
 }
 </script>

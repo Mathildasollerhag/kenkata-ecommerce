@@ -1,26 +1,32 @@
 <template>
   <div id="app">
     <Navigation/>
-    <div id="nav">
-      
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-    </div>
+    
     <router-view/>
+
+
+  <Brands/>
+  <Footer/>
+
   </div>
 </template>
 
 <script>
 
 import Navigation from '../src/components/global/Navigation'
+import Brands from '@/components/global/Brands.vue'
+import Footer from '@/components/global/Footer.vue'
 
 export default {
   name: "App",
   components:{
-  Navigation
+  Navigation,
+  Brands,
+  Footer
   }
 }
 </script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
@@ -70,3 +76,5 @@ body {
     background-color: #20D3C2 !important;
 }
 </style>
+
+

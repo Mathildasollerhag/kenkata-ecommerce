@@ -77,9 +77,12 @@ html, body {
     background-color: #20D3C2 !important;
 }
 
-/* Margin */
+/* Utilities */
 .mb-custom {
     margin-bottom: 5em;
+}
+.c-pointer {
+  cursor: pointer;
 }
 
 /* Buttons */

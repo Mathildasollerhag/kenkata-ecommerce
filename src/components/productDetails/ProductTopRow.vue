@@ -2,11 +2,11 @@
     <div class="blue-theme-bg text-white py-4">
       <div class="container d-flex justify-content-between align-items-center">
         <div>
-            <span class="d-flex align-items-center">
-                <small>
-                  <router-link to="/">Home</router-link> / 
-                  <router-link to="/shop">Shop</router-link> /                     
-                </small>
+            <span class="d-flex align-items-center">             
+                <router-link class="theme-text" to="/">Home</router-link><span class="mx-2">/</span>
+                <router-link class="theme-text" to="/shop">Shop</router-link><span class="mx-2">/</span>
+                <router-link class="theme-text" to="">Product Category</router-link><span class="mx-2">/</span> 
+                <span>{{product.name}}</span> 
             </span>            
         </div>
         <div class="d-flex py-2">
@@ -15,7 +15,9 @@
             </div>
             <div class="d-flex align-items-center ml-3">
                 <i class="fas fa-chevron-left font-weight-light"></i>
-                <img class="grid-img mx-2" src="@/images/icons/Grid.png" alt="">    
+                <span class="c-pointer" v-b-tooltip.hover title="Back to shop">
+                    <router-link to="/shop"><img class="grid-img mx-3 c-pointer" src="@/images/icons/Grid.png" alt=""></router-link>
+                </span>                    
                 <i class="fas fa-chevron-right font-weight-light"></i>
             </div>       
         </div>
@@ -24,28 +26,27 @@
 </template>
 
 <script>
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
-
+    props: ["product"]
 }
 </script>
 
 <style scoped>
-a{
-    color: white !important;
+a:hover {
+    color: var(--theme);
 }
 i {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 .filter-brand {
-    border-radius: 4px;
+    border-radius: 6px;
 }
 .filter-brand img {
-    /* border: 1px solid var(--kenkata-gray-lighter); */
-    width: 110px;
-    padding: 4px 10px;
+    width: 140px;
+    padding: 8px 20px;
 }
 .grid-img {
-    transform: scale(0.7);
     filter: brightness(0) invert(1);
 }
 </style>

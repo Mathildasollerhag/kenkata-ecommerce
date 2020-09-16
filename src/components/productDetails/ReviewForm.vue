@@ -1,18 +1,18 @@
 <template>
     <div>
-        <form id="reviewForm" class="p-3 was-validated">
+        <form id="reviewForm" class="p-4 was-validated">
             <h5 class="theme-text">Add a review</h5>
             <p class="text-muted">Your email address will not be published. Required fields are marked *</p>
             <p class="mt-3 mb-2">Your rating<span class="theme-text mr-4">*</span>
-                <i class="fas fa-star theme-text"></i>
-                <i class="fas fa-star theme-text"></i>
-                <i class="fas fa-star theme-text"></i>
-                <i class="fas fa-star theme-text"></i>
-                <i class="far fa-star theme-text"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
             </p>
             <div class="mb-3">
-                <label for="review">Your review<span class="text-kenkata-blue">*</span></label>
-                <textarea class="form-control" id="review" autocomplete="off" required></textarea>
+                <label for="review">Your review<span class="theme-text">*</span></label>
+                <textarea class="form-control" id="review" autocomplete="off" rows="6" required></textarea>
             <!-- <div class="invalid-feedback">
                 Please enter a message in the textarea.
             </div> -->
@@ -50,7 +50,7 @@ form {
     border-radius: 5px;
 }
 form p, label, .form-control {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     border: none;
     box-shadow: none;
 }

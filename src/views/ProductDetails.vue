@@ -3,20 +3,20 @@
     <div id="productDetails">
       <!-- Top Row -->
       <div class="mb-custom">
-        <ProductTopRow />
+        <ProductTopRow :product="product" />
       </div>
 
       <!-- Product Details -->
       <div class="container d-flex align-items-center">
         <DetailsCarousel :product="product" />
         <div class="details">
-          <h5 class="theme-text">{{product.name}}</h5>
+          <h3 class="theme-text mb-3">{{product.name}}</h3>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud.</p>
           <hr />
 
           <!-- Price Row -->
           <div class="d-flex align-items-center">
-            <h5 class="m-0 theme-text mr-3">{{product.price}}sek</h5>
+            <h4 class="m-0 theme-text mr-3 my-1">{{product.price}} SEK</h4>
             <p class="m-0">
               <del class="text-muted mr-4">$220.00</del>
             </p>
@@ -25,7 +25,7 @@
           </div>
 
           <!-- Options -->
-          <div class="d-flex align-items-center my-3">
+          <div class="d-flex align-items-center mt-3 mb-4">
             <Quantity />
 
             <!-- Add To Cart -->
@@ -36,8 +36,12 @@
             <!-- Colors/Compare/Wishlist -->
             <div class="d-flex options-img">
               <img src="@/images/icons/ColorCircle.png">
+              <span class="c-pointer" v-b-tooltip.hover title="Compare">
               <img class="mx-2" src="@/images/icons/CompareCircle.png">
-              <img src="@/images/icons/HeartCircle.png">
+              </span>
+              <span class="c-pointer" v-b-tooltip.hover title="Add To Wishlist">
+                <img src="@/images/icons/HeartCircle.png">
+              </span>              
             </div>
           </div>
 
@@ -48,7 +52,7 @@
           </p>
 
           <!-- Tags -->
-          <p class="tags d-block my-3">
+          <p class="tags d-block my-4">
             Tags:
             <span class="ml-2">Fashion</span>
             <span class="mx-1">Shoes</span>
@@ -161,6 +165,7 @@
 </template>
 
 <script>
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import ProductTopRow from "@/components/productDetails/ProductTopRow";
 import DetailsCarousel from "@/components/productDetails/DetailsCarousel";
 import DetailsSocials from "@/components/productDetails/DetailsSocials";

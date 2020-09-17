@@ -14,15 +14,11 @@
                         <a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Pages <i class="fas fa-chevron-down myclass9"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="/wishlist" class="dropdown-item ml-2">Wishlist</a>
-                            <a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+                        <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+                            <a href="/wishlist" class="dropdown-item">Wishlist</a>
+                            <router-link class="dropdown-item" to="/about">About us</router-link><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
 
-                <li class="nav-item active myclass7"><router-link class="nav-link" to="/">Home</router-link></li>
-                <li class="nav-item myclass7"><a class="" href="/shop"><div class=" dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
-                <li class="nav-item myclass7"><a class="" href="/products"><div class="dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
-                <li class="nav-item myclass7"><a class="" href="/categories"><div class=" dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
-                <li class="nav-item myclass7"><a class="" href="/pages"><div class="dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><router-link class="dropdown-item" to="/about">About us</router-link><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+                
 
                 <li class="nav-item myclass7"><router-link class=" nav-link" to="/">Blog</router-link></li></ul>
             </div>

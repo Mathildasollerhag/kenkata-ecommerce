@@ -1,6 +1,6 @@
 <template>
-       
-         <div class="container center " >
+       <div class="light-gray-bg">
+          <div class="container center">
             <div class="row">
                   <div class="col-lg-5 col-md-5 col-ms-12 align-self-center">
                      <div class="size1"> <span>Shopping is </span> <br > <span class="color"> MORE FUN </span></div>
@@ -14,6 +14,8 @@
           
              </div>
          </div>
+       </div>
+         
         
 
 
@@ -23,17 +25,15 @@
 
 
 
-<style>
+<style scoped>
 
-  .size1{
+.size1{
   font-size: 60px;
 }
 .color{
   color: #20D3C2;
 }
-body{
-  background-color: #EEEEEE;
-}
+
 .viv{
   margin-top: 10px;
     margin-bottom: 20px;

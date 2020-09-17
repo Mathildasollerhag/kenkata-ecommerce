@@ -10,7 +10,6 @@
     <DiscountBanner />
     <featuredProducts/>
     <FlashBanner />
-
     <TopSellers/>
     <ReviewCarousel/>
     <LatestBlog/>

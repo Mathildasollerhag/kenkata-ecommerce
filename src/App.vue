@@ -40,6 +40,7 @@ html, body {
   --theme: #20D3C2;
   --light-cyan-theme: #EDFCFA;
   --blue-theme: #0E153D;
+  --blue-theme-op: #0e153db4;
   --gray-theme: #CCCCCC;
 
 }
@@ -58,6 +59,10 @@ html, body {
 
 .blue-theme-bg {
   background-color: var(--blue-theme);
+}
+
+.blue-theme-bg-op {
+  background-color: var(--blue-theme-op);
 }
 
 .blue-theme-text {

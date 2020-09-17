@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
 import Shop from '../views/Shop.vue'
-
-
 import ProductDetails from '../views/ProductDetails.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
-
 import AboutUs from '../views/AboutUs.vue'
+import Portfolio from '../views/Portfolio.vue'
 
 
 //Import .vue - file here
@@ -22,14 +19,12 @@ const routes = [
     name: 'Home',
     component: Home
   },
-
   {
-
     path: '/shop',
     name: 'Shop',
     component: Shop
   },
-
+  {
     path: '/product/:id',
     name: 'ProductDetails',
     component: ProductDetails,
@@ -45,9 +40,6 @@ const routes = [
     name: 'Checkout',
     component: Checkout
   },
-
-  
-
   // {
   //   path: '/product:id',
   //   name: 'ProductDetails',
@@ -83,17 +75,16 @@ const routes = [
     name: 'AboutUs',
     component: AboutUs
   },
-
   // {
   //   path: '/team',
   //   name: 'Team',
   //   component: Team
   // },
-  // {
-  //   path: '/portfolio',
-  //   name: 'Portfolio',
-  //   component: Portfolio
-  // },
+  {
+    path: '/portfolio',
+    name: 'Portfolio',
+    component: Portfolio
+  },
   // {
   //   path: '/portfolio-details???',
   //   name: 'PortfolioDetails',

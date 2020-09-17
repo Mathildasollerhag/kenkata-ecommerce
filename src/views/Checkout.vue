@@ -10,7 +10,7 @@
           <CouponCode />
         </div>
         <!-- Form -->
-        <h6 class="text-uppercase font-weight-bold mt-5">Billing Details</h6>
+        <h6 class="text-uppercase font-weight-bold mt-5 mb-3">Billing Details</h6>
         <BillingDetails />
       </div>
 

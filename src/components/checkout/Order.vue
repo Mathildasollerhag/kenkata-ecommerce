@@ -2,7 +2,7 @@
 <div id="order" class="mx-4">
 
     <!-- Order Product List -->
-    <div class="font-weight-bold text-kenkata-blue d-flex justify-content-between pt-3 pb-2 text-uppercase border-bottom">
+    <div class="font-weight-bold theme-text d-flex justify-content-between pt-3 pb-2 text-uppercase border-bottom">
         <p>Product</p>
         <p>Subtotal</p>
     </div>
@@ -56,6 +56,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  margin: 0.4em 0;
+}
 .cart-totals-border {
   border-bottom: 2px dotted var(--blue-theme-bg);
   border-right: 2px dotted var(--blue-theme-bg);

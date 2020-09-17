@@ -23,7 +23,7 @@
         </div>
         <!-- Local pickup -->
         <div class="mb-1">
-          <p class="d-flex align-items-center">
+          <p class="d-flex align-items-center mb-0">
             <label class="m-0 mr-1" for="localpickup">Local pickup: <span class="theme-text">$25.00</span></label>
             <input type="radio" id="localpickup">
           </p>
@@ -34,7 +34,7 @@
         </div>
         <!-- Change address -->
         <div v-if="currentRoute === 'ShoppingCart'">
-          <p>Change address</p>
+          <p class="mb-0">Change address</p>
         </div>
       </div>        
     </div>
@@ -57,7 +57,9 @@ export default {
 </script>
 
 <style scoped>
-
+p {
+  margin: 0.4em 0;
+}
 .cart-totals-border {
   border-bottom: 2px dotted var(--blue-theme);
   border-right: 2px dotted var(--blue-theme);

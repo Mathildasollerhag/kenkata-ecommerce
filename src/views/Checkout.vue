@@ -31,14 +31,42 @@
 <script>
 import Toprow from '@/components/shoppingCart/Toprow'
 import CouponCode from '@/components/shoppingCart/CouponCode'
+import BillingDetails from '@/components/checkout/BillingDetails'
+import Order from '@/components/checkout/Order'
 export default {
   components: {
     Toprow,
-    CouponCode
+    CouponCode,
+    BillingDetails,
+    Order
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+.cart-heading {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+#yourOrder {
+  border-bottom: 2px dotted var(--blue-theme);
+  border-right: 2px dotted var(--blue-theme);
+  border-left: 2px dotted var(--blue-theme);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+#yourOrder .border-top  {
+  border-color: var(--theme) !important;
+}
+a:hover {
+  color: var(--theme) !important;
+}
+button {
+  font-size: 17px;
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+a:hover {
+  text-decoration: none;
+}
 </style>

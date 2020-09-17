@@ -3,7 +3,7 @@
       <p>If you have a coupon code, please apply it below</p>
         <form class="form-inline position-relative mt-3 mb-2">
             <input class="form-control bg-transparent" type="text" placeholder="Coupon code">
-            <button class="btn blue-theme-bg position-absolute text-white px-3" type="submit">Apply Coupon</button>
+            <button class="btn theme-bg position-absolute text-white px-3" type="submit">Apply Coupon</button>
         </form>
   </div>
 </template>

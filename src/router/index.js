@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+
+import Wishlists from '../components/global/Wishlists.vue'
+
 import Shop from '../views/Shop.vue'
 
 import Compare from '../views/Compare.vue'
@@ -10,6 +13,7 @@ import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Portfolio from '../views/Portfolio.vue'
+
 
 //Import .vue - file here
 
@@ -22,6 +26,13 @@ const routes = [
     component: Home
   },
   {
+
+    path: '/wishlist',
+    name: 'Wishlists',
+    component: Wishlists
+  },
+  {
+
     path: '/shop',
     name: 'Shop',
     component: Shop
@@ -92,6 +103,7 @@ const routes = [
   //   name: 'ContactUs',
   //   component: ContactUs
   // }
+
 ]
 
 const router = new VueRouter({

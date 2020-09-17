@@ -1,0 +1,79 @@
+<template>
+  <div>
+    <Toprow />
+    <div class="container d-flex mb-custom">
+      <!-- Product List -->
+      <div class="cart-left col-lg-8">
+        <ProductList />        
+        <div class="d-flex justify-content-between">
+          <div class="col-lg-8">
+            <CouponCode />
+          </div>
+          <div>
+            <button class="btn btn-kenkata-dark update-cart">Update Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Totals -->
+      <div class="cart-right col-lg-4">
+        <div class="cart-heading blue-theme-bg text-center py-2">
+          <h4 class="theme-text text-uppercase my-1">Cart Totals</h4>
+        </div>
+        <div class="cart-totals-border">
+          
+          <div class="mx-4 pt-2 pb-4">
+            <Totals />
+            <router-link to="/checkout"><button class="btn btn-block btn-kenkata-blue mx-4 m-auto">Proceed to checkout</button></router-link>
+          </div>
+        </div>
+      </div>      
+    </div>
+
+    <!-- You May Also Like -->
+    <div class="container mb-custom">
+      <div class="mt-5">
+        <YouMayAlsoLike />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import YouMayAlsoLike from '@/components/productDetails/YouMayAlsoLike'
+import Totals from '@/components/shoppingCart/Totals'
+import Toprow from '@/components/shoppingCart/Toprow'
+import CouponCode from '@/components/shoppingCart/CouponCode'
+import ProductList from '@/components/shoppingCart/ProductList'
+export default {
+  components: {
+    YouMayAlsoLike,
+    Totals,
+    Toprow,
+    CouponCode,
+    ProductList
+  }
+}
+</script>
+
+<style scoped>
+.cart-heading {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.cart-totals-border {
+  border-bottom: 2px dotted var(--blue-theme);
+  border-right: 2px dotted var(--blue-theme);
+  border-left: 2px dotted var(--blue-theme);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+button {
+  font-size: 17px;
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+a:hover {
+  text-decoration: none;
+}
+</style>

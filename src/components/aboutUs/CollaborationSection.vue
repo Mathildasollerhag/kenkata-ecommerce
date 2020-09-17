@@ -41,5 +41,4 @@ export default {
 .mb-15 {
     margin-bottom: 5rem;
 }
-
 </style>

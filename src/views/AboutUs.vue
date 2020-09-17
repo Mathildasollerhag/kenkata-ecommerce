@@ -4,6 +4,8 @@
     <VideoSection />
     <IconSection />
     <ThemeSection />
+    <CollaborationSection />
+    <SubscribeBanner/>
   </div>
 </template>
 
@@ -15,6 +17,8 @@ export default {
     VideoSection,
     IconSection,
     ThemeSection,
+    CollaborationSection,
+    SubscribeBanner
 
   }
 }
@@ -23,6 +27,8 @@ import OnlineStore from '../components/aboutUs/OnlineStore';
 import VideoSection from '../components/aboutUs/VideoSection';
 import IconSection from '../components/aboutUs/IconSection';
 import ThemeSection from '../components/aboutUs/ThemeSection';
+import CollaborationSection from '../components/aboutUs/CollaborationSection';
+import SubscribeBanner from '../components/home/SubscribeBanner';
 </script>
 
 

@@ -45,12 +45,6 @@ const routes = [
     props: true
   },
   {
-    path: 'quickview/:id',
-    name: 'Quickview',
-    component: Quickview,
-    props: true
-  },
-  {
     path: '/shoppingcart',
     name: 'ShoppingCart',
     component: ShoppingCart
@@ -60,11 +54,12 @@ const routes = [
     name: 'Checkout',
     component: Checkout
   },
-  // {
-  //   path: '/quickview???',
-  //   name: 'QuickView',
-  //   component: QuickView
-  // },
+  {
+    path: '/:id',
+    name: 'Quickview',
+    component: Quickview,
+    props: true
+  },
   // {
   //   path: '/account',
   //   name: 'MyAccount',

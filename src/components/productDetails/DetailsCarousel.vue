@@ -17,10 +17,7 @@
 import carousel from 'vue-owl-carousel'
 export default {
   props: ["product"],
-  components: { carousel },
-  created() {
-    console.log(this.product)
-  }
+  components: { carousel }
 }
 </script>
 

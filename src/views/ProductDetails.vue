@@ -8,6 +8,8 @@
 
       <!-- Product Details -->
       <Details :product="product"/>
+      
+
 
       <!-- Details Nav -->
       <div class="container mb-custom mt-5">

@@ -9,8 +9,8 @@
   <Footer/>
 
 
-  <!-- Quickview Modal -->
-  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
+  <!-- Quickview Product Modal -->
+  <div class="modal fade w-100" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <Quickview />
@@ -27,7 +27,6 @@ import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
 import Quickview from '@/components/quickview/Quickview'
-import { mapState } from 'vuex'
 
 export default {
   name: "App",

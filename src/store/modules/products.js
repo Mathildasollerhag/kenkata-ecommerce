@@ -20,7 +20,6 @@ export default {
         SET_PRODUCT(state, product) {
             state.product = product
         },
-
     },
 
     actions: {
@@ -35,14 +34,12 @@ export default {
 
         // Get product by ID
         getProductById({ commit }, id) {
-            console.log(id);
             axios.get('http://localhost:9999/api/products/' + id).then(res => {
                 commit('SET_PRODUCT', res.data.product)
             }).catch(error => {
                 console.log(error);
             })
         },
-
     },
 
     getters: {

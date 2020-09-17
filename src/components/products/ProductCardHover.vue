@@ -6,7 +6,7 @@
             <div class="card-text-body">
                 <p class="card-text my-2">{{ product.name }}</p>
                 <small class="border py-1 px-2">Fashion</small>
-                <!-- <p class="mt-2"><del>$220.00</del></p> -->
+                <!-- <p class="mt-2 mb-0"><del>$220.00</del></p> -->
                 <h5 class="text-kenkata-blue m-0 mt-2">{{product.price}} SEK</h5>            
             </div>
             <!-- Star Rating -->

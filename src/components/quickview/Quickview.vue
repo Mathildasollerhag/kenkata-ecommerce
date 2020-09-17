@@ -1,11 +1,11 @@
 <template>
-  <div id="quickView" class="blue-theme-bg-op">
+  <div v-if="product" id="quickView">
       <div class="close theme-bg rounded-circle text-white c-pointer">
           X
       </div>
       <div class="py-5 d-flex align-items-center">
           <Toprow />
-          <Details />
+          <Details :product="product"/>
       </div>
   </div>
 </template>

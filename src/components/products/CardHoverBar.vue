@@ -1,6 +1,6 @@
 <template>
   <div id="hoverbar">
-
+ 
       <div class="h-100 d-flex flex-column align-items-center justify-content-center"> 
 
         <!-- Colors Tooltip -->
@@ -31,9 +31,18 @@
             </g>
         </svg>
 
-        <!-- Quick view Tooltip --> 
+
+        <!-- Quickview Modal -->
+        <!-- <div class="modal fade w-100" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <Quickview :id="product._id" />
+            </div>
+            </div>
+        </div>  -->
+        <!-- Quick view Tooltip -->
         <!-- <router-link :to="{name: 'Quickview', params: {id: product._id}}"> -->
-            <b-button data-toggle="modal" data-target="#quickviewModal" id="tooltip-view" class="p-0" variant="transparent">
+            <b-button v-on:click="getProductById(product._id)" data-toggle="modal" data-target="#quickviewModal" id="tooltip-view" class="p-0" variant="transparent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21.061" height="21.061" viewBox="0 0 21.061 21.061">
                     <g id="Search_icon" data-name="Search icon" transform="translate(-15.152 -304.457)">
                         <g class="hoverbar-svg" id="Ellipse_10" data-name="Ellipse 10" transform="translate(15.152 304.457)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
@@ -59,6 +68,8 @@
                 </g>
             </svg>
         </b-button>
+      
+       
         <b-tooltip target="tooltip-cart" triggers="hover" placement="left" custom-class="tooltip-class">Add to cart</b-tooltip>        
          
       </div>
@@ -68,8 +79,15 @@
 <script>
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Quickview from '@/components/quickview/Quickview'
+import { mapActions } from 'vuex'
 export default {
-    components: { Quickview }
+    props: ["product"],
+    components: {
+        Quickview
+    },
+    methods: {
+        ...mapActions(["getProductById"])
+    }
 }
 </script>
 
@@ -142,5 +160,7 @@ svg:hover .hoverbar-svg {
 #hoverbar .arrow::before {
     border-left-color: #20D3C2 !important;
 }
+
+
 </style>
 

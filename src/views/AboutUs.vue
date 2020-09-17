@@ -3,6 +3,7 @@
     <OnlineStore />
     <VideoSection />
     <IconSection />
+    <ThemeSection />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ export default {
     OnlineStore,
     VideoSection,
     IconSection,
+    ThemeSection,
 
   }
 }
@@ -20,6 +22,7 @@ export default {
 import OnlineStore from '../components/aboutUs/OnlineStore';
 import VideoSection from '../components/aboutUs/VideoSection';
 import IconSection from '../components/aboutUs/IconSection';
+import ThemeSection from '../components/aboutUs/ThemeSection';
 </script>
 
 

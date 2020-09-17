@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5 pt-5">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 d-none d-xl-block">
             <div class="gray-bg video-ph">
             </div>
         </div>

@@ -10,7 +10,7 @@
 
 
   <!-- Quickview Product Modal -->
-  <div class="modal fade w-100" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
+  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <Quickview />
@@ -138,9 +138,6 @@ html, body {
 .modal-backdrop {
   background-color: var(--blue-theme);
   opacity: 0.85 !important;
-}
-.modal-content {
-  margin-top: 8em;
 }
 
 </style>

@@ -3,22 +3,19 @@
       <div class="close theme-bg rounded-circle text-white c-pointer">
           X
       </div>
-      <div class="py-5 d-flex align-items-center">
-          <Toprow />
+      <div class="py-4 d-flex align-items-center position-relative">
           <Details :product="product"/>
       </div>
   </div>
 </template>
 
 <script>
-import Toprow from './Toprow'
 import Details from '@/components/productDetails/Details'
 import { mapActions, mapGetters } from 'vuex'
 export default {
     name: "Quickview",
     props: ["id"],
     components: {
-        Toprow,
         Details
     },
     methods: {
@@ -37,6 +34,11 @@ export default {
 #quickView {
     background-color: white;
     border-radius: 10px;
+    position: absolute;
+    right: -50%;
+    top: 13em;
+    padding: 0 1em 1.7em 1em;
+    max-width: 950px;
 }
 .close {
     position: absolute;

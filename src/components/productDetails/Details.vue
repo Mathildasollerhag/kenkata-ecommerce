@@ -1,7 +1,21 @@
 <template>
-  <div v-if="product" class="container d-flex align-items-center">
+  <div v-if="product" class="container d-flex align-items-center justify-content-around">
     <DetailsCarousel :product="product" />
     <div class="details">
+
+      <!-- Quickview Top Row -->
+      <div v-if="currentRoute != 'ProductDetails'" class="quickview-row d-flex justify-content-between mb-4">
+        <span class="d-flex align-items-center">
+            <i class="fa fa-star theme-text"></i>
+            <i class="fa fa-star theme-text"></i>
+            <i class="fa fa-star theme-text"></i>
+            <i class="fa fa-star theme-text"></i>
+            <i class="far fa-star theme-text"></i>
+            <p class="mb-0 ml-2">(2 customer reviews)</p>
+        </span>
+        <img src="@/images/Bexim.png" alt="">
+      </div>
+
       <h3 class="theme-text mb-3">{{product.name}}</h3>
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud.</p>
       <hr />
@@ -68,17 +82,24 @@ import DetailsSocials from "./DetailsSocials";
 import ProductReviews from "./ProductReviews";
 import Quantity from "./Quantity";
 export default {
-    props: ["product"],
-    components: {
-        DetailsCarousel,
-        DetailsSocials,
-        ProductReviews,
-        Quantity
+  props: ["product"],
+  components: {
+      DetailsCarousel,
+      DetailsSocials,
+      ProductReviews,
+      Quantity
+  },
+  computed: {
+    currentRoute() {
+      return this.$route.name;
     }
+  }  
+  
 };
 </script>
 
 <style scoped>
+
 .details {
   padding-left: 12%;
 }
@@ -101,5 +122,13 @@ button:hover img {
 .tags span {
   border: 1px solid var(--gray-theme);
   padding: 0 5px;
+}
+
+#quickView .details {
+  padding-left: 1em;
+  margin-bottom: -2em;
+}
+.quickview-row img {
+  width: 105px;
 }
 </style>

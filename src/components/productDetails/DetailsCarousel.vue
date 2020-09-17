@@ -35,6 +35,7 @@ export default {
     border-radius: 5px;
     background-repeat: no-repeat;
 }
+
 #detailsCarousel .owl-theme .owl-dots {
     display: flex;
     flex-direction: column;
@@ -42,6 +43,7 @@ export default {
     top: 0;
     right: -28%
 }
+
 #detailsCarousel .owl-theme .owl-dots .owl-dot {
     display: block;
 }
@@ -72,6 +74,7 @@ export default {
     background: none;
     border-radius: 5px;
 }
+
 
 
 #detailsCarousel .owl-theme .owl-dots .owl-dot span::after,
@@ -116,5 +119,25 @@ export default {
     background: #F6F6F6;
     z-index: -2;
     border-radius: 5px;
+}
+
+
+/* Quickview */
+#quickView #detailsCarousel .owl-theme .owl-dots {
+    flex-direction: row;
+    top: unset;
+    bottom: -17%;
+    left: -1%;
+}
+#quickView #detailsCarousel img {
+    margin-left: auto;
+}
+#quickView #detailsCarousel  {
+    margin-top: -3.5em;
+}
+#quickView #detailsCarousel .owl-theme .owl-dots .owl-dot span {
+    width: 70px;
+    height: 70px;
+    margin: 0 5px;
 }
 </style>

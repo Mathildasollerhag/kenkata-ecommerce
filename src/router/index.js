@@ -41,11 +41,6 @@ const routes = [
     component: Checkout
   },
   // {
-  //   path: '/product:id',
-  //   name: 'ProductDetails',
-  //   component: ProductDetails
-  // },
-  // {
   //   path: '/quickview???',
   //   name: 'QuickView',
   //   component: QuickView

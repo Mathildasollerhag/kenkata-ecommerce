@@ -2,8 +2,8 @@
   <div v-if="newArrivals.length > 0" id="relatedProducts" class="position-relative container my-5">
     <div class="text-center mb-4">
       <div class="d-flex justify-content-center text-uppercase">
-        <h1 id="new" class="font-weight-bold">You may</h1>
-        <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Also like</h1>
+        <h1 id="new" class="font-weight-bold">Related</h1>
+        <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Products</h1>
       </div>
       <img src="@/images/ZigZag.svg" alt="">
     </div>

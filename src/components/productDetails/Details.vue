@@ -1,5 +1,5 @@
 <template>
-  <div v-if="product" class="container d-flex align-items-center justify-content-around">
+  <div class="container d-flex align-items-center justify-content-around">
     <DetailsCarousel :product="product" />
     <div class="details">
 

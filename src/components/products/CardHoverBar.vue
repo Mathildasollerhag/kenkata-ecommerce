@@ -31,17 +31,7 @@
             </g>
         </svg>
 
-
-        <!-- Quickview Modal -->
-        <!-- <div class="modal fade w-100" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <Quickview :id="product._id" />
-            </div>
-            </div>
-        </div>  -->
         <!-- Quick view Tooltip -->
-        <!-- <router-link :to="{name: 'Quickview', params: {id: product._id}}"> -->
             <b-button v-on:click="getProductById(product._id)" data-toggle="modal" data-target="#quickviewModal" id="tooltip-view" class="p-0" variant="transparent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21.061" height="21.061" viewBox="0 0 21.061 21.061">
                     <g id="Search_icon" data-name="Search icon" transform="translate(-15.152 -304.457)">
@@ -53,7 +43,6 @@
                     </g>
                 </svg>
             </b-button>
-        <!-- </router-link> -->
         <b-tooltip target="tooltip-view" triggers="hover" placement="left" custom-class="tooltip-class">Quick view</b-tooltip>
         
         <!-- Add to cart Tooltip -->

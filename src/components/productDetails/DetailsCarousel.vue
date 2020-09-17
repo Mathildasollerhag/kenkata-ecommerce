@@ -15,9 +15,10 @@
 
 <script>
 import carousel from 'vue-owl-carousel'
+import { mapGetters } from 'vuex'
 export default {
   props: ["product"],
-  components: { carousel }
+  components: { carousel },
 }
 </script>
 

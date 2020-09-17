@@ -14,8 +14,13 @@
                             Pages <i class="fas fa-chevron-down myclass9"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a href="/wishlist" class="dropdown-item ml-2">Wishlist</a>
-                            <a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+                            <a href="/wishlist" class="dropdown-item ml-1">Wishlist</a>
+                            <a class="dropdown-item ml-1" href="/error">404 Error</a>
+                            <a class="dropdown-item ml-1" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    </a>
+                </li>
                 <li class="nav-item myclass7"><router-link class=" nav-link" to="/">Blog</router-link></li></ul>
             </div>
             <div class=""><button class="btn green specialoffer" type="submit">SPECIAL OFFER</button></div>
@@ -27,6 +32,7 @@
 </script>
 
 <style scoped>
+
 .green{
     background-color: #20D3C2;
 }

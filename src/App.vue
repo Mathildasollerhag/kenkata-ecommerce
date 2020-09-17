@@ -101,19 +101,18 @@ html, body {
     font-weight: 500;
     border: 1px solid;
 }
-.btn-kenkata-blue:hover {
-    background-color: white;
-    color: var(--theme);
-    border: 1px solid var(--theme);
-}
 .btn-kenkata-dark {
-    padding: 0.7em 1.5em;
+    padding: 0.4em 1.5em;
     background-color: var(--blue-theme);
     color: white;
     border-radius: 30px;
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+.btn-kenkata-blue:hover, .btn-kenkata-dark:hover {
+    color: white;
+}
+
 </style>
 
 

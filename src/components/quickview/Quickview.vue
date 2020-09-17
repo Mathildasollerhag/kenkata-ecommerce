@@ -38,7 +38,7 @@ export default {
     right: -50%;
     top: 13em;
     padding: 0 1em 1.7em 1em;
-    max-width: 950px;
+    width: 950px;
 }
 .close {
     position: absolute;

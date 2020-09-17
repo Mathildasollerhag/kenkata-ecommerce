@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  margin: 0;
+}
 .delete {
     background: var(--gray-theme);
     border-radius: 50%;

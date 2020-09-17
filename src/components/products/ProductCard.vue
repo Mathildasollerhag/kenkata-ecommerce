@@ -1,7 +1,7 @@
 <template>
     <div class="h-100" @mouseover="hover = true" @mouseleave="hover = false">
-      <div v-if="product.image" class="product-card card p-0 position-relative h-100">
-        <router-link to="/">
+      <div v-if="product.image" class="product-card p-0 position-relative h-100">
+        <router-link :to="{name: 'ProductDetails', params: {id: product._id}}">
             <img :src="product.image" class="card-img-top">
         </router-link>
 

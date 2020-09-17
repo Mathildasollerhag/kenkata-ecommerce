@@ -132,10 +132,10 @@ svg:hover .hoverbar-svg {
 
 
 /* Other Tooltips */
-.tooltip-inner {
+#hoverbar .tooltip-inner {
     background-color: #20D3C2;
 }
-.arrow::before {
+#hoverbar .arrow::before {
     border-left-color: #20D3C2 !important;
 }
 </style>

@@ -8,6 +8,16 @@
   <Brands/>
   <Footer/>
 
+
+  <!-- Quickview Modal -->
+  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <Quickview />
+      </div>
+    </div>
+  </div>
+  
   </div>
 </template>
 
@@ -16,13 +26,16 @@
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
+import Quickview from '@/components/quickview/Quickview'
+import { mapState } from 'vuex'
 
 export default {
   name: "App",
   components:{
   Navigation,
   Brands,
-  Footer
+  Footer,
+  Quickview
   }
 }
 </script>
@@ -111,6 +124,14 @@ html, body {
 }
 .btn-kenkata-blue:hover, .btn-kenkata-dark:hover {
     color: white;
+}
+
+.modal-backdrop {
+  background-color: var(--blue-theme);
+  opacity: 0.85 !important;
+}
+.modal-content {
+  margin-top: 8em;
 }
 
 </style>

@@ -6,6 +6,7 @@ import Shop from '../views/Shop.vue'
 
 
 import ProductDetails from '../views/ProductDetails.vue'
+import Quickview from '@/components/quickview/Quickview'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
 
@@ -31,6 +32,12 @@ const routes = [
     path: '/product/:id',
     name: 'ProductDetails',
     component: ProductDetails,
+    props: true
+  },
+  {
+    path: 'quickview/:id',
+    name: 'Quickview',
+    component: Quickview,
     props: true
   },
   {

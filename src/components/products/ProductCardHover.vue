@@ -19,7 +19,7 @@
             </div>
         </div>
        </router-link>
-       <CardHoverBar />
+       <CardHoverBar :product="product"/>
    </div>
 </template>
 

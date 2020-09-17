@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex align-items-center">
+  <div v-if="product" class="container d-flex align-items-center">
     <DetailsCarousel :product="product" />
     <div class="details">
       <h3 class="theme-text mb-3">{{product.name}}</h3>

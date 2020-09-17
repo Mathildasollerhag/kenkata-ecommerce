@@ -16,7 +16,7 @@
                         </a>
                         <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
                             <a href="/wishlist" class="dropdown-item">Wishlist</a>
-                            <router-link class="dropdown-item" to="/about">About us</router-link><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+                            <router-link class="dropdown-item" to="/about">About us</router-link><router-link class="dropdown-item" to="/team">Team</router-link></div></div></a></li>
 
                 
 

@@ -53,8 +53,10 @@ html, body {
   --theme: #20D3C2;
   --light-cyan-theme: #EDFCFA;
   --blue-theme: #0E153D;
-  --blue-theme-op: #0e153db4;
+  --blue-theme-op: #0e153dc0;
   --gray-theme: #CCCCCC;
+  --light-gray-theme: #EEEEEE;
+  --lighter-gray-theme: #F6F6F6;
 
 }
 
@@ -84,6 +86,14 @@ html, body {
 
 .gray-bg {
   background-color: var(--gray-theme);
+}
+
+.light-gray-bg {
+  background-color: var(--light-gray-theme);
+}
+
+.lighter-gray-bg {
+  background-color: var(--lighter-gray-theme);
 }
 
 /* Owl Carousel Style */

@@ -26,7 +26,7 @@
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
-import Quickview from '@/components/quickview/Quickview'
+import Quickview from '@/components/quickview/Quickview.vue'
 
 export default {
   name: "App",

@@ -9,8 +9,8 @@
                 <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s, when an unknown printer took.</small>
             </p>
         </div>
-        <TeamCard />
     </div>
+    <TeamCardHolder />
   </div>
 </template>
 
@@ -18,10 +18,10 @@
 export default {
     name: 'Business',
     components: {
-        TeamCard
+        TeamCardHolder,
     }
 }
-import TeamCard from '../team/TeamCard';
+import TeamCardHolder from '../team/TeamCardHolder';
 </script>
 
 <style scoped>

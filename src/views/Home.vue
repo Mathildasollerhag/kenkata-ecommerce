@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    
+    <Shopping />
     <InfoCards />
     <ShopByCategory />
 
@@ -18,6 +18,7 @@
 
 
 
+  
   </div>
 </template>
 
@@ -28,6 +29,7 @@ import TopSellers from '@/components/home/TopSellers.vue'
 import ReviewCarousel from '@/components/home/ReviewCarousel.vue'
 import LatestBlog from '@/components/home/LatestBlog.vue'
 import SubscribeBanner from '@/components/home/SubscribeBanner.vue'
+import Shopping from '@/components/home/Shopping.vue'
 
 
 import NewArrivals from '@/components/home/NewArrivals';
@@ -46,6 +48,7 @@ export default {
     ReviewCarousel,
     LatestBlog,
     SubscribeBanner,
+    Shopping,
 
 
     NewArrivals,

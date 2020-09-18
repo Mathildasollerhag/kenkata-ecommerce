@@ -4,10 +4,12 @@
         <span class="delete d-flex align-items-center justify-content-center">
             <i class="fas fa-times font-weight-light p-0 m-0"></i>
         </span>
-        <span class="img-box d-flex justify-content-center align-items-center ml-3 mr-2">
-            <img class="img-fluid" src="@/images/featuredProducts3.png" alt="">
-        </span>
-        <p>Women smart high heel shoe</p>                
+        <div class="d-none d-lg-block">
+          <span class="img-box d-flex justify-content-center align-items-center ml-3 mr-2">
+              <img class="img-fluid" src="@/images/featuredProducts3.png" alt="">
+          </span>
+        </div>
+        <p class="ml-3 ml-lg-0">Women smart high heel shoe</p>                
     </div>
 
     <div class="d-flex align-items-center col-lg-5">
@@ -36,6 +38,7 @@ p {
     border-radius: 50%;
     height: 25px;
     width: 25px;
+    min-width: 25px;
 }
 i {
     font-size: 1.2rem;

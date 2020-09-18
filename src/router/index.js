@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Wishlists from '../components/global/Wishlists.vue'
 import Error from '../components/global/Error.vue'
+import Contact from '../components/global/Contact.vue'
 //Import .vue - file here
 
 Vue.use(VueRouter)
@@ -22,6 +23,11 @@ const routes = [
     path: '/error',
     name: 'Error',
     component: Error
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   }
   
 ]

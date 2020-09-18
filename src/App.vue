@@ -8,6 +8,16 @@
   <Brands/>
   <Footer/>
 
+
+  <!-- Quickview Product Modal -->
+  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content d-flex align-items-center bg-transparent">
+        <Quickview />
+      </div>
+    </div>
+  </div>
+  
   </div>
 </template>
 
@@ -16,14 +26,17 @@
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
+import Quickview from '@/components/quickview/Quickview'
 
 export default {
   name: "App",
   components:{
   Navigation,
   Brands,
-  Footer
+  Footer,
+  Quickview
   }
+  
 }
 </script>
 
@@ -33,7 +46,6 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -84,9 +96,9 @@ html, body {
 }
 
 /* Owl Carousel Style */
-.carousel-height {
+/* .carousel-height {
     height: 380px !important;
-}
+} */
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     transition: all 0.3s ease;
     background-color: #20D3C2 !important;
@@ -121,6 +133,14 @@ html, body {
 }
 .btn-kenkata-blue:hover, .btn-kenkata-dark:hover {
     color: white;
+}
+
+.modal-backdrop {
+  background-color: var(--blue-theme);
+  opacity: 0.85 !important;
+}
+.modal-content{
+  border: none;
 }
 
 </style>

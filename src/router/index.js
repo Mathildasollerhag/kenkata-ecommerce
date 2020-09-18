@@ -9,7 +9,6 @@ import Shop from '../views/Shop.vue'
 import Compare from '../views/Compare.vue'
 
 import ProductDetails from '../views/ProductDetails.vue'
-import Quickview from '@/components/quickview/Quickview'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
 import AboutUs from '../views/AboutUs.vue'
@@ -54,12 +53,7 @@ const routes = [
     name: 'Checkout',
     component: Checkout
   },
-  {
-    path: '/:id',
-    name: 'Quickview',
-    component: Quickview,
-    props: true
-  },
+
   // {
   //   path: '/account',
   //   name: 'MyAccount',

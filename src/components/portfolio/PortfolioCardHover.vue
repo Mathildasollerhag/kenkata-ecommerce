@@ -1,7 +1,7 @@
 <template>
     <div class="overlay">
         <div class="text">
-            <div class="plus-icon"><a href=""><img src="@/images/Plus-Icon.svg" alt=""></a></div>
+            <div class="plus-icon"><router-link to="/portfolio/portfolio-details"><img src="@/images/Plus-Icon.svg" alt=""></router-link></div>
             <p class="mb-2">Women's fashion</p>
             <small>Fashion</small>
         </div>
@@ -38,6 +38,18 @@ p {
   height: auto;
 }
 
+.one:hover .overlay {
+  opacity: 85%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 82.5%;
+  left: 5%;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -50,18 +62,6 @@ p {
   transition: .5s ease;
   background-color: #0E153D;
   border-radius: 6px;
-}
-
-.one:hover .overlay {
-  opacity: 85%;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 82.5%;
-  left: 5%;
 }
 
 </style>

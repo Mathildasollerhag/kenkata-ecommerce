@@ -7,6 +7,7 @@ import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Portfolio from '../views/Portfolio.vue'
+import PortfolioDetails from '../views/PortfolioDetails.vue'
 
 
 //Import .vue - file here
@@ -85,11 +86,11 @@ const routes = [
     name: 'Portfolio',
     component: Portfolio
   },
-  // {
-  //   path: '/portfolio-details???',
-  //   name: 'PortfolioDetails',
-  //   component: PortfolioDetails
-  // },
+  {
+    path: '/portfolio/portfolio-details',
+    name: 'PortfolioDetails',
+    component: PortfolioDetails
+  },
   // {
   //   path: '/contact',
   //   name: 'ContactUs',

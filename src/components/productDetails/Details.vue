@@ -1,10 +1,10 @@
 <template>
-  <div class="container d-flex align-items-center justify-content-around">
+  <div class="container d-xl-flex align-items-center justify-content-around">
     <DetailsCarousel :product="product" />
     <div class="details">
 
       <!-- Quickview Top Row -->
-      <div v-if="currentRoute != 'ProductDetails'" class="quickview-row d-flex justify-content-between mb-4">
+      <div v-if="currentRoute != 'ProductDetails'" class="quickview-row d-md-flex justify-content-between mb-4">
         <span class="d-flex align-items-center">
             <i class="fa fa-star theme-text"></i>
             <i class="fa fa-star theme-text"></i>
@@ -99,10 +99,6 @@ export default {
 </script>
 
 <style scoped>
-
-.details {
-  padding-left: 12%;
-}
 .icon {
   transform: scale(0.9);
 }
@@ -125,10 +121,20 @@ button:hover img {
 }
 
 #quickView .details {
+  padding-top: 6em;
   padding-left: 1em;
   margin-bottom: -2em;
 }
 .quickview-row img {
   width: 105px;
+}
+
+@media(min-width: 1200px) {
+  .details {
+    padding-left: 7em;
+  }
+  #quickView .details {
+    padding-top: 0;
+  }
 }
 </style>

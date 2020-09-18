@@ -1,5 +1,5 @@
 <template>
-  <div id="detailsCarousel" class="position-relative col-lg-5 pl-0">
+  <div id="detailsCarousel" class="position-relative col-xl-5 pl-0">
     <carousel :items="1" :dots="true" :nav="false">
         <img :src="product.image" alt="">
         <img :src="product.image" alt="">
@@ -30,6 +30,7 @@ export default {
 }
 #detailsCarousel img{
     max-height: 425px;
+    max-width: 425px;
     background-position: center;
     background-size: contain;
     margin: 1em 0;
@@ -42,7 +43,7 @@ export default {
     flex-direction: column;
     position: absolute;
     top: 0;
-    right: -28%
+    left: 27em
 }
 
 #detailsCarousel .owl-theme .owl-dots .owl-dot {
@@ -69,11 +70,18 @@ export default {
 }
 #detailsCarousel .owl-theme .owl-dots .owl-dot span {
     position: relative;
-    width: 95px;
     height:95px;
+    width:95px;
     margin: 7px 12px;
     background: none;
     border-radius: 5px;
+}
+
+@media (min-width: 1200px) {
+    #detailsCarousel .owl-theme .owl-dots .owl-dot span {
+        width: 95px;
+        height:95px;
+    }
 }
 
 
@@ -131,14 +139,19 @@ export default {
     left: -1%;
 }
 #quickView #detailsCarousel img {
-    margin-left: auto;
+    /* margin-left: auto; */
 }
-#quickView #detailsCarousel  {
-    margin-top: -3.5em;
-}
+/* #quickView #detailsCarousel  {
+    margin-top: -10em;
+} */
 #quickView #detailsCarousel .owl-theme .owl-dots .owl-dot span {
     width: 70px;
     height: 70px;
     margin: 0 5px;
+}
+@media (min-width: 1200px) {
+    #quickView #detailsCarousel  {
+    margin-top: -3.5em;
+}
 }
 </style>

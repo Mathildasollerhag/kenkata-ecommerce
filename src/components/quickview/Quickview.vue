@@ -27,19 +27,34 @@ export default {
 #quickView {
     background-color: white;
     border-radius: 10px;
-    margin-top: 12em;
+    margin-top: 4em;
     padding: 0 1em 1.7em 1em;
-    width: 950px;
+    width: 400px; 
 }
 .close {
     position: absolute;
-    right: -10.8em;
-    top: 6.8em;
+    right: -1.5em;
+    top: 1.5em;
     padding: 2px 12px;
 }
 i {
     font-weight: 200;
     font-size: 1rem;
     margin-bottom: 6px;
+}
+@media (min-width: 600px) {
+    #quickView {
+        width: 500px; 
+    }
+}
+@media (min-width: 1200px) {
+    #quickView {
+        width: 950px; 
+        margin-top: 12em;
+    }
+    .close {
+        right: -10.8em;
+        top: 6.8em;
+    }
 }
 </style>

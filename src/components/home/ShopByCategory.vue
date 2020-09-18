@@ -6,7 +6,7 @@
           SHOP BY
           <span class="theme-text">CATEGORY</span>
         </h1>
-        <img src="" alt="Icon" />
+        <img src="@/images/ZigZag.svg" alt="Icon">
         <p class="mt-3">We always try to give you the best product within a fast and reliable way</p>
       </div>
       <div class="container d-none d-sm-block">

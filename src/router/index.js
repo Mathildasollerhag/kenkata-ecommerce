@@ -12,6 +12,7 @@ import ProductDetails from '../views/ProductDetails.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
 import AboutUs from '../views/AboutUs.vue'
+import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
 
 
@@ -83,11 +84,11 @@ const routes = [
     name: 'AboutUs',
     component: AboutUs
   },
-  // {
-  //   path: '/team',
-  //   name: 'Team',
-  //   component: Team
-  // },
+  {
+    path: '/team',
+    name: 'Team',
+    component: Team
+  },
   {
     path: '/portfolio',
     name: 'Portfolio',

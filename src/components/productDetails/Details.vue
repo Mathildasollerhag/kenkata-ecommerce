@@ -1,8 +1,8 @@
 <template>
   <div class="container d-xl-flex align-items-center justify-content-around">
-    <DetailsCarousel :product="product" />
+    <DetailsCarousel :product="product" />    
+    
     <div class="details">
-
       <!-- Quickview Top Row -->
       <div v-if="currentRoute != 'ProductDetails'" class="quickview-row d-md-flex justify-content-between mb-4">
         <span class="d-flex align-items-center">

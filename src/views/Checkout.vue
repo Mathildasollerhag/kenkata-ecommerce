@@ -1,12 +1,12 @@
 <template>
   <div>
     <Toprow />
-    <div class="container d-flex mb-custom">
+    <div class="container d-flex flex-column flex-lg-row align-items-center align-items-lg-start mb-custom">
       <!-- Billing Details -->
       <div class="checkout-left col-lg-6">
         <div class="mb-3"><span>Returning customer?<router-link to="/account" class="ml-2 theme-text">Click here to login</router-link></span></div>
         <div class="mb-3"><span>Have a coupon?<a href="#couponCollapse" data-toggle="collapse" role="button" class="ml-2 theme-text" aria-expanded="false" aria-controls="couponCode">Click here to enter your code</a></span></div>
-        <div class="col-10 pl-0 collapse" id="couponCollapse">
+        <div class="col-md-10 pl-0 collapse" id="couponCollapse">
           <CouponCode />
         </div>
         <!-- Form -->

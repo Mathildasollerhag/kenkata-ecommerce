@@ -1,6 +1,6 @@
 <template>
     <div class="blue-theme-bg text-white py-4">
-      <div class="container d-flex justify-content-between align-items-center">
+      <div class="container d-lg-flex justify-content-between align-items-center">
         <div>
             <span class="d-flex align-items-center">             
                 <router-link class="theme-text" to="/">Home</router-link><span class="mx-2">/</span>

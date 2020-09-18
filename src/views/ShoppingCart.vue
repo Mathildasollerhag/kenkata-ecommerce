@@ -1,22 +1,22 @@
 <template>
   <div>
     <Toprow />
-    <div class="container d-flex mb-custom">
+    <div class="container-fluid container-md d-flex flex-column flex-xl-row align-items-center mb-custom">
       <!-- Product List -->
-      <div class="cart-left col-lg-8">
+      <div class="cart-left col-xl-8">
         <ProductList />        
-        <div class="d-flex justify-content-between">
-          <div class="col-lg-8">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div class="col-md-8 order-1 order-md-0 pl-0">
             <CouponCode />
           </div>
           <div>
-            <button class="btn btn-kenkata-dark update-cart">Update Cart</button>
+            <button class="btn btn-kenkata-dark update-cart order-0 order-md-1 mb-4 mb-md-0">Update Cart</button>
           </div>
         </div>
       </div>
 
       <!-- Cart Totals -->
-      <div class="cart-right col-lg-4">
+      <div class="cart-right col-xl-4 mt-4 mt-xl-0">
         <div class="cart-heading blue-theme-bg text-center py-2">
           <h4 class="theme-text text-uppercase my-1">Cart Totals</h4>
         </div>

@@ -1,5 +1,6 @@
 <template>
   <div id="hoverbar">
+ 
       <div class="h-100 d-flex flex-column align-items-center justify-content-center"> 
 
         <!-- Colors Tooltip -->
@@ -31,17 +32,17 @@
         </svg>
 
         <!-- Quick view Tooltip -->
-        <b-button id="tooltip-view" class="p-0" variant="transparent">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21.061" height="21.061" viewBox="0 0 21.061 21.061">
-                <g id="Search_icon" data-name="Search icon" transform="translate(-15.152 -304.457)">
-                    <g class="hoverbar-svg" id="Ellipse_10" data-name="Ellipse 10" transform="translate(15.152 304.457)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                    <circle cx="8.493" cy="8.493" r="8.493" stroke="none"/>
-                    <circle cx="8.493" cy="8.493" r="7.743" fill="none"/>
+            <b-button v-on:click="getProductById(product._id)" data-toggle="modal" data-target="#quickviewModal" id="tooltip-view" class="p-0" variant="transparent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21.061" height="21.061" viewBox="0 0 21.061 21.061">
+                    <g id="Search_icon" data-name="Search icon" transform="translate(-15.152 -304.457)">
+                        <g class="hoverbar-svg" id="Ellipse_10" data-name="Ellipse 10" transform="translate(15.152 304.457)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                        <circle cx="8.493" cy="8.493" r="8.493" stroke="none"/>
+                        <circle cx="8.493" cy="8.493" r="7.743" fill="none"/>
+                        </g>
+                        <line class="hoverbar-svg" id="Line_12" data-name="Line 12" x1="5.502" y1="5.502" transform="translate(29.65 318.955)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                     </g>
-                    <line class="hoverbar-svg" id="Line_12" data-name="Line 12" x1="5.502" y1="5.502" transform="translate(29.65 318.955)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                </g>
-            </svg>
-        </b-button>
+                </svg>
+            </b-button>
         <b-tooltip target="tooltip-view" triggers="hover" placement="left" custom-class="tooltip-class">Quick view</b-tooltip>
         
         <!-- Add to cart Tooltip -->
@@ -56,6 +57,8 @@
                 </g>
             </svg>
         </b-button>
+      
+       
         <b-tooltip target="tooltip-cart" triggers="hover" placement="left" custom-class="tooltip-class">Add to cart</b-tooltip>        
          
       </div>
@@ -64,8 +67,16 @@
 
 <script>
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Quickview from '@/components/quickview/Quickview'
+import { mapActions } from 'vuex'
 export default {
-
+    props: ["product"],
+    components: {
+        Quickview
+    },
+    methods: {
+        ...mapActions(["getProductById"])
+    }
 }
 </script>
 
@@ -138,5 +149,7 @@ svg:hover .hoverbar-svg {
 #hoverbar .arrow::before {
     border-left-color: #20D3C2 !important;
 }
+
+
 </style>
 

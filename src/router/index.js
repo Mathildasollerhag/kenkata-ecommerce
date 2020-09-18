@@ -17,6 +17,7 @@ import Checkout from '../views/Checkout.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
+import PortfolioDetails from '../views/PortfolioDetails.vue'
 
 //Import .vue - file here
 
@@ -29,7 +30,6 @@ const routes = [
     component: Home
   },
   {
-
     path: '/wishlist',
     name: 'Wishlists',
     component: Wishlists
@@ -76,11 +76,6 @@ const routes = [
     name: 'Compare',
     component: Compare
   },
-  // {
-  //   path: '/404???',
-  //   name: '404',
-  //   component: 404
-  // },
   {
     path: '/about',
     name: 'AboutUs',
@@ -95,7 +90,12 @@ const routes = [
     path: '/portfolio',
     name: 'Portfolio',
     component: Portfolio
-  }
+  },
+  {
+    path: '/portfolio/portfolio-details',
+    name: 'PortfolioDetails',
+    component: PortfolioDetails
+  },
 
 ]
 

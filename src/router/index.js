@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 import Wishlists from '../components/global/Wishlists.vue'
+import Error from '../components/global/Error.vue'
+import Contact from '../components/global/Contact.vue'
+
 
 import Shop from '../views/Shop.vue'
 
@@ -14,7 +17,6 @@ import Checkout from '../views/Checkout.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
-
 
 //Import .vue - file here
 
@@ -33,7 +35,16 @@ const routes = [
     component: Wishlists
   },
   {
-
+    path: '/error',
+    name: 'Error',
+    component: Error
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
     path: '/shop',
     name: 'Shop',
     component: Shop
@@ -60,11 +71,6 @@ const routes = [
   //   name: 'MyAccount',
   //   component: MyAccount
   // },
-  // {
-  //   path: '/wishlist',
-  //   name: 'Wishlist',
-  //   component: Wishlist
-  // },
   {
     path: '/compare',
     name: 'Compare',
@@ -89,17 +95,7 @@ const routes = [
     path: '/portfolio',
     name: 'Portfolio',
     component: Portfolio
-  },
-  // {
-  //   path: '/portfolio-details???',
-  //   name: 'PortfolioDetails',
-  //   component: PortfolioDetails
-  // },
-  // {
-  //   path: '/contact',
-  //   name: 'ContactUs',
-  //   component: ContactUs
-  // }
+  }
 
 ]
 

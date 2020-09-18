@@ -1,9 +1,7 @@
 <template>
     <div class="h-100" @mouseover="hover = true" @mouseleave="hover = false">
-      <div v-if="product.image" class="product-card card p-0 position-relative h-100">
-        <router-link to="/">
-            <img :src="product.image" class="card-img-top">
-        </router-link>
+      <div v-if="product.image" class="product-card p-0 position-relative h-100">       
+        <img :src="product.image" class="card-img-top">   
 
         <div v-if="!hover" class="bottom-row position-absolute card-body">
             <p class="text-white align-middle m-0">{{ product.name }}</p>
@@ -39,6 +37,9 @@ export default {
 <style scoped>
   .product-card {
     cursor: pointer;
+  }
+  .card-img-top {
+    background-color: #f0f0f0;
   }
   .card-body {
     background-color: #0E153D;

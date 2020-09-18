@@ -19,14 +19,13 @@ export default {
 
         SET_PRODUCT(state, product) {
             state.product = product
-        }
+        },
     },
 
     actions: {
         // Get all products
         getProducts({ commit }) {
             axios.get('http://localhost:9999/api/products').then(res => {
-                console.log(res.data)
                 commit('SET_PRODUCTS', res.data);
             }).catch(error => {
                 console.log(error);
@@ -40,7 +39,7 @@ export default {
             }).catch(error => {
                 console.log(error);
             })
-        }
+        },
     },
 
     getters: {
@@ -49,6 +48,9 @@ export default {
         },
         newArrivals(state) {
             return state.newArrivals
+        },
+        product(state) {
+            return state.product
         }
     }
 

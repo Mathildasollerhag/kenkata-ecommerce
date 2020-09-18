@@ -22,7 +22,7 @@
                 <div class=" col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><i class="far fa-user icon-size mr-1"></i>My account</div>
                     <div class=" iconsextra ml-4"><i class="far fa-heart icon-size"></i></div>
                     <div class=" iconsextra ml-4"><i class="fas fa-random mr-3 icon-size myclass2"></i><span class="badge badge-pill green white myclass3">0</span></div>
-                    <div class=" iconsextra ml-4 my-width"><i class="fas fa-shopping-bag icon-size "></i> $0.00<span class="badge badge-pill green white cart2">0</span></div>
+                    <div class=" iconsextra ml-4 my-width"><router-link class="text-dark" to="/shoppingcart"><i class="fas fa-shopping-bag icon-size "></i></router-link> $0.00<span class="badge badge-pill green white cart2">0</span></div>
                 </div>
             </div>
         </div>

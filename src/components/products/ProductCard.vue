@@ -38,6 +38,9 @@ export default {
   .product-card {
     cursor: pointer;
   }
+  .card-img-top {
+    background-color: #f0f0f0;
+  }
   .card-body {
     background-color: #0E153D;
     bottom: 0;

@@ -27,12 +27,12 @@
                 <div class="d-flex justify-content-between align-items-center">
                       <div class="bg-face  d-flex  rounded ">
                         <div class="text-white font1  ml-2"><i class="fab fa-facebook-square"></i></div>
-                        <div class="size1 py-1 mt-2  px-5"> <a class=" text-white px-4" href="/www.facebook.com">Facebook</a></div>
+                        <div class="size1 py-1 mt-2  px-5"> <router-link class=" text-white px-4" to="/www.facebook.com">Facebook</router-link></div>
                        
                       </div>
                       <div class="bg-primary py-1 d-flex  rounded ">
                         <div class="text-white rounded  mb mt-1 px-2 bg-white ml-2"><i class="fab fa-google fa-x " ></i></div>
-                        <div class="size1 mt-1 m-google px-5"> <a class=" text-white px-4" href="/www.google.com">Google</a></div>
+                        <div class="size1 mt-1 m-google px-5"> <router-link class=" text-white px-4" to="/www.google.com">Google</router-link></div>
                       
                       </div>
                      

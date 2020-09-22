@@ -17,9 +17,9 @@
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
             </div>
             <div class="d-flex flex-right">
-                <div class=" margintop"><a href="">Newsletter</a></div>
-                <div><img class="ml-3 " src="../../images/line.png" alt=""></div>
-                <div class=" margintop ml-3"><a href="">Contact us</a></div>
+                <div class="margintop"><a href="">Newsletter</a></div>
+                <div><img class="ml-3" src="../../images/line.png" alt=""></div>
+                <div class="margintop ml-3"><router-link to="/contact">Contact us</router-link></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
                 <div class="margintop ml-3"><a href="">FAQs</a></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>

@@ -25,12 +25,14 @@ export default {
   updated() {
     this.carouselImages()
   },
-  computed: {
+  methods: {
     carouselImages() {
-        $('#detailsCarousel .owl-theme .owl-dots .owl-dot span').css('background-image', 'url("' + this.product.images[0] + '")')
-        $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[1] + '")')
-        $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[2] + '")')
-        $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[3] + '")')        
+        if (this.product) {
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot span').css('background-image', 'url("' + this.product.images[0] + '")')
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[1] + '")')
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[2] + '")')
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[3] + '")') 
+        }       
     }
   }
 }

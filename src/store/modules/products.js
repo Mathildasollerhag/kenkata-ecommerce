@@ -30,14 +30,12 @@ export default {
         // Get all products
         getProducts({ commit }) {
             db.collection('products').get().then(res => {
-                let items = [];
-                
+                let items = [];                
                 res.forEach(doc => {                    
                     const data = {
                         id: doc.id,
                         product: doc.data()
                     }
-
                     items.push(data)
                 });
                 commit('SET_PRODUCTS', items)

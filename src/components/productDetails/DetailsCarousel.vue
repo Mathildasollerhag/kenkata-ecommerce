@@ -135,7 +135,7 @@ export default {
 
 
 /* Quickview */
-#quickView #detailsCarousel .owl-theme .owl-dots {
+ #quickView #detailsCarousel .owl-theme .owl-dots {
     flex-direction: row;
     top: unset;
     bottom: -17%;
@@ -149,7 +149,7 @@ export default {
 }
 @media (min-width: 1200px) {
     #quickView #detailsCarousel  {
-    margin-top: -3.5em;
-}
+        margin-top: -3.5em;
+    } 
 }
 </style>

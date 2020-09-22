@@ -13,8 +13,10 @@
                 "https://s1.gifyu.com/images/produktbild.png",
                 "https://s1.gifyu.com/images/produktbild.png"
             ],
+            "colors": [],
             "price": 850,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": false,
             "discount": "-20%",
             "status": ""
         },
@@ -31,10 +33,12 @@
                 "https://s1.gifyu.com/images/produktbild.png",
                 "https://s1.gifyu.com/images/produktbild.png"
             ],
+            "colors": [],
             "price": 850,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": true,
             "discount": "",
-            "status": "new"
+            "status": ""
         },
         {
             "category": "men",
@@ -51,9 +55,10 @@
             ],
             "colors": [],
             "price": 850,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": true,
             "discount": "",
-            "status": "new"
+            "status": ""
         },
         {
             "category": "kids",
@@ -70,9 +75,10 @@
             ],
             "colors": [],
             "price": 350,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": true,
             "discount": "",
-            "status": "new"
+            "status": ""
         },
         {
             "category": "women",
@@ -89,9 +95,10 @@
             ],
             "colors": [],
             "price": 950,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": true,
             "discount": "",
-            "status": "new"
+            "status": ""
         },
         {
             "category": "women",
@@ -108,7 +115,8 @@
             ],
             "colors": [],
             "price": 1050,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": false,
             "discount": "-20%",
             "status": "hot"
         },
@@ -127,7 +135,8 @@
             ],
             "colors": [],
             "price": 850,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": false,
             "discount": "-20%",
             "status": ""
         },
@@ -146,9 +155,10 @@
             ],
             "colors": [],
             "price": 1850,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": true,
             "discount": "",
-            "status": "new"
+            "status": ""
         },
         {
             "category": "hats",
@@ -165,7 +175,8 @@
             ],
             "colors": [],
             "price": 150,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": false,
             "discount": "-20%",
             "status": ""
         },
@@ -184,7 +195,8 @@
             ],
             "colors": [],
             "price": 450,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": false,
             "discount": "",
             "status": ""
         },
@@ -203,9 +215,10 @@
             ],
             "colors": [],
             "price": 350,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": true,
             "discount": "",
-            "status": "new"
+            "status": ""
         },
         {
             "category": "shoes",
@@ -222,7 +235,8 @@
             ],
             "colors": [],
             "price": 1350,
-            "inStockAmount": 100,
+            "inStock": true,
+            "newArrival": false,
             "discount": "-20%",
             "status": "hot"
         }

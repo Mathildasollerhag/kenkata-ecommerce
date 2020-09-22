@@ -4,19 +4,12 @@
     
     <router-view/>
 
-
   <Brands/>
   <Footer/>
 
 
   <!-- Quickview Product Modal -->
-  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content d-flex align-items-center bg-transparent">
-        <Quickview />
-      </div>
-    </div>
-  </div>
+  <Quickview />
   
   </div>
 </template>
@@ -55,7 +48,6 @@ html, body {
   --gray-theme: #CCCCCC;
   --light-gray-theme: #EEEEEE;
   --lighter-gray-theme: #F6F6F6;
-
 }
 
 .theme-bg {

@@ -37,35 +37,35 @@
 <style scoped>
 /* Next and Prev Buttons */
 .owl-prev, .owl-next {
-position: absolute;
-border: 2px solid #E3E3E3;
-background-color: white;
-height: 58px;
-width: 58px;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-transition: all 0.3s ease;
+    position: absolute;
+    border: 2px solid #E3E3E3;
+    background-color: white;
+    height: 58px;
+    width: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 .owl-prev {  
-left: -7%;
-bottom: 37%;
+    left: -7%;
+    bottom: 37%;
 }
 .owl-next {
-right: -7%;
-bottom: 37%;
+    right: -7%;
+    bottom: 37%;
 }
 
 .owl-next i, .owl-prev i {
-font-size: 2rem ;
-font-weight: 200 !important;
-color: #E3E3E3 !important;
+    font-size: 2rem ;
+    font-weight: 200 !important;
+    color: #E3E3E3 !important;
 }
 .owl-next:hover, .owl-prev:hover {
-background-color: #20D3C2;
-border-color: transparent;
-cursor: pointer;
+    background-color: #20D3C2;
+    border-color: transparent;
+    cursor: pointer;
 }
 
 .owl-next i{

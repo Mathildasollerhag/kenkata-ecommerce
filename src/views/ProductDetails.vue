@@ -138,6 +138,7 @@ export default {
     ...mapActions(["getProductById"]),
   },
   created() {
+    console.log(this.id)
     this.getProductById(this.id)
   },
   computed: {

@@ -1,10 +1,10 @@
 <template>
     <div class="h-100" @mouseover="hover = true" @mouseleave="hover = false">
-      <div v-if="product.image" class="product-card p-0 position-relative h-100">       
-        <img :src="product.image" class="card-img-top">   
+      <div v-if="item.product.images" class="product-card p-0 position-relative h-100">       
+        <img :src="item.product.images[0]" class="card-img-top">   
 
         <div v-if="!hover" class="bottom-row position-absolute card-body">
-            <p class="text-white align-middle m-0">{{ product.name }}</p>
+            <p class="text-white align-middle m-0">{{ item.product.name }}</p>
         </div>
 
         <!-- Mouseover Component -->
@@ -12,7 +12,7 @@
         enter-active-class="animate__animated animate__fadeIn animate__faster"
         leave-active-class="animate__animated animate__fadeOut animate__faster">
             <div v-if="hover" class="hover-card-body fadeIn">
-              <ProductCardHover :product="product"/>
+              <ProductCardHover :product="item.product" :id="item.id"/>
             </div>  
         </transition>      
       </div>
@@ -30,7 +30,7 @@ export default {
     components: {
         ProductCardHover
     },
-    props:["product"]
+    props:["item"]
 }
 </script>
 

@@ -1,5 +1,12 @@
 <template>
-   <div class="row row-cols-1 row-cols-md-4 my-5 mx-2">
+   <div class="row row-cols-1 row-cols-md-4">
+      <TeamCard />
+      <TeamCard />
+      <TeamCard />
+      <TeamCard />
+      <TeamCard />
+      <TeamCard />
+      <TeamCard />
       <TeamCard />
      
   </div>

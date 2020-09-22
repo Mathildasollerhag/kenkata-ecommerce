@@ -17,7 +17,7 @@ export default {
 
             // console.log(products);
             // Set newArrivals
-            state.newArrivals = items.filter(item => item.product.status === 'new')
+            state.newArrivals = items.filter(item => item.product.newArrival === true)
             // state.newArrivals = products.filter(product => product.status === 'new')
         },
 

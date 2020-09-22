@@ -3,6 +3,14 @@
       <div v-if="item.product.images" class="product-card p-0 position-relative h-100">       
         <img :src="item.product.images[0]" class="card-img-top">   
 
+        <!-- Product Badges -->
+        <div v-if="!hover" class="badges">
+          <span v-if="item.product.newArrival === true"><New class="new"/></span>
+          <span v-if="item.product.discount != ''"><Discount class="discount" :discount="item.product.discount"/></span>
+          <span v-if="item.product.status === 'hot'"><Hot class="hot"/></span>
+        </div>
+        
+        <!-- Product Name -->
         <div v-if="!hover" class="bottom-row position-absolute card-body">
             <p class="text-white align-middle m-0">{{ item.product.name }}</p>
         </div>
@@ -21,6 +29,9 @@
 
 <script>
 import ProductCardHover from './ProductCardHover'
+import New from './badges/New'
+import Hot from './badges/Hot'
+import Discount from './badges/Discount'
 export default {
     data() {
         return {
@@ -28,7 +39,8 @@ export default {
         }
     }, 
     components: {
-        ProductCardHover
+        ProductCardHover,
+        New, Hot, Discount
     },
     props:["item"]
 }
@@ -52,12 +64,15 @@ export default {
   .card-body p {
     font-size: 1rem;
   }
-  .badge {
+  .badges {
     position: absolute;
-    left: 0;
-    top: 0;
-    transform: scale(0.7);
+    left: 5px;
+    top: 5px;
     z-index: 100;
+  }
+  .new, .discount, .hot {
+    transform: scale(0.7);
+    margin: 0 0 -12px 0;
   }
   .hover-card-body {
     background: #0e153dd8;

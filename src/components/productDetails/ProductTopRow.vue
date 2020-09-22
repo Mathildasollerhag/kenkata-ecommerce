@@ -5,7 +5,7 @@
             <span class="d-flex align-items-center">             
                 <router-link class="theme-text" to="/">Home</router-link><span class="mx-2">/</span>
                 <router-link class="theme-text" to="/shop">Shop</router-link><span class="mx-2">/</span>
-                <router-link class="theme-text" to="">Product Category</router-link><span class="mx-2">/</span> 
+                <router-link class="theme-text text-capitalize" to="">{{product.category}}</router-link><span class="mx-2">/</span> 
                 <span>{{product.name}}</span> 
             </span>            
         </div>

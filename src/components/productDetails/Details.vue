@@ -27,7 +27,8 @@
           <del class="text-muted mr-4">$220.00</del>
         </p>
         <img class="icon mb-1 mr-1" src="@/images/icons/InStock.png" alt />
-        <p class="m-0">In Stock</p>
+        <p v-if="product.inStock" class="m-0">In Stock</p>
+        <p v-else class="m-0">Out Of Stock</p>
       </div>
 
       <!-- Options -->
@@ -54,7 +55,7 @@
       <!-- Category -->
       <p>
         Category:
-        <span class="theme-text">Shoes</span>
+        <span class="theme-text text-capitalize">{{product.category}}</span>
       </p>
 
       <!-- Tags -->
@@ -99,6 +100,7 @@ export default {
 </script>
 
 <style scoped>
+
 .icon {
   transform: scale(0.9);
 }
@@ -110,9 +112,6 @@ export default {
 }
 button img {
   filter: brightness(0) invert(1);
-}
-button:hover img {
-  filter: unset;
 }
 
 .tags span {

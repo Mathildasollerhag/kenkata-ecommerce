@@ -87,14 +87,10 @@ html, body {
 }
 
 /* Owl Carousel Style */
-/* .carousel-height {
-    height: 380px !important;
-} */
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     transition: all 0.3s ease;
     background-color: #20D3C2 !important;
 }
-
 /* Utilities */
 .mb-custom {
     margin-bottom: 5em;
@@ -126,14 +122,15 @@ html, body {
     color: white;
 }
 
+
+/* Product Quickview */
 .modal-backdrop {
   background-color: var(--blue-theme);
   opacity: 0.85 !important;
 }
-.modal-content{
+.modal-content {
   border: none;
 }
-
 </style>
 
 

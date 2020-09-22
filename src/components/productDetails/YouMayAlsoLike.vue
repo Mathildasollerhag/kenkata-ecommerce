@@ -9,8 +9,8 @@
     </div>
 
     <carousel :margin="25" :responsive="{0:{items:1,nav:false,dots:false},760:{items:2,nav:false,dots:true},1000:{items:4,nav:false,dots:true}}">
-      <div v-for="product in newArrivals" :key="product._id">
-        <ProductCard :product="product"/>
+      <div v-for="item in newArrivals" :key="item.id">
+        <ProductCard :item="item"/>
       </div>
       <template slot="prev"><span class="d-none d-xl-flex owl-prev"><i class="fas fa-chevron-left"></i></span></template>
       <template slot="next"><span class="d-none d-xl-flex owl-next"><i class="fas fa-chevron-right"></i></span></template>

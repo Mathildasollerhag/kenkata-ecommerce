@@ -22,7 +22,6 @@
 </template>
 
 <script>
-
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'

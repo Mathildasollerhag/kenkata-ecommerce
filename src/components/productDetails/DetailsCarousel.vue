@@ -1,10 +1,10 @@
 <template>
   <div id="detailsCarousel" class="position-relative col-xl-5 pl-0">
     <carousel :items="1" :dots="true" :nav="false">
-        <img :src="product.image" alt="">
-        <img :src="product.image" alt="">
-        <img :src="product.image" alt="">
-        <img :src="product.image" alt="">
+        <img :src="product.images[0]" alt="">
+        <img :src="product.images[1]" alt="">
+        <img :src="product.images[2]" alt="">
+        <img :src="product.images[3]" alt="">
     </carousel>
 
     <div id="enlarge" class="position-absolute c-pointer">
@@ -19,6 +19,9 @@ import { mapGetters } from 'vuex'
 export default {
   props: ["product"],
   components: { carousel },
+  created() {
+      console.log(this.product)
+  }
 }
 </script>
 
@@ -138,12 +141,7 @@ export default {
     bottom: -17%;
     left: -1%;
 }
-#quickView #detailsCarousel img {
-    /* margin-left: auto; */
-}
-/* #quickView #detailsCarousel  {
-    margin-top: -10em;
-} */
+
 #quickView #detailsCarousel .owl-theme .owl-dots .owl-dot span {
     width: 70px;
     height: 70px;

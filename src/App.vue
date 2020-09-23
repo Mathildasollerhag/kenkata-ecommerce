@@ -4,26 +4,31 @@
     
     <router-view/>
 
-
   <Brands/>
   <Footer/>
 
+
+  <!-- Quickview Product Modal -->
+  <Quickview />
+  
   </div>
 </template>
 
 <script>
-
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
+import Quickview from '@/components/quickview/Quickview'
 
 export default {
   name: "App",
   components:{
   Navigation,
   Brands,
-  Footer
+  Footer,
+  Quickview
   }
+  
 }
 </script>
 
@@ -33,7 +38,6 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -44,7 +48,6 @@ html, body {
   --gray-theme: #CCCCCC;
   --light-gray-theme: #EEEEEE;
   --lighter-gray-theme: #F6F6F6;
-
 }
 
 .theme-bg {
@@ -84,14 +87,10 @@ html, body {
 }
 
 /* Owl Carousel Style */
-.carousel-height {
-    height: 380px !important;
-}
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     transition: all 0.3s ease;
     background-color: #20D3C2 !important;
 }
-
 /* Utilities */
 .mb-custom {
     margin-bottom: 5em;
@@ -123,6 +122,15 @@ html, body {
     color: white;
 }
 
+
+/* Product Quickview */
+.modal-backdrop {
+  background-color: var(--blue-theme);
+  opacity: 0.85 !important;
+}
+.modal-content {
+  border: none;
+}
 </style>
 
 

@@ -9,14 +9,23 @@
                 <li class="nav-item myclass7"><a class="" href="/Products"><div class="dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
                 <li class="nav-item myclass7"><a class="" href="/Categories"><div class=" dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
                 <li class="nav-item myclass7">
-                    <a class="" href="/Pages">
+                    <a class="" href="#">
                     <div class=" dropdown nav-link">
                         <a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Pages <i class="fas fa-chevron-down myclass9"></i>
                         </a>
-                        <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
-                            <a href="/wishlist" class="dropdown-item">Wishlist</a>
-                            <router-link class="dropdown-item" to="/about">About us</router-link><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a href="/wishlist" class="dropdown-item ml-1">Wishlist</a>
+                            <a class="dropdown-item ml-1" href="/error">404 Error</a>
+                            <a class="dropdown-item ml-1" href="/contact">Contact Us</a>
+                            <router-link class="dropdown-item" to="/about">About us</router-link><router-link class="dropdown-item" to="/team">Team</router-link>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+
+                 
 
                 
 
@@ -31,6 +40,7 @@
 </script>
 
 <style scoped>
+
 .green{
     background-color: #20D3C2;
 }

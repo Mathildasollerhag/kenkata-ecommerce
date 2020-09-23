@@ -2,7 +2,7 @@
   <div class="container mt-5 mb-5 pb-5">
 
     <div class="flex-row d-md-flex">
-        <aside class="pr-3">
+        <aside class="pr-2">
 
         <div class="card">
           <article class="card-group-item">
@@ -368,7 +368,7 @@
             <div class="filter-content">
               <div class="list-group list-group-flush">
                 <div class="d-flex">
-                    <div class="img-bg">
+                    <div class="img-bg mb-auto py-3">
                         <img class="" src="@/images/Top-Rated-Shirt.svg" alt="">
                     </div>
                     <div>
@@ -378,7 +378,7 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <div class="img-bg">
+                    <div class="img-bg mb-auto py-3">
                         <img class="" src="@/images/Top-Rated-Shoes.svg" alt="">
                     </div>
                     <div>
@@ -388,7 +388,7 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <div class="img-bg">
+                    <div class="img-bg mb-auto py-3">
                         <img class="" src="@/images/Top-Rated-Clock.svg" alt="">
                     </div>
                     <div>

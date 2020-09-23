@@ -28,7 +28,7 @@
                                         <h2 class="font-weight-bold">12</h2><div class="text-dark">Seconds</div>
                                     </div>
                                 </div>
-                                <button class="btn bg-white custom-radius theme-text px-4 mt-4 py-2 font-weight-bold">SHOP NOW</button>
+                                <router-link to="/shop"><button class="btn bg-white custom-radius theme-text px-4 mt-4 py-2 font-weight-bold">SHOP NOW</button></router-link>
                             </div>
                         </div>
                     </div>

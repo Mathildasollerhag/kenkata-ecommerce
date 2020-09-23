@@ -1,35 +1,29 @@
 <template>
     <div>
-        <form id="reviewForm" class="p-4 was-validated">
+        <form v-on:submit.prevent="reviewSubmit" id="reviewForm" class="p-4 was-validated">
             <h5 class="theme-text">Add a review</h5>
             <p class="text-muted">Your email address will not be published. Required fields are marked *</p>
             <div class="mt-3 mb-2 d-flex position-relative">
                 <p>Your rating<span class="theme-text mr-4">*</span></p>
-
-                <!-- <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i> -->
-                <StarRating />
+                <StarRating @clicked="getRating" />
             </div>
             <div class="mb-3">
                 <label for="review">Your review<span class="theme-text">*</span></label>
-                <textarea class="form-control" id="review" autocomplete="off" rows="6" required></textarea>
+                <textarea v-model="review.text" class="form-control" id="review" autocomplete="off" rows="6" required></textarea>
             <!-- <div class="invalid-feedback">
                 Please enter a message in the textarea.
             </div> -->
             </div>
             <div class="mb-3">
                 <label for="name">Name<span class="theme-text">*</span></label>
-                <input type="text" class="form-control" id="name" autocomplete="off" required>
+                <input v-model="review.name" type="text" class="form-control" id="name" autocomplete="off" required>
             </div>
             <div class="mb-3">
                 <label for="email">Email<span class="theme-text">*</span></label>
-                <input type="email" class="form-control" id="name" autocomplete="off" required>
+                <input v-model="review.email" type="email" class="form-control" id="email" autocomplete="off" required>
             </div>
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="">
+                <input v-model="review.check" class="form-check-input" type="checkbox" value="">
                 <label class="form-check-label" for="savedetails">
                     Save my name, email and website in this browser for the next time I comment.
                 </label>
@@ -40,9 +34,44 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import StarRating from './StarRating'
 export default {
-    components: { StarRating }
+    props: ["id"],
+    components: { StarRating },
+    data() {
+        return {
+            review: {
+                rating: null,
+                text: "",
+                name: "",
+                email: "",
+                date: new Date()
+            }
+        }
+    },
+    methods: {
+        ...mapActions(["saveProductReview"]),
+
+        // Gets rating from StarRating component
+        getRating(rating) {
+            this.review.rating = rating
+        },
+        
+        reviewSubmit() {
+
+            if(this.review.rating) {
+                this.saveProductReview({
+                    productId: this.id,
+                    review: this.review
+                })
+            }
+            else {
+                console.log("Please leave a rating.")
+            }
+
+        }
+    }
 }
 </script>
 

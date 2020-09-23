@@ -73,7 +73,7 @@
             role="tabpanel"
             aria-labelledby="reviews-tab"
           >
-            <ProductReviews />
+            <ProductReviews :id="id" />
           </div>
           <div
             class="tab-pane fade"
@@ -138,7 +138,6 @@ export default {
     ...mapActions(["getProductById"]),
   },
   created() {
-    console.log(this.id)
     this.getProductById(this.id)
   },
   computed: {

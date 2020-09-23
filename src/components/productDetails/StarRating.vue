@@ -1,25 +1,26 @@
 <template>
   <div class="rating d-flex flex-row-reverse">
-     <input type="radio" name="star" id="star5"><label for="star5"></label> 
-     <input type="radio" name="star" id="star4"><label for="star4"></label> 
-     <input type="radio" name="star" id="star3"><label for="star3"></label> 
-     <input type="radio" name="star" id="star2"><label for="star2"></label> 
-     <input type="radio" name="star" id="star1"><label for="star1"></label> 
+     <input @click="setRating" type="radio" name="star" id="5"><label for="5"></label> 
+     <input @click="setRating" type="radio" name="star" id="4"><label for="4"></label> 
+     <input @click="setRating" type="radio" name="star" id="3"><label for="3"></label> 
+     <input @click="setRating" type="radio" name="star" id="2"><label for="2"></label> 
+     <input @click="setRating" type="radio" name="star" id="1"><label for="1"></label>
   </div>
 </template>
 
 <script>
 export default {
-
+    methods: {
+        setRating(e) {
+            this.$emit('clicked', e.target.id)
+        }
+    }
 }
 </script>
 
 <style scoped>
 .rating {
-    position: absolute;
-    left: 20%;
-    bottom: 19%;
-    /* flex-direction: row-reverse; */
+    margin-top: -2px;
 }
 .rating label{
     display: block;
@@ -35,6 +36,7 @@ export default {
     display: block;
     color: var(--theme);
     opacity: 0.3;
+    font-size: 18px;
 }
 .rating label:after {
     content: '\f005';
@@ -42,9 +44,10 @@ export default {
     position: absolute;
     display: block;
     color: var(--theme);
-    top: 0;
+    top: -2px;
     opacity: 0;
     transition: .5s;
+    font-size: 18px;
 }
 .rating label:hover:after,
 .rating label:hover ~ label:after,

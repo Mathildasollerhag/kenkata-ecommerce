@@ -6,7 +6,7 @@
         <ReviewCard name="Willium Cary" date="16 June, 2020" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet." />
       </div>
       <div class="col-lg-6">
-          <ReviewForm />
+          <ReviewForm :id="id" />
       </div>
   </div>
 </template>
@@ -15,9 +15,10 @@
 import ReviewCard from './ReviewCard'
 import ReviewForm from './ReviewForm'
 export default {
-    components: {
-        ReviewCard, ReviewForm
-    }
+  props: ["id"],
+  components: {
+      ReviewCard, ReviewForm
+  }
 }
 </script>
 

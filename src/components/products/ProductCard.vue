@@ -20,7 +20,7 @@
         enter-active-class="animate__animated animate__fadeIn animate__faster"
         leave-active-class="animate__animated animate__fadeOut animate__faster">
             <div v-if="hover" class="hover-card-body fadeIn">
-              <ProductCardHover :product="item.product" :id="item.id"/>
+              <ProductCardHover :product="item.product" :id="item.id" :rating="ratingOverall"/>
             </div>  
         </transition>      
       </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ProductCardHover from './ProductCardHover'
 import New from './badges/New'
 import Hot from './badges/Hot'
@@ -35,14 +36,38 @@ import Discount from './badges/Discount'
 export default {
     data() {
         return {
-            hover: false
+            hover: false,
+            ratingOverall: 0
         }
     }, 
     components: {
         ProductCardHover,
         New, Hot, Discount
     },
-    props:["item"]
+    props:["item"],
+    methods: {
+      countOverallRating() {
+        const reviews = this.item.product.reviews        
+        let ratings = []
+        let total = 0
+
+        // Pushar alla betyg till arrayen ratings
+        reviews.forEach(review => {
+          ratings.push(review.rating)
+
+          ratings = ratings.map(Number)
+        });
+        // Räknar ut det genomsnittliga betyget
+        for (let index = 0; index < ratings.length; index++) {
+          total += ratings[index]
+        }
+        // Sätter ratingOverall till det genomsnittliga betyget
+        this.ratingOverall = Math.round(total / ratings.length)
+      }
+    },
+    created() {
+        this.countOverallRating()
+    }
 }
 </script>
 

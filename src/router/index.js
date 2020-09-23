@@ -19,6 +19,7 @@ import Portfolio from '../views/Portfolio.vue'
 import PortfolioDetails from '../views/PortfolioDetails.vue'
 
 import Myaccount from '../views/Myaccount.vue'
+import Compare from '../views/Compare.vue'
 
 
 //Import .vue - file here

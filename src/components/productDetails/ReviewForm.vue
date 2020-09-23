@@ -3,13 +3,16 @@
         <form id="reviewForm" class="p-4 was-validated">
             <h5 class="theme-text">Add a review</h5>
             <p class="text-muted">Your email address will not be published. Required fields are marked *</p>
-            <p class="mt-3 mb-2">Your rating<span class="theme-text mr-4">*</span>
+            <div class="mt-3 mb-2 d-flex position-relative">
+                <p>Your rating<span class="theme-text mr-4">*</span></p>
+
+                <!-- <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-            </p>
+                <i class="far fa-star"></i> -->
+                <StarRating />
+            </div>
             <div class="mb-3">
                 <label for="review">Your review<span class="theme-text">*</span></label>
                 <textarea class="form-control" id="review" autocomplete="off" rows="6" required></textarea>
@@ -37,8 +40,9 @@
 </template>
 
 <script>
+import StarRating from './StarRating'
 export default {
-    
+    components: { StarRating }
 }
 </script>
 

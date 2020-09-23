@@ -6,18 +6,20 @@ import Wishlists from '../components/global/Wishlists.vue'
 import Error from '../components/global/Error.vue'
 import Contact from '../components/global/Contact.vue'
 
-
 import Shop from '../views/Shop.vue'
-
-import Compare from '../views/Compare.vue'
 
 import ProductDetails from '../views/ProductDetails.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
+
 import AboutUs from '../views/AboutUs.vue'
+
 import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
 import PortfolioDetails from '../views/PortfolioDetails.vue'
+
+import Myaccount from '../views/Myaccount.vue'
+
 
 //Import .vue - file here
 
@@ -65,17 +67,16 @@ const routes = [
     name: 'Checkout',
     component: Checkout
   },
-
-  // {
-  //   path: '/account',
-  //   name: 'MyAccount',
-  //   component: MyAccount
-  // },
   {
     path: '/compare',
     name: 'Compare',
     component: Compare
   },
+   {
+     path: '/account',
+    name: 'Myaccount',
+     component: Myaccount
+   },
   {
     path: '/about',
     name: 'AboutUs',
@@ -97,7 +98,6 @@ const routes = [
     component: PortfolioDetails,
     props: true
   },
-
 ]
 
 const router = new VueRouter({

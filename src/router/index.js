@@ -37,7 +37,7 @@ const routes = [
     component: Wishlists
   },
   {
-    path: '/error',
+    path: '*',
     name: 'Error',
     component: Error
   },
@@ -93,9 +93,10 @@ const routes = [
     component: Portfolio
   },
   {
-    path: '/portfolio/portfolio-details',
+    path: '/portfolio/:id',
     name: 'PortfolioDetails',
-    component: PortfolioDetails
+    component: PortfolioDetails,
+    props: true
   },
 ]
 

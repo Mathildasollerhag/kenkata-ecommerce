@@ -1,5 +1,5 @@
 <template>
-    <div v-if="productsCatalog.length > 0" class="position-relative container my-5">
+    <div v-if="featuredProducts.length > 0" class="position-relative container my-5">
         <div class="text-center">
             <div class="d-flex justify-content-center text-uppercase">
                 <h1 id="new" class="font-weight-bold">Featured</h1>
@@ -9,7 +9,7 @@
             <p class="pt-3 mb-4">Check out our monthly featured products from top brands</p>
         </div>
         <carousel :margin="25" :responsive="{0:{items:1,nav:false,dots:false},760:{items:2,nav:false,dots:true},1000:{items:3,nav:false,dots:true}}">
-            <div v-for="item in productsCatalog" :key="item.id">
+            <div v-for="item in featuredProducts" :key="item.id">
                 <ProductCard :item="item"/>
             </div>
             <template slot="prev"><span class="d-none d-xl-flex owl-prev"><i class="fas fa-chevron-left"></i></span></template>
@@ -29,7 +29,7 @@
             this.$store.dispatch("getProducts")
         },
         computed: {
-            ...mapGetters(['productsCatalog'])
+            ...mapGetters(['featuredProducts'])
     }
 }
 </script>

@@ -20,7 +20,20 @@ export default {
   props: ["product"],
   components: { carousel },
   created() {
-      console.log(this.product)
+    this.carouselImages()
+  },
+  updated() {
+    this.carouselImages()
+  },
+  methods: {
+    carouselImages() {
+        if (this.product) {
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot span').css('background-image', 'url("' + this.product.images[0] + '")')
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[1] + '")')
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[2] + '")')
+            $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[3] + '")') 
+        }       
+    }
   }
 }
 </script>
@@ -58,15 +71,12 @@ export default {
 }
 #detailsCarousel .owl-theme .owl-dots .owl-dot.active span, #detailsCarousel .owl-theme .owl-dots .owl-dot:focus span {
     transition: zoom 0.3s ease;
-
-    background: none !important;
     border: 1px solid var(--theme);
     outline: none;
     box-shadow: none;
 }
 #detailsCarousel .owl-theme .owl-dots .owl-dot.active span, #detailsCarousel .owl-theme .owl-dots .owl-dot:hover span {
     transition: zoom 0.3s ease;
-    background: none !important;
     border: 1px solid var(--theme);
     outline: none;
     box-shadow: none;
@@ -76,18 +86,17 @@ export default {
     height:95px;
     width:95px;
     margin: 7px 12px;
-    background: none;
     border-radius: 5px;
+    background-size: contain;
 }
 
 @media (min-width: 1200px) {
     #detailsCarousel .owl-theme .owl-dots .owl-dot span {
         width: 95px;
         height:95px;
+
     }
 }
-
-
 
 #detailsCarousel .owl-theme .owl-dots .owl-dot span::after,
 #detailsCarousel .owl-theme .owl-dots .owl-dot + .owl-dot span::after,
@@ -102,37 +111,6 @@ export default {
     background-size: contain;
     z-index: -1;
 }
-
-#detailsCarousel .owl-theme .owl-dots .owl-dot span::after {
-    /* background-image: url('../../assets/images/products/shoes/shoe1.png'); */
-    background-image: url('../../images/featuredProducts1.png');
-}
-#detailsCarousel .owl-theme .owl-dots .owl-dot + .owl-dot span::after {
-    /* background-image: url('../../assets/images/products/shoes/shoe2.png'); */
-    background-image: url('../../images/featuredProducts1.png')
-}
-#detailsCarousel .owl-theme .owl-dots .owl-dot + .owl-dot + .owl-dot span::after {
-    /* background-image: url('../../assets/images/products/shoes/shoe3.png'); */
-    background-image: url('../../images/featuredProducts1.png')
-}
-#detailsCarousel .owl-theme .owl-dots .owl-dot + .owl-dot + .owl-dot + .owl-dot span::after {
-    /* background-image: url('../../assets/images/products/shoes/shoe4.png'); */
-    background-image: url('../../images/featuredProducts1.png')
-}
-
-#detailsCarousel .owl-theme .owl-dots .owl-dot span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* background: var(--gray-theme); */
-    background: #F6F6F6;
-    z-index: -2;
-    border-radius: 5px;
-}
-
 
 /* Quickview */
  #quickView #detailsCarousel .owl-theme .owl-dots {

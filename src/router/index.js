@@ -17,7 +17,7 @@ import AboutUs from '../views/AboutUs.vue'
 import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
 import PortfolioDetails from '../views/PortfolioDetails.vue'
-
+import Compare from '../views/Compare.vue'
 import Myaccount from '../views/Myaccount.vue'
 
 

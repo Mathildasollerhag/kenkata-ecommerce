@@ -1,7 +1,7 @@
 <template>
   <div>
     <Toprow />
-    <div class="container-fluid container-md d-flex flex-column flex-xl-row align-items-center mb-custom">
+    <div class="container-fluid container-md d-flex flex-column flex-xl-row align-items-start mb-custom">
       <!-- Product List -->
       <div class="cart-left col-xl-8">
         <ProductList />        

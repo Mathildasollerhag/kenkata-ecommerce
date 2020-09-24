@@ -6,7 +6,10 @@
             <div class="mt-3 mb-2 d-flex position-relative">
                 <p>Your rating<span class="theme-text mr-4">*</span></p>
                 <StarRating @clicked="getRating" />
+                <small v-if="errorMessage" class="ml-4 text-danger">Please leave a rating.</small>
             </div>
+
+          
             <div class="mb-3">
                 <label for="review">Your review<span class="theme-text">*</span></label>
                 <textarea v-model="review.text" class="form-control" id="review" autocomplete="off" rows="6" required></textarea>
@@ -28,7 +31,9 @@
                     Save my name, email and website in this browser for the next time I comment.
                 </label>
             </div>
-            <button type="submit" class="btn btn-kenkata-blue">Submit</button>
+            <button type="submit" class="btn btn-kenkata-blue mr-3">Submit</button>
+            <small v-if="reviewSuccess">Thank you for your review!</small>
+            <small class="text-danger" v-if="reviewFailed">Please leave a rating.</small>
         </form>
     </div>
 </template>
@@ -49,12 +54,10 @@ export default {
                 name: "",
                 email: "",
                 date: new Date()
-            }
+            },
+            reviewFailed: false,
+            reviewSuccess: false
         }
-    },
-    created() {
-        // console.log(this.review.id)
-        // console.log(this.review.date)
     },
     methods: {
         ...mapActions(["saveProductReview"]),
@@ -72,9 +75,10 @@ export default {
                     productId: this.id,
                     review: this.review
                 })
+                this.reviewSuccess = true
             }
             else {
-                console.log("Please leave a rating.")
+                this.reviewFailed = true
             }
 
         }

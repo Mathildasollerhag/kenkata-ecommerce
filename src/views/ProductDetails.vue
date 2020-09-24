@@ -73,7 +73,7 @@
             role="tabpanel"
             aria-labelledby="reviews-tab"
           >
-            <ProductReviews :id="id" />
+            <ProductReviews :product="product" :id="id" />
           </div>
           <div
             class="tab-pane fade"

@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import * as uuid from 'uuid/v4';
 import { mapActions } from 'vuex'
 import StarRating from './StarRating'
 export default {
@@ -42,6 +43,7 @@ export default {
     data() {
         return {
             review: {
+                id: uuid(),
                 rating: null,
                 text: "",
                 name: "",
@@ -50,11 +52,16 @@ export default {
             }
         }
     },
+    created() {
+        // console.log(this.review.id)
+        // console.log(this.review.date)
+    },
     methods: {
         ...mapActions(["saveProductReview"]),
 
         // Gets rating from StarRating component
         getRating(rating) {
+            rating = parseInt(rating)
             this.review.rating = rating
         },
         

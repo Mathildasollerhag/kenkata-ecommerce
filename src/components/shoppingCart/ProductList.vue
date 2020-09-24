@@ -30,6 +30,7 @@ export default {
 
 <style scoped>
 .heading-row {
+    align-items: flex-start;
     border-bottom: 2px solid var(--theme)
 }
 

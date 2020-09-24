@@ -50,7 +50,8 @@ export default {
         },
 
         // Save Product Review
-        saveProductReview({commit}, {productId, review}) {
+        saveProductReview({ commit }, { productId, review }) {
+            console.log(review);
             const reviews = db.collection("products").doc(productId)
 
             reviews.update({

@@ -55,7 +55,7 @@ export default {
         reviews.forEach(review => {
           ratings.push(review.rating)
 
-          ratings = ratings.map(Number)
+          // ratings = ratings.map(Number)
         });
         // Räknar ut det genomsnittliga betyget
         for (let index = 0; index < ratings.length; index++) {

@@ -22,9 +22,10 @@
 
       <!-- Price Row -->
       <div class="d-flex align-items-center">
-        <h4 class="m-0 theme-text mr-3 my-1">{{product.price}} SEK</h4>
+        <h4 v-if="product.discount !== ''" class="m-0 theme-text mr-3 my-1">{{product.price * 0.8}} SEK</h4>
+        <h4 v-else class="m-0 theme-text mr-3 my-1">{{product.price}} SEK</h4>
         <p class="m-0">
-          <del class="text-muted mr-4">$220.00</del>
+          <del v-if="product.discount !== ''" class="text-muted mr-4">{{product.price}} SEK</del>
         </p>
         <img class="icon mb-1 mr-1" src="@/images/icons/InStock.png" alt />
         <p v-if="product.inStock" class="m-0">In Stock</p>

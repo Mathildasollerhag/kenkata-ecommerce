@@ -55,7 +55,8 @@ export default {
                 date: new Date()
             },
             reviewFailed: false,
-            reviewSuccess: false
+            reviewSuccess: false,
+            
         }
     },
     methods: {
@@ -66,6 +67,7 @@ export default {
             rating = parseInt(rating)
             this.review.rating = rating
         },
+
         
         reviewSubmit() {
 

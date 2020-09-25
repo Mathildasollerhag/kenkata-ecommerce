@@ -6,9 +6,9 @@
                 <!-- Product name/price -->
                 <div class="card-text-body">
                     <p class="card-text my-2">{{ product.name }}</p>
-                    <small class="border py-1 px-2">Fashion</small>
-                    <!-- <p class="mt-2 mb-0"><del>$220.00</del></p> -->
-                    <h5 class="text-kenkata-blue m-0 mt-2">{{product.price}} SEK</h5>            
+                    <div class="mb-2"><small class="border py-1 px-2">Fashion</small></div>
+                    <p v-if="product.discount != ''" class="my-0"><del>{{product.price}} SEK</del></p>
+                    <h5 class="theme-text m-0">{{product.price * 0.8}} SEK</h5>            
                 </div>
                 <!-- Star Rating -->
                 <div class="ratings position-absolute">

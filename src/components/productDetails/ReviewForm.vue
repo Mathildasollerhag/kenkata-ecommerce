@@ -6,7 +6,6 @@
             <div class="mt-3 mb-2 d-flex position-relative">
                 <p>Your rating<span class="theme-text mr-4">*</span></p>
                 <StarRating @clicked="getRating" />
-                <small v-if="errorMessage" class="ml-4 text-danger">Please leave a rating.</small>
             </div>
 
           

@@ -45,7 +45,7 @@
               role="tab"
               aria-controls="reviews"
               aria-selected="false"
-            >Reviews</a>
+            >Reviews ({{product.reviews.length}})</a>
           </li>
           <li class="nav-item" role="presentation">
             <a
@@ -91,13 +91,13 @@
 
       <!-- You May Also Like -->
       <div class="mb-custom">
-        <YouMayAlsoLike />
+        <YouMayAlsoLike :gender="product.gender"/>
       </div>
 
 
       <!-- Related Products -->
       <div class="mb-custom">
-        <RelatedProducts />
+        <RelatedProducts :category="product.category"/>
       </div>
 
       <SubscribeBanner />

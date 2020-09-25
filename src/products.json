@@ -1,6 +1,7 @@
 {
     "products": [
         {
+            "mainCategory": "clothes",
             "category": "men",
             "gender": "men",
             "brand": "brand",
@@ -23,6 +24,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "men",
             "gender": "men",
             "brand": "brand",
@@ -45,6 +47,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "men",
             "gender": "men",
             "brand": "brand",
@@ -67,6 +70,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "kids",
             "gender": "unisex",
             "brand": "brand",
@@ -89,6 +93,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "women",
             "gender": "women",
             "brand": "brand",
@@ -111,6 +116,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "women",
             "gender": "women",
             "brand": "brand",
@@ -133,6 +139,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "women",
             "gender": "women",
             "brand": "brand",
@@ -155,6 +162,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "accessories",
             "category": "watches",
             "gender": "unisex",
             "brand": "brand",
@@ -177,6 +185,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "hats",
             "gender": "men",
             "brand": "brand",
@@ -184,10 +193,12 @@
             "shortDescription": "Lorem, ipsum dolor sit ametdolor  dolor sit amet sit amet consectetur adipisicing elit. Id fugit",
             "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugit laboriosam voluptatem nihil voluptatibus nostrum expedita temporibus debitis vero asperiores rerum et, minima aliquam nobis! Assumenda ipsam vero aliquam asperiores quidem facilis doloremque laborum temporibus repellat voluptates? Expedita sed ratione adipisci dignissimos praesentium cupiditate commodi error molestias aspernatur reiciendis, eius totam consequuntur necessitatibus, dolorum rem odio, magni accusamus libero sapiente fugit! Assumenda, suscipit enim unde natus error fugit. Facilis quia, error iusto tempore repudiandae necessitatibus sequi iste ab aut eos voluptatem fugiat quam officiis, asperiores harum delectus voluptas tenetur rerum! Hic rem dignissimos quia natus quas voluptatem facilis quod maiores!",
             "images": [
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png"
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5d8a50a68ce19a4a7aaf13a3_68d5f38f19b9687011fd1082711556eb.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5d8a50a72ff162f0d87cfd3c_6b69afabba744b40be783c71f6fe2892.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5d8a50a7ff39f71a14a29a00_e2ac3fa1ee88a99a8440e87e4eebe70a.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5d836a0cc0ad674c18f290d6_ca301314e9803943b6d6cd722783d366.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5d8a50aa8346c8ecbc73cec5_c5d9dbe02970057d4e61dd9bc7d14585.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5d836a07411a17dfaf6f5137_07c24ea682224f9725f1be2356e71ae9.png"
             ],
             "colors": [],
             "sizes": [],
@@ -199,16 +210,17 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "hats",
-            "gender": "women",
+            "gender": "men",
             "brand": "brand",
             "name": "Hats product 2",
             "shortDescription": "Lorem, ipsum dolor sit ametdolor  dolor sit amet sit amet consectetur adipisicing elit. Id fugit",
             "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugit laboriosam voluptatem nihil voluptatibus nostrum expedita temporibus debitis vero asperiores rerum et, minima aliquam nobis! Assumenda ipsam vero aliquam asperiores quidem facilis doloremque laborum temporibus repellat voluptates? Expedita sed ratione adipisci dignissimos praesentium cupiditate commodi error molestias aspernatur reiciendis, eius totam consequuntur necessitatibus, dolorum rem odio, magni accusamus libero sapiente fugit! Assumenda, suscipit enim unde natus error fugit. Facilis quia, error iusto tempore repudiandae necessitatibus sequi iste ab aut eos voluptatem fugiat quam officiis, asperiores harum delectus voluptas tenetur rerum! Hic rem dignissimos quia natus quas voluptatem facilis quod maiores!",
             "images": [
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6afeb6ccb4f23128eb488_DNMnJR03ngxo.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6afec6ccb4f154f8eb4ed_lxJ6X29m1Z3X.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6afee4d802a3cb849aa30_EeO1mJ09r37y.png",
                 "https://s1.gifyu.com/images/produktbild.png"
             ],
             "colors": [],
@@ -221,6 +233,7 @@
             "reviews": []
         },
         {
+            "mainCategory": "accessories",
             "category": "sunglasses",
             "gender": "unisex",
             "brand": "brand",
@@ -228,10 +241,10 @@
             "shortDescription": "Lorem, ipsum dolor sit ametdolor  dolor sit amet sit amet consectetur adipisicing elit. Id fugit",
             "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugit laboriosam voluptatem nihil voluptatibus nostrum expedita temporibus debitis vero asperiores rerum et, minima aliquam nobis! Assumenda ipsam vero aliquam asperiores quidem facilis doloremque laborum temporibus repellat voluptates? Expedita sed ratione adipisci dignissimos praesentium cupiditate commodi error molestias aspernatur reiciendis, eius totam consequuntur necessitatibus, dolorum rem odio, magni accusamus libero sapiente fugit! Assumenda, suscipit enim unde natus error fugit. Facilis quia, error iusto tempore repudiandae necessitatibus sequi iste ab aut eos voluptatem fugiat quam officiis, asperiores harum delectus voluptas tenetur rerum! Hic rem dignissimos quia natus quas voluptatem facilis quod maiores!",
             "images": [
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png"
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6b07257b9c576ef40cc24_Kw31E3JK6qYy.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6b0752806e23ff5794110_Mab1K0k8rKXm.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6afd28a2ca919498b8cff_Mab1K0LvrKXm.png",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6b074ee027cb4dad4a98e_ldQ6BZEg6p54.png"
             ],
             "colors": [],
             "sizes": [],
@@ -243,17 +256,18 @@
             "reviews": []
         },
         {
+            "mainCategory": "clothes",
             "category": "shoes",
-            "gender": "women",
+            "gender": "men",
             "brand": "brand",
             "name": "Shoes product 1",
             "shortDescription": "Lorem, ipsum dolor sit ametdolor  dolor sit amet sit amet consectetur adipisicing elit. Id fugit",
             "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugit laboriosam voluptatem nihil voluptatibus nostrum expedita temporibus debitis vero asperiores rerum et, minima aliquam nobis! Assumenda ipsam vero aliquam asperiores quidem facilis doloremque laborum temporibus repellat voluptates? Expedita sed ratione adipisci dignissimos praesentium cupiditate commodi error molestias aspernatur reiciendis, eius totam consequuntur necessitatibus, dolorum rem odio, magni accusamus libero sapiente fugit! Assumenda, suscipit enim unde natus error fugit. Facilis quia, error iusto tempore repudiandae necessitatibus sequi iste ab aut eos voluptatem fugiat quam officiis, asperiores harum delectus voluptas tenetur rerum! Hic rem dignissimos quia natus quas voluptatem facilis quod maiores!",
             "images": [
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png",
-                "https://s1.gifyu.com/images/produktbild.png"
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5ef0ab60b22d8333b3cf57e7_Order%20%23538714%20%7C%20cra%40greatsbrand.com%202.jpg",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5ef0ab77e152b7e41812088c_Order%20%23538714%20%7C%20cra%40greatsbrand.com%201.jpg",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5ef0ab470aad89a6c3e28e84_Order%20%23538714%20%7C%20cra%40greatsbrand.com%205.jpg",
+                "https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5ef0ab54e625d136e9620df5_Order%20%23538714%20%7C%20cra%40greatsbrand.com%203.jpg"
             ],
             "colors": [],
             "sizes": [],

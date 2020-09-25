@@ -76,7 +76,8 @@ export default {
     cursor: pointer;
   }
   .card-img-top {
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
+    background-color: #f5f5f5;
   }
   .card-body {
     background-color: #0E153D;

@@ -7,8 +7,9 @@
                 <div class="card-text-body">
                     <p class="card-text my-2">{{ product.name }}</p>
                     <div class="mb-2"><small class="border py-1 px-2">Fashion</small></div>
-                    <p v-if="product.discount != ''" class="my-0"><del>{{product.price}} SEK</del></p>
-                    <h5 class="theme-text m-0">{{product.price * 0.8}} SEK</h5>            
+                    <p v-if="product.discount !== ''" class="my-0"><del>{{product.price}} SEK</del></p>
+                    <h5 v-if="product.discount !== ''" class="theme-text m-0">{{product.price * 0.8}} SEK</h5>            
+                    <h5 v-if="product.discount === ''" class="theme-text m-0">{{product.price}} SEK</h5>            
                 </div>
                 <!-- Star Rating -->
                 <div class="ratings position-absolute">

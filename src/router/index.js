@@ -1,24 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
 import Wishlists from '../components/global/Wishlists.vue'
 import Error from '../components/global/Error.vue'
 import Contact from '../components/global/Contact.vue'
-
 import Shop from '../views/Shop.vue'
-
 import ProductDetails from '../views/ProductDetails.vue'
 import ShoppingCart from '../views/ShoppingCart.vue'
 import Checkout from '../views/Checkout.vue'
-
 import AboutUs from '../views/AboutUs.vue'
-
 import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
 import PortfolioDetails from '../views/PortfolioDetails.vue'
-
 import Myaccount from '../views/Myaccount.vue'
+import Compare from '../views/Compare.vue'
 
 
 //Import .vue - file here
@@ -37,7 +32,7 @@ const routes = [
     component: Wishlists
   },
   {
-    path: '/error',
+    path: '*',
     name: 'Error',
     component: Error
   },
@@ -93,9 +88,10 @@ const routes = [
     component: Portfolio
   },
   {
-    path: '/portfolio/portfolio-details',
+    path: '/portfolio/:id',
     name: 'PortfolioDetails',
-    component: PortfolioDetails
+    component: PortfolioDetails,
+    props: true
   },
 ]
 

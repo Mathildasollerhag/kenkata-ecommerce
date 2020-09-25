@@ -30,10 +30,10 @@ export default {
       this.$store.dispatch("getProducts")
     },
     computed: {
-      ...mapGetters(['productsCatalog']),     
+      ...mapGetters(['productsCatalog']),
       
       relatedProducts() {
-        return this.productsCatalog.filter(item => item.product.gender == this.category)
+        return this.productsCatalog.filter(item => item.product.category == this.category)
       }
     }
 }

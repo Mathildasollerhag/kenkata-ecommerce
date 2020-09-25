@@ -29,9 +29,6 @@ export default {
     created() {
       this.$store.dispatch("getProducts")
     },
-    methods: {
-
-    },
     computed: {
       ...mapGetters(['productsCatalog']),
 

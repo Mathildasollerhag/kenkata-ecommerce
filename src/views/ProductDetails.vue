@@ -141,7 +141,7 @@ export default {
     this.getProductById(this.id)
   },
   computed: {
-    ...mapGetters(["product"]),
+    ...mapGetters(["product"])
   }
 };
 </script>

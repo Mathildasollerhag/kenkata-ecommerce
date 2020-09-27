@@ -2,14 +2,13 @@
   <div id="hoverbar">
  
       <div class="h-100 d-flex flex-column align-items-center justify-content-center"> 
-
         <!-- Colors Tooltip -->
         <b-button id="tooltip-colors" class="p-0" variant="transparent"><i class="fas fa-circle"></i></b-button>
         <b-tooltip class="colors" target="tooltip-colors" triggers="hover" placement="left" custom-class="tooltip-class colors" offset="6">    
-            <i class="fas fa-circle fa-blue"></i>
-            <i class="fas fa-circle fa-purple mx-1"></i>
+            <i v-for="(color, index) in product.colors" :key="index" :class="'bg-' + color" class="fas fa-circle ml-1"></i>
+            <!-- <i class="fas fa-circle fa-purple mx-1"></i>
             <i class="fas fa-circle fa-red mr-1"></i>
-            <i class="fas fa-circle fa-black"></i>         
+            <i class="fas fa-circle fa-black"></i>         -->
         </b-tooltip>
         
         <!-- Heart -->
@@ -70,12 +69,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Quickview from '@/components/quickview/Quickview'
 import { mapActions } from 'vuex'
 export default {
-    props: ["id"],
+    props: ["product", "id"],
     components: {
         Quickview
     },
     methods: {
-        ...mapActions(["getProductById"])
+        ...mapActions(["getProductById"]),
     }
 }
 </script>
@@ -128,18 +127,24 @@ svg:hover .hoverbar-svg {
     margin-top: -2px;
 }
 .colors .tooltip-inner {
-    background-color: white !important;
+    background-color: rgb(211, 211, 211) !important;
     padding-top: 3px;
     padding-bottom: 3px;
 }
 .colors .arrow::before {
-    border-left-color: white !important;
+    border-left-color: rgb(211, 211, 211) !important;
     top: 3px;
 }
-.fa-blue { background: #20D3C2; color: #20D3C2; border-radius: 50%; }
-.fa-purple { background: plum; color: plum; border-radius: 50%; }
-.fa-red { background: #FE4545; color: #FE4545; border-radius: 50%; }
-.fa-black { background: black; color: black; border-radius: 50%; }
+.bg-blue { background: #20D3C2; color: #20D3C2; border-radius: 50%; }
+.bg-purple { background: plum; color: plum; border-radius: 50%; }
+.bg-red { background: #FE4545; color: #FE4545; border-radius: 50%; }
+.bg-black { background: black; color: black; border-radius: 50%; }
+.bg-gray { background: gray; color: gray; border-radius: 50%; }
+.bg-brown { background: #68532b; color: #68532b; border-radius: 50%; }
+.bg-yellow { background: #ad943f; color:#ad943f; border-radius: 50%; }
+.bg-navy { background: #16236e; color: #16236e; border-radius: 50%; }
+.bg-white { background: #ffffff; color: #ffffff; border-radius: 50%; }
+
 
 
 /* Other Tooltips */

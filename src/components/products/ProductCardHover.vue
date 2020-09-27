@@ -34,7 +34,7 @@
 
         </div>
        </router-link>
-       <CardHoverBar :id="id"/>
+       <CardHoverBar :product="product" :id="id"/>
    </div>
 </template>
 

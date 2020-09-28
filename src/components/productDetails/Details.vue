@@ -34,10 +34,14 @@
 
       <!-- Options -->
       <div class="d-flex align-items-center mt-3 mb-4">
-        <Quantity />
+        <div class="text-center quantity-container d-flex">
+          <span v-on:click="productDecrement({product, id, quantity})" class="decrement">-</span>
+          <span class="quantity">{{quantity}}</span>
+          <span v-on:click="productIncrement({product, id, quantity})" class="increment">+</span>
+        </div>
 
         <!-- Add To Cart -->
-        <button class="btn btn-kenkata-blue font-weight-normal mx-4">
+        <button v-on:click="addProductToCart({product, quantity, id})" class="btn btn-kenkata-blue font-weight-normal mx-4">
           <img src="@/images/icons/Cart.png" alt /> Add to cart
         </button>
 
@@ -82,20 +86,30 @@
 import DetailsCarousel from "./DetailsCarousel";
 import DetailsSocials from "./DetailsSocials";
 import ProductReviews from "./ProductReviews";
-import Quantity from "./Quantity";
+import { mapActions } from 'vuex';
 export default {
-  props: ["product"],
+  data() {
+    return {
+      quantity: 1
+    }
+  },
+  props: ["product", "id"],
   components: {
       DetailsCarousel,
       DetailsSocials,
       ProductReviews,
-      Quantity
   },
   computed: {
     currentRoute() {
       return this.$route.name;
     }
-  }  
+  }, 
+  methods: {
+        ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement"])
+    },
+    created() {
+      console.log(this.product)
+    }
   
 };
 </script>
@@ -127,6 +141,25 @@ button img {
 }
 .quickview-row img {
   width: 105px;
+}
+
+.quantity-container {
+  border: 1px solid var(--gray-theme);
+  border-radius: 5px;
+}
+.quantity-container span {
+  padding: 4px 10px;
+  min-width: 30px;
+}
+
+.increment:hover, .decrement:hover {
+  background-color: var(--theme);
+  color: white;
+  cursor: pointer;
+}
+.quantity {
+  border-left: 1px solid var(--gray-theme);
+  border-right: 1px solid var(--gray-theme);
 }
 
 @media(min-width: 1200px) {

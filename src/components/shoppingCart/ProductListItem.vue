@@ -1,7 +1,7 @@
 <template>
   <li class="list-group-item d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center col-lg-7 pl-0">
-        <span class="delete d-flex align-items-center justify-content-center">
+        <span v-on:click="deleteProductFromCart(item.id)" class="delete d-flex align-items-center justify-content-center">
             <i class="fas fa-times font-weight-light p-0 m-0"></i>
         </span>
         <div class="d-none d-lg-block">
@@ -9,22 +9,30 @@
               <img class="img-fluid" src="@/images/featuredProducts3.png" alt="">
           </span>
         </div>
-        <p class="ml-3 ml-lg-0">Women smart high heel shoe</p>                
+        <p class="ml-3 ml-lg-0">{{item.product.name}}</p>                
     </div>
 
     <div class="d-flex align-items-center col-lg-5">
-        <p class="">$190.00</p>
-        <Quantity class="ml-4 mr-5"/>
-        <p class="theme-text font-weight-bold">$380.00</p>
+        <p class="">${{item.product.price}}</p>
+        <Quantity :item="item" class="ml-4 mr-5"/>
+        <p class="theme-text font-weight-bold">${{item.product.price * item.quantity}}</p>
     </div>          
   </li>
 </template>
 
 <script>
 import Quantity from '@/components/productDetails/Quantity'
+import { mapActions } from 'vuex'
 export default {
   components: {
     Quantity
+  },
+  props: ["item"],
+  methods: {
+        ...mapActions(['deleteProductFromCart'])
+    },
+  created() {
+    console.log(this.item)
   }
 }
 </script>

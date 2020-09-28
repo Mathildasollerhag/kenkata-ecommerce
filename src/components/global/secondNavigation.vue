@@ -22,7 +22,7 @@
                 <div class=" col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><router-link to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link></div>
                     <div class=" iconsextra ml-4"><i class="far fa-heart icon-size"></i></div>
                     <div class=" iconsextra ml-4"><router-link to="/compare"><i class="fas fa-random mr-3 icon-size myclass2"></i></router-link><span class="badge badge-pill green white myclass3">0</span></div>
-                    <div class=" iconsextra ml-4 my-width"><router-link class="text-dark" to="/shoppingcart"><i class="fas fa-shopping-bag icon-size "></i></router-link> $0.00<span class="badge badge-pill green white cart2">0</span></div>
+                    <div class=" iconsextra ml-4 my-width"><router-link class="text-dark" to="/shoppingcart"><i class="fas fa-shopping-bag icon-size "></i></router-link> ${{shoppingCartTotal}}<span class="badge badge-pill green white cart2">{{shoppingCartItemCount}}</span></div>
                 </div>
             </div>
         </div>
@@ -30,7 +30,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+    computed: {
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal'])
+    },  
 }
 </script>
 

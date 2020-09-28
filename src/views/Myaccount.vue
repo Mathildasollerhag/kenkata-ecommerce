@@ -26,9 +26,9 @@
 
 <script>
 // @ is an alias to /src
-import Register from'@/components/Myaccount/Register.vue'
-import LoggIn from'@/components/Myaccount/LoggIn.vue'
-import Sec1 from'@/components/Myaccount/Sec1.vue'
+import Register from'@/components/myAccount/Register.vue'
+import LoggIn from'@/components/myAccount/LoggIn.vue'
+import Sec1 from'@/components/myAccount/Sec1.vue'
 
 
 

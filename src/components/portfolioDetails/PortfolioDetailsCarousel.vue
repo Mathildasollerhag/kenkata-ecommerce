@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="portfolioCatalog.length > 0" class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 d-none d-sm-block">
         <div class="text-center mt-5 mb-5 pt-5">

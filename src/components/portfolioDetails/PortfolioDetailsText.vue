@@ -4,7 +4,7 @@
     <div class="d-flex pt-5 mt-5">
         <div class="row">
             <div class=" col-lg-6">
-            <h2 class="mb-3 grey">In these days women's fashion became great!</h2>
+            <h2 class="mb-3 grey">{{portfolio.title}}</h2>
             <span class="pt-2">
                 <small>Date: </small>
                 <small class="grey">30 July 2020</small>
@@ -57,9 +57,25 @@
 </template>
 
 <script>
-    export default {
-        
-    }
+
+// import { mapActions, mapGetters } from 'vuex'
+
+export default {
+
+    props: ['portfolio'],
+
+    // methods: {
+    //   ...mapActions(["getPortfolioById"])
+    // },
+
+    created() {
+    // console.log(this.portfolio)
+    },
+
+    // computed: {
+    //     ...mapGetters(["getPortfolio"])
+    // }
+}
 </script>
 
 <style scoped>

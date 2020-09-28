@@ -36,15 +36,16 @@
       <div class="d-flex align-items-center mt-3 mb-4">
     
 
-      <div>
-        <Quantity :item="item" :quantity="0"/>
+      <!-- Quantity -->
+      <div class="text-center quantity-container d-flex">
+        <span v-on:click="productDecrement(item); itemQuantityCount()" class="decrement">-</span>
+        <span class="quantity">{{item.quantity}}</span>
+        <span v-on:click="productIncrement({product, quantity:0, id}); itemQuantityCount()" class="increment">+</span>
       </div>
-      <!-- <div v-else>
-        <Quantity :item="{id, product, quantity}" />
-      </div> -->
+      
 
         <!-- Add To Cart -->
-        <button v-on:click="addProductToCart({product, id}); itemQuantityCount()" class="btn btn-kenkata-blue font-weight-normal mx-4">
+        <button v-on:click="addProductToCart({product, quantity:1, id}); itemQuantityCount();" class="btn btn-kenkata-blue font-weight-normal mx-4">
           <img src="@/images/icons/Cart.png" alt /> Add to cart
         </button>
 
@@ -115,13 +116,12 @@ export default {
   ...mapGetters(["shoppingCart"]),
   }, 
   methods: {
-    ...mapActions(["getProductById","addProductToCart", "productIncrement", "productDecrement"]),
+    ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement"]),
     
     itemQuantityCount() {
-      let item = this.shoppingCart.find(item => item.id === this.id)
+      let item = this.shoppingCart.find(item => item.id == this.id)
       if(item) {
-        this.item.quantity = item.quantity
-        return
+        this.item = item
       }           
     }
   },

@@ -20,12 +20,14 @@ export default {
           sessionStorage.setItem('shoppingcart', JSON.stringify(state.shoppingcart))
         },
         INCREMENT(state, product) {
+
           // Om produkten redan finns i shoppingcart, öka quantity
-          let exists = state.shoppingcart.find(item => { return item.id === product.id })            
+          let exists = state.shoppingcart.find(item => { return item.id == product.id })            
           if(exists) {
             product.quantity += 1
             return
           }
+
           // Annars lägg till produkt i shoppingcart
           state.shoppingcart.push(product)
         },
@@ -37,25 +39,30 @@ export default {
 
 
     actions: {
-        addProductToCart({commit}, { product, id }) {
-            commit('ADD_TO_CART', { product, quantity: 1, id })
+        addProductToCart({commit}, { product, quantity, id }) {
+          commit('ADD_TO_CART', { product, quantity, id })
         },
         deleteProductFromCart({commit}, id) {
             commit('DELETE_FROM_CART', id)
         },
-        productIncrement({commit}, product) {            
-            if(product.quantity === 0) {
-              product.quantity === 1
-              commit('INCREMENT', product)
+        productIncrement({commit}, item) {    
+            if(item.quantity === 0) {
+              item.quantity = 1
+              commit('ADD_TO_CART', {
+                product: item.product,
+                quantity: item.quantity,
+                id: item.id
+              })
+              return
             }
-            commit('INCREMENT', product)
+            commit('INCREMENT', item)
         },
-        productDecrement({commit}, product) {
-            if(product.quantity <= 1) {
-              commit('DELETE_FROM_CART', product.id)                
-              return product.quantity = 0
+        productDecrement({commit}, item) {
+            if(item.quantity <= 1) {
+              commit('DELETE_FROM_CART', item.id)                
+              return item.quantity = 0
             }
-            commit('DECREMENT', product)
+            commit('DECREMENT', item)
         }
     },
 

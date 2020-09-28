@@ -34,9 +34,9 @@
       <!-- Options -->
       <div class="d-flex align-items-center mt-3 mb-4">
         <div class="text-center quantity-container d-flex">
-          <span v-on:click="productDecrement({product, id, quantity})" class="decrement">-</span>
+          <span v-on:click="productDecrement(product)" class="decrement">-</span>
           <span class="quantity">{{quantity}}</span>
-          <span v-on:click="productIncrement({product, id, quantity})" class="increment">+</span>
+          <span v-on:click="productIncrement(product)" class="increment">+</span>
         </div>
 
         <!-- Add To Cart -->

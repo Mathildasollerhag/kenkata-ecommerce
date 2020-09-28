@@ -7,7 +7,7 @@
       </div>
 
       <!-- Product Details -->
-      <Details :product="product"/>
+      <Details :product="product" :id="id"/>
       
 
 
@@ -139,6 +139,7 @@ export default {
   },
   created() {
     this.getProductById(this.id)
+    console.log(this.product)
   },
   computed: {
     ...mapGetters(["product"])

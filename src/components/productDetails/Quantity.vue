@@ -1,6 +1,6 @@
 <template>
   <div class="text-center quantity-container d-flex">
-      <span @click="cartItemFind()" v-on:click="productDecrement(item)" class="decrement">-</span>
+      <span v-on:click="productDecrement(item)" class="decrement">-</span>
       <span class="quantity">{{item.quantity}}</span>
       <span v-on:click="productIncrement(item)" class="increment">+</span>
   </div>
@@ -11,18 +11,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   props: ["item"],
   methods: {
-    ...mapActions(["productIncrement", "productDecrement"]),
-    
-    cartItemFind() {
-      if(this.item) {
-        console.log(this.item) 
-      }              
-    }
-
-  },
-  created() {
-    this.cartItemFind()
-  }  
+    ...mapActions(["productIncrement", "productDecrement"])
+  } 
 }
 </script>
 

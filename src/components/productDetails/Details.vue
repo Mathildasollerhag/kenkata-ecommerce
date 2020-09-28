@@ -37,14 +37,14 @@
     
 
       <div>
-        <Quantity :item="item" />
+        <Quantity :item="item" :quantity="0"/>
       </div>
       <!-- <div v-else>
         <Quantity :item="{id, product, quantity}" />
       </div> -->
 
         <!-- Add To Cart -->
-        <button @click="cartItemFind()" v-on:click="addProductToCart({product, id})" class="btn btn-kenkata-blue font-weight-normal mx-4">
+        <button v-on:click="addProductToCart({product, id}); itemQuantityCount()" class="btn btn-kenkata-blue font-weight-normal mx-4">
           <img src="@/images/icons/Cart.png" alt /> Add to cart
         </button>
 
@@ -98,8 +98,7 @@ export default {
         id: this.id,
         product: this.product,
         quantity: 0
-      },
-      // quantity: 1
+      }
     }
   },
   props: ["product", "id"],
@@ -118,16 +117,16 @@ export default {
   methods: {
     ...mapActions(["getProductById","addProductToCart", "productIncrement", "productDecrement"]),
     
-    cartItemFind() {
-      let exists = this.shoppingCart.find(item => item.id === this.id)
-      if(exists) {
-        this.item = exists
+    itemQuantityCount() {
+      let item = this.shoppingCart.find(item => item.id === this.id)
+      if(item) {
+        this.item.quantity = item.quantity
         return
       }           
     }
   },
   created() {
-    this.cartItemFind()
+    this.itemQuantityCount()
   }
   
 };

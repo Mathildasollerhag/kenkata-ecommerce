@@ -110,10 +110,10 @@ export default {
     Quantity
   },
   computed: {
-  currentRoute() {
-    return this.$route.name;
-  },
-  ...mapGetters(["shoppingCart"]),
+    currentRoute() {
+      return this.$route.name;
+    },
+    ...mapGetters(["shoppingCart"]),
   }, 
   methods: {
     ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement"]),

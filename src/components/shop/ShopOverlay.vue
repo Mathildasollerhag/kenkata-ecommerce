@@ -18,7 +18,7 @@
                             <a href="#" style="color:#FE6C6C;font-size:16px;" class=""><i class="fas fa-circle"></i></a>
                             <a href="#" style="color:#333333;font-size:16px;" class=""><i class="fas fa-circle"></i></a>
                         </span>
-                    </div>'  v-tippy="{ placement : 'left', interactive : true, arrow : true, arrowType : 'round', theme : 'light' }"><img src="@/images/Color-Circle-Icon.svg" alt=""></button></div>
+                    </div>' v-tippy="{ placement : 'left', interactive : true, arrow : true, arrowType : 'round', theme : 'light' }"><img src="@/images/Color-Circle-Icon.svg" alt=""></button></div>
                     <div><button class="pb-2" content="Add to favorites" v-tippy="{ placement : 'left', arrow : true, arrowType : 'round', theme : 'light' }"><img src="@/images/Heart-Grey-Icon.svg" alt=""></button></div>
                     <div><button class="pb-2" content="Compare" v-tippy="{ placement : 'left', arrow : true, arrowType : 'round', theme : 'light' }"><img src="@/images/Compare-Grey-Icon.svg" alt=""></button></div>
                     <div><button class="pb-2" content="Take a closer look" v-tippy="{ placement : 'left', arrow : true, arrowType : 'round', theme : 'light' }"><img src="@/images/Search-Grey-Icon.svg" alt=""></button></div>

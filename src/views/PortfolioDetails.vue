@@ -1,9 +1,9 @@
 <template>
     <div v-if="portfolio">
-        <PortfolioDetailsBanner/>
+        <PortfolioDetailsBanner :portfolio="portfolio"/>
         <PortfolioDetailsText :portfolio="portfolio"/>
         <ProjectsBanner/>
-        <PortfolioDetailsCarousel/>
+        <PortfolioDetailsCarousel :portfolio="portfolio"/>
     </div>
 </template>
 
@@ -35,7 +35,6 @@ import { mapActions, mapGetters } from 'vuex'
     if (this.portfolio !== null){
         // console.log(this.portfolio)
     }
-    
     },
 
     computed: {

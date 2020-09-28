@@ -4,19 +4,19 @@
     <div class="d-flex pt-5 mt-5">
         <div class="row">
             <div class=" col-lg-6">
-            <h2 class="mb-3 grey">{{portfolio.title}}</h2>
+            <h2 class="mb-3 grey">{{ portfolio.title }}</h2>
             <span class="pt-2">
                 <small>Date: </small>
-                <small class="grey">30 July 2020</small>
+                <small class="grey">{{ portfolio.date }}</small>
                 <small>, Category: </small>
-                <small class="grey">Fashion</small>
+                <small class="grey">{{ portfolio.tag }}</small>
             </span>
             <p class="pt-3 pb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
             <p class="left-border pl-3 grey">Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed lacus elementum feugiat. Vivamus ac sagittis justo. Suspendisse in purus lobortis, accumsan urna et.</p>
             <p class="pt-3">Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed lacus elementum feugiat. Vivamus ac sagittis justo. Suspendisse in purus lobortis, accumsan urna et, fermentum dolor. In hac habitasse platea dictumst.</p>
         </div>
         <div class="col-lg-6 d-flex flex-wrap">
-            <img class="mx-auto mb-auto" src="@/images/Portfolio-Img.svg" alt="">
+            <img class="mx-auto mb-auto" :src="portfolio.images[0]" alt="">
         </div>
       </div>
     </div>
@@ -58,24 +58,12 @@
 
 <script>
 
-// import { mapActions, mapGetters } from 'vuex'
-
 export default {
 
     props: ['portfolio'],
-
-    // methods: {
-    //   ...mapActions(["getPortfolioById"])
-    // },
-
-    created() {
-    // console.log(this.portfolio)
-    },
-
-    // computed: {
-    //     ...mapGetters(["getPortfolio"])
-    // }
+    
 }
+
 </script>
 
 <style scoped>

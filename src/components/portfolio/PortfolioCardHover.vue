@@ -13,7 +13,6 @@
 <script>
 
 import { mapGetters } from 'vuex'
-import PortfolioCardHover from '@/components/portfolio/PortfolioCardHover.vue'
 
     export default {
 

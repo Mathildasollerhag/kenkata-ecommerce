@@ -12,8 +12,7 @@ export default {
         },
 
         SET_PORTFOLIO(state, item) {
-            // console.log(item)
-            state.porfolio = item
+            state.portfolio = item
         },
     },
 
@@ -36,7 +35,6 @@ export default {
 
         // Get portfolio by ID
         getPortfolioById({ commit }, id) {
-            console.log(id)
             db.collection('portfolio').doc(id).get().then(res => {
                 commit('SET_PORTFOLIO', res.data())
             })
@@ -48,7 +46,6 @@ export default {
             return state.portfolioCatalog
         },
         portfolio(state) {
-            console.log(state.portfolio)
             return state.portfolio
         }
     }

@@ -9,7 +9,7 @@
                         <div id="slash" class="px-2">/</div>
                         <a href="/portfolio"><router-link class="portfolio" to="/portfolio">Portfolio</router-link></a>
                         <div id="slash" class="px-2">/</div>
-                        <div class="portfolio-page">Women's fashion choice</div>
+                        <div class="portfolio-page">{{ portfolio.name }}</div>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
 
 <script>
     export default {
-        
+        props: ['portfolio']
     }
 </script>
 

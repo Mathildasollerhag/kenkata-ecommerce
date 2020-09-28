@@ -34,14 +34,17 @@
 
       <!-- Options -->
       <div class="d-flex align-items-center mt-3 mb-4">
-        <div class="text-center quantity-container d-flex">
-          <span v-on:click="productDecrement({product, id, quantity})" class="decrement">-</span>
-          <span class="quantity">{{quantity}}</span>
-          <span v-on:click="productIncrement({product, id, quantity})" class="increment">+</span>
-        </div>
+    
+
+      <div>
+        <Quantity :item="item" />
+      </div>
+      <!-- <div v-else>
+        <Quantity :item="{id, product, quantity}" />
+      </div> -->
 
         <!-- Add To Cart -->
-        <button v-on:click="addProductToCart({product, quantity, id})" class="btn btn-kenkata-blue font-weight-normal mx-4">
+        <button @click="cartItemFind()" v-on:click="addProductToCart({product, id})" class="btn btn-kenkata-blue font-weight-normal mx-4">
           <img src="@/images/icons/Cart.png" alt /> Add to cart
         </button>
 
@@ -86,30 +89,46 @@
 import DetailsCarousel from "./DetailsCarousel";
 import DetailsSocials from "./DetailsSocials";
 import ProductReviews from "./ProductReviews";
-import { mapActions } from 'vuex';
+import Quantity from './Quantity'
+import { mapActions, mapGetters } from 'vuex';
 export default {
   data() {
     return {
-      quantity: 1
+      item: {
+        id: this.id,
+        product: this.product,
+        quantity: 0
+      },
+      // quantity: 1
     }
   },
   props: ["product", "id"],
   components: {
-      DetailsCarousel,
-      DetailsSocials,
-      ProductReviews,
+    DetailsCarousel,
+    DetailsSocials,
+    ProductReviews,
+    Quantity
   },
   computed: {
-    currentRoute() {
-      return this.$route.name;
-    }
+  currentRoute() {
+    return this.$route.name;
+  },
+  ...mapGetters(["shoppingCart"]),
   }, 
   methods: {
-        ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement"])
-    },
-    created() {
-      console.log(this.product)
+    ...mapActions(["getProductById","addProductToCart", "productIncrement", "productDecrement"]),
+    
+    cartItemFind() {
+      let exists = this.shoppingCart.find(item => item.id === this.id)
+      if(exists) {
+        this.item = exists
+        return
+      }           
     }
+  },
+  created() {
+    this.cartItemFind()
+  }
   
 };
 </script>

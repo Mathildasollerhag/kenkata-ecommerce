@@ -45,7 +45,7 @@
         <b-tooltip target="tooltip-view" triggers="hover" placement="left" custom-class="tooltip-class">Quick view</b-tooltip>
         
         <!-- Add to cart Tooltip -->
-        <b-button v-on:click="addProductToCart({product, quantity, id})" id="tooltip-cart" class="p-0" variant="transparent">
+        <b-button v-on:click="addProductToCart({product, id})" id="tooltip-cart" class="p-0" variant="transparent">
             <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="18.861" viewBox="0 0 21.5 18.861">
                 <g id="Cart_icon" data-name="Cart icon" transform="translate(-91.663 -412.982)">
                     <path class="hoverbar-svg" id="Path_52" data-name="Path 52" d="M92.413,413.733h2.61l5.083,11.643h9.941l2.366-7.651H100.106" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
@@ -74,10 +74,10 @@ export default {
         Quickview
     },
     data() {
-    return {
-      quantity: 1
-    }
-  },
+        return {
+            quantity: 0
+        }
+    },
     methods: {
         ...mapActions(["getProductById", "addProductToCart"])
     }

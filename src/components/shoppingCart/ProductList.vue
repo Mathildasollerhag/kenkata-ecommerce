@@ -27,7 +27,7 @@ export default {
         ...mapGetters(["shoppingCart"])
     },
     created() {
-        console.log(this.shoppingCart)
+        // console.log(this.shoppingCart)
     },
 }
 </script>

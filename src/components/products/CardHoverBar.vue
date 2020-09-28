@@ -73,11 +73,6 @@ export default {
     components: {
         Quickview
     },
-    data() {
-        return {
-            quantity: 0
-        }
-    },
     methods: {
         ...mapActions(["getProductById", "addProductToCart"])
     }

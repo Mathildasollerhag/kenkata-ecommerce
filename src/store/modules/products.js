@@ -42,12 +42,28 @@ export default {
             })            
         },
 
-        // Get product by ID
+        // Get Product by ID
         getProductById({ commit }, id) {
             db.collection('products').doc(id).get().then(res => {
                 commit('SET_PRODUCT', res.data())
             })
         },
+
+        // Save Product Review
+        saveProductReview({ commit }, { productId, review }) {
+            console.log(review);
+            const reviews = db.collection("products").doc(productId)
+
+            reviews.update({
+                reviews: firebase.firestore.FieldValue.arrayUnion(review)
+            }).then(() => {
+                console.log("Review successfully added!");
+            }).catch(err => {
+                console.log(err);
+            })
+            
+        }
+
     },
 
     getters: {

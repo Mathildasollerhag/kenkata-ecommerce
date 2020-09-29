@@ -2,8 +2,10 @@
   <div id="app">
     <Navigation/>
     
-    <router-view/>
-
+    <transition 
+      enter-active-class="animate__animated animate__fadeIn animate__faster">
+      <router-view/>
+    </transition> 
   <Brands/>
   <Footer/>
 

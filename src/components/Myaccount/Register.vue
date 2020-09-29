@@ -26,6 +26,7 @@
               
    
 </template>
+
 <script>
 import firebase from 'firebase';
 
@@ -56,7 +57,9 @@ export default {
   }
 }
 </script>
-<style>
+
+<style scoped>
+
 .bg{
   height: 140px;
   background-color: #7B7D8E;

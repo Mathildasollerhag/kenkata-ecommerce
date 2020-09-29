@@ -25,6 +25,9 @@ export default {
     components: {
         Details
     },
+    created() {
+        // console.log(id)
+    },
     computed: {
         ...mapGetters(["product"])
     }

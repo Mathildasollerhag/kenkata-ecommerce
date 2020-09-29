@@ -22,9 +22,10 @@
 
       <!-- Price Row -->
       <div class="d-flex align-items-center">
-        <h4 class="m-0 theme-text mr-3 my-1">{{product.price}} SEK</h4>
+        <h4 v-if="product.discount !== ''" class="m-0 theme-text mr-3 my-1">{{product.price * 0.8}} SEK</h4>
+        <h4 v-else class="m-0 theme-text mr-3 my-1">{{product.price}} SEK</h4>
         <p class="m-0">
-          <del class="text-muted mr-4">$220.00</del>
+          <del v-if="product.discount !== ''" class="text-muted mr-4">{{product.price}} SEK</del>
         </p>
         <img class="icon mb-1 mr-1" src="@/images/icons/InStock.png" alt />
         <p v-if="product.inStock" class="m-0">In Stock</p>
@@ -33,10 +34,18 @@
 
       <!-- Options -->
       <div class="d-flex align-items-center mt-3 mb-4">
-        <Quantity />
+    
+
+      <!-- Quantity -->
+      <div class="text-center quantity-container d-flex">
+        <span v-on:click="productDecrement(item); itemQuantityCount()" class="decrement">-</span>
+        <span class="quantity">{{item.quantity}}</span>
+        <span v-on:click="productIncrement({product, quantity:0, id}); itemQuantityCount()" class="increment">+</span>
+      </div>
+      
 
         <!-- Add To Cart -->
-        <button class="btn btn-kenkata-blue font-weight-normal mx-4">
+        <button v-on:click="addProductToCart({product, quantity:1, id}); itemQuantityCount();" class="btn btn-kenkata-blue font-weight-normal mx-4">
           <img src="@/images/icons/Cart.png" alt /> Add to cart
         </button>
 
@@ -81,20 +90,44 @@
 import DetailsCarousel from "./DetailsCarousel";
 import DetailsSocials from "./DetailsSocials";
 import ProductReviews from "./ProductReviews";
-import Quantity from "./Quantity";
+import Quantity from './Quantity'
+import { mapActions, mapGetters } from 'vuex';
 export default {
-  props: ["product"],
+  data() {
+    return {
+      item: {
+        id: this.id,
+        product: this.product,
+        quantity: 0
+      }
+    }
+  },
+  props: ["product", "id"],
   components: {
-      DetailsCarousel,
-      DetailsSocials,
-      ProductReviews,
-      Quantity
+    DetailsCarousel,
+    DetailsSocials,
+    ProductReviews,
+    Quantity
   },
   computed: {
     currentRoute() {
       return this.$route.name;
+    },
+    ...mapGetters(["shoppingCart"]),
+  }, 
+  methods: {
+    ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement"]),
+    
+    itemQuantityCount() {
+      let item = this.shoppingCart.find(item => item.id == this.id)
+      if(item) {
+        this.item = item
+      }           
     }
-  }  
+  },
+  created() {
+    this.itemQuantityCount()
+  }
   
 };
 </script>
@@ -126,6 +159,25 @@ button img {
 }
 .quickview-row img {
   width: 105px;
+}
+
+.quantity-container {
+  border: 1px solid var(--gray-theme);
+  border-radius: 5px;
+}
+.quantity-container span {
+  padding: 4px 10px;
+  min-width: 30px;
+}
+
+.increment:hover, .decrement:hover {
+  background-color: var(--theme);
+  color: white;
+  cursor: pointer;
+}
+.quantity {
+  border-left: 1px solid var(--gray-theme);
+  border-right: 1px solid var(--gray-theme);
 }
 
 @media(min-width: 1200px) {

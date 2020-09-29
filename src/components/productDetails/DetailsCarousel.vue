@@ -41,10 +41,10 @@ export default {
 <style>
 #enlarge{
     z-index: 10;
-    bottom: 1em;
+    bottom: 1.8em;
     left: 1em;    
 }
-#detailsCarousel img{
+#detailsCarousel .owl-item img{
     max-height: 425px;
     max-width: 425px;
     background-position: center;
@@ -52,6 +52,8 @@ export default {
     margin: 1em 0;
     border-radius: 5px;
     background-repeat: no-repeat;
+    position: relative;
+    background-color: #f5f5f5;
 }
 
 #detailsCarousel .owl-theme .owl-dots {
@@ -80,6 +82,12 @@ export default {
     border: 1px solid var(--theme);
     outline: none;
     box-shadow: none;
+}
+#detailsCarousel .owl-theme .owl-dots .owl-dot span {
+    background: #f5f5f5;
+}
+#detailsCarousel .owl-theme .owl-dots .owl-dot.active span, #detailsCarousel .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #f5f5f5 !important;
 }
 #detailsCarousel .owl-theme .owl-dots .owl-dot span {
     position: relative;

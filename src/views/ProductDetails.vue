@@ -7,7 +7,7 @@
       </div>
 
       <!-- Product Details -->
-      <Details :product="product"/>
+      <Details :product="product" :id="id"/>
       
 
 
@@ -45,7 +45,7 @@
               role="tab"
               aria-controls="reviews"
               aria-selected="false"
-            >Reviews</a>
+            >Reviews ({{product.reviews.length}})</a>
           </li>
           <li class="nav-item" role="presentation">
             <a
@@ -73,7 +73,7 @@
             role="tabpanel"
             aria-labelledby="reviews-tab"
           >
-            <ProductReviews />
+            <ProductReviews :product="product" :id="id" />
           </div>
           <div
             class="tab-pane fade"
@@ -91,13 +91,13 @@
 
       <!-- You May Also Like -->
       <div class="mb-custom">
-        <YouMayAlsoLike />
+        <YouMayAlsoLike :gender="product.gender"/>
       </div>
 
 
       <!-- Related Products -->
       <div class="mb-custom">
-        <RelatedProducts />
+        <RelatedProducts :category="product.category"/>
       </div>
 
       <SubscribeBanner />
@@ -138,11 +138,11 @@ export default {
     ...mapActions(["getProductById"]),
   },
   created() {
-    console.log(this.id)
     this.getProductById(this.id)
+    // console.log(this.product)
   },
   computed: {
-    ...mapGetters(["product"]),
+    ...mapGetters(["product"])
   }
 };
 </script>

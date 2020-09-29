@@ -1,14 +1,18 @@
 <template>
   <div class="text-center quantity-container d-flex">
-      <span class="decrement">-</span>
-      <span class="quantity">3</span>
-      <span class="increment">+</span>
+      <span v-on:click="productDecrement(item)" class="decrement">-</span>
+      <span class="quantity">{{item.quantity}}</span>
+      <span v-on:click="productIncrement(item)" class="increment">+</span>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
-
+  props: ["item"],
+  methods: {
+    ...mapActions(["productIncrement", "productDecrement"])
+  } 
 }
 </script>
 

@@ -2,7 +2,7 @@ export default {
     
     state: {
         shoppingcart: [],
-        shipping: ''
+        shipping: ""
     },
 
 
@@ -35,9 +35,8 @@ export default {
         DECREMENT(state, product) {
           product.quantity -= 1
         },
-        SET_SHIPPING(state, value) {
-          console.log(value);
-          state.shipping = value
+        SET_SHIPPING(state, shipping) {
+          state.shipping = shipping
         }
     },
 

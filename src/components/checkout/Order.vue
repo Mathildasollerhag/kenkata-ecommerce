@@ -7,7 +7,7 @@
         <p>Subtotal</p>
     </div>
     <div class="order-list">
-      <OrderProduct v-for="item in shoppingCart" :key="item.id" :item="item"/>
+      <!-- <OrderProduct v-for="item in shoppingCart" :key="item.id" :item="item"/> -->
         <!-- <OrderProduct title="Women smart high heel shoe" subtotal="$380.00" />
         <OrderProduct title="Gents half t-shirt" subtotal="$280.00" />
         <OrderProduct title="Gents winter yellow jacket" subtotal="$160.00" />

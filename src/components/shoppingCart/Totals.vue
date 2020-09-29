@@ -49,9 +49,10 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+
   methods: {
-    updateShipping(value) {
-      this.$store.commit('SET_SHIPPING', value)
+    updateShipping(shipping) {
+      this.$store.commit('SET_SHIPPING', shipping)
     }
   },
   computed: {
@@ -59,12 +60,10 @@ export default {
       return this.$route.name;
     },
     shipping() {
-      return this.$store.state.shipping
+      return this.$store.state.shoppingcart.shipping
     },
-    ...mapGetters(['shoppingCartTotal', 'getShipping'])
-        
-  },
-  props: ["item"],
+    ...mapGetters(['shoppingCartTotal', 'getShipping'])        
+  }
   
 }
 </script>

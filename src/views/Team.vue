@@ -2,6 +2,8 @@
   <div>
     <AwesomeTeam />
     <Business />
+    <MomentSection />
+    <SubscribeBanner />
   </div>
 </template>
 
@@ -11,11 +13,15 @@ export default {
     components: {
         AwesomeTeam,
         Business,
+        MomentSection,
+        SubscribeBanner,
 
     }
 }
 import AwesomeTeam from '../components/team/AwesomeTeam';
 import Business from '../components/team/Business';
+import MomentSection from '../components/team/MomentSection';
+import SubscribeBanner from '../components/home/SubscribeBanner';
 </script>
 
 <style>

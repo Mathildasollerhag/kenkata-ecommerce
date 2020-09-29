@@ -1,12 +1,20 @@
 <template>
-  <div id="quickView">
-      <div class="close theme-bg rounded-circle text-white c-pointer">
-          <i class="fas fa-times"></i>
+  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content d-flex align-items-center bg-transparent">
+        <!-- <Quickview /> -->
+        <div id="quickView">
+            <div class="close theme-bg rounded-circle text-white c-pointer">
+                <i class="fas fa-times"></i>
+            </div>
+            <div v-if="product !== null" class="py-4 d-flex align-items-center position-relative">
+                <Details :product="product"/>
+            </div>
+        </div>
       </div>
-      <div v-if="product !== null" class="py-4 d-flex align-items-center position-relative">
-          <Details :product="product"/>
-      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -16,6 +24,9 @@ export default {
     name: "Quickview",
     components: {
         Details
+    },
+    created() {
+        // console.log(id)
     },
     computed: {
         ...mapGetters(["product"])

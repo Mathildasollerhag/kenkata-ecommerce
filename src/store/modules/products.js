@@ -1,45 +1,74 @@
-import axios from "axios"
 
 export default {
 
     state: {
         productsCatalog: [],
         newArrivals: [],
-        product: null
+        featuredProducts: [],
+        product: null,
+        productId: null
     },
 
     mutations: {
-        SET_PRODUCTS(state, products) {
+        SET_PRODUCTS(state, items) {
             // Set productsCatalog
-            state.productsCatalog = products
+            state.productsCatalog = items
 
             // Set newArrivals
-            state.newArrivals = products.filter(product => product.status === 'new')
+            state.newArrivals = items.filter(item => item.product.newArrival === true)
+
+            // Set featured products 
+            state.featuredProducts = items.filter(item => item.product.discount !== '')
         },
 
         SET_PRODUCT(state, product) {
-            state.product = product
+            // Set product
+            state.product = product.data()
+
+            // Set productId
+            state.productId = product.id
         },
     },
 
     actions: {
+        
         // Get all products
         getProducts({ commit }) {
-            axios.get('http://localhost:9999/api/products').then(res => {
-                commit('SET_PRODUCTS', res.data);
-            }).catch(error => {
-                console.log(error);
+            db.collection('products').get().then(res => {
+                let items = [];                
+                res.forEach(doc => {                    
+                    const data = {
+                        id: doc.id,
+                        product: doc.data()
+                    }
+                    items.push(data)
+                });
+                commit('SET_PRODUCTS', items)
+            })            
+        },
+
+        // Get Product by ID
+        getProductById({ commit }, id) {
+            db.collection('products').doc(id).get().then(res => {
+                commit('SET_PRODUCT', res)
             })
         },
 
-        // Get product by ID
-        getProductById({ commit }, id) {
-            axios.get('http://localhost:9999/api/products/' + id).then(res => {
-                commit('SET_PRODUCT', res.data.product)
-            }).catch(error => {
-                console.log(error);
+        // Save Product Review
+        saveProductReview({ commit }, { productId, review }) {
+            console.log(review);
+            const reviews = db.collection("products").doc(productId)
+
+            reviews.update({
+                reviews: firebase.firestore.FieldValue.arrayUnion(review)
+            }).then(() => {
+                console.log("Review successfully added!");
+            }).catch(err => {
+                console.log(err);
             })
-        },
+            
+        }
+
     },
 
     getters: {
@@ -49,8 +78,14 @@ export default {
         newArrivals(state) {
             return state.newArrivals
         },
+        featuredProducts(state) {
+            return state.featuredProducts
+        },
         product(state) {
             return state.product
+        },
+        productId(state) {
+            return state.productId
         }
     }
 

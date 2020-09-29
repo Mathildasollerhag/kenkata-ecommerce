@@ -10,7 +10,7 @@
                                     <span class="h3-size">OFF</span>
                                     <p>FOR NEW CUSTOMER</p>
                                 </div>
-                                    <button class="btn blue-theme-bg text-white custom-radius px-4">SHOP NOW</button>
+                                    <router-link to="/shop"><button class="btn blue-theme-bg text-white custom-radius px-4">SHOP NOW</button></router-link>
                             </div>
                                 
                         </div>

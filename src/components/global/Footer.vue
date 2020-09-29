@@ -48,7 +48,7 @@
           <div class="nav-item d-flex flex-column">
             <a id="privacy-policy" class="useful-links pt-4" href="">Privacy Policy</a>
             <a class="terms pt-1 pb-1" href="">Terms &amp; Conditions</a>
-            <a class="useful-links pt-1 pb-1" href="">Contact Us</a>
+            <router-link to="/contact" class="useful-links pt-1 pb-1" href="">Contact Us</router-link>
             <a class="useful-links pt-1 pb-1" href="">Our Sitemap</a>
             <a class="useful-links pt-1 pb-1" href="">Latest News</a>
             <a class="useful-links pt-1 pb-1" href="">Returns</a>

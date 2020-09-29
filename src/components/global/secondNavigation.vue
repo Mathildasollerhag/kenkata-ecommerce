@@ -39,7 +39,6 @@ export default {
 </script>
 
 <style scoped>
-
 .green{
     background-color: #20D3C2;
 }
@@ -60,7 +59,6 @@ a {
     padding-bottom: 5px;
     color: black !important;
 }
-
 .margin-link {
     margin-left: 0.2rem !important;
 }
@@ -73,8 +71,10 @@ a {
     left: 10px;
     font-size: 10px;
 }
-
 .cart2 {
+    /* position: relative; */
+    /* top: -15.9px; */
+    /* left: -58px; */
     font-size: 10px;
     top: 8px;
     left: 5px;
@@ -111,11 +111,12 @@ a {
     margin-left: 1rem;
     color: var(--green);
 }
-
 .myclass1 {
     margin-top: -0.7rem !important;
 }
-
+.iconsextra {
+    padding-top: 1rem !important;
+}
 .myclass6 {   
     padding-left: 0.5rem;
     padding-bottom: 1.4rem;
@@ -148,11 +149,9 @@ a {
     width: 70%;
     background-color: #20D3C2;
 }
-
-
 @media (min-width: 1200px) { 
     .classmargin {
-        margin-left: 1.5rem;
+        margin-left: 3.5rem;
     }
     .margin {
         margin-left: 0.75rem !important;

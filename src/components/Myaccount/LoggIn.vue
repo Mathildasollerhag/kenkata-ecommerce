@@ -4,14 +4,14 @@
                         <h2 class="font">LOGIN</h2>
                         <div class="form-group position-relative">
                                   <label for="username">Username or email <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+                                  <input v-model="email" type="text" class="form-control" id="username" aria-describedby="emailHelp">
                                   <small id="emailHelp" class="form-text text-muted">We'll never share your email or username with anyone else.</small>
                         </div>
                         <div class="form-group position-relative">
                                   <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="password" class="form-control rounded" id="password">
+                                  <input v-model="password" type="password" class="form-control rounded" id="password">
                         </div>
-                         <button type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block ">LOG IN</button>
+                         <button v-on:click="login" type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block ">LOG IN</button>
                         <div class="form-group form-check mt-4">
                                <input type="checkbox" class="form-check-input rounded" id="exampleCheck1">
                                <div class="d-flex justify-content-between">
@@ -31,6 +31,7 @@
                        
                       </div>
                       <div class="bg-primary py-1 d-flex  rounded ">
+            
                         <div class="text-white rounded  mb mt-1 px-2 bg-white ml-2"><i class="fab fa-google fa-x " ></i></div>
                         <div class="size1 mt-1 m-google px-5"> <router-link class=" text-white px-4" to="/www.google.com">Google</router-link></div>
                       
@@ -39,10 +40,39 @@
                 </div>
 
     </div>
-              
-        
-    
+               
 </template>
+
+
+<script>
+import firebase from 'firebase';
+
+export default {
+  data: function() {
+    return {
+      username: '',
+      email: '',
+      password: ''
+    };
+  },
+  methods: {
+    login: function(e) {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          alert(`You are logged in as ${user.email}`);
+          this.$router.push('/shop');
+        },
+        err => {
+          alert(err.message);
+        }
+      );
+      e.preventDefault();
+    }
+  }
+}
+</script>
 <style scoped>
 P {
   overflow: hidden;

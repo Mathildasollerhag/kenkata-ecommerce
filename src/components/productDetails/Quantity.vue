@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
+  props: ["item"],
   methods: {
     ...mapActions(["productIncrement", "productDecrement"])
-  },
-  props: ["item"],
+  } 
 }
 </script>
 

@@ -1,12 +1,12 @@
 <template>
   <li class="list-group-item d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center col-lg-7 pl-0">
-        <span v-on:click="deleteProductFromCart(item.id)" class="delete d-flex align-items-center justify-content-center">
+        <span v-on:click="deleteProductFromCart(item.id)" class="delete d-flex align-items-center justify-content-center c-pointer">
             <i class="fas fa-times font-weight-light p-0 m-0"></i>
         </span>
         <div class="d-none d-lg-block">
           <span class="img-box d-flex justify-content-center align-items-center ml-3 mr-2">
-              <img class="img-fluid" src="@/images/featuredProducts3.png" alt="">
+              <img class="img-fluid" :src="item.product.images[0]" alt="">
           </span>
         </div>
         <p class="ml-3 ml-lg-0">{{item.product.name}}</p>                
@@ -29,10 +29,7 @@ export default {
   },
   props: ["item"],
   methods: {
-        ...mapActions(['deleteProductFromCart'])
-    },
-  created() {
-    console.log(this.item)
+    ...mapActions(['deleteProductFromCart'])
   }
 }
 </script>

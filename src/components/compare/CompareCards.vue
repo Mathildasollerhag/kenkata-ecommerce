@@ -1,11 +1,14 @@
 <template>
   <div class="d-flex justify-content-center">
     <div class="mt-auto d-none d-xl-block">
-    
-      <CompareSidebar v-if="compare >= 1"/>
+
+      <div>
+        <CompareSidebar v-if="compare != 0"/>
+      </div>
+      
     
       <div v-if="compare == 0">
-        <h2>Empty</h2>
+        <h2>Add products to compare</h2>
       </div>
     </div>
 

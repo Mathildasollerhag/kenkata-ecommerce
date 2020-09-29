@@ -1,7 +1,12 @@
 <template>
   <div class="d-flex justify-content-center">
     <div class="mt-auto d-none d-xl-block">
-      <CompareSidebar />
+    
+      <CompareSidebar v-if="compare >= 1"/>
+    
+      <div v-if="compare == 0">
+        <h2>Empty</h2>
+      </div>
     </div>
 
     <div class="card-deck mt-5 pt-4">
@@ -15,13 +20,19 @@
 <script>
 import CompareSidebar from '@/components/compare/CompareSidebar.vue';
 import CompareCard from '@/components/compare/CompareCard.vue';
-
+import { mapGetters } from 'vuex'
 export default {
   components: {
     CompareSidebar,
     CompareCard,
   },
   props: ["item"],
+  computed: {
+        ...mapGetters(["compare"])
+    },
+    created() {
+      console.log(this.compare)
+    }
 };
 </script>
 

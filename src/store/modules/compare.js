@@ -8,7 +8,6 @@ export default {
         ADD_TO_COMPARE(state, {product, quantity, id}) {
             let exists = state.compare.find(item => { return item.id === id })
             if(exists) {
-              exists.quantity += 1
               return
             }
             state.compare.push({product, quantity, id})
@@ -32,11 +31,11 @@ export default {
 
     getters: {
         compare(state) {
-            let compare = JSON.parse(sessionStorage.getItem('compare'))
-            if(compare !== null) {
-                state.shoppingcart = cart
+            let cart = JSON.parse(sessionStorage.getItem('compare'))
+            if(cart !== null) {
+                state.compare = cart
             }
-            return state.shoppingcart
+            return state.compare
           },
         compareCount(state) {
             let items = 0

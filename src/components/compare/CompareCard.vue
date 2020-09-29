@@ -2,18 +2,18 @@
   <div>
         <div class="custom-card">
           <div class="p-2 d-flex">
-            <button class="remove-btn">
+            <button v-on:click="deleteProductFromCompare(item.id)" class="remove-btn">
               <i class="fas fa-times px-2"></i>
             </button>
             <div class="my-auto remove-item">Remove item</div>
           </div>
           <img
             class="card-img-top"
-            src="@/images/Compare-Tshirt.svg"
+            :src="item.product.images[0]"
             alt="Card image cap"
           />
           <div class="card-body text-center">
-            <p class="card-title">Circle pattern girls shirt</p>
+            <p class="card-title">{{item.product.name}}</p>
             <div class="rating">
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
@@ -21,7 +21,7 @@
               <i class="fa fa-star"></i>
               <i class="far fa-star"></i>
             </div>
-            <p class="mt-2 price">$190.00</p>
+            <p class="mt-2 price">${{item.product.price}}</p>
             <div class="pb-2">
               <button class="add-to-cart-btn">
                 <i class="fas fa-shopping-cart pr-2"></i>Add to cart
@@ -31,33 +31,50 @@
         </div>
 
         <div class="container text-center">
-          <div class="card-boxes d-flex">
-            <p class="mx-auto my-auto">
-              <i class="checkmark pr-2 fas fa-check"></i> In Stock
+          <div v-if="item.product.inStock == true" class="card-boxes d-flex">
+            <p  class="mx-auto my-auto">
+              <i class="checkmark pr-2 fas fa-check"></i>In Stock
             </p>
           </div>
+          <div v-if="item.product.inStock == false" class="card-boxes d-flex">
+            <p  class="mx-auto my-auto">
+              <i class="checkmark pr-2 fas fa-exclamation"></i>Sold Out
+            </p>
+          </div>
+          
+          
           <div class="card-boxes d-flex">
-            <img
-              class="mx-auto my-auto"
-              src="@/images/Bexim.svg"
-              alt="Card image cap"
-            />
+            <h2 class="blue-theme-text m-auto px-2">{{item.product.brand}}<i class="far fa-registered fa-xs align-top mt-2"></i></h2>
           </div>
           <div class="card-boxes d-flex">
-            <p class="mx-auto my-auto">Brown, Black, White</p>
+            <p v-for="(color, index) in item.product.colors" :key=index class="mx-auto my-auto">{{color}}</p>
           </div>
         </div>
       </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
+    props: ["item"],
+    methods: {
+    ...mapActions(['deleteProductFromCompare'])
+  }
 
 }
 </script>
 
 <style scoped>
-    .card-boxes {
+
+.fa-xs {
+    font-size: 0.7rem;
+}
+
+.card-img-top {
+    max-width: 15rem;
+}
+    
+.card-boxes {
   border: 1.5px solid #e3e3e3;
   margin-bottom: 10px;
   width: 257px;

@@ -76,6 +76,10 @@ html, body {
   color: var(--blue-theme);
 }
 
+.blue-theme-text-op {
+  color: var(--blue-theme-op);
+}
+
 .gray-bg {
   background-color: var(--gray-theme);
 }

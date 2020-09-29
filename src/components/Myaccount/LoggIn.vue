@@ -23,7 +23,7 @@
                         </div>
                          
             </form>
-                <P class="">OR LOGIN WITH</P>
+                <p class="">OR LOGIN WITH</p>
                 <div class="d-flex justify-content-between align-items-center">
                       <div class="bg-face  d-flex  rounded ">
                         <div class="text-white font1  ml-2"><i class="fab fa-facebook-square"></i></div>

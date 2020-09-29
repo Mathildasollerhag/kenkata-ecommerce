@@ -139,7 +139,7 @@ export default {
   },
   created() {
     this.getProductById(this.id)
-    console.log(this.product)
+    // console.log(this.product)
   },
   computed: {
     ...mapGetters(["product"])

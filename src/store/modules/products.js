@@ -4,7 +4,8 @@ export default {
         productsCatalog: [],
         newArrivals: [],
         featuredProducts: [],
-        product: null
+        product: null,
+        productId: null
     },
 
     mutations: {
@@ -20,7 +21,11 @@ export default {
         },
 
         SET_PRODUCT(state, product) {
-            state.product = product
+            // Set product
+            state.product = product.data()
+
+            // Set productId
+            state.productId = product.id
         },
     },
 
@@ -44,7 +49,7 @@ export default {
         // Get Product by ID
         getProductById({ commit }, id) {
             db.collection('products').doc(id).get().then(res => {
-                commit('SET_PRODUCT', res.data())
+                commit('SET_PRODUCT', res)
             })
         },
 
@@ -77,6 +82,9 @@ export default {
         },
         product(state) {
             return state.product
+        },
+        productId(state) {
+            return state.productId
         }
     }
 

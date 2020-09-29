@@ -44,6 +44,7 @@ export default {
       firebase
         .auth().createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
+          console.log(user)
           alert(`Account created for ${user.email}`);
           this.$router.push('/shop');
         },

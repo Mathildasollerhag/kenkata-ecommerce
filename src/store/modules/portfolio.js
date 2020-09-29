@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 export default {
 
     state: {
@@ -20,7 +22,7 @@ export default {
         
         // Get all portfolio items
         getPortfolio({ commit }) {
-            db.collection('portfolio').get().then(res => {
+            firebase.firestore().collection('portfolio').get().then(res => {
                 let items = [];                
                 res.forEach(doc => {
                     const data = {
@@ -35,7 +37,7 @@ export default {
 
         // Get portfolio by ID
         getPortfolioById({ commit }, id) {
-            db.collection('portfolio').doc(id).get().then(res => {
+            firebase.firestore().collection('portfolio').doc(id).get().then(res => {
                 commit('SET_PORTFOLIO', res.data())
             })
         },

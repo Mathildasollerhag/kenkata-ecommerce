@@ -2,7 +2,7 @@
   <div id="cartTotals">
     <div class="d-flex justify-content-between align-items-center border-bottom py-2">
       <p class="subtotal font-weight-bold blue-theme-text">Subtotal</p>
-      <p class="theme-text font-weight-bold">${{shoppingCartTotal}}</p>
+      <p class="theme-text font-weight-bold">${{shoppingCartTotal}}.00</p>
     </div>
     <div class="d-flex justify-content-between align-items-center border-bottom py-3">
       <p class="font-weight-bold blue-theme-text">Shipping</p>
@@ -41,7 +41,7 @@
     <!-- Total -->
     <div class="total d-flex justify-content-between align-items-center py-3">
       <p class="font-weight-bold blue-theme-text text-uppercase">Total</p>
-      <p class="theme-text font-weight-bold">${{ shoppingCartTotal + getShipping }}</p>
+      <p class="theme-text font-weight-bold">${{ shoppingCartTotal + getShipping }}.00</p>
     </div>
   </div>
 </template>

@@ -1,32 +1,66 @@
 <template>
     <div class="">
        <form>
-                        <h2 class="font">REGISTER</h2>
-                        <p class="text-muted mt-2">Register for this site allos you to access your order status and history.<br>just fill in the fields below , and we will get a new account.set up foe you in no <br>time.we will only ask you for information necessary to make the purchase<br> process faster and easeri </p>
-                        <div class="form-group position-relative">
-                                  <label for="username">Username or email <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
-                                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
-                        </div>
-                        <div class="form-group position-relative">
-                                  <label for="Email address"> Email address <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="email" class="form-control" id="Email address" aria-describedby="emailHelp">
-                                  <small id="emailHelp" class="form-text text-muted">We'll never share your emailwith anyone else.</small>
-                        </div>
-                        <div class="form-group position-relative">
-                                  <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="password" class="form-control rounded" id="password">
-                        </div>
-                        <p class="m-pragraf"> your personal data will be used to support your experience <br>throught this website,to manage access to your account,and for <br> purposes described in our <span class="color">privacy policy</span> </p>
-                         <button type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block ">REGISTER</button>
-                 
+      <h2 class="font">REGISTER</h2>
+      <p class="text-muted mt-2">Register for this site allos you to access your order status and history.<br>just fill in the fields below , and we will get a new account.set up foe you in no <br>time.we will only ask you for information necessary to make the purchase<br> process faster and easeri </p>
+      <div class="form-group position-relative">
+                <label for="username">Username or email <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+                <input v-model="username" type="text" class="form-control" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+      </div>
+      <div class="form-group position-relative">
+                <label for="Email address"> Email address <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+                <input  v-model="email" type="email" class="form-control"  aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your emailwith anyone else.</small>
+      </div>
+      <div class="form-group position-relative">
+                <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+                <input v-model="password"  type="password" class="form-control rounded" >
+      </div>
+      <p class="m-pragraf"> your personal data will be used to support your experience <br>throught this website,to manage access to your account,and for <br> purposes described in our <span class="color">privacy policy</span> </p>
+        <button v-on:click="register" type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block ">REGISTER</button>
+
         </form> 
 
     </div>
               
    
 </template>
+
+<script>
+import firebase from 'firebase';
+
+export default {
+  name: 'register',//där borde vara Myaccount, tror så, kolla igen här
+  data: function() {
+    return {
+      username: '',
+      email: '',
+      password: ''
+    };
+  },
+  methods: {
+    register: function(e) {
+      firebase
+        .auth().createUserWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          console.log(user)
+          alert(`Account created for ${user.email}`);
+          this.$router.push('/shop');
+        },
+        err => {
+          alert(err.message);
+        }
+      );
+
+      e.preventDefault();
+    }
+  }
+}
+</script>
+
 <style scoped>
+
 .bg{
   height: 140px;
   background-color: #7B7D8E;

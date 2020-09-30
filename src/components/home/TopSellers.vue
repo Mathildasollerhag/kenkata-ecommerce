@@ -6,7 +6,7 @@
                 </div>
             <img src="@/images/ZigZag.svg" alt="">
             <p class="pt-3">Check out our weekly top sellers in all category</p>
-            <div class="d-lg-flex justify-content-center pt-4">
+            <div id="test" class="d-lg-flex justify-content-center pt-4">
 
                 <div class="pt-2" v-for="item in topSellers.slice(0, 1)" :key="item.id">
                     <ProductCard :item="item"/>
@@ -48,6 +48,7 @@ import { mapGetters } from 'vuex'
 
 ::v-deep .card-img-top {
     height: 100%;
+    object-fit: cover;
 }
 
 .side-box {

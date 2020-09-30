@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 export default {
 
     state: {
@@ -37,7 +39,7 @@ export default {
         
         // Get all products
         getProducts({ commit }) {
-            db.collection('products').get().then(res => {
+            firebase.firestore().collection('products').get().then(res => {
                 let items = [];                
                 res.forEach(doc => {                    
                     const data = {
@@ -52,7 +54,7 @@ export default {
 
         // Get Product by ID
         getProductById({ commit }, id) {
-            db.collection('products').doc(id).get().then(res => {
+            firebase.firestore().collection('products').doc(id).get().then(res => {
                 commit('SET_PRODUCT', res)
             })
         },
@@ -60,7 +62,7 @@ export default {
         // Save Product Review
         saveProductReview({ commit }, { productId, review }) {
             console.log(review);
-            const reviews = db.collection("products").doc(productId)
+            const reviews = firebase.firestore().collection("products").doc(productId)
 
             reviews.update({
                 reviews: firebase.firestore.FieldValue.arrayUnion(review)

@@ -8,16 +8,19 @@
     </carousel>
 
     <div id="enlarge" class="position-absolute c-pointer">
-        <img src="@/images/icons/Enlarge.png" alt="">
+        <div data-toggle="modal" data-target="#enlargeModal" id="tooltip-view" class="p-0" variant="transparent">
+            <img src="@/images/icons/Enlarge.png" alt="">
+        </div>
     </div>
+    
   </div>
 </template>
 
 <script>
 import carousel from 'vue-owl-carousel'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  props: ["product"],
+  props: ["product", "id"],
   components: { carousel },
   created() {
     this.carouselImages()
@@ -33,7 +36,8 @@ export default {
             $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[2] + '")')
             $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[3] + '")') 
         }       
-    }
+    },
+    ...mapActions(["getProductById"])
   }
 }
 </script>

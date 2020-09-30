@@ -10,7 +10,7 @@
                                         <h1 class="size1 mt-5 font-weight-normal">Shopping is</h1>
                                         <h1 class="theme-text size1 font-weight-bold">MORE FUN</h1>
                                         <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
-                                        <button href="/#" class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button>
+                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button></router-link>
                                     </div>
                                     <div class="col-lg-7">
                                         <img class="img-fluid w-100 rounded" src="@/images/carousel1.jpg" alt="Shopping" />
@@ -23,7 +23,7 @@
                                         <h1 class="size1 mt-5 font-weight-normal">New in</h1>
                                         <h1 class="theme-text size1 font-weight-bold">FOR KIDS</h1>
                                         <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
-                                        <button href="/#" class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button>
+                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button></router-link>
                                     </div>
                                     <div class="col-lg-7">
                                         <img class="img-fluid w-100 rounded" src="@/images/carousel5.jpg" alt="Shopping" />
@@ -36,7 +36,7 @@
                                         <h1 class="size1 mt-5 font-weight-normal">Latest</h1>
                                         <h1 class="theme-text size1 font-weight-bold">MEN'S FASHION</h1>
                                         <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
-                                        <button href="/#" class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button>
+                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button></router-link>
                                     </div>
                                     <div class="col-lg-7">
                                         <img class="img-fluid w-100 rounded" src="@/images/carousel3.jpg" alt="Shopping" />

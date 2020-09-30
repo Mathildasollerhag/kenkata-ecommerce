@@ -40,7 +40,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .socialmedia {
     color: white; 
 }

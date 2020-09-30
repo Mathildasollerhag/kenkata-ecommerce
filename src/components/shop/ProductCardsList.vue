@@ -1,11 +1,14 @@
 <template>
-<div class="product-page">
+<div class="product-page" >
 
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap"  >
     <div v-for="item in productsCatalog" :key="item.id">
-      <ProductCard class="productcard" :item="item"/>
+      <ProductCard class="productcard" :item="item" />
+       
     </div>
   </div>
+   
+  
 
   <ul class="pagination justify-content-center pt-4">
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="left-arrow" class="fas fa-2x fa-chevron-left"></i></a></li>
@@ -33,16 +36,31 @@ import ProductCard from '../products/ProductCard'
 export default {
     name: 'ProductsCatalog',
     components: { ProductCard },
+ 
     created() {
       this.$store.dispatch("getProducts")
     },
+  
     computed: {
-      ...mapGetters(['productsCatalog'])
-    }
+      ...mapGetters(['productsCatalog']),
+     
+
+      
+    
+      }
+     
+    
 }
 </script>
 
 <style scoped>
+.box{
+display: flex;
+}
+.list{
+  display: table-column;
+  color: green;
+}
 
 .card-hover-body {
     position: absolute;

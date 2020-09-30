@@ -5,43 +5,52 @@ export default {
         productsCatalog: [],
         newArrivals: [],
         featuredProducts: [],
-        product: null
+        product: null,
+
+
     },
-
-    mutations: {
-        SET_PRODUCTS(state, items) {
-            // Set productsCatalog
-            state.productsCatalog = items
-
-            // Set newArrivals
-            state.newArrivals = items.filter(item => item.product.newArrival === true)
-
-            // Set featured products 
-            state.featuredProducts = items.filter(item => item.product.discount !== '')
-        },
-
-        SET_PRODUCT(state, product) {
-            state.product = product
-        },
-    },
-
     actions: {
-        
+      
         // Get all products
         getProducts({ commit }) {
             db.collection('products').get().then(res => {
-                let items = [];                
+                let items = [];   
+                let thecatalogs =             
                 res.forEach(doc => {                    
                     const data = {
                         id: doc.id,
-                        product: doc.data()
+                        product: doc.data(),
+                        catalog:doc.data().category
                     }
                     items.push(data)
                 });
                 commit('SET_PRODUCTS', items)
             })            
         },
+      // Get all catecory
+      getProductsByCategory({ commit },thecategory) {
+        
+        db.collection('products').where("category", "==",thecategory).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {    
+                              
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+            });
+            let length = res.docs.length
+            console.log(length )
+         
+          
+            commit('SET_PRODUCTS', items)
 
+          
+
+        })            
+    },
         // Get Product by ID
         getProductById({ commit }, id) {
             db.collection('products').doc(id).get().then(res => {
@@ -65,10 +74,31 @@ export default {
         }
 
     },
+    mutations: {
+        SET_PRODUCTS(state, items) {
+            // Set productsCatalog
+            state.productsCatalog = items
+            
+            
 
+            // Set newArrivals
+            state.newArrivals = items.filter(item => item.product.newArrival === true)
+
+            // Set featured products 
+            state.featuredProducts = items.filter(item => item.product.discount !== '')
+        },
+  
+        SET_PRODUCT(state, product) {
+            state.product = product
+        },
+    },
     getters: {
+      
         productsCatalog(state) {
             return state.productsCatalog
+        },
+        getProductsByCategory(state){
+            return getProductsByCategory
         },
         newArrivals(state) {
             return state.newArrivals

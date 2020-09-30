@@ -14,7 +14,8 @@
         </svg>
 
         <!-- Compare -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="20.049" viewBox="0 0 21.5 20.049">
+        <b-button v-on:click="addProductToCompare({product, quantity: 1, id})" class="p-0" variant="transparent">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="20.049" viewBox="0 0 21.5 20.049">
             <g id="Compare_icon" data-name="Compare icon" transform="translate(-246.185 -304.952)">
                 <g id="Group_23" data-name="Group 23" transform="translate(246.935 306.012)">
                 <path class="hoverbar-svg" id="Path_48" data-name="Path 48" d="M266.935,309.9h-4.022a2.452,2.452,0,0,0-2.027,1.071l-6.363,9.335a2.451,2.451,0,0,1-2.027,1.071h-5.561" transform="translate(-246.935 -307.31)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
@@ -26,6 +27,8 @@
                 </g>
             </g>
         </svg>
+        </b-button>
+        
 
         <!-- Quick view Tooltip -->
             <b-button v-on:click="getProductById(id)" data-toggle="modal" data-target="#quickviewModal" id="tooltip-view" class="p-0" variant="transparent">
@@ -71,7 +74,7 @@ export default {
         Quickview
     },
     methods: {
-        ...mapActions(["getProductById", "addProductToCart"])
+        ...mapActions(["getProductById", "addProductToCart", "addProductToCompare"])
     }
 }
 </script>

@@ -63,15 +63,15 @@
         <div>
           <div class="images-gallery">
             <ul>
-              <li data-aos="flip-left" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="400" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="500" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="600" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Instagram-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="700" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="800" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="900" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="1000" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel4.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel8.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel5.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel7.jpg" alt=""></a></li>
+              <li><a href="#"><img src="@/images/Grey-Instagram-Box.svg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel2.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel10.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel11.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel9.jpg" alt=""></a></li>
             </ul>
           </div>
         </div>
@@ -114,6 +114,12 @@
 </script>
 
 <style scoped>
+
+.w-78 {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+}
 
 #copyright {
     background-color: #080C24;

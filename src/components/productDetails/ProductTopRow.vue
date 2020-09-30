@@ -10,8 +10,8 @@
             </span>            
         </div>
         <div class="d-flex py-2">
-            <div class="filter-brand bg-white">
-                <img src="@/images/Bexim.png" alt="">
+            <div class="filter-brand">
+                <h5 class="text-uppercase font-weight-light m-0">{{product.brand}}</h5>
             </div>
             <div class="d-flex align-items-center ml-3">
                 <i class="fas fa-chevron-left font-weight-light"></i>
@@ -41,6 +41,7 @@ i {
 }
 .filter-brand {
     border-radius: 6px;
+    letter-spacing: 1.5px;
 }
 .filter-brand img {
     width: 140px;

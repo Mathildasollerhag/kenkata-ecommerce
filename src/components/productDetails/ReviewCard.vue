@@ -5,8 +5,8 @@
             <div class="px-3">
                 <span class="text-muted d-flex align-items-center">
                     <p class="theme-text mr-1 m-0 font-weight-bold text-capitalize">{{ review.name }}</p>
-                    <!-- <small>- {{this.review.date.toDate().getDate()}}/{{this.review.date.toDate().getMonth()}} - {{this.review.date.toDate().getFullYear()}}</small> -->
-                    <small>{{reviewDate}}</small>
+                    <small>- {{this.review.date.toDate().getDate()}}/{{this.review.date.toDate().getMonth()}} - {{this.review.date.toDate().getFullYear()}}</small>
+                    <!-- <small>{{reviewDate}}</small> -->
                 </span>
                 <div>
                     <p>{{ review.text }}</p>
@@ -66,12 +66,6 @@ export default {
     },
     created() {
         this.setRating()
-        // this.review.date = this.review.date.toDate()
-    },
-    computed: {
-        reviewDate() {
-            return `- ${this.review.date.toDate().getDate()}/${this.review.date.toDate().getMonth()} - ${this.review.date.toDate().getFullYear()}`
-        }
     }
 }
 </script>

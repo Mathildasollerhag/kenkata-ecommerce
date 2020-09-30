@@ -4,6 +4,7 @@ import products from './modules/products';
 import users from './modules/users';
 import shoppingcart from './modules/shoppingcart';
 import portfolio from './modules/portfolio';
+import orders from './modules/orders'
 
 Vue.use(Vuex);
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     shoppingcart,
     users,
     portfolio,
+    orders
   }
 });

@@ -4,6 +4,7 @@ export default {
         productsCatalog: [],
         newArrivals: [],
         featuredProducts: [],
+        topSellers: [],
         product: null,
         productId: null
     },
@@ -15,6 +16,9 @@ export default {
 
             // Set newArrivals
             state.newArrivals = items.filter(item => item.product.newArrival === true)
+
+            // Set topSellers
+            state.topSellers = items.filter(item => item.product.topSellers === true)
 
             // Set featured products 
             state.featuredProducts = items.filter(item => item.product.discount !== '')
@@ -79,6 +83,9 @@ export default {
         },
         featuredProducts(state) {
             return state.featuredProducts
+        },
+        topSellers(state) {
+            return state.topSellers
         },
         product(state) {
             return state.product

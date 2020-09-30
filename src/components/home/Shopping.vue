@@ -1,55 +1,75 @@
 <template>
-       <div class="light-gray-bg">
-          <div class="container center">
-            <div class="row">
-                  <div class="col-lg-5 col-md-5 col-ms-12 align-self-center">
-                     <div class="size1"> <span>Shopping is </span> <br > <span class="color"> MORE FUN </span></div>
-                     <p class="viv "> vivamus digissiim a ex eu ornare. Ut fermentum orci <br > vel diam ultricies fauibus. quise quis erat sed</p>
-                     <router-link to="/shop"><button class="btn bg-white rounded-pill color bb px-5 mt-2 py-3" type="submit">SHOP NOW</button></router-link>
-                  </div>
-                  <div class="col-lg-6 col-md-6 offset-md-1 col-ms-12 ">
-                       <img class="changesize" src="@/images/Banner-thumb.png" >
-                  </div>
-
-          
-             </div>
-         </div>
-       </div>
-         
-        
-
-
- 
-   
+  <div class="container-fluid lighter-gray-bg">
+            <div class="container">
+                <div class="row mx-auto my-auto">
+                    <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-5 align-self-center mb-5">
+                                        <h1 class="size1 mt-5 font-weight-normal">Shopping is</h1>
+                                        <h1 class="theme-text size1 font-weight-bold">MORE FUN</h1>
+                                        <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
+                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button></router-link>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <img class="img-fluid w-100 rounded" src="@/images/carousel1.jpg" alt="Shopping" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-5 align-self-center mb-5">
+                                        <h1 class="size1 mt-5 font-weight-normal">New in</h1>
+                                        <h1 class="theme-text size1 font-weight-bold">FOR KIDS</h1>
+                                        <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
+                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button></router-link>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <img class="img-fluid w-100 rounded" src="@/images/carousel5.jpg" alt="Shopping" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-5 align-self-center mb-5">
+                                        <h1 class="size1 mt-5 font-weight-normal">Latest</h1>
+                                        <h1 class="theme-text size1 font-weight-bold">MEN'S FASHION</h1>
+                                        <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
+                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">SHOP NOW</button></router-link>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <img class="img-fluid w-100 rounded" src="@/images/carousel3.jpg" alt="Shopping" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </template>
 
 
 
 <style scoped>
 
-.size1{
-  font-size: 60px;
+.size1 {
+  font-size: 3.7rem;
 }
-.color{
-  color: #20D3C2;
-}
-
-.viv{
-  margin-top: 10px;
-    margin-bottom: 20px;
-}
-@media (max-width: 750px) { 
-    
-    .center {
-        text-align: center!important;
-        justify-content: center;
-    }
-    .changesize{
-      height: 80%;
-      width: 80%;
-      margin-top: 20px;
-    }
+._radius {
+  border-radius: 20px;
 }
 
-
+@media (max-width: 750px) {
+  .center {
+    text-align: center !important;
+    justify-content: center;
+  }
+  .changesize {
+    height: 80%;
+    width: 80%;
+    margin-top: 20px;
+  }
+}
 </style>

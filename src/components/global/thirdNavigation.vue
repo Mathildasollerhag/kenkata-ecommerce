@@ -1,13 +1,14 @@
 <template>
+<div class="border-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class=" collapse navbar-collapse" id="navbarNavDropdown"><ul class="navbar-nav"><button id="mybutton2" class="btn nav-item dropdown green"><a class="nav-link myclass10" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class=" fas fa-bars myclass10 mr-1"></i>Browse Categories <i class="fas fa-chevron-down myclass8 myclass10"></i></a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><div class="dropdown-divider"></div><a class="dropdown-item" href="#">Something else here</a></div></button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown"><ul class="navbar-nav"><button id="mybutton2" class="btn nav-item dropdown green"><a class="nav-link myclass10" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class=" fas fa-bars myclass10 mr-1"></i>Browse Categories <i class="fas fa-chevron-down myclass8 myclass10"></i></a><div class="dropdown-menu pl-2" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><div class="dropdown-divider"></div><a class="dropdown-item" href="#">Something else here</a></div></button>
 
                 <li class="nav-item active myclass7"><router-link class="nav-link" to="/">Home</router-link></li>
-                <li class="nav-item dropdown myclass7"><router-link class="nav-link" to="/shop" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i></router-link><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Clothes</a><a class="dropdown-item" href="#">Accessories</a></div></li>
-                <li class="nav-item myclass7"><a class="" href="/Products"><div class="dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
-                <li class="nav-item myclass7"><a class="" href="/Categories"><div class=" dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+                <li class="nav-item dropdown myclass7"><router-link class="nav-link" to="/shop" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i></router-link><div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Clothes</a><a class="dropdown-item" href="#">Accessories</a></div></li>
+                <li class="nav-item myclass7"><a class="" href="/Products"><div class="dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
+                <li class="nav-item myclass7"><a class="" href="/Categories"><div class=" dropdown nav-link"><a id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories <i class="fas fa-chevron-down myclass9"></i></a><div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div></div></a></li>
                 <li class="nav-item myclass7">
                     <a class="" href="#">
                     <div class=" dropdown nav-link">
@@ -36,6 +37,8 @@
             <div class=""><button class="btn green specialoffer" type="submit">SPECIAL OFFER</button></div>
         </nav>
     </div>
+</div>
+    
 </template>
 
 <script>

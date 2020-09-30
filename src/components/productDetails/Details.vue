@@ -52,9 +52,10 @@
         <!-- Colors/Compare/Wishlist -->
         <div class="d-flex options-img">
           <img src="@/images/icons/ColorCircle.png" />
-          <span class="c-pointer" v-b-tooltip.hover title="Compare">
+          <span v-on:click="addProductToCompare({product, quantity: 1, id})" class="c-pointer" v-b-tooltip.hover title="Compare">
             <img class="mx-2" src="@/images/icons/CompareCircle.png" />
           </span>
+          
           <span class="c-pointer" v-b-tooltip.hover title="Add To Wishlist">
             <img src="@/images/icons/HeartCircle.png" />
           </span>
@@ -116,7 +117,7 @@ export default {
     ...mapGetters(["shoppingCart"]),
   }, 
   methods: {
-    ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement"]),
+    ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement", "addProductToCompare"]),
     
     itemQuantityCount() {
       let item = this.shoppingCart.find(item => item.id == this.id)

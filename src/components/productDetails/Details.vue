@@ -6,14 +6,15 @@
       <!-- Quickview Top Row -->
       <div v-if="currentRoute != 'ProductDetails'" class="quickview-row d-md-flex justify-content-between mb-4">
         <span class="d-flex align-items-center">
-            <i class="fa fa-star theme-text"></i>
-            <i class="fa fa-star theme-text"></i>
-            <i class="fa fa-star theme-text"></i>
-            <i class="fa fa-star theme-text"></i>
+            <i class="fas fa-star theme-text"></i>
+            <i class="fas fa-star theme-text"></i>
+            <i class="fas fa-star theme-text"></i>
+            <i class="fas fa-star theme-text"></i>
             <i class="far fa-star theme-text"></i>
-            <p class="mb-0 ml-2">(2 customer reviews)</p>
+            <p class="mb-0 ml-2">({{product.reviews.length}} customer reviews)</p>
         </span>
-        <img src="@/images/Bexim.png" alt="">
+        <!-- <img src="@/images/Bexim.png" alt=""> -->
+        <h5 class="text-uppercase blue-theme-text m-0">{{product.brand}}</h5>
       </div>
 
       <h3 class="theme-text mb-3">{{product.name}}</h3>
@@ -22,10 +23,10 @@
 
       <!-- Price Row -->
       <div class="d-flex align-items-center">
-        <h4 v-if="product.discount !== ''" class="m-0 theme-text mr-3 my-1">{{product.price * 0.8}} SEK</h4>
-        <h4 v-else class="m-0 theme-text mr-3 my-1">{{product.price}} SEK</h4>
+        <h4 v-if="product.discount !== ''" class="m-0 theme-text mr-3 my-1">${{product.price * 0.8}}.00</h4>
+        <h4 v-else class="m-0 theme-text mr-3 my-1">${{product.price}}.00</h4>
         <p class="m-0">
-          <del v-if="product.discount !== ''" class="text-muted mr-4">{{product.price}} SEK</del>
+          <del v-if="product.discount !== ''" class="text-muted mr-4">${{product.price}}.00</del>
         </p>
         <img class="icon mb-1 mr-1" src="@/images/icons/InStock.png" alt />
         <p v-if="product.inStock" class="m-0">In Stock</p>
@@ -69,12 +70,12 @@
       </p>
 
       <!-- Tags -->
-      <p class="tags d-block my-4">
+      <span class="tags d-flex my-4">
         Tags:
-        <span class="ml-2">Fashion</span>
-        <span class="mx-1">Shoes</span>
-        <span>Sneakers</span>
-      </p>
+        <div><span class="ml-2">Fashion</span></div>
+        <div><span class="mx-1 text-capitalize">{{product.brand}}</span></div>
+        <div><span class="text-capitalize">{{product.category}}</span></div>      
+      </span>
 
       <!-- Share -->
       <div class="details-socials d-flex">

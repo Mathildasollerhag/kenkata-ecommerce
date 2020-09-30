@@ -115,6 +115,16 @@ svg:hover .hoverbar-svg {
     left: -10px !important;
 }
 
+.bg-blue { background: #20D3C2; color: #20D3C2; border-radius: 50%; }
+.bg-purple { background: plum; color: plum; border-radius: 50%; }
+.bg-red { background: #FE4545; color: #FE4545; border-radius: 50%; }
+.bg-black { background: black; color: black; border-radius: 50%; }
+.bg-gray { background: gray; color: gray; border-radius: 50%; }
+.bg-brown { background: #68532b; color: #68532b; border-radius: 50%; }
+.bg-yellow { background: #ad943f; color:#ad943f; border-radius: 50%; }
+.bg-navy { background: #16236e; color: #16236e; border-radius: 50%; }
+.bg-white { background: #ffffff; color: #ffffff; border-radius: 50%; }
+
 </style>
 
 <style>
@@ -135,15 +145,7 @@ svg:hover .hoverbar-svg {
     border-left-color: rgb(211, 211, 211) !important;
     top: 3px;
 }
-.bg-blue { background: #20D3C2; color: #20D3C2; border-radius: 50%; }
-.bg-purple { background: plum; color: plum; border-radius: 50%; }
-.bg-red { background: #FE4545; color: #FE4545; border-radius: 50%; }
-.bg-black { background: black; color: black; border-radius: 50%; }
-.bg-gray { background: gray; color: gray; border-radius: 50%; }
-.bg-brown { background: #68532b; color: #68532b; border-radius: 50%; }
-.bg-yellow { background: #ad943f; color:#ad943f; border-radius: 50%; }
-.bg-navy { background: #16236e; color: #16236e; border-radius: 50%; }
-.bg-white { background: #ffffff; color: #ffffff; border-radius: 50%; }
+
 
 
 

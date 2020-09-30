@@ -275,7 +275,7 @@
     </div>
 </template>
 
-    <script>
+<script>
     
     export default {
        
@@ -283,7 +283,7 @@
 
     </script>
 
-    <style scoped>
+<style scoped>
     
     .arxafon{
         background-color: #585f7c;

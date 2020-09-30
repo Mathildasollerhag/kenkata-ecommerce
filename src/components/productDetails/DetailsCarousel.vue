@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #enlarge{
     z-index: 10;
     bottom: 1.8em;

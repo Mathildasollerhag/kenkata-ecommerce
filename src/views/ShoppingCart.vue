@@ -33,7 +33,7 @@
     <!-- You May Also Like -->
     <div class="container mb-custom">
       <div class="mt-5">
-        <YouMayAlsoLike />
+        <YouMayAlsoLike :gender="shoppingCart[0].product.gender"/>
       </div>
     </div>
   </div>
@@ -45,6 +45,7 @@ import Totals from '@/components/shoppingCart/Totals'
 import Toprow from '@/components/shoppingCart/Toprow'
 import CouponCode from '@/components/shoppingCart/CouponCode'
 import ProductList from '@/components/shoppingCart/ProductList'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     YouMayAlsoLike,
@@ -52,6 +53,9 @@ export default {
     Toprow,
     CouponCode,
     ProductList
+  },
+  computed: {
+    ...mapGetters(["shoppingCart"])
   }
 }
 </script>

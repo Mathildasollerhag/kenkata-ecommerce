@@ -2,7 +2,7 @@
   <div>
     <NewCustomerBanner/>
     <ShopSettingsBanner/>
-    <ProductFilters/>
+    <ProductFilters :category="category" :gender="gender"/>
     <SubscribeBanner/>
   </div>
 </template>
@@ -20,7 +20,8 @@ export default {
     NewCustomerBanner,
     ProductFilters,
     ShopSettingsBanner,
-  }
+  },
+  props: ["category", "gender"]
 }
 </script>
 

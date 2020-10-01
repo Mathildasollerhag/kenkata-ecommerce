@@ -8,7 +8,6 @@ export default {
         featuredProducts: [],
         topSellers: [],
         product: null,
-        productId: null
     },
 
     mutations: {
@@ -30,8 +29,6 @@ export default {
             // Set product
             state.product = product.data()
 
-            // Set productId
-            state.productId = product.id
         },
     },
 
@@ -92,9 +89,6 @@ export default {
         product(state) {
             return state.product
         },
-        productId(state) {
-            return state.productId
-        }
     }
 
 }

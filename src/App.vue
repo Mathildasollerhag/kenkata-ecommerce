@@ -12,7 +12,7 @@
 
   <!-- Quickview Product Modal -->
   <Quickview />
-  <Enlarge />
+
   
   
   </div>
@@ -23,7 +23,6 @@ import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
 import Quickview from '@/components/quickview/Quickview.vue'
-import Enlarge from '@/components/productDetails/Enlarge.vue'
 
 export default {
   name: "App",
@@ -32,7 +31,7 @@ export default {
   Brands,
   Footer,
   Quickview,
-  Enlarge,
+ 
   }
   
 }

@@ -12,6 +12,8 @@
 
   <!-- Quickview Product Modal -->
   <Quickview />
+
+  
   
   </div>
 </template>
@@ -28,7 +30,8 @@ export default {
   Navigation,
   Brands,
   Footer,
-  Quickview
+  Quickview,
+ 
   }
   
 }

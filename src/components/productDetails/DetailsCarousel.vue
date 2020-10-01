@@ -7,20 +7,30 @@
         <img :src="product.images[3]" alt="">
     </carousel>
 
-    <div id="enlarge" class="position-absolute c-pointer">
-        <img src="@/images/icons/Enlarge.png" alt="">
+    <div @click="click" id="enlarge" class="position-absolute c-pointer">
+        <div data-toggle="modal" data-target="#enlargeModal" id="tooltip-view" class="p-0" variant="transparent">
+            <img src="@/images/icons/Enlarge.png" alt="">
+        </div>
     </div>
+    <Enlarge :image="this.currentImage" />
   </div>
 </template>
 
 <script>
+import Enlarge from './Enlarge.vue'
 import carousel from 'vue-owl-carousel'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  props: ["product"],
-  components: { carousel },
+    data() {
+        return {
+            currentImage: ''
+        }
+    },
+  props: ["product", "id"],
+  components: { carousel, Enlarge }, 
   created() {
     this.carouselImages()
+    console.log(this.currentImage)
   },
   updated() {
     this.carouselImages()
@@ -33,12 +43,23 @@ export default {
             $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[2] + '")')
             $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[3] + '")') 
         }       
-    }
-  }
+    },
+    click() {
+        
+        this.currentImage=$('#detailsCarousel .owl-item.active')[0].children[0].currentSrc
+    },
+    ...mapActions(["getProductById"])
+  },
+//   computed: {
+//       currentImage() {
+//           return $('#detailsCarousel .owl-item.active')[0].children[0].currentSrc
+//       }
+//   }
 }
 </script>
 
-<style scoped>
+<style>
+
 #enlarge{
     z-index: 10;
     bottom: 1.8em;

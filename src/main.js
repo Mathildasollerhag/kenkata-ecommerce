@@ -4,6 +4,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import axios from "axios";
+
 // import firebase from "firebase/app";
 
 import VueTippy from 'vue-tippy';
@@ -13,6 +14,9 @@ Vue.use(VueTippy);
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+
+
+
 
 
 // const firebaseConfig = {

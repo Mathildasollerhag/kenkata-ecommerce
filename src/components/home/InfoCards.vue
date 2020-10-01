@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-center mt-5 py-5 px-5">
   <div class="row" >
 
-    <div class="col-lg-3 col-md-6 col-sm-6 pb-3">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3">
       <div class="card">
           <div class="d-flex card-body">
               <div class="my-auto">
@@ -16,7 +16,7 @@
 
   </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6 pb-3">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3">
       <div class="card ">
           <div class="d-flex card-body">
               <div class="my-auto">
@@ -30,7 +30,7 @@
   </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6 pb-3">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3">
       <div class="card">
           <div class="d-flex card-body">
               <div class="my-auto">
@@ -44,7 +44,7 @@
   </div>
     </div>
     
-    <div class="col-lg-3 col-md-6 col-sm-6 pb-3">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3">
       <div class="card">
           <div class="d-flex card-body">
               <div class="my-auto">

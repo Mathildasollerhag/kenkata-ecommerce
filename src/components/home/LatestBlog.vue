@@ -24,7 +24,7 @@
 				<div class="carousel-inner">
 					<div class="item carousel-item active">
 						<div class="img-box d-flex">
-                            <img src="@/images/Blog-Grey-Img.svg" alt="">
+                            <img class="blog-img" src="@/images/pexels-scenery.jpg" alt="">
                             <div class="blog-text-div-1 text-left">
                                 <div class="pl-4 pr-5 mr-4">
                                   <div class="date text-center">
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="img-box">
-                            <img src="@/images/Blog-Grey-Img.svg" alt="">
+                            <img class="blog-img" src="@/images/pexels-people.jpg" alt="">
                             <div class="blog-text-div-2 text-left">
                                 <div class="pl-4 pr-5">
                                   <div class="date text-center">
@@ -86,7 +86,7 @@
 					</div>
                     <div class="item carousel-item">
 						<div class="img-box d-flex">
-                            <img src="@/images/Blog-Grey-Img.svg" alt="">
+                            <img class="blog-img" src="@/images/pexels-scenery2.jpg" alt="">
                             <div class="blog-text-div-1 text-left">
                                 <div class="pl-4 pr-5 mr-4">
                                   <div class="date text-center">
@@ -115,7 +115,7 @@
                             </div>
 
                             <div class="img-box">
-                            <img src="@/images/Blog-Grey-Img.svg" alt="">
+                            <img class="blog-img" src="@/images/pexels-people2.jpg" alt="">
                             <div class="blog-text-div-2 text-left">
                                 <div class="pl-4 pr-5">
                                   <div class="date text-center">
@@ -171,6 +171,11 @@
 </script>
 
 <style scoped>
+
+.blog-img {
+    border-radius: 6px;
+    opacity: 85%;
+}
 
 #read-more-btn {
   background-color: #fff;

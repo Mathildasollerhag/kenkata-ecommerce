@@ -33,9 +33,7 @@ const routes = [
     path: '/wishlist',
     name: 'Wishlists',
     component: Wishlists,
-    meta: {
-      requiresAuth: true
-    }
+    meta: { requiresAuth: true }
   },
   {
     path: '*',
@@ -88,18 +86,13 @@ const routes = [
   {
     path: '/account',
     name: 'Myaccount',
-    component: Myaccount,
-    meta: {
-      requiresGuest: true
-    }
+    component: Myaccount
   },
   {
     path: '/myaccount',
     name: 'AccountManage',
     component: AccountManage,
-    meta: {
-      requiresAuth: true
-    }
+    meta: { requiresAuth: true }
   },
   {
     path: '/about',
@@ -151,21 +144,8 @@ router.beforeEach((to, from, next) => {
       //Proceed to route
       next();
     }
-  } else if (to.matched.some(record => record.meta.requiresGuest)) {
-    // Check if "not" logged in
-    if(firebase.auth().currentUser){
-      //Go to Account Manage
-      next({
-        path: '/myaccount',
-        query: {
-          redirect: to.fullPath
-        }
-      });
-    } else {
-      //Proceed to route
-      next();
-    }
-  } else {
+  } 
+  else {
     //Proceed to route
     next();
   }

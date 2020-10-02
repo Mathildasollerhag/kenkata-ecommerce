@@ -3,7 +3,7 @@
     <div class="bg py-1" >
       <div class="container py-4">
         <div class="d-flex  justify-content-between align-items-center py-4">
-          <h3 class="color theme-text mb-0">Welcome {{currentUser.username}}</h3>
+          <h3 class="color theme-text mb-0">Inlogged as <span class="text-capitalize">{{currentUser.username}}</span></h3>
           <div>
             <router-link to="/" class="color text-white">Home</router-link>
             <span class="text-white"> / </span>

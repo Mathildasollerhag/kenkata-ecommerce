@@ -19,8 +19,10 @@
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
-                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><router-link to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link></div>
-                    <div class=" iconsextra ml-4"><i class="far fa-heart icon-size"></i></div>
+                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
+                    <router-link to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>  
+                </div>
+                    <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
                     <div class=" iconsextra ml-4"><router-link to="/compare"><i class="fas fa-random mr-3 icon-size myclass2"></i></router-link><span class="badge badge-pill green white myclass3">{{compareCount}}</span></div>
                     <div class=" iconsextra ml-4 my-width position-relative"><router-link class="text-dark" to="/shoppingcart"><i class="fas fa-shopping-bag icon-size"></i></router-link> ${{shoppingCartTotal}}<span class="badge badge-pill green white cart2 position-absolute">{{shoppingCartItemCount}}</span></div>
                 </div>

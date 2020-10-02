@@ -27,7 +27,7 @@
                     <i class="fab fa-twitter"></i>
                     <i class="fab fa-instagram ml-2"></i>
                     <i class="fab fa-facebook ml-2"></i>
-                    <i class="fas fa-envelope ml-2"></i>
+                    <i class="fab fa-pinterest-p ml-2"></i>
                     <i class="fab fa-google-plus-g ml-2"></i>
                 </div>
             </div>

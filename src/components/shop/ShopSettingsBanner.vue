@@ -91,10 +91,11 @@
                 </div>
               </div> -->
 <CategoryFilters/>
+<priceFilter />
                          <!-- list-group .// -->
             </div> 
           </article>
-          <section class="mb-4 d-none d-lg-block">
+   <!--      <section class="mb-4 d-none d-lg-block">
 
             <p class="list-title mt-4">Filter by Price</p>
 
@@ -109,7 +110,7 @@
             </div>
 
             </section>
-            <div class="dropdown d-lg-none">
+          <div class="dropdown d-lg-none">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Filter by Color
                 </button>
@@ -145,46 +146,9 @@
                      <span class="float-right badge badge-light round">7</span>
                 </label>
                 </div>
-              </div>
+              </div>-->
 
-          <article class="card-group-item d-none d-lg-block ">
-              <p class="list-title">Filter by Color</p>
-            <div class="filter-content">
-              <div class="card-body pl-0 pr-0">
-                <label class="customcheck">Black
-                    <input type="checkbox">
-                    <span id="checkmark-black" class="checkmark"></span>
-                    <span class="float-right badge badge-light round">12</span>
-                </label>
-                <label class="customcheck">Gray
-                    <input type="checkbox">
-                    <span id="checkmark-gray" class="checkmark"></span>
-                    <span class="float-right badge badge-light round">20</span>
-                </label>
-                <label class="customcheck">Red
-                    <input type="checkbox">
-                    <span id="checkmark-red" class="checkmark"></span>
-                    <span class="float-right badge badge-light round">18</span>
-                </label>
-                <label class="customcheck">Green
-                    <input type="checkbox">
-                     <span id="checkmark-green" class="checkmark"></span>
-                     <span class="float-right badge badge-light round">25</span>
-                </label>
-                <label class="customcheck">Orange
-                    <input type="checkbox">
-                     <span id="checkmark-orange" class="checkmark"></span>
-                     <span class="float-right badge badge-light round">9</span>
-                </label>
-                <label class="customcheck">Brown
-                    <input type="checkbox">
-                     <span id="checkmark-brown" class="checkmark"></span>
-                     <span class="float-right badge badge-light round">7</span>
-                </label>
-              </div>
-              <!-- card-body.// -->
-            </div>
-          </article>
+         <colorFilter />
           <!-- card-group-item.// -->
         </div>
       
@@ -228,7 +192,7 @@
                 </div>
               </div>
         -->
-        <sizeFilter />
+ <sizeFilter />
 
         <div class="dropdown d-lg-none mt-3">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -334,21 +298,7 @@
           </article>
         </div>
 
-        <section class="mb-4 d-lg-none">
-
-            <p class="list-title mt-4">Filter by Price</p>
-
-            <div class=" align-items-center my-4">
-                <div class="form-group">
-                    <input type="range" class="form-control-range">
-                </div>
-                <div class="d-flex justify-content-between">
-                    <p class="my-auto">Price: $0 - $10,000</p>
-                    <button id="filter-btn" class="btn">Filter</button>
-                </div>
-            </div>
-
-            </section>
+       
 
         <div class="card">
           <article class="card-group-item">
@@ -423,13 +373,14 @@
                 -->
             </div>
              <div  v-show="isVShowVisible()"> 
-                 <div class="row" v-for="item in productsCatalog" :key="item.id">
+                 <div class="r" v-for="item in productsCatalog" :key="item.id">
                     <div  class="col-6">
                          <ProductCard class="productcard" :item="item" />
                     </div>
                     <div  class="col-6">
                          <ProductCard class="productcard" :item="item" />
                     </div>
+                   
                    
                 </div>
               
@@ -457,6 +408,8 @@ import ProductCard from '../products/ProductCard'
 import ProductCardsList from '@/components/shop/ProductCardsList.vue'
 import CategoryFilters from '@/components/shop/CategoryFilters.vue'
 import sizeFilter from '@/components/shop/sizeFilter.vue'
+import colorFilter from '@/components/shop/colorFilter.vue'
+import priceFilter from '@/components/shop/priceFilter.vue'
 export default {
         name: (
             'ShopSettingsBanner'
@@ -466,7 +419,9 @@ export default {
       ProductCardsList,
       ProductCard,
       CategoryFilters,
-      sizeFilter
+      sizeFilter,
+      colorFilter,
+     priceFilter
        },
     
   

@@ -1,66 +1,71 @@
 <template>
+   <section class="mb-4 ">
 
-        <div class="card">
-          <article class="card-group-item">
-              <p class="list-title list-group-item mb-2 mt-2">Filter by Size</p>
-            <div class="filter-content">
-              <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('xs')">
-                  XS
-                  <span class="float-right badge badge-light round">18</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('s')">
-                  S
-                  <span class="float-right badge badge-light round">23</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('m')">
-                  M
-                  <span class="float-right badge badge-light round">32</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('l')">
-                  L
-                  <span class="float-right badge badge-light round">12</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('xl')">
-                  XL
-                  <span class="float-right badge badge-light round">15</span>
-                </a>
-                <a href="#" class="list-group-item"  @click.prevent="getProductsBySize('xxl')">
-                  XXL
-                  <span class="float-right badge badge-light round">12</span>
-                </a>
-              </div>
-              <!-- list-group .// -->
+            <p class="list-title mt-4">Filter by Price</p>
+
+            <div class=" align-items-center my-4">
+                <div class="form-group">
+                    <input type="range" class="form-control-range" v-model="rangeDate" range="" show-stops :max="valuesSlider[1]" >
+                </div>
+                <div class="d-flex justify-content-between" v-for="item in productsCatalog" :key="item.id">
+                    <p class="my-auto">{{price}}</p>
+                    <button id="filter-btn" class="btn">Filter</button>
+                </div>
             </div>
-          </article>
-        </div>
 
+            </section>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-
 export default {
-        name: (
-            'sizeFilter'
-        ),
-   
-    computed: {
-      ...mapGetters(['productsSize']),
+  name:('priceFilter'),
+data(){
+  return {
+      start :1,
+      end:0,
      
-      },
+  }
+},
+computed: {
+      ...mapGetters(['productsCatalog']),
+         valuesSlider(){
+       var vm = this,
+           maxMin= vm.productsCatalog,
+           max = _.maxBy(maxMin, function(o) { return o.price; }),
+           min = _.minBy(maxMin, function(o) { return o.price; })
+       return [min.price, max.price];
+     },
+     filteredData(){
+       var vm = this
+       var start = vm.start;
+       var end = vm.end;
+       return _.filter(vm.productsCatalog, (function (data) {
+         if ((_.isNull(start) && _.isNull(end))) {
+           return true
+         } else {
+           var price = items.product.price;
+           return (price >= start && price <= end);
+         }
+       }))
+     }
+   },
+     
+     
       methods: {
    
-    ...mapActions(["getProductsBySize"]),
+    ...mapActions(["getProducts"]),
    
   
   },
-  
-    
-    }
+
+
+
+
+}
 </script>
 
-<style scoped>
+<style  scoped>
+
 .img-bg {
     background-color:#EEEEEE;
     border-radius: 8px;

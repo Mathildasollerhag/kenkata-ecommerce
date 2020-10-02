@@ -1,66 +1,68 @@
 <template>
-
-        <div class="card">
-          <article class="card-group-item">
-              <p class="list-title list-group-item mb-2 mt-2">Filter by Size</p>
+   <article class="card-group-item  ">
+              <p class="list-title">Filter by Color</p>
             <div class="filter-content">
-              <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('xs')">
-                  XS
-                  <span class="float-right badge badge-light round">18</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('s')">
-                  S
-                  <span class="float-right badge badge-light round">23</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('m')">
-                  M
-                  <span class="float-right badge badge-light round">32</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('l')">
-                  L
-                  <span class="float-right badge badge-light round">12</span>
-                </a>
-                <a href="#" class="list-group-item" @click.prevent="getProductsBySize('xl')">
-                  XL
-                  <span class="float-right badge badge-light round">15</span>
-                </a>
-                <a href="#" class="list-group-item"  @click.prevent="getProductsBySize('xxl')">
-                  XXL
-                  <span class="float-right badge badge-light round">12</span>
-                </a>
+              <div class="card-body pl-0 pr-0">
+                <label class="customcheck">Black
+                    <input type="checkbox" @click.prevent="getProductsByColor('black')">
+                    <span id="checkmark-black" class="checkmark"></span>
+                    <span class="float-right badge badge-light round">12</span>
+                </label>
+                <label class="customcheck">Gray
+                    <input type="checkbox" @click.prevent="getProductsByColor('gray')">
+                    <span id="checkmark-gray" class="checkmark"></span>
+                    <span class="float-right badge badge-light round">20</span>
+                </label>
+                <label class="customcheck">Red
+                    <input type="checkbox" @click.prevent="getProductsByColor('red')">
+                    <span id="checkmark-red" class="checkmark"></span>
+                    <span class="float-right badge badge-light round">18</span>
+                </label>
+                <label class="customcheck">Green
+                    <input type="checkbox" @click.prevent="getProductsByColor('green')">
+                     <span id="checkmark-green" class="checkmark"></span>
+                     <span class="float-right badge badge-light round">25</span>
+                </label>
+                <label class="customcheck">Orange
+                    <input type="checkbox" @click.prevent="getProductsByColor('orange')">
+                     <span id="checkmark-orange" class="checkmark"></span>
+                     <span class="float-right badge badge-light round">9</span>
+                </label>
+                <label class="customcheck">Brown
+                    <input type="checkbox" @click.prevent="getProductsByColor('brown')">
+                     <span id="checkmark-brown" class="checkmark"></span>
+                     <span class="float-right badge badge-light round">7</span>
+                </label>
               </div>
-              <!-- list-group .// -->
+              <!-- card-body.// -->
             </div>
           </article>
-        </div>
-
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-
+ import { mapActions, mapGetters } from 'vuex'
 export default {
+   
         name: (
-            'sizeFilter'
+            'colorFilter'
         ),
    
     computed: {
-      ...mapGetters(['productsSize']),
+      ...mapGetters(['productsColor']),
      
       },
       methods: {
    
-    ...mapActions(["getProductsBySize"]),
+    ...mapActions(["getProductsByColor"]),
    
   
   },
-  
-    
-    }
+
+}
 </script>
 
 <style scoped>
+
 .img-bg {
     background-color:#EEEEEE;
     border-radius: 8px;

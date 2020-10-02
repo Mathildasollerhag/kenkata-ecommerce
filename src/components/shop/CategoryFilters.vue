@@ -2,7 +2,7 @@
 <div class="list-group list-group-flush">
                 <a href="#" class="list-group-item"  @click.prevent="getProductsByCategory('jackets')">
                   Men's
-                  <span class="float-right badge badge-light round">{{ getLength()}}</span>
+                  <span class="float-right badge badge-light round">18</span>
                 </a>
                 <a href="#" class="list-group-item"   @click.prevent="getProductsByCategory('sportswear')">
                   Women's
@@ -37,20 +37,28 @@ import { mapActions , mapGetters} from "vuex";
 
 export default {
   name: "CategoryFilters",
+  data : function(){
+      return{
+          length:null
+      }
+
+  },
  
   methods: {
    
     ...mapActions(["getProductsByCategory"]),
-    getLength: function(){
-      let length = this.getProductsByCategory.length
-        return this.getProductsByCategory.length
-
-        console.log(this.getProductsByCategory.length)
-      }
+   
   
   },
   computed:{
-      ...mapGetters(['productsCatalog'])
+      ...mapGetters(['productsCatalog']),
+       getLength: function(){
+       this.length = this.getProductsByCategory.length
+        return this.getProductsByCategory.length
+
+        console.log(this.getProductsByCategory.length)
+        
+      }
     
   },
   created(){

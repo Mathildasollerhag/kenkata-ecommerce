@@ -27,13 +27,12 @@ export default {
                 commit('SET_PRODUCTS', items)
             })            
         },
-      // Get all catecory
+      // Get all getProductsByCategory
       getProductsByCategory({ commit },thecategory) {
         
         db.collection('products').where("category", "==",thecategory).get().then(res => {
             let items = [];                
-            res.forEach(doc => {    
-                              
+            res.forEach(doc => {                  
                 const data = {
                     id: doc.id,
                     product: doc.data(),
@@ -41,9 +40,6 @@ export default {
                 }
                 items.push(data)
             });
-            let length = res.docs.length
-            console.log(length )
-         
           
             commit('SET_PRODUCTS', items)
 
@@ -51,6 +47,49 @@ export default {
 
         })            
     },
+    // Get all getProductsBysize
+    getProductsBySize({ commit },size) {
+        
+        db.collection('products').where("sizes",  'array-contains',size).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+                console.log(items);
+            });
+          
+            commit('SET_PRODUCTS', items)
+
+          
+
+        })            
+    },
+     // Get all getProductsBycolor
+     getProductsByColor({ commit },color) {
+        
+        db.collection('products').where("colors",  'array-contains',color).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+                console.log(items);
+            });
+          
+            commit('SET_PRODUCTS', items)
+
+          
+
+        })            
+    },
+
         // Get Product by ID
         getProductById({ commit }, id) {
             db.collection('products').doc(id).get().then(res => {
@@ -78,6 +117,8 @@ export default {
         SET_PRODUCTS(state, items) {
             // Set productsCatalog
             state.productsCatalog = items
+            state.productsSize = items
+            state.productsColor = items
             
             
 

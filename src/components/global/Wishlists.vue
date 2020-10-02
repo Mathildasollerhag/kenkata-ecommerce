@@ -4,14 +4,14 @@
         <div class="container">
           <div class="row ">
             <div class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-start">
-                <h3 class="big-text green font-weight-bold pt-5 pb-5">Whislist</h3>                
+                <h3 class="big-text green font-weight-bold pt-5 pb-5">Wishlist</h3>                
             </div>
             <div class="col-12 col-lg-9 d-flex justify-content-center flex-column ">
               <div class="text-center ml-lg-auto">
                 <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
                   <div class="arxayox d-flex  flex-row justify-content-center round bg-white align-items-center">
                     
-                    <a class="mr-1 green arxayox" href="">Home </a>/<a class="ml-1 arxayox ag" href="">Whislist</a>
+                    <a class="mr-1 green arxayox" href="">Home </a>/<a class="ml-1 arxayox ag" href="">Wishlist</a>
                   </div>                 
                 </div>       
               </div>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex flex-row justify-content-center text-center">
-                        <h1 class="pr-2 font-weight-bold">YOUR PRODUCTS <span class="green">WHISLIST</span></h1>
+                        <h1 class="pr-2 font-weight-bold">YOUR PRODUCTS <span class="green">WISHLIST</span></h1>
                     </div>
                     <div class="d-flex justify-content-center">
                         <img src="../../images/line1.png" alt="">
@@ -275,7 +275,7 @@
     </div>
 </template>
 
-    <script>
+<script>
     
     export default {
        
@@ -283,7 +283,7 @@
 
     </script>
 
-    <style scoped>
+<style scoped>
     
     .arxafon{
         background-color: #585f7c;

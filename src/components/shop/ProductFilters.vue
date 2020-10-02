@@ -406,7 +406,7 @@
       <!-- col.// -->
 
     <div id="product-cards-list" class="d-flex justify-content-center mx-auto">
-        <ProductCardsList/>
+        <ProductCardsList :category="category" :gender="gender"/>
     </div>
     </div>
     <!-- row.// -->
@@ -420,7 +420,8 @@ import ProductCardsList from '@/components/shop/ProductCardsList.vue'
 export default {
   components: {
       ProductCardsList
-  }
+  },
+  props: ["category", "gender"]
 }
 
 </script>

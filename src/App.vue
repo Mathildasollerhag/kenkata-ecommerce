@@ -12,6 +12,8 @@
 
   <!-- Quickview Product Modal -->
   <Quickview />
+
+  
   
   </div>
 </template>
@@ -28,7 +30,8 @@ export default {
   Navigation,
   Brands,
   Footer,
-  Quickview
+  Quickview,
+ 
   }
   
 }
@@ -40,6 +43,7 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -74,6 +78,10 @@ html, body {
 
 .blue-theme-text {
   color: var(--blue-theme);
+}
+
+.blue-theme-text-op {
+  color: var(--blue-theme-op);
 }
 
 .gray-bg {

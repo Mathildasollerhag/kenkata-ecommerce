@@ -5,13 +5,13 @@
                 <div class="dropdown margintop">
                     <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENG <i class="fas fa-chevron-down pill"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="green dropdown-item">ENG</a>
+                        <a class="green dropdown-item">SWE</a>
                     </div>
                 </div>
                 <div class="dropdown ml-2 margintop">
                     <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD <i class="fas fa-chevron-down pill"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="green dropdown-item">USD</a>
+                        <a class="green dropdown-item">SEK</a>
                     </div>
                 </div> 
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
@@ -27,7 +27,7 @@
                     <i class="fab fa-twitter"></i>
                     <i class="fab fa-instagram ml-2"></i>
                     <i class="fab fa-facebook ml-2"></i>
-                    <i class="fas fa-envelope ml-2"></i>
+                    <i class="fab fa-pinterest-p ml-2"></i>
                     <i class="fab fa-google-plus-g ml-2"></i>
                 </div>
             </div>
@@ -40,7 +40,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .socialmedia {
     color: white; 
 }

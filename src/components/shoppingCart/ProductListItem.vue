@@ -13,9 +13,9 @@
     </div>
 
     <div class="d-flex align-items-center col-lg-5">
-        <p class="">${{item.product.price}}</p>
-        <Quantity :item="item" class="ml-4 mr-5"/>
-        <p class="theme-text font-weight-bold">${{item.product.price * item.quantity}}</p>
+        <p>${{item.product.price}}.00</p>
+        <Quantity :item="item" class="ml-4 mr-4"/>
+        <p class="d-none d-xl-block theme-text font-weight-bold">${{item.product.price * item.quantity}}.00</p>
     </div>          
   </li>
 </template>

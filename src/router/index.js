@@ -48,6 +48,18 @@ const routes = [
     component: Shop
   },
   {
+    path: '/shop/:category',
+    name: 'ShopByCategory',
+    component: Shop,
+    props: true
+  },
+  {
+    path: '/shop/:gender',
+    name: 'ShopByGender',
+    component: Shop,
+    props: true
+  },
+  {
     path: '/product/:id',
     name: 'ProductDetails',
     component: ProductDetails,

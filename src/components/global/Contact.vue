@@ -11,7 +11,7 @@
                 <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
                   <div class="arxayox d-flex  flex-row justify-content-center round bg-white align-items-center">
                     
-                    <a class="mr-1 green arxayox" href="">Home </a>/<a class="ml-1 arxayox ag" href="">Contact</a>
+                    <router-link to="/" class="mr-1 green arxayox">Home </router-link><p class="my-auto text-white px-1">/</p><a class="ml-1 arxayox ag" href="#">Contact</a>
                   </div>                 
                 </div>       
               </div>
@@ -40,8 +40,8 @@
           <span class="d-flex align-items-center">
             <i class="fas fa-envelope formclass2 green"></i>
             <span>
-              <p>vanilla@website.com</p>
-              <p>info@website.com</p>
+              <a href="#"><p>vanilla@website.com</p></a>
+              <a href="#"><p>info@website.com</p></a>
             </span>
           </span>
         </div>
@@ -51,14 +51,14 @@
             <h3 class="text-size-24 green mb-4">Get in Touch</h3>
             <p>We have world-class, flexible support via live chat, email <br> and phone. We guarantee that you’ll be able to have any <br> issue resolved within 24 hours. You can contact support <br> immediately here.</p>
             <div class="mt-4 mb-4 mb-md-0">
-              <span class="weight-bold">Follow us</span>
+              <span class="font-weight-bold">Follow us</span>
               <hr class="formclass4">
               <div class="text-theme-color mt-2">
-                <i class="green fab fa-facebook-f pr-2"></i>
-                <i class="green fab fa-twitter px-2"></i>
-                <i class="green fab fa-instagram px-2"></i>
-                <i class="fas fa-envelope px-2"></i>
-                <i class="fab green fa-google-plus-g px-2"></i>
+                <a href="#"><i class="green fab fa-facebook-f pr-2"></i></a>
+                <a href="#"><i class="green fab fa-twitter px-2"></i></a>
+                <a href="#"><i class="green fab fa-instagram px-2"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p px-2"></i></a>
+                <a href="#"><i class="fab green fa-google-plus-g px-2"></i></a>
               </div>
             </div>
           </div>
@@ -84,6 +84,19 @@ export default {
 </script>
 
 <style scoped>
+
+a {
+  color: white;
+}
+
+.fa-pinterest-p {
+  color: white;
+}
+
+.fab:hover {
+  color: white!important;
+}
+
 .arxafon{
     background-color: #585f7c;
 }
@@ -105,6 +118,7 @@ width: 100%;
   position: relative;
   background-color: #0E153D;
   color: white;
+  border-radius: 6px;
 }
 .formclass2{
   font-size: 1.3rem;

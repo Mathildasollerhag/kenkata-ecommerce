@@ -2,7 +2,8 @@
   <div class="container mt-5 pt-5">
     <div class="row">
         <div class="col-lg-6 d-none d-xl-block">
-            <div class="gray-bg video-ph">
+            <div class="video-ph">
+                <img src="@/images/pexels-onlinestore2.jpg" alt="">
             </div>
         </div>
         <div class="col-lg-6 align-self-center">
@@ -22,6 +23,13 @@ export default {
 </script>
 
 <style scoped>
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
 
 .video-ph {
     height: 640px;

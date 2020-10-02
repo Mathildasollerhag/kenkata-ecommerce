@@ -41,7 +41,7 @@ import ProductCard from '../products/ProductCard'
 export default {
     name: 'ProductsCatalog',
     components: { ProductCard },
-    props: ["category", "gender"],
+    props: ["category", "gender", "mainCategory"],
     created() {
       this.$store.dispatch("getProducts")
       // this.shopByCategory()
@@ -50,12 +50,15 @@ export default {
       ...mapGetters(['productsCatalog']),
 
       shopByCategory() {
-        if(this.category || this.gender) {
+        if(this.category || this.gender || this.mainCategory) {
           if(this.category) {
             return this.productsCatalog.filter(item => { return item.product.category == this.category })
           }
-          else {
+          else if (this.gender){
             return this.productsCatalog.filter(item => { return item.product.gender == this.gender })
+          }
+          else {
+            return this.productsCatalog.filter(item => { return item.product.mainCategory == this.mainCategory })
           }          
         }        
       }     

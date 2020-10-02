@@ -3,7 +3,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-// import axios from "axios";
+import axios from "axios";
 import firebase from "firebase/app";
 
 import VueTippy from 'vue-tippy';
@@ -26,6 +26,7 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 
 
 new Vue({

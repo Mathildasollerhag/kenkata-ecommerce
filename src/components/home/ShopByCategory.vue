@@ -13,43 +13,43 @@
           
   <div class="card item1 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Shoes</button></router-link>
+        <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}"><button @mouseover="shoes = true" @mouseleave="shoes = false" class="card-p card-text p-y-1 text-left">Shoes <br> <small v-if="shoes">{{getShoes.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item2 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Men</button></router-link>
+        <router-link :to="{name: 'ShopByGender', params: {gender: 'men'}}"><button @mouseover="men = true" @mouseleave="men = false" class="card-p card-text p-y-1 text-left">Men <br> <small v-if="men">{{getMen.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item3 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Women</button></router-link>
+        <router-link :to="{name: 'ShopByGender', params: {gender: 'women'}}"><button @mouseover="women = true" @mouseleave="women = false" class="card-p card-text p-y-1 text-left">Women <br> <small v-if="women">{{getWomen.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item4 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Kids</button></router-link>
+        <router-link :to="{name: 'ShopByCategory', params: {category: 'kids'}}"><button @mouseover="kids = true" @mouseleave="kids = false" class="card-p card-text p-y-1 text-left">Kids <br> <small v-if="kids">{{getKids.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item5 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Hats</button></router-link>
+        <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}"><button @mouseover="hats = true" @mouseleave="hats = false" class="card-p card-text p-y-1 text-left">Hats <br> <small v-if="hats">{{getHats.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item6 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Sunglasses <br> <small>18 Products</small></button></router-link>
+        <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}"><button @mouseover="sunglasses = true" @mouseleave="sunglasses = false" class="card-p card-text p-y-1 text-left">Sunglasses <br> <small v-if="sunglasses">{{getSunglasses.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item7 pb-0">
     <div class="mt-auto">
-        <router-link to="/shop"><button class="card-p card-text p-y-1 text-left">Watches</button></router-link>
+        <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}"><button @mouseover="watches = true" @mouseleave="watches = false" class="card-p card-text p-y-1 text-left">Watches <br> <small v-if="watches">{{getWatches.length}} Products</small></button></router-link>
     </div>
   </div>
 
@@ -58,11 +58,30 @@
 </template>
 
 <script>
-    export default {
-        name: (
-            'CategoryCards'
-        )
-    }
+import { mapGetters } from 'vuex';
+export default {
+    name: 'CategoryCards',
+
+    data() {
+      return {
+        shoes: false,
+        men: false,
+        women: false,
+        kids: false,
+        hats: false,
+        sunglasses: false,
+        watches: false
+      };
+    },
+
+    created() {
+      this.$store.dispatch('getProducts')
+    },
+
+    computed: {
+      ...mapGetters(['getShoes', 'getMen', 'getWomen', 'getKids', 'getHats', 'getSunglasses', 'getWatches', ])
+    },
+}
 </script>
 
 <style scoped>

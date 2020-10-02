@@ -7,8 +7,14 @@ export default {
         newArrivals: [],
         featuredProducts: [],
         topSellers: [],
+        shoes: [],
+        men: [],
+        women: [],
+        kids: [],
+        hats: [],
+        sunglasses: [],
+        watches: [],
         product: null,
-        productId: null
     },
 
     mutations: {
@@ -22,6 +28,15 @@ export default {
             // Set topSellers
             state.topSellers = items.filter(item => item.product.topSellers === true)
 
+            // Set watches
+            state.shoes = items.filter(item => item.product.category === 'shoes')
+            state.men = items.filter(item => item.product.gender === 'men')
+            state.women = items.filter(item => item.product.gender === 'women')
+            state.kids = items.filter(item => item.product.category === 'kids')
+            state.hats = items.filter(item => item.product.category === 'hats')
+            state.sunglasses = items.filter(item => item.product.category === 'sunglasses')
+            state.watches = items.filter(item => item.product.category === 'watches')
+
             // Set featured products 
             state.featuredProducts = items.filter(item => item.product.discount !== '')
         },
@@ -30,8 +45,6 @@ export default {
             // Set product
             state.product = product.data()
 
-            // Set productId
-            state.productId = product.id
         },
     },
 
@@ -89,12 +102,30 @@ export default {
         topSellers(state) {
             return state.topSellers
         },
+        getShoes(state) {
+            return state.shoes
+        },
+        getMen(state) {
+            return state.men
+        },
+        getWomen(state) {
+            return state.women
+        },
+        getKids(state) {
+            return state.kids
+        },
+        getHats(state) {
+            return state.hats
+        },
+        getSunglasses(state) {
+            return state.sunglasses
+        },
+        getWatches(state) {
+            return state.watches
+        },
         product(state) {
             return state.product
         },
-        productId(state) {
-            return state.productId
-        }
     }
 
 }

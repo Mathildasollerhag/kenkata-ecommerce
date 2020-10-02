@@ -1,7 +1,15 @@
 <template>
 <div class="product-page">
 
-  <div class="d-flex flex-wrap">
+  <!-- Shop By Category -->
+  <div v-if="shopByCategory" class="d-flex flex-wrap">
+    <div v-for="item in shopByCategory" :key="item.id">
+      <ProductCard class="productcard" :item="item"/>
+    </div>
+  </div>
+
+  <!-- Products Catalog -->
+  <div v-else class="d-flex flex-wrap">
     <div v-for="item in productsCatalog" :key="item.id">
       <ProductCard class="productcard" :item="item"/>
     </div>
@@ -33,11 +41,24 @@ import ProductCard from '../products/ProductCard'
 export default {
     name: 'ProductsCatalog',
     components: { ProductCard },
+    props: ["category", "gender"],
     created() {
       this.$store.dispatch("getProducts")
+      // this.shopByCategory()
     },
     computed: {
-      ...mapGetters(['productsCatalog'])
+      ...mapGetters(['productsCatalog']),
+
+      shopByCategory() {
+        if(this.category || this.gender) {
+          if(this.category) {
+            return this.productsCatalog.filter(item => { return item.product.category == this.category })
+          }
+          else {
+            return this.productsCatalog.filter(item => { return item.product.gender == this.gender })
+          }          
+        }        
+      }     
     }
 }
 </script>

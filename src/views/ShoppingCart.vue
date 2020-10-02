@@ -36,7 +36,7 @@
     <!-- You May Also Like -->
     <div class="container mb-custom">
       <div class="mt-5">
-        <YouMayAlsoLike />
+        <YouMayAlsoLike :gender="shoppingCart[0].product.gender"/>
       </div>
     </div>
   </div>

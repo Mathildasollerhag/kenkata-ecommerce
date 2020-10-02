@@ -4,7 +4,7 @@
       <div class="modal-content d-flex align-items-center bg-transparent">
         <!-- <Quickview /> -->
         <div id="quickView">
-            <div class="close theme-bg rounded-circle text-white c-pointer">
+            <div class="close theme-bg rounded-circle text-white c-pointer" data-dismiss="modal" aria-label="Close">
                 <i class="fas fa-times"></i>
             </div>
             <div v-if="product !== null" class="py-4 d-flex align-items-center position-relative">

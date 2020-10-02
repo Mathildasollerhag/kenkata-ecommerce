@@ -10,9 +10,11 @@
                             <div class="dropdown myclass1">
                                 <a id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p>Categories <i class="fas fa-chevron-down smaller margin"></i></p></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">Hats</a>
+                                    <a class="dropdown-item" href="#">Sunglasses</a>
+                                    <a class="dropdown-item" href="#">Shoes</a>
+                                    <a class="dropdown-item" href="#">Watches</a>
+                                    <a class="dropdown-item" href="#">Clothes</a>
                                 </div>
                             </div>
                         </a>

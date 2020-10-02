@@ -15,7 +15,8 @@
                 <button class="mb-5 btn bg-white theme-text custom-radius px-4 py-2 font-weight-bold">LEARN MORE</button>
             </div>
         <div class="col-lg-6 pl-45">
-            <div class="gray-bg h-75">
+            <div class="h-75">
+              <img src="@/images/pexels-onlinestore.jpg" alt="">
             </div>
         </div>
         </div>
@@ -30,6 +31,14 @@ export default {
 </script>
 
 <style scoped>
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
 
 .custom-radius {
   border-radius: 20px;

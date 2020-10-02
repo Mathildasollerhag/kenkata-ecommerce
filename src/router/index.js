@@ -12,9 +12,11 @@ import AboutUs from '../views/AboutUs.vue'
 import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
 import PortfolioDetails from '../views/PortfolioDetails.vue'
+import AccountManage from '../views/AccountManage.vue'
 
 import Myaccount from '../views/Myaccount.vue'
 import Compare from '../views/Compare.vue'
+import firebase from 'firebase'
 
 
 //Import .vue - file here
@@ -30,7 +32,10 @@ const routes = [
   {
     path: '/wishlist',
     name: 'Wishlists',
-    component: Wishlists
+    component: Wishlists,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '*',
@@ -80,11 +85,22 @@ const routes = [
     name: 'Compare',
     component: Compare
   },
-   {
-     path: '/account',
+  {
+    path: '/account',
     name: 'Myaccount',
-     component: Myaccount
-   },
+    component: Myaccount,
+    meta: {
+      requiresGuest: true
+    }
+  },
+  {
+    path: '/myaccount',
+    name: 'AccountManage',
+    component: AccountManage,
+    meta: {
+      requiresAuth: true
+    }
+  },
   {
     path: '/about',
     name: 'AboutUs',
@@ -115,6 +131,43 @@ const router = new VueRouter({
 
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 };
+  }
+})
+
+// Nav Guards
+router.beforeEach((to, from, next) => {
+  // Check for requiresAuth guards
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // Check if "not" logged in
+    if(!firebase.auth().currentUser){
+      //Go to login
+      next({
+        path: '/account',
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      //Proceed to route
+      next();
+    }
+  } else if (to.matched.some(record => record.meta.requiresGuest)) {
+    // Check if "not" logged in
+    if(firebase.auth().currentUser){
+      //Go to Account Manage
+      next({
+        path: '/myaccount',
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      //Proceed to route
+      next();
+    }
+  } else {
+    //Proceed to route
+    next();
   }
 })
 

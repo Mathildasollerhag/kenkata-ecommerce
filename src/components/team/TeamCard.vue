@@ -2,7 +2,7 @@
 <div class="row row-cols-1 row-cols-md-4">
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
-      <img src="@/images/Team.png" class="card-img-top" alt="..." />
+      <img src="@/images/Team.png" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
         <h6 class="card-title text-white text-uppercase">Alaa Atweh</h6>
         <p class="card-text text-white">Frontend developer</p>
@@ -18,7 +18,7 @@
   </div>
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
-      <img src="@/images/Team.png" class="card-img-top" alt="..." />
+      <img src="@/images/Team.png" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
         <h6 class="card-title text-white text-uppercase">Christoffer Olsson</h6>
         <p class="card-text text-white">Frontend developer</p>
@@ -34,7 +34,7 @@
   </div>
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
-      <img src="@/images/Team.png" class="card-img-top" alt="..." />
+      <img src="@/images/Team.png" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
         <h6 class="card-title text-white text-uppercase">Elvin Salimov</h6>
         <p class="card-text text-white">Frontend developer</p>
@@ -50,7 +50,8 @@
   </div>
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
-      <img src="@/images/Team.png" class="card-img-top" alt="..." />
+    
+      <img src="@/images/mathilda.jpg" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
         <h6 class="card-title text-white text-uppercase">Mathilda Sollerhag</h6>
         <p class="card-text text-white">Frontend developer</p>
@@ -66,7 +67,7 @@
   </div>
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
-      <img src="@/images/Team.png" class="card-img-top" alt="..." />
+      <img src="@/images/Team.png" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
         <h6 class="card-title text-white text-uppercase">Viktor Sandvik</h6>
         <p class="card-text text-white">Frontend developer</p>
@@ -137,6 +138,14 @@ export default {};
 </script>
 
 <style scoped>
+
+.card-image {
+  width: 251px;
+  height: 350px;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
 .full-border {
   border: 2px solid var(--theme);
 }

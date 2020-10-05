@@ -13,6 +13,7 @@ import Team from '../views/Team.vue'
 import Portfolio from '../views/Portfolio.vue'
 import PortfolioDetails from '../views/PortfolioDetails.vue'
 import AccountManage from '../views/AccountManage.vue'
+import Complete from '../views/Complete.vue'
 
 import Myaccount from '../views/Myaccount.vue'
 import Compare from '../views/Compare.vue'
@@ -121,6 +122,11 @@ const routes = [
     component: PortfolioDetails,
     props: true
   },
+  {
+    path: '/complete',
+    name: 'Complete',
+    component: Complete,
+  }
 ]
 
 const router = new VueRouter({

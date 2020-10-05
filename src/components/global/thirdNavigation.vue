@@ -127,7 +127,7 @@
           </ul>
         </div>
         <div>
-          <button class="btn green specialoffer" type="submit">
+          <button class="btn green specialoffer">
             <router-link class="text-white" to="/shop">SPECIAL OFFER</router-link>
           </button>
         </div>

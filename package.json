@@ -13,6 +13,7 @@
     "bootstrap-vue": "^2.17.0",
     "core-js": "^3.6.5",
     "firebase": "^7.21.0",
+    "style-loader": "^1.2.1",
     "uuidv4": "^6.2.3",
     "vue": "^2.6.12",
     "vue-browser-geolocation": "^1.8.0",

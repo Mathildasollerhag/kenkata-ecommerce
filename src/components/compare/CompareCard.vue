@@ -47,7 +47,7 @@
             <h2 class="blue-theme-text m-auto px-2">{{item.product.brand}}<i class="far fa-registered fa-xs align-top mt-2"></i></h2>
           </div>
           <div class="card-boxes d-flex">
-            <p v-for="(color, index) in item.product.colors" :key=index class="mx-auto my-auto">{{color}}</p>
+            <p v-for="(color, index) in item.product.colors" :key="index" class="mx-auto my-auto">{{color}}</p>
           </div>
         </div>
       </div>

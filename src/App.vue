@@ -43,6 +43,7 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -117,7 +118,6 @@ html, body {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid;
 }
 .btn-kenkata-dark {
     padding: 0.4em 1.5em;

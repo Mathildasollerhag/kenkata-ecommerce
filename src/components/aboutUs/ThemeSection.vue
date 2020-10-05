@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="co-lg-6">
-            <img class="img-fluid" src="@/images/About-img.png" alt="Image">
+            <img class="img-fluid" src="@/images/theme-section-img.png" alt="Image">
         </div>
     </div>
   </div>

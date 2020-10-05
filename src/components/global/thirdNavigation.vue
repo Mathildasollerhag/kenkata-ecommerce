@@ -122,13 +122,13 @@
               </a>
             </li>
             <li class="nav-item myclass7">
-              <router-link class="nav-link" to="/">Blog</router-link>
+              <router-link class="nav-link" to="/*">Blog</router-link>
             </li>
           </ul>
         </div>
-        <div class="">
+        <div>
           <button class="btn green specialoffer" type="submit">
-            SPECIAL OFFER
+            <router-link class="text-white" to="/shop">SPECIAL OFFER</router-link>
           </button>
         </div>
       </nav>

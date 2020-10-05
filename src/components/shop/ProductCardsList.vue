@@ -1,5 +1,5 @@
 <template>
-<div class="product-page">
+<div class="product-page" >
 
   <!-- Shop By Category -->
   <div v-if="shopByCategory" class="d-flex flex-wrap">
@@ -11,20 +11,23 @@
   <!-- Products Catalog -->
   <div v-else class="d-flex flex-wrap">
     <div v-for="item in productsCatalog" :key="item.id">
-      <ProductCard class="productcard" :item="item"/>
+      <ProductCard class="productcard" :item="item" />
+       
     </div>
   </div>
+   
+  
 
   <ul class="pagination justify-content-center pt-4">
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="left-arrow" class="fas fa-2x fa-chevron-left"></i></a></li>
     <div class="d-flex my-auto">
-      <li class="page-item"><a class="p-2 pl-3 mt-1" href="javascript:void(0);">8</a></li>
+      <li class="page-item"><a class="p-2 pl-3 mt-1" href="javascript:void(0);">1</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">2</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">3</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">...</a></li>
       <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">9</a></li>
       <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">10</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">...</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">24</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">25</a></li>
-      <li class="page-item"><a class="p-2 pr-3 mt-1" href="javascript:void(0);">26</a></li>
+      <li class="page-item"><a class="p-2 pr-3 mt-1" href="javascript:void(0);">11</a></li>
     </div>
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="right-arrow" class="fas fa-2x fa-chevron-right"></i></a></li>
   </ul>
@@ -46,6 +49,7 @@ export default {
       this.$store.dispatch("getProducts")
       // this.shopByCategory()
     },
+  
     computed: {
       ...mapGetters(['productsCatalog']),
 
@@ -67,6 +71,13 @@ export default {
 </script>
 
 <style scoped>
+.box{
+display: flex;
+}
+.list{
+  display: table-column;
+  color: green;
+}
 
 .card-hover-body {
     position: absolute;

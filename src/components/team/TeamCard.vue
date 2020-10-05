@@ -51,9 +51,9 @@
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
     
-      <img src="@/images/mathilda.jpg" class="card-img-top card-image" alt="..." />
+      <img src="@/images/Team.png" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
-        <h6 class="card-title text-white text-uppercase">Mathilda Sollerhag</h6>
+        <h6 class="card-title text-white text-uppercase">Viktor Sandvik</h6>
         <p class="card-text text-white">Frontend developer</p>
         <div class="blue-theme-bg text-white custom-radius">
           <i class="fab fa-facebook-f mx-2 my-3"></i>
@@ -67,9 +67,9 @@
   </div>
   <div class="col mt-5">
     <div class="card h-100 full-border" id="team-card">
-      <img src="@/images/Team.png" class="card-img-top card-image" alt="..." />
+      <img src="@/images/mathilda.jpg" class="card-img-top card-image" alt="..." />
       <div class="card-body theme-bg text-center">
-        <h6 class="card-title text-white text-uppercase">Viktor Sandvik</h6>
+        <h6 class="card-title text-white text-uppercase">Mathilda Sollerhag</h6>
         <p class="card-text text-white">Frontend developer</p>
         <div class="blue-theme-bg text-white custom-radius">
           <i class="fab fa-facebook-f mx-2 my-3"></i>

@@ -49,9 +49,8 @@ export default {
 
         },
     },
-
     actions: {
-        
+      
         // Get all products
         getProducts({ commit }) {
             firebase.firestore().collection('products').get().then(res => {
@@ -59,13 +58,128 @@ export default {
                 res.forEach(doc => {                    
                     const data = {
                         id: doc.id,
-                        product: doc.data()
+                        product: doc.data(),
+                        catalog:doc.data().category
                     }
                     items.push(data)
                 });
                 commit('SET_PRODUCTS', items)
             })            
         },
+      // Get all getProductsByCategory
+      getProductsByCategory({ commit },thecategory) {
+        
+        firebase.firestore().collection('products').where("category", "==",thecategory).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+            
+            });
+          
+            commit('SET_PRODUCTS', items)
+
+          
+
+        })            
+    },
+    // Get all getProductsByBrand
+    getProductsByBrand({ commit },thebrand) {
+        
+        firebase.firestore().collection('products').where("brand", "==",thebrand).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+            });
+           
+          
+            commit('SET_PRODUCTS', items)
+            console.log('alaa');
+
+          
+
+        })            
+    },
+         // Get all getProductsByPrice
+         getProductsByPrice({ commit}, value ) {
+            firebase.firestore().collection('products').orderByChild('price').limitToFirst(1).once('value').then(snapshot => { 
+                snapshot.forEach(function(child) {
+                   console.log(child.val());
+                  console.log(child.val().price);
+               })
+          })
+         
+        
+          //  db.collection('products').where("price", ">=",price).get().then(res => {
+           //     let items = [];                
+             //   res.forEach(doc => {                  
+              //      const data = {
+                 //       id: doc.id,
+                  //   product: doc.data(),
+                      
+                  // }
+                   //items.push(data)
+                  
+             // });
+              
+              // commit('SET_PRODUCTS', items)
+    
+              
+           
+            //})            
+     },
+    // Get all getProductsBysize
+    getProductsBySize({ commit },size) {
+        
+        firebase.firestore().collection('products').where("sizes",  'array-contains',size).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+              
+            });
+          
+            commit('SET_PRODUCTS', items)
+
+          
+
+        })            
+    },           
+   
+     // Get all getProductsBycolor
+     getProductsByColor({ commit },color) {
+        
+        firebase.firestore().collection('products').where("colors",  'array-contains',color).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+                console.log(items);
+            });
+          
+            commit('SET_PRODUCTS', items)
+
+          
+
+        })            
+    },
 
         // Get Product by ID
         getProductById({ commit }, id) {
@@ -90,10 +204,41 @@ export default {
         }
 
     },
+    mutations: {
+        SET_PRODUCTS(state, items) {
+            // Set productsCatalog
+            state.productsCatalog = items
+            state.productsSize = items
+            state.productsColor = items
+            state.productsPrice = items
+            state.productsBrand = items
+            
+            
 
+            // Set newArrivals
+            state.newArrivals = items.filter(item => item.product.newArrival === true)
+
+            // Set featured products 
+            state.featuredProducts = items.filter(item => item.product.discount !== '')
+        },
+  
+        SET_PRODUCT(state, product) {
+            state.product = product
+        },
+    },
     getters: {
+      
         productsCatalog(state) {
             return state.productsCatalog
+        },
+        productsBrand(state) {
+            return state.productsBrand
+        },
+        getProductsByCategory(state){
+            return getProductsByCategory
+        },
+        getProductsByPrice(state){
+            return getProductsByPrice
         },
         newArrivals(state) {
             return state.newArrivals

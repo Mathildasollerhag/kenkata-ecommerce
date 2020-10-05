@@ -1,6 +1,9 @@
 <template>
-<div class="product-page">
+<div class="product-page" >
 
+<<<<<<< HEAD
+  <div class="d-flex flex-wrap"  >
+=======
   <!-- Shop By Category -->
   <div v-if="shopByCategory" class="d-flex flex-wrap">
     <div v-for="item in shopByCategory" :key="item.id">
@@ -10,10 +13,14 @@
 
   <!-- Products Catalog -->
   <div v-else class="d-flex flex-wrap">
+>>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
     <div v-for="item in productsCatalog" :key="item.id">
-      <ProductCard class="productcard" :item="item"/>
+      <ProductCard class="productcard" :item="item" />
+       
     </div>
   </div>
+   
+  
 
   <ul class="pagination justify-content-center pt-4">
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="left-arrow" class="fas fa-2x fa-chevron-left"></i></a></li>
@@ -41,13 +48,27 @@ import ProductCard from '../products/ProductCard'
 export default {
     name: 'ProductsCatalog',
     components: { ProductCard },
+<<<<<<< HEAD
+ 
+=======
     props: ["category", "gender", "mainCategory"],
+>>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
     created() {
       this.$store.dispatch("getProducts")
       // this.shopByCategory()
     },
+  
     computed: {
       ...mapGetters(['productsCatalog']),
+<<<<<<< HEAD
+     
+
+      
+    
+      }
+     
+    
+=======
 
       shopByCategory() {
         if(this.category || this.gender || this.mainCategory) {
@@ -63,10 +84,18 @@ export default {
         }        
       }     
     }
+>>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
 }
 </script>
 
 <style scoped>
+.box{
+display: flex;
+}
+.list{
+  display: table-column;
+  color: green;
+}
 
 .card-hover-body {
     position: absolute;

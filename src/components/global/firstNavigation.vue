@@ -2,20 +2,20 @@
     <div class="navbar navbar-dark green firstnavbar">
         <div class="container">
             <div class="d-flex">
-<<<<<<< HEAD
+
                 <div class="dropdown margintop language" >
                    <select class="green language" id="" v-model="$i18n.locale">
                     <option class="green" value="en" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                         >ENG <i class="fas fa-chevron-down pill"></i>
                     </option><option value="se" class="green dropdown-item">SWE</option>
                     </select>
-=======
+
                 <div class="dropdown margintop">
                     <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#/">ENG</a> <i class="fas fa-chevron-down pill"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a href="#/" class="currency p-2">SWE</a>
                     </div>
->>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
+
                 </div>
                 <div class="dropdown ml-2 margintop">
                     <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#/">USD</a> <i class="fas fa-chevron-down pill"></i></a>
@@ -26,11 +26,11 @@
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
             </div>
             <div class="d-flex flex-right">
-<<<<<<< HEAD
+
                 <div class="margintop"><a href="">{{ $t('translated.newsletter') }}</a></div>
-=======
+
                 <div class="margintop"><a href="#/">Newsletter</a></div>
->>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
+
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
                 <div class="margintop ml-3"><router-link to="/contact">{{ $t('translated.contactUs') }}</router-link></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
@@ -54,12 +54,12 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
+
 .language{
     border: 1px solid transparent !important;
     color: white
 }
-=======
+
 
 .currency {
     color: #0E153D;
@@ -78,7 +78,6 @@ a:hover {
     transition: 0.2s ease-in-out;
 }
 
->>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
 .socialmedia {
     color: white; 
 }

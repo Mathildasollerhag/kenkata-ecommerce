@@ -423,33 +423,7 @@ export default {
  components: {
       ProductCardsList
   },
-<<<<<<< HEAD
-
-    created() {
-     this.$store.dispatch("getProducts")
-    },
-    method:{
-
-    },
-    computed: {
-     ...mapGetters(['productsCatalog']),
-     
-     filteredProducts: function () {
-       let categories = ['color', 'category', 'size', 'gender']
-         return this.categories.filter((product) => {
-            return product.categories.filter((category) => { 
-                return this.category; 
-             }).length > 0;
-            console.log(this.category);
-
-            }
-         )}  
-         }
-     
-    
-=======
   props: ["category", "gender", "mainCategory"]
->>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
 }
 
 

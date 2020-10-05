@@ -1,59 +1,87 @@
 <template>
-    <div>
-            <form>
-                        <h2 class="font">LOGIN</h2>
-                        <div class="form-group position-relative">
-                                  <label for="username">Username or email <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
-                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email or username with anyone else.</small>
-                        </div>
-                        <div class="form-group position-relative">
-                                  <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                                  <input type="password" class="form-control rounded" id="password">
-                        </div>
-                         <button type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block ">LOG IN</button>
-                        <div class="form-group form-check mt-4">
-                               <input type="checkbox" class="form-check-input rounded" id="exampleCheck1">
-                               <div class="d-flex justify-content-between">
-                                 <label class="form-check-label" for="exampleCheck1">Remember me </label>
-                                 <a href="" class="color"> Lost your password?</a>
+    <div class="login px-2">
 
-                               </div>
-                               
-                        </div>
-                         
-            </form>
-                <P class="">OR LOGIN WITH</P>
-                <div class="d-flex justify-content-between align-items-center">
-                      <div class="bg-face  d-flex  rounded ">
-                        <div class="text-white font1  ml-2"><i class="fab fa-facebook-square"></i></div>
-                        <div class="size1 py-1 mt-2  px-5"> <router-link class=" text-white px-4" to="/www.facebook.com">Facebook</router-link></div>
-                       
-                      </div>
-                      <div class="bg-primary py-1 d-flex  rounded ">
-                        <div class="text-white rounded  mb mt-1 px-2 bg-white ml-2"><i class="fab fa-google fa-x " ></i></div>
-                        <div class="size1 mt-1 m-google px-5"> <router-link class=" text-white px-4" to="/www.google.com">Google</router-link></div>
-                      
-                      </div>
-                     
-                </div>
+      <form v-on:submit.prevent="userLogin">
+        <h2 class="font">LOGIN</h2>
+        <div class="form-group position-relative">
+          <label for="username">Email address<span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+          <input v-model="email" type="text" class="form-control" id="username" required autocomplete="off">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email or username with anyone else.</small>
+        </div>
+        <div class="form-group position-relative">
+          <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+          <input v-model="password" type="password" class="form-control rounded" id="password" required autocomplete="off">
+        </div>
+        <button type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block mb-1">LOG IN</button>
+        <span v-if="errorMessage" class="position-absolute error-message text-muted">Wrong email or password, try again!</span>
+        <div class="form-group form-check mt-4 pt-3">
+          <input type="checkbox" class="form-check-input rounded" id="exampleCheck1">
+          <div class="d-flex justify-content-between">
+            <label class="form-check-label" for="exampleCheck1">Remember me </label>
+            <a href="" class="color"> Lost your password?</a>
+          </div>                
+        </div>                    
+      </form>
 
-    </div>
-              
-        
-    
+        <p class="">OR LOGIN WITH</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="bg-face d-flex rounded">
+            <div class="text-white font1 ml-2"><i class="fab fa-facebook-square"></i></div>
+            <div class="size1 py-1 mt-2 px-5"> <router-link class=" text-white px-4" to="/www.facebook.com">Facebook</router-link></div>    
+          </div>
+          <div class="bg-primary py-1 d-flex rounded">
+            <div class="text-white rounded  mb mt-1 px-2 bg-white ml-2"><i class="fab fa-google fa-x " ></i></div>
+            <div class="size1 mt-1 m-google px-5"> <router-link class=" text-white px-4" to="/www.google.com">Google</router-link></div>          
+          </div>              
+        </div>
+
+    </div>               
 </template>
+
+
+<script>
+import firebase from 'firebase';
+
+export default {
+  data: function() {
+    return {
+      email: '',
+      password: '',
+
+      isLoading: false,
+      errorMessage: false
+    };
+  },
+  methods: {
+    userLogin() {
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        .then((user) => {
+          this.$router.push('/myaccount')
+        })
+        .catch(() => {
+          this.errorMessage = true
+          setTimeout(() => {
+            this.errorMessage = false
+          }, 4000);
+        })
+    }
+  }
+}
+</script>
 <style scoped>
-P {
+.login {
+  border-radius: 7px;
+}
+p {
   overflow: hidden;
   text-align: center;
   margin-top: 40px;
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 
-P:before,
-P:after {
+p:before,
+p:after {
   background-color: #000;
   content: "";
   display: inline-block;
@@ -63,12 +91,12 @@ P:after {
   width: 50%;
 }
 
-P:before {
+p:before {
   right: 0.5em;
   margin-left: -50%;
 }
 
-P:after {
+p:after {
   left: 0.5em;
   margin-right: -50%;
 }
@@ -127,4 +155,11 @@ a{
     text-decoration: none;
 }
 
+input, .form-control {
+  border: none;
+}
+.error-message {
+  margin-top: 0.5em;
+  right: 1.5em;
+}
 </style>

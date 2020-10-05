@@ -7,7 +7,7 @@
         <div class="d-flex col-lg-5">
             <h6>Price</h6>
             <h6 class="mx-5">Quantity</h6>
-            <h6>Subtotal</h6>
+            <h6 class="d-none d-xl-block">Subtotal</h6>
         </div>
     </div>
     <ul class="list-group-flush pl-0">
@@ -27,7 +27,7 @@ export default {
         ...mapGetters(["shoppingCart"])
     },
     created() {
-        console.log(this.shoppingCart)
+        // console.log(this.shoppingCart)
     },
 }
 </script>

@@ -11,7 +11,7 @@
                 <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
                   <div class="arxayox d-flex  flex-row justify-content-center round bg-white align-items-center">
                     
-                    <a class="mr-1 green arxayox" href="">Home </a>/<a class="ml-1 arxayox ag" href="">Contact</a>
+                    <router-link to="/" class="mr-1 green arxayox">Home </router-link><p class="my-auto text-white px-1">/</p><a class="ml-1 arxayox ag" href="#">Contact</a>
                   </div>                 
                 </div>       
               </div>
@@ -19,7 +19,22 @@
           </div>
         </div>
         </div>
-        <img class="googleMap" src="../../images/Maps-Gray.png" alt="">
+        <!--<img class="googleMap" src="../../images/Maps-Gray.png" alt="">-->
+
+
+          
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Chhagalnaiya%20%20city%20center%2C%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
+             frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe><a href="https://www.embedgooglemap.net"></a>
+          </div>
+        </div>
+
+         
+          
+    
+        
         <div class="container">
       <form class="formclass">
         <div class="formclass1 d-flex flex-column py-4 flex-md-row justify-content-between">
@@ -40,8 +55,8 @@
           <span class="d-flex align-items-center">
             <i class="fas fa-envelope formclass2 green"></i>
             <span>
-              <p>vanilla@website.com</p>
-              <p>info@website.com</p>
+              <a href="#"><p>vanilla@website.com</p></a>
+              <a href="#"><p>info@website.com</p></a>
             </span>
           </span>
         </div>
@@ -51,14 +66,14 @@
             <h3 class="text-size-24 green mb-4">Get in Touch</h3>
             <p>We have world-class, flexible support via live chat, email <br> and phone. We guarantee that you’ll be able to have any <br> issue resolved within 24 hours. You can contact support <br> immediately here.</p>
             <div class="mt-4 mb-4 mb-md-0">
-              <span class="weight-bold">Follow us</span>
+              <span class="font-weight-bold">Follow us</span>
               <hr class="formclass4">
               <div class="text-theme-color mt-2">
-                <i class="green fab fa-facebook-f pr-2"></i>
-                <i class="green fab fa-twitter px-2"></i>
-                <i class="green fab fa-instagram px-2"></i>
-                <i class="fas fa-envelope px-2"></i>
-                <i class="fab green fa-google-plus-g px-2"></i>
+                <a href="#"><i class="green fab fa-facebook-f pr-2"></i></a>
+                <a href="#"><i class="green fab fa-twitter px-2"></i></a>
+                <a href="#"><i class="green fab fa-instagram px-2"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p px-2"></i></a>
+                <a href="#"><i class="fab green fa-google-plus-g px-2"></i></a>
               </div>
             </div>
           </div>
@@ -80,10 +95,31 @@
 <script>
 export default {
     
-}
+};
 </script>
 
 <style scoped>
+
+.mapouter {
+  position:relative;text-align:right;height:500px; width:100%;
+ }
+ 
+.gmap_canvas {
+overflow:hidden;background:none!important;height:500px; width: 100%;
+}
+
+a {
+  color: white;
+}
+
+.fa-pinterest-p {
+  color: white;
+}
+
+.fab:hover {
+  color: white!important;
+}
+
 .arxafon{
     background-color: #585f7c;
 }
@@ -105,6 +141,7 @@ width: 100%;
   position: relative;
   background-color: #0E153D;
   color: white;
+  border-radius: 6px;
 }
 .formclass2{
   font-size: 1.3rem;

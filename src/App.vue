@@ -2,14 +2,18 @@
   <div id="app">
     <Navigation/>
     
-    <router-view/>
-
+    <transition 
+      enter-active-class="animate__animated animate__fadeIn animate__faster">
+      <router-view/>
+    </transition> 
   <Brands/>
   <Footer/>
 
 
   <!-- Quickview Product Modal -->
   <Quickview />
+
+  
   
   </div>
 </template>
@@ -26,7 +30,8 @@ export default {
   Navigation,
   Brands,
   Footer,
-  Quickview
+  Quickview,
+ 
   }
   
 }
@@ -38,6 +43,7 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -74,6 +80,10 @@ html, body {
   color: var(--blue-theme);
 }
 
+.blue-theme-text-op {
+  color: var(--blue-theme-op);
+}
+
 .gray-bg {
   background-color: var(--gray-theme);
 }
@@ -108,7 +118,6 @@ html, body {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid;
 }
 .btn-kenkata-dark {
     padding: 0.4em 1.5em;

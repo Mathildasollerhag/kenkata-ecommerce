@@ -1,3 +1,4 @@
+import firebase from 'firebase';
 
 export default {
 
@@ -5,17 +6,55 @@ export default {
         productsCatalog: [],
         newArrivals: [],
         featuredProducts: [],
+        topSellers: [],
+        shoes: [],
+        men: [],
+        women: [],
+        kids: [],
+        hats: [],
+        sunglasses: [],
+        watches: [],
+        clothes: [],
         product: null,
+    },
 
+    mutations: {
+        SET_PRODUCTS(state, items) {
+            // Set productsCatalog
+            state.productsCatalog = items
 
+            // Set newArrivals
+            state.newArrivals = items.filter(item => item.product.newArrival === true)
+
+            // Set topSellers
+            state.topSellers = items.filter(item => item.product.topSellers === true)
+
+            // Set watches
+            state.shoes = items.filter(item => item.product.category === 'shoes')
+            state.men = items.filter(item => item.product.gender === 'men')
+            state.women = items.filter(item => item.product.gender === 'women')
+            state.kids = items.filter(item => item.product.category === 'kids')
+            state.hats = items.filter(item => item.product.category === 'hats')
+            state.sunglasses = items.filter(item => item.product.category === 'sunglasses')
+            state.watches = items.filter(item => item.product.category === 'watches')
+            state.clothes = items.filter(item => item.product.mainCategory === 'clothes')
+
+            // Set featured products 
+            state.featuredProducts = items.filter(item => item.product.discount !== '')
+        },
+
+        SET_PRODUCT(state, product) {
+            // Set product
+            state.product = product.data()
+
+        },
     },
     actions: {
       
         // Get all products
         getProducts({ commit }) {
-            db.collection('products').get().then(res => {
-                let items = [];   
-                let thecatalogs =             
+            firebase.firestore().collection('products').get().then(res => {
+                let items = [];                
                 res.forEach(doc => {                    
                     const data = {
                         id: doc.id,
@@ -30,7 +69,7 @@ export default {
       // Get all getProductsByCategory
       getProductsByCategory({ commit },thecategory) {
         
-        db.collection('products').where("category", "==",thecategory).get().then(res => {
+        firebase.firestore().collection('products').where("category", "==",thecategory).get().then(res => {
             let items = [];                
             res.forEach(doc => {                  
                 const data = {
@@ -51,7 +90,7 @@ export default {
     // Get all getProductsByBrand
     getProductsByBrand({ commit },thebrand) {
         
-        db.collection('products').where("brand", "==",thebrand).get().then(res => {
+        firebase.firestore().collection('products').where("brand", "==",thebrand).get().then(res => {
             let items = [];                
             res.forEach(doc => {                  
                 const data = {
@@ -72,7 +111,7 @@ export default {
     },
          // Get all getProductsByPrice
          getProductsByPrice({ commit}, value ) {
-             db.collection('products').orderByChild('price').limitToFirst(1).once('value').then(snapshot => { 
+            firebase.firestore().collection('products').orderByChild('price').limitToFirst(1).once('value').then(snapshot => { 
                 snapshot.forEach(function(child) {
                    console.log(child.val());
                   console.log(child.val().price);
@@ -101,7 +140,7 @@ export default {
     // Get all getProductsBysize
     getProductsBySize({ commit },size) {
         
-        db.collection('products').where("sizes",  'array-contains',size).get().then(res => {
+        firebase.firestore().collection('products').where("sizes",  'array-contains',size).get().then(res => {
             let items = [];                
             res.forEach(doc => {                  
                 const data = {
@@ -123,7 +162,7 @@ export default {
      // Get all getProductsBycolor
      getProductsByColor({ commit },color) {
         
-        db.collection('products').where("colors",  'array-contains',color).get().then(res => {
+        firebase.firestore().collection('products').where("colors",  'array-contains',color).get().then(res => {
             let items = [];                
             res.forEach(doc => {                  
                 const data = {
@@ -144,15 +183,15 @@ export default {
 
         // Get Product by ID
         getProductById({ commit }, id) {
-            db.collection('products').doc(id).get().then(res => {
-                commit('SET_PRODUCT', res.data())
+            firebase.firestore().collection('products').doc(id).get().then(res => {
+                commit('SET_PRODUCT', res)
             })
         },
 
         // Save Product Review
         saveProductReview({ commit }, { productId, review }) {
             console.log(review);
-            const reviews = db.collection("products").doc(productId)
+            const reviews = firebase.firestore().collection("products").doc(productId)
 
             reviews.update({
                 reviews: firebase.firestore.FieldValue.arrayUnion(review)
@@ -207,9 +246,36 @@ export default {
         featuredProducts(state) {
             return state.featuredProducts
         },
+        topSellers(state) {
+            return state.topSellers
+        },
+        getShoes(state) {
+            return state.shoes
+        },
+        getMen(state) {
+            return state.men
+        },
+        getWomen(state) {
+            return state.women
+        },
+        getKids(state) {
+            return state.kids
+        },
+        getHats(state) {
+            return state.hats
+        },
+        getSunglasses(state) {
+            return state.sunglasses
+        },
+        getWatches(state) {
+            return state.watches
+        },
+        getClothes(state) {
+            return state.clothes
+        },
         product(state) {
             return state.product
-        }
+        },
     }
 
 }

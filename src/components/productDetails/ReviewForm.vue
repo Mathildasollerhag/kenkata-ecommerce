@@ -55,7 +55,8 @@ export default {
                 date: new Date()
             },
             reviewFailed: false,
-            reviewSuccess: false
+            reviewSuccess: false,
+            
         }
     },
     methods: {
@@ -66,6 +67,7 @@ export default {
             rating = parseInt(rating)
             this.review.rating = rating
         },
+
         
         reviewSubmit() {
 
@@ -75,9 +77,16 @@ export default {
                     review: this.review
                 })
                 this.reviewSuccess = true
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1000);
             }
             else {
                 this.reviewFailed = true
+                setTimeout(() => {
+                    this.reviewFailed = false
+                }, 2000);
+                
             }
 
         }
@@ -103,7 +112,8 @@ form p, label, .form-control {
 textarea {
     resize: none;
 }
-.form-control.is-invalid, .was-validated .form-control:invalid {
+.form-control.is-invalid, .was-validated .form-control:invalid,
+.form-control.is-valid, .was-validated .form-control:valid {
     border: none;
     background-image: none;
     box-shadow: none;

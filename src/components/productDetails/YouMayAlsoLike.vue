@@ -33,7 +33,7 @@ export default {
       ...mapGetters(['productsCatalog']),
 
       youMayAlsoLike() {
-        return this.productsCatalog.filter(item => item.product.gender == this.gender)
+        return this.productsCatalog.filter(item => item.product.gender == this.gender)        
       }
     }
 }

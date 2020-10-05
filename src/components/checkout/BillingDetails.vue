@@ -6,11 +6,11 @@
       <div class="row">
         <div class="form-group col-md-6">
           <label for="firstName">First name<span class="theme-text"> *</span></label>
-          <input type="text" class="form-control" id="firstName">
+          <input @blur="checkField()" type="text" class="form-control" id="firstName" required>
         </div>
         <div class="form-group col-md-6">
           <label for="lastName">Last name<span class="theme-text"> *</span></label>
-          <input type="text" class="form-control" id="lastName">
+          <input type="text" class="form-control" id="lastName" required>
         </div>
       </div>
       <!-- Company Name -->
@@ -21,7 +21,7 @@
       <!-- Country / Region -->
       <div class="form-group">
         <label for="countryRegion">Country / Region<span class="theme-text"> *</span></label>
-        <select id="countryRegion" class="form-control">
+        <select id="countryRegion" class="form-control" required>
           <option selected>United States (US)</option>
           <option>Option 2</option>
           <option>Option 3</option>
@@ -30,18 +30,18 @@
       <!-- Street Address -->
       <div class="form-group">
         <label for="streetAddress">Street address<span class="theme-text"> *</span></label>
-        <input type="text" class="form-control mb-3" id="streetAddress" placeholder="House number and street name">
+        <input type="text" class="form-control mb-3" id="streetAddress" placeholder="House number and street name" required>
         <input type="text" class="form-control" id="apartment" placeholder="Apartment, suite, unit, etc. (optional)">
       </div>
       <!-- Town / City -->
       <div class="form-group">
         <label for="townCity">Town / City<span class="theme-text"> *</span></label>
-        <input type="text" class="form-control" id="townCity" placeholder="">
+        <input type="text" class="form-control" id="townCity" placeholder="" required>
       </div>
       <!-- State -->
       <div class="form-group">
         <label for="state">State<span class="theme-text"> *</span></label>
-        <select id="state" class="form-control">
+        <select id="state" class="form-control" required>
           <option selected>Alabama</option>
           <option>Option 2</option>
           <option>Option 3</option>
@@ -50,17 +50,17 @@
       <!-- ZIP -->
       <div class="form-group">
         <label for="zip">ZIP<span class="theme-text"> *</span></label>
-        <input type="number" class="form-control" id="zip">
+        <input type="number" class="form-control" id="zip" required>
       </div>
       <!-- Phone -->
       <div class="form-group">
         <label for="phone">Phone<span class="theme-text"> *</span></label>
-        <input type="text" class="form-control" id="phone">
+        <input type="text" class="form-control" id="phone" required>
       </div>
       <!-- Email Adress -->
       <div class="form-group">
         <label for="inputAddress">Address<span class="theme-text"> *</span></label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
       </div>
       <!-- Create an account? -->
       <div class="form-group py-4 border-bottom">
@@ -91,7 +91,40 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+     billingDetails: {
+       
+     }
+    }
+  },
+  created() {
+    console.log(this.requiredFields)
+  },
+  methods: {
+    checkField() {
+      if(this.value = '') {
+        console.log('required field')
+      }
+    }
+  },
+  computed: {
+    // checkField() {
+    //   if(this.value === '') {
+    //     return console.log("required field")
+    //   }
+    //   return this.requiredFields.forEach(field => {
+    //     return this.requiredFields.on('blur', function () {
+    //     console.log("Required field")
+    //     return console.log(field)
+    //   })
+    // });
+
+      // const requiredFields = $('input, textarea, select').filter('[required]')
+      
+      
+  }
+
 }
 </script>
 

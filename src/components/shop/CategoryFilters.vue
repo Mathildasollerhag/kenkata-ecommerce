@@ -40,10 +40,13 @@ export default {
   methods: {
     ...mapActions(["getProductsByCategory"]),
     getlength: function(){
-        return this.getProductsByCategory.length
-        console.log(this.getProductsByCategory.length)
-      }
+        
+
+    }
+   
+           
   
+    
   },
   computed:{
       ...mapGetters(['productsCatalog'])

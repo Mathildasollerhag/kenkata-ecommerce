@@ -4,19 +4,19 @@
     <div class="container-fluid container-md d-flex flex-column flex-xl-row align-items-start mb-custom">
       <!-- Product List -->
       <div class="cart-left col-xl-8">
-        <ProductList />        
+        <ProductList v-if="shoppingCart != 0"/>        
         <div class="d-flex flex-column flex-md-row justify-content-between">
           <div class="col-md-8 order-1 order-md-0 pl-0">
-            <CouponCode />
+            <CouponCode v-if="shoppingCart != 0"/>
           </div>
-          <div>
+          <div v-if="shoppingCart != 0">
             <button class="btn btn-kenkata-dark update-cart order-0 order-md-1 mb-4 mb-md-0">Update Cart</button>
           </div>
         </div>
       </div>
 
       <!-- Cart Totals -->
-      <div class="cart-right col-xl-4 mt-4 mt-xl-0">
+      <div v-if="shoppingCart != 0" class="cart-right col-xl-4 mt-4 mt-xl-0">
         <div class="cart-heading blue-theme-bg text-center py-2">
           <h4 class="theme-text text-uppercase my-1">Cart Totals</h4>
         </div>
@@ -29,11 +29,14 @@
         </div>
       </div>      
     </div>
+    <div v-if="shoppingCart == 0" class="text-center">
+      <h2>Your shoppingcart is empty</h2>
+    </div>
 
     <!-- You May Also Like -->
     <div class="container mb-custom">
       <div class="mt-5">
-        <YouMayAlsoLike />
+        <YouMayAlsoLike :gender="shoppingCart[0].product.gender"/>
       </div>
     </div>
   </div>
@@ -45,6 +48,7 @@ import Totals from '@/components/shoppingCart/Totals'
 import Toprow from '@/components/shoppingCart/Toprow'
 import CouponCode from '@/components/shoppingCart/CouponCode'
 import ProductList from '@/components/shoppingCart/ProductList'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     YouMayAlsoLike,
@@ -52,6 +56,9 @@ export default {
     Toprow,
     CouponCode,
     ProductList
+  },
+  computed: {
+    ...mapGetters(["shoppingCart"])
   }
 }
 </script>

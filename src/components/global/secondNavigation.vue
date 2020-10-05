@@ -32,7 +32,8 @@
                     </div>
                 </div>
                 <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
-                    <router-link to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>  
+                    <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
+                    <router-link v-else to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
                 </div>
                     <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
 
@@ -48,7 +49,7 @@
 import { mapGetters } from 'vuex';
 export default {
     computed: {
-        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount'])
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser'])
     },  
 }
 </script>

@@ -1,15 +1,20 @@
 <template>
    <section class="mb-4 ">
+   
 
             <p class="list-title mt-4">Filter by Price</p>
 
             <div class=" align-items-center my-4">
                 <div class="form-group">
-                    <input type="range" class="form-control-range" v-model="rangeDate" range="" show-stops :max="valuesSlider[1]" >
+                    <input type="range" min="0" max="20000"  value="1000" v-model="value" class="form-control-range"  >
+                     
+
                 </div>
-                <div class="d-flex justify-content-between" v-for="item in productsCatalog" :key="item.id">
-                    <p class="my-auto">{{price}}</p>
-                    <button id="filter-btn" class="btn">Filter</button>
+                
+   
+                <div class="d-flex justify-content-between" >
+                    <p class="my-auto"> price : ${{value}}</p>
+                    <button id="filter-btn" class="btn" @click="getProductsByPrice( {value} )">Filter</button>
                 </div>
             </div>
 
@@ -17,54 +22,58 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name:('priceFilter'),
-data(){
-  return {
-      start :1,
-      end:0,
+  data(){
+    return {
+       value:  10
+    }
+  },
+    computed: {
+      ...mapGetters(['productsPrice']),
      
-  }
-},
-computed: {
-      ...mapGetters(['productsCatalog']),
-         valuesSlider(){
-       var vm = this,
-           maxMin= vm.productsCatalog,
-           max = _.maxBy(maxMin, function(o) { return o.price; }),
-           min = _.minBy(maxMin, function(o) { return o.price; })
-       return [min.price, max.price];
-     },
-     filteredData(){
-       var vm = this
-       var start = vm.start;
-       var end = vm.end;
-       return _.filter(vm.productsCatalog, (function (data) {
-         if ((_.isNull(start) && _.isNull(end))) {
-           return true
-         } else {
-           var price = items.product.price;
-           return (price >= start && price <= end);
-         }
-       }))
-     }
-   },
-     
-     
+      },
       methods: {
    
-    ...mapActions(["getProducts"]),
+    ...mapActions(["getProductsByPrice"]),
    
   
   },
-
-
-
-
-}
+   
+  
+  // computed: {
+  //    ...mapGetters(['productsCatalog']),
+    //     valuesSlider(){
+       //  var vm = this,
+        //     maxMin= vm.productsCatalog,
+          //   max = _.maxBy(maxMin, function(o) { return o.price; }),
+          //   min = _.minBy(maxMin, function(o) { return o.price; })
+       //  return [min.price, max.price];
+      // },
+      // filteredData(){
+       //  var vm = this
+       //  var start = vm.start;
+        // var end = vm.end;
+       //  return _.filter(vm.productsCatalog, (function (Price) {
+        //   if ((_.isNull(start) && _.isNull(end))) {
+           //  return true
+         //  } else {
+         //    var price = items.product.price;
+         //    return (price >= start && price <= end);
+        //   }
+        // }))
+      // }
+    // },
+   
+ }
 </script>
 
 <style  scoped>
+.slider {
+  /* overwrite slider styles */
+  width: 200px;
+}
 
 .img-bg {
     background-color:#EEEEEE;

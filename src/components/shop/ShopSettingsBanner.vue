@@ -92,7 +92,7 @@
               </div> -->
 <CategoryFilters/>
 <priceFilter />
-                         <!-- list-group .// -->
+                         
             </div> 
           </article>
    <!--      <section class="mb-4 d-none d-lg-block">
@@ -200,8 +200,8 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a href="#" class="dropdown-item">
-                          <div class="img-div">
-                              <img src="@/images/Bexim.svg" alt="">
+                          <div class="img-div" @click.prevent="getProductsByBrand('Bexim')">
+                              <img src="@/images/Bexim.svg"  alt="">
                           </div>
                         </a>
                         <a href="#" class="dropdown-item">
@@ -427,6 +427,7 @@ export default {
   
     computed: {
       ...mapGetters(['productsCatalog']),
+      ...mapGetters(['productsBrand']),
      
       },
     
@@ -443,6 +444,7 @@ export default {
 }  
         },
          methods: {
+              ...mapActions(["getProductsByBrand"]),
             toggleVIfVisible(){
                 this.$data.local.isVIfVisible = !(this.$data.local.isVIfVisible);
                 this.$data.local.isVShowVisible = null;

@@ -39,6 +39,7 @@ export default {
                   
                 }
                 items.push(data)
+            
             });
           
             commit('SET_PRODUCTS', items)
@@ -47,6 +48,56 @@ export default {
 
         })            
     },
+    // Get all getProductsByBrand
+    getProductsByBrand({ commit },thebrand) {
+        
+        db.collection('products').where("brand", "==",thebrand).get().then(res => {
+            let items = [];                
+            res.forEach(doc => {                  
+                const data = {
+                    id: doc.id,
+                    product: doc.data(),
+                  
+                }
+                items.push(data)
+            });
+           
+          
+            commit('SET_PRODUCTS', items)
+            console.log('alaa');
+
+          
+
+        })            
+    },
+         // Get all getProductsByPrice
+         getProductsByPrice({ commit}, value ) {
+             db.collection('products').orderByChild('price').limitToFirst(1).once('value').then(snapshot => { 
+                snapshot.forEach(function(child) {
+                   console.log(child.val());
+                  console.log(child.val().price);
+               })
+          })
+         
+        
+          //  db.collection('products').where("price", ">=",price).get().then(res => {
+           //     let items = [];                
+             //   res.forEach(doc => {                  
+              //      const data = {
+                 //       id: doc.id,
+                  //   product: doc.data(),
+                      
+                  // }
+                   //items.push(data)
+                  
+             // });
+              
+              // commit('SET_PRODUCTS', items)
+    
+              
+           
+            //})            
+     },
     // Get all getProductsBysize
     getProductsBySize({ commit },size) {
         
@@ -59,7 +110,7 @@ export default {
                   
                 }
                 items.push(data)
-                console.log(items);
+              
             });
           
             commit('SET_PRODUCTS', items)
@@ -67,7 +118,8 @@ export default {
           
 
         })            
-    },
+    },           
+   
      // Get all getProductsBycolor
      getProductsByColor({ commit },color) {
         
@@ -119,6 +171,8 @@ export default {
             state.productsCatalog = items
             state.productsSize = items
             state.productsColor = items
+            state.productsPrice = items
+            state.productsBrand = items
             
             
 
@@ -138,8 +192,14 @@ export default {
         productsCatalog(state) {
             return state.productsCatalog
         },
+        productsBrand(state) {
+            return state.productsBrand
+        },
         getProductsByCategory(state){
             return getProductsByCategory
+        },
+        getProductsByPrice(state){
+            return getProductsByPrice
         },
         newArrivals(state) {
             return state.newArrivals

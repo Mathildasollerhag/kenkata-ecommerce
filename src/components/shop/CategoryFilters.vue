@@ -37,28 +37,16 @@ import { mapActions , mapGetters} from "vuex";
 
 export default {
   name: "CategoryFilters",
-  data : function(){
-      return{
-          length:null
-      }
-
-  },
- 
   methods: {
-   
     ...mapActions(["getProductsByCategory"]),
-   
+    getlength: function(){
+        return this.getProductsByCategory.length
+        console.log(this.getProductsByCategory.length)
+      }
   
   },
   computed:{
-      ...mapGetters(['productsCatalog']),
-       getLength: function(){
-       this.length = this.getProductsByCategory.length
-        return this.getProductsByCategory.length
-
-        console.log(this.getProductsByCategory.length)
-        
-      }
+      ...mapGetters(['productsCatalog'])
     
   },
   created(){

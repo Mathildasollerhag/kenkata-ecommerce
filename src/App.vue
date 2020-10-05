@@ -43,7 +43,6 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -54,6 +53,10 @@ html, body {
   --gray-theme: #CCCCCC;
   --light-gray-theme: #EEEEEE;
   --lighter-gray-theme: #F6F6F6;
+}
+
+button, input, .form-control {
+  box-shadow: none !important;
 }
 
 .theme-bg {

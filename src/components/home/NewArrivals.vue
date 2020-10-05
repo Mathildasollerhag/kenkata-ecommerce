@@ -26,9 +26,6 @@ import ProductCard from '../products/ProductCard'
 export default {
     name: 'NewArrivals',
     components: { carousel, ProductCard },
-    created() {
-      this.$store.dispatch("getProducts")
-    },
     computed: {
       ...mapGetters(['newArrivals'])
     }

@@ -28,12 +28,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-<<<<<<< HEAD
-    "vue-cli-plugin-mdb": "~2.1.0",
-    "vue-template-compiler": "^2.6.11"
-=======
     "vue-template-compiler": "^2.6.11",
     "vue2-google-maps": "^0.10.7"
->>>>>>> 399ff2d611b36366c9c8cddb919ee48314acd669
   }
 }

@@ -388,7 +388,7 @@
                 
             </div>
              <div  v-show="isshowGrid()"> 
-                    <div class="d-flex justify-content-center mx-auto"> <ProductCardsList/></div>
+                    <div class="d-flex justify-content-center mx-auto"> <ProductCardsList /></div>
           
              </div>
            
@@ -424,7 +424,6 @@ export default {
      priceFilter
        },
     
-  
     computed: {
       ...mapGetters(['productsCatalog']),
       ...mapGetters(['productsBrand']),
@@ -477,7 +476,6 @@ export default {
           created() {
       this.$store.dispatch("getProducts")
       this.$data.local.isshowGrid = !(this.$data.local.isshowGrid);
-     
     },
 
     

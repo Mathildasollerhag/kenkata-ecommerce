@@ -12,44 +12,44 @@
         <div class="grid-container">
           
   <div class="card item1 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}"><button @mouseover="shoes = true" @mouseleave="shoes = false" class="card-p card-text p-y-1 text-left">Shoes <br> <small v-if="shoes">{{getShoes.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByCategory('shoes')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="shoes = true" @mouseleave="shoes = false" class="card-p card-text p-y-1 text-left">Shoes <br> <small v-if="shoes">{{getShoes.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item2 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByGender', params: {gender: 'men'}}"><button @mouseover="men = true" @mouseleave="men = false" class="card-p card-text p-y-1 text-left">Men <br> <small v-if="men">{{getMen.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByGender('men')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="men = true" @mouseleave="men = false" class="card-p card-text p-y-1 text-left">Men <br> <small v-if="men">{{getMen.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item3 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByGender', params: {gender: 'women'}}"><button @mouseover="women = true" @mouseleave="women = false" class="card-p card-text p-y-1 text-left">Women <br> <small v-if="women">{{getWomen.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByGender('women')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="women = true" @mouseleave="women = false" class="card-p card-text p-y-1 text-left">Women <br> <small v-if="women">{{getWomen.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item4 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByCategory', params: {category: 'kids'}}"><button @mouseover="kids = true" @mouseleave="kids = false" class="card-p card-text p-y-1 text-left">Kids <br> <small v-if="kids">{{getKids.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByCategory('kids')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="kids = true" @mouseleave="kids = false" class="card-p card-text p-y-1 text-left">Kids <br> <small v-if="kids">{{getKids.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item5 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}"><button @mouseover="hats = true" @mouseleave="hats = false" class="card-p card-text p-y-1 text-left">Hats <br> <small v-if="hats">{{getHats.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByCategory('hats')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="hats = true" @mouseleave="hats = false" class="card-p card-text p-y-1 text-left">Hats <br> <small v-if="hats">{{getHats.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item6 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}"><button @mouseover="sunglasses = true" @mouseleave="sunglasses = false" class="card-p card-text p-y-1 text-left">Sunglasses <br> <small v-if="sunglasses">{{getSunglasses.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByCategory('sunglasses')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="sunglasses = true" @mouseleave="sunglasses = false" class="card-p card-text p-y-1 text-left">Sunglasses <br> <small v-if="sunglasses">{{getSunglasses.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item7 pb-0">
-    <div class="mt-auto">
-        <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}"><button @mouseover="watches = true" @mouseleave="watches = false" class="card-p card-text p-y-1 text-left">Watches <br> <small v-if="watches">{{getWatches.length}} Products</small></button></router-link>
+    <div @click.prevent="getProductsByCategory('watches')" class="mt-auto">
+        <router-link to="/shop"><button @mouseover="watches = true" @mouseleave="watches = false" class="card-p card-text p-y-1 text-left">Watches <br> <small v-if="watches">{{getWatches.length}} Products</small></button></router-link>
     </div>
   </div>
 
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 export default {
     name: 'CategoryCards',
 
@@ -77,7 +77,9 @@ export default {
     created() {
       this.$store.dispatch('getProducts')
     },
-
+    methods: {
+      ...mapActions(["getProductsByGender", "getProductsByCategory"])
+    },
     computed: {
       ...mapGetters(['getShoes', 'getMen', 'getWomen', 'getKids', 'getHats', 'getSunglasses', 'getWatches', ])
     },

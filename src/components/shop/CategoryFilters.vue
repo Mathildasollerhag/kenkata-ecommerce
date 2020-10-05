@@ -1,10 +1,10 @@
 <template>
 <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item"  @click.prevent="getProductsByCategory('jackets')">
+                <a href="#" class="list-group-item"  @click.prevent="getProductsByGender('men')">
                   Men's
                   <span class="float-right badge badge-light round">18</span>
                 </a>
-                <a href="#" class="list-group-item"   @click.prevent="getProductsByCategory('sportswear')">
+                <a href="#" class="list-group-item"   @click.prevent="getProductsByGender('women')">
                   Women's
                   <span class="float-right badge badge-light round">23</span>
                 </a>
@@ -38,22 +38,14 @@ import { mapActions , mapGetters} from "vuex";
 export default {
   name: "CategoryFilters",
   methods: {
-    ...mapActions(["getProductsByCategory"]),
-    getlength: function(){
-        
-
-    }
-   
-           
-  
-    
+    ...mapActions(["getProductsByCategory", "getProductsByGender"])    
   },
   computed:{
       ...mapGetters(['productsCatalog'])
     
   },
   created(){
-      console.log(this.productsCatalog)
+      // console.log(this.productsCatalog)
   }
 
 };

@@ -415,46 +415,18 @@
 
 <script>
 import ProductCardsList from '@/components/shop/ProductCardsList.vue'
-import { mapGetters } from 'vuex'
 
 
 export default {
-  props: ["category"],
  components: {
       ProductCardsList
   },
   props: ["category", "gender", "mainCategory"]
 }
 
-
-  </script>
-    
+</script>
      
-    
-
-
-     
-    
-
-    
-     
-
-    
-
       
-          //  handleClick () {
-              
-            //  if(item.products.category === this.category){
-              //  return item
-              //  console.log(item)
-              //}
-           // }
-      
-       
-      
-
-
-
 
 <style scoped>
 

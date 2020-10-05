@@ -158,7 +158,7 @@ a {
 .item2 {
   grid-area: 1 / 1 / span 1 / span 1;
   background-image: url("../../images/pexels-men.jpg");
-  background-size: contain;
+  background-size: cover;
   height: 214px;
   width: 214px;
 }

@@ -406,7 +406,7 @@
       <!-- col.// -->
 
     <div id="product-cards-list" class="d-flex justify-content-center mx-auto">
-        <ProductCardsList :category="category" :gender="gender"/>
+        <ProductCardsList :category="category" :gender="gender" :mainCategory="mainCategory"/>
     </div>
     </div>
     <!-- row.// -->
@@ -421,7 +421,7 @@ export default {
   components: {
       ProductCardsList
   },
-  props: ["category", "gender"]
+  props: ["category", "gender", "mainCategory"]
 }
 
 </script>

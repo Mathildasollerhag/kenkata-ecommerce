@@ -45,6 +45,10 @@ export default {
 
 <style scoped>
 
+.container {
+    width: 85%;
+}
+
 .custom-radius {
   border-radius: 20px;
 }

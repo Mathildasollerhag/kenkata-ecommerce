@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler my-2"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
@@ -15,7 +15,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <button id="mybutton2" class="btn nav-item dropdown green">
+            <button id="mybutton2" class="btn nav-item dropdown green text-left">
               <a
                 class="nav-link myclass10"
                 href="#"
@@ -37,13 +37,13 @@
                 <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
               </div>
             </button>
-            <li class="nav-item active myclass7">
-              <router-link class="nav-link" to="/">Home</router-link>
+            <li class="nav-item myclass7">
+              <router-link active-class="active" exact class="nav-link" to="/">Home</router-link>
             </li>
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i>
-              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+              <div  class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
                 <router-link to="/shop" class="dropdown-item">All</router-link>
                 <router-link :to="{name: 'ShopByGender', params: {gender: 'men'}}" class="dropdown-item">Men's</router-link>
                 <router-link :to="{name: 'ShopByGender', params: {gender: 'women'}}" class="dropdown-item">Women's</router-link>
@@ -127,7 +127,7 @@
           </ul>
         </div>
         <div class="">
-          <button class="btn green specialoffer" type="submit">
+          <button class="btn green specialoffer d-lg-none d-xl-block" type="submit">
             SPECIAL OFFER
           </button>
         </div>
@@ -141,6 +141,19 @@
 </script>
 
 <style scoped>
+
+.active {
+  position: relative;
+}
+.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  height: 4px;
+  width: 85%;
+  background-color: #20d3c2;
+}
 
 .green {
   background-color: #20d3c2;
@@ -166,7 +179,7 @@ i {
 }
 .nav-link {
   padding-bottom: 5px;
-  color: #313131 !important;
+  color: #0E153D !important;
   font-weight: 400;
 }
 .nav-link:hover {
@@ -203,27 +216,18 @@ i {
 .nav-item:hover {
   text-decoration: none;
 }
-.active {
-  position: relative;
-}
-.active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0px;
-  height: 4px;
-  width: 45px;
-  background-color: #20d3c2;
-}
+
 @media (min-width: 992px) {
   .myclass7 {
     margin-left: 1rem;
   }
-  .active::after {
-    left: 0px;
-    height: 4px;
-    width: 85%;
-  }
+}
+
+@media (max-width: 992px) {
+  .specialoffer {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
 }
 </style>

@@ -2,8 +2,8 @@
   <div v-if="newArrivals.length > 0" id="newArrivals" class="position-relative container my-5">
     <div class="text-center">
       <div class="d-flex justify-content-center text-uppercase">
-        <h1 id="new" class="font-weight-bold">New</h1>
-        <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Arrivals</h1>
+        <h1 class="font-weight-bold">New</h1>
+        <h1 class="pl-2 font-weight-bold theme-text">Arrivals</h1>
       </div>
       <img src="@/images/ZigZag.svg" alt="">
       <p class="pt-3 mb-4">Check out our latest products from top fashion designers</p>

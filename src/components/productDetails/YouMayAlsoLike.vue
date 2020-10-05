@@ -1,7 +1,7 @@
 <template>
   <div v-if="youMayAlsoLike.length > 0" id="mayAlsoLike" class="position-relative container my-5">
     <div class="text-center mb-4">
-      <div class="d-flex justify-content-center text-uppercase">
+      <div class="d-flex flex-wrap justify-content-center text-uppercase">
         <h1 class="font-weight-bold">You may</h1>
         <h1 class="pl-2 font-weight-bold theme-text">Also like</h1>
       </div>

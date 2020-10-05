@@ -72,4 +72,10 @@
     margin-top: 20px;
   }
 }
+
+@media (max-width: 992px) {
+  #myCarousel {
+      margin-bottom: 50px;
+  }
+}
 </style>

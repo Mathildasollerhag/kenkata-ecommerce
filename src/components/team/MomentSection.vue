@@ -7,9 +7,9 @@
         <h2 class="text-white font-weight-bold mb-4">from our company</h2>
         <p class="text-white pb-4">It has survived not only five centuries, but also the leap into electronic <br> typesetting, remaining essentially unchanged.</p>
     </div>
-    <div class="d-flex justify-content-between mb-10">
-        <img class="img-fluid team-image" src="@/images/team1.jpg" alt="Image">
-        <img class="img-fluid team-image" src="@/images/team3.jpg" alt="Image">
+    <div class="d-flex img-div justify-content-between mb-10">
+        <img class="img-fluid pr-3 team-image" src="@/images/team1.jpg" alt="Image">
+        <img class="img-fluid pr-3 team-image" src="@/images/team3.jpg" alt="Image">
         <img class="img-fluid team-image" src="@/images/team2.jpg" alt="Image">
     </div>
     
@@ -24,9 +24,12 @@ export default {
 
 <style scoped>
 
+.img-div {
+    width: 100%;
+}
+
 .team-image {
-    width: 630px;
-    height: 600px;
+    width: 100%;
     object-fit: cover;
 }
 

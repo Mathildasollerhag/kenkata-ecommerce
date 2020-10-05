@@ -54,6 +54,12 @@ const routes = [
     props: true
   },
   {
+    path: '/shop/:mainCategory',
+    name: 'ShopByMainCategory',
+    component: Shop,
+    props: true
+  },
+  {
     path: '/shop/:gender',
     name: 'ShopByGender',
     component: Shop,

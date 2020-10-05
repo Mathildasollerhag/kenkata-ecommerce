@@ -24,58 +24,46 @@
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                ><i class="fas fa-bars myclass10 mr-1"></i>Browse Categories
+                ><i class="fas fa-bars myclass10 px-2"></i>Browse Categories
                 <i class="fas fa-chevron-down myclass8 myclass10"></i
               ></a>
               <div class="dropdown-menu pl-2" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Hats</a
-                ><a class="dropdown-item" href="#">Sunglasses</a
-                ><a class="dropdown-item" href="#">Shoes</a
-                ><a class="dropdown-item" href="#">Watches</a
-                ><a class="dropdown-item" href="#">Clothes</a>
+                <router-link to="/shop" class="dropdown-item">All</router-link>
+                <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'clothes'}}" class="dropdown-item">Clothes</router-link>
+                <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'accessories'}}" class="dropdown-item">Accessories</router-link>
+                <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}" class="dropdown-item" href="#">Hats</router-link>
+                <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}" class="dropdown-item" href="#">Sunglasses</router-link>
+                <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}" class="dropdown-item" href="#">Shoes</router-link>
+                <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
               </div>
             </button>
             <li class="nav-item active myclass7">
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
+
             <li class="nav-item dropdown myclass7">
-              <router-link class="nav-link"
-                to="/shop"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i></router-link>
-              <div
-                class="dropdown-menu pl-2"
-                aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Men's</a>
-                <a class="dropdown-item" href="#">Women's</a>
-                <a class="dropdown-item" href="#">Kids</a>
+              <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i>
+              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+                <router-link to="/shop" class="dropdown-item">All</router-link>
+                <router-link :to="{name: 'ShopByGender', params: {gender: 'men'}}" class="dropdown-item">Men's</router-link>
+                <router-link :to="{name: 'ShopByGender', params: {gender: 'women'}}" class="dropdown-item">Women's</router-link>
+                <router-link :to="{name: 'ShopByCategory', params: {category: 'kids'}}" class="dropdown-item">Kid's</router-link>
+              </div>
               </div>
             </li>
-            <li class="nav-item myclass7">
-              <a class="" href="/Products"
-                ><div class="dropdown nav-link">
-                  <a
-                    id="categoriesDropdown"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Products <i class="fas fa-chevron-down myclass9"></i
-                  ></a>
-                  <div
-                    class="dropdown-menu pl-2"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">Clothes</a
-                    ><a class="dropdown-item" href="#">Accessories</a>
+
+            <li class="nav-item dropdown myclass7">
+              <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class="fas fa-chevron-down pl-2"></i>
+              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+                    <router-link to="/shop" class="dropdown-item">All</router-link>
+                    <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'clothes'}}" class="dropdown-item">Clothes</router-link>
+                    <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'accessories'}}" class="dropdown-item">Accessories</router-link>
                   </div>
-                </div></a
-              >
+              </div>
             </li>
+
             <li class="nav-item myclass7">
-              <a class="" href="/Categories"
+              <a class="" href="#/"
                 ><div class="dropdown nav-link">
                   <a
                     id="categoriesDropdown"
@@ -87,12 +75,11 @@
                   <div
                     class="dropdown-menu pl-2"
                     aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">Hats</a
-                    ><a class="dropdown-item" href="#">Sunglasses</a
-                    ><a class="dropdown-item" href="#">Shoes</a>
-                    <a class="dropdown-item" href="#">Watches</a>
-                    <a class="dropdown-item" href="#">Clothes</a>
+                  > <router-link to="/shop" class="dropdown-item">All</router-link>
+                    <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}" class="dropdown-item" href="#">Hats</router-link>
+                    <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}" class="dropdown-item" href="#">Sunglasses</router-link>
+                    <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}" class="dropdown-item" href="#">Shoes</router-link>
+                    <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
                   </div>
                 </div></a
               >
@@ -150,9 +137,11 @@
 </template>
 
 <script>
+
 </script>
 
 <style scoped>
+
 .green {
   background-color: #20d3c2;
 }
@@ -165,8 +154,9 @@
   padding-right: 18px;
 }
 .specialoffer:hover {
-  color: #20d3c2 !important;
-  background-color: white;
+  color: white !important;
+  background-color: #0E153D;
+  transition: .2s ease-in-out;
 }
 a {
   text-decoration: none !important;
@@ -177,7 +167,7 @@ i {
 .nav-link {
   padding-bottom: 5px;
   color: #313131 !important;
-  font-weight: 500;
+  font-weight: 400;
 }
 .nav-link:hover {
   color: #20d3c2 !important;

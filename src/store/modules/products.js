@@ -14,6 +14,7 @@ export default {
         hats: [],
         sunglasses: [],
         watches: [],
+        clothes: [],
         product: null,
     },
 
@@ -36,6 +37,7 @@ export default {
             state.hats = items.filter(item => item.product.category === 'hats')
             state.sunglasses = items.filter(item => item.product.category === 'sunglasses')
             state.watches = items.filter(item => item.product.category === 'watches')
+            state.clothes = items.filter(item => item.product.mainCategory === 'clothes')
 
             // Set featured products 
             state.featuredProducts = items.filter(item => item.product.discount !== '')
@@ -122,6 +124,9 @@ export default {
         },
         getWatches(state) {
             return state.watches
+        },
+        getClothes(state) {
+            return state.clothes
         },
         product(state) {
             return state.product

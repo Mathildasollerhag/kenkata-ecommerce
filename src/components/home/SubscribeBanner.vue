@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="my-auto col-12 col-sm-12 col-md-6 col-lg-6 d-none d-sm-block">
-                <img src="@/images/Subscribe-Img.svg" alt="">
+                <img src="@/images/pexels-subscribe-img.jpg" alt="">
             </div>
 		</div>
 	</div>

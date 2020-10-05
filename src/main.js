@@ -3,7 +3,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-// import axios from "axios";
+import axios from "axios";
 import firebase from "firebase/app";
 
 import VueTippy from 'vue-tippy';
@@ -38,10 +38,5 @@ firebase.auth().onAuthStateChanged(user => {
   }
 })
 
-// new Vue({
-//   router,
-//   store,
-//   render: h => h(App)
-// }).$mount('#app')
 
 

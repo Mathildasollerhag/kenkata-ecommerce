@@ -60,13 +60,13 @@
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade" id="desc" role="tabpanel" aria-labelledby="desc-tab">desc</div>
+          <div class="tab-pane fade mt-2" id="desc" role="tabpanel" aria-labelledby="desc-tab">{{product.description}}</div>
           <div
-            class="tab-pane fade"
+            class="tab-pane fade mt-2"
             id="additional"
             role="tabpanel"
             aria-labelledby="additional-tab"
-          >additional</div>
+          >{{product.shortDescription}}</div>
           <div
             class="tab-pane fade show active"
             id="reviews"
@@ -76,11 +76,11 @@
             <ProductReviews :product="product" :id="id" />
           </div>
           <div
-            class="tab-pane fade"
+            class="tab-pane fade mt-2"
             id="aboutbrand"
             role="tabpanel"
             aria-labelledby="aboutbrand-tab"
-          >about brand</div>
+          >{{product.brand}} focus on high quality products. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, laboriosam.</div>
         </div>
       </div>
 

@@ -10,7 +10,7 @@
         <div>
           <img class="pb-4" src="@/images/Logo-White.svg" alt="">
           <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim quam, ullamcorper vel tellus vitae, tempus fringilla lectus. Donec maximus justo eu nisl convallis iaculis. Aenean laoreet.</p>
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim quam, ullamcorper vel tellus vitae, tempus fringilla lectus. Donec maximus justo eu nisl convallis iaculis. Aenean laoreet.</p>
             <div>
             <div class="text-white">
               <div id="follow-centered" class="d-flex pt-3">
@@ -159,7 +159,7 @@ a i:hover {
 }
 a:hover {
   color: #24afa1;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a p:hover {
   color: #24afa1!important;
@@ -170,10 +170,8 @@ a p:hover {
 }
 
 .terms {
-    color: #20D3C2;
-    text-decoration: underline;
+    color: white;
 }
-
 
 .images-gallery ul{
       padding-left: 0;

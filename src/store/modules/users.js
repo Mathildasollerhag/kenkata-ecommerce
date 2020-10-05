@@ -14,6 +14,7 @@ export default {
          state.isLoggedIn = true
          state.currentUser = user.data()
          state.currentUserId = user.id
+         sessionStorage.setItem('wishlist', JSON.stringify(user.data().wishlist))
       }
    },
 
@@ -45,6 +46,9 @@ export default {
       },
       currentUser(state) {
          return state.currentUser
+      },
+      currentUserWishlist(state) {
+         return state.currentUser.wishlist
       },
       currentUserId(state) {
          return state.currentUserId

@@ -1,27 +1,31 @@
 <template>
-    <div class="">
-       <form>
-      <h2 class="font">REGISTER</h2>
-      <p class="text-muted mt-2">Register for this site allos you to access your order status and history.<br>just fill in the fields below , and we will get a new account.set up foe you in no <br>time.we will only ask you for information necessary to make the purchase<br> process faster and easeri </p>
-      <div class="form-group position-relative">
-                <label for="username">Username or email <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                <input v-model="username" type="text" class="form-control" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
-      </div>
-      <div class="form-group position-relative">
-                <label for="Email address"> Email address <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                <input  v-model="email" type="email" class="form-control"  aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your emailwith anyone else.</small>
-      </div>
-      <div class="form-group position-relative">
-                <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
-                <input v-model="password"  type="password" class="form-control rounded" >
-      </div>
-      <p class="m-pragraf"> your personal data will be used to support your experience <br>throught this website,to manage access to your account,and for <br> purposes described in our <span class="color">privacy policy</span> </p>
-        <button v-on:click="register" type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block ">REGISTER</button>
+    <div>
+      <form v-on:submit.prevent="userRegister" class="pb-3">
 
-        </form> 
+        <h2 class="font">REGISTER</h2>
+        <p class="text-muted mt-2">Register for this site allos you to access your order status and history.<br>just fill in the fields below , and we will get a new account.set up foe you in no <br>time.we will only ask you for information necessary to make the purchase<br> process faster and easeri </p>
+        <div class="form-group position-relative">
+          <label for="username">Username <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+          <input v-model="username" type="text" class="form-control" aria-describedby="emailHelp" required autocomplete="off">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+        </div>
+        <div class="form-group position-relative">
+          <label for="Email address"> Email address <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+          <input  v-model="email" type="email" class="form-control"  aria-describedby="emailHelp" required autocomplete="off">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your emailwith anyone else.</small>
+        </div>
+        <div class="form-group position-relative">
+          <label for="password">Password <span class=" star position-absolute color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
+          <input v-model="password"  type="password" class="form-control rounded" required autocomplete="off">
+        </div>
+        <p class="m-pragraf"> your personal data will be used to support your experience <br>throught this website,to manage access to your account,and for <br> purposes described in our <span class="color">privacy policy</span> </p>
+        <button type="submit" class="btn rounded-pill lightgreen text-white btn-lg btn-block d-flex justify-content-center align-items-center">REGISTER <LoadingSpinner v-if="isLoading"/></button>
 
+        <div class="d-flex justify-content-center mt-3">
+          <span v-show="errorMessage" class="text-muted">{{errorMessage}}</span>
+          <span v-show="accountCreated" class="text-muted">Account created, you're now being redirected...</span>
+        </div>
+      </form> 
     </div>
               
    
@@ -29,31 +33,49 @@
 
 <script>
 import firebase from 'firebase';
-
+import LoadingSpinner from './LoadingSpinner'
 export default {
   name: 'register',//där borde vara Myaccount, tror så, kolla igen här
+  components: {
+    LoadingSpinner
+  },
   data: function() {
     return {
       username: '',
       email: '',
-      password: ''
+      password: '',
+
+      isLoading: false,
+      errorMessage: '',
+      accountCreated: false
     };
   },
   methods: {
-    register: function(e) {
-      firebase
-        .auth().createUserWithEmailAndPassword(this.email, this.password)
-        .then(user => {
-          console.log(user)
-          alert(`Account created for ${user.email}`);
-          this.$router.push('/shop');
-        },
-        err => {
-          alert(err.message);
-        }
-      );
-
-      e.preventDefault();
+    userRegister() {
+      this.isLoading = true
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        .then(newUser => {
+          console.log(newUser)
+          firebase.firestore().collection('users').doc(newUser.user.uid).set({
+            username: this.username,
+            email: newUser.user.email,
+            wishlist: []
+          }).then(() => {
+            this.errorMessage = false
+            this.accountCreated = true
+            setTimeout(() => {
+              firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+                .then((user) => {
+                    if (user) {
+                      this.$router.push('/myaccount')
+                    }
+                })
+            }, 2000);
+          })         
+        }).catch((err) => {
+          this.isLoading = false
+          this.errorMessage = err.message
+        })
     }
   }
 }
@@ -128,5 +150,7 @@ margin-bottom: 10px;
   height:522px;
 }
 
-
+input, .form-control {
+  border: none;
+}
 </style>

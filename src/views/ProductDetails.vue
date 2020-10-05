@@ -56,7 +56,7 @@
               role="tab"
               aria-controls="aboutbrand"
               aria-selected="false"
-            >About Brand</a>
+            >About {{product.brand}}</a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">

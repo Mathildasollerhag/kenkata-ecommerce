@@ -2,24 +2,25 @@
     <div class="navbar navbar-dark green firstnavbar">
         <div class="container">
             <div class="d-flex">
-                <div class="dropdown margintop">
-                    <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENG <i class="fas fa-chevron-down pill"></i></a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="green dropdown-item">ENG</a>
-                    </div>
+                <div class="dropdown margintop language" >
+                   <select class="green language" id="" v-model="$i18n.locale">
+                    <option class="green" value="en" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                        >ENG <i class="fas fa-chevron-down pill"></i>
+                    </option><option value="se" class="green dropdown-item">SWE</option>
+                    </select>
                 </div>
                 <div class="dropdown ml-2 margintop">
                     <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD <i class="fas fa-chevron-down pill"></i></a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="green dropdown-item">USD</a>
+                        <a class="green dropdown-item">SEK</a>
                     </div>
                 </div> 
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
             </div>
             <div class="d-flex flex-right">
-                <div class="margintop"><a href="">Newsletter</a></div>
+                <div class="margintop"><a href="">{{ $t('translated.newsletter') }}</a></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
-                <div class="margintop ml-3"><router-link to="/contact">Contact us</router-link></div>
+                <div class="margintop ml-3"><router-link to="/contact">{{ $t('translated.contactUs') }}</router-link></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
                 <div class="margintop ml-3"><a href="">FAQs</a></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
@@ -40,7 +41,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.language{
+    border: 1px solid transparent !important;
+    color: white
+}
 .socialmedia {
     color: white; 
 }

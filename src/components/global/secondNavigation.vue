@@ -8,7 +8,7 @@
                         <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0"><input id="myclass5" type="text" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2"></div>
                         <a class="form-control myclass6 col-5 col-md-5 col-xl-5" href="#">
                             <div class="dropdown myclass1">
-                                <a id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p>Categories <i class="fas fa-chevron-down smaller margin"></i></p></a>
+                                <a id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p>{{ $t('translated.categories') }} <i class="fas fa-chevron-down smaller margin"></i></p></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
@@ -19,9 +19,9 @@
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
-                <div class=" col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><router-link to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link></div>
+                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><router-link to="/account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link></div>
                     <div class=" iconsextra ml-4"><i class="far fa-heart icon-size"></i></div>
-                    <div class=" iconsextra ml-4"><router-link to="/compare"><i class="fas fa-random mr-3 icon-size myclass2"></i></router-link><span class="badge badge-pill green white myclass3">0</span></div>
+                    <div class=" iconsextra ml-4"><router-link to="/compare"><i class="fas fa-random mr-3 icon-size myclass2"></i></router-link><span class="badge badge-pill green white myclass3">{{compareCount}}</span></div>
                     <div class=" iconsextra ml-4 my-width position-relative"><router-link class="text-dark" to="/shoppingcart"><i class="fas fa-shopping-bag icon-size"></i></router-link> ${{shoppingCartTotal}}<span class="badge badge-pill green white cart2 position-absolute">{{shoppingCartItemCount}}</span></div>
                 </div>
             </div>
@@ -30,16 +30,15 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 export default {
     computed: {
-        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal'])
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount'])
     },  
 }
 </script>
 
 <style scoped>
-
 .green{
     background-color: #20D3C2;
 }
@@ -60,7 +59,6 @@ a {
     padding-bottom: 5px;
     color: black !important;
 }
-
 .margin-link {
     margin-left: 0.2rem !important;
 }
@@ -73,7 +71,6 @@ a {
     left: 10px;
     font-size: 10px;
 }
-
 .cart2 {
     /* position: relative; */
     /* top: -15.9px; */
@@ -120,7 +117,6 @@ a {
 .iconsextra {
     padding-top: 1rem !important;
 }
-
 .myclass6 {   
     padding-left: 0.5rem;
     padding-bottom: 1.4rem;
@@ -153,8 +149,6 @@ a {
     width: 70%;
     background-color: #20D3C2;
 }
-
-
 @media (min-width: 1200px) { 
     .classmargin {
         margin-left: 3.5rem;

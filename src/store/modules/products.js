@@ -1,3 +1,4 @@
+import firebase from 'firebase';
 
 export default {
 
@@ -5,6 +6,7 @@ export default {
         productsCatalog: [],
         newArrivals: [],
         featuredProducts: [],
+        topSellers: [],
         product: null,
         productId: null
     },
@@ -16,6 +18,9 @@ export default {
 
             // Set newArrivals
             state.newArrivals = items.filter(item => item.product.newArrival === true)
+
+            // Set topSellers
+            state.topSellers = items.filter(item => item.product.topSellers === true)
 
             // Set featured products 
             state.featuredProducts = items.filter(item => item.product.discount !== '')
@@ -34,7 +39,7 @@ export default {
         
         // Get all products
         getProducts({ commit }) {
-            db.collection('products').get().then(res => {
+            firebase.firestore().collection('products').get().then(res => {
                 let items = [];                
                 res.forEach(doc => {                    
                     const data = {
@@ -49,7 +54,7 @@ export default {
 
         // Get Product by ID
         getProductById({ commit }, id) {
-            db.collection('products').doc(id).get().then(res => {
+            firebase.firestore().collection('products').doc(id).get().then(res => {
                 commit('SET_PRODUCT', res)
             })
         },
@@ -57,7 +62,7 @@ export default {
         // Save Product Review
         saveProductReview({ commit }, { productId, review }) {
             console.log(review);
-            const reviews = db.collection("products").doc(productId)
+            const reviews = firebase.firestore().collection("products").doc(productId)
 
             reviews.update({
                 reviews: firebase.firestore.FieldValue.arrayUnion(review)
@@ -80,6 +85,9 @@ export default {
         },
         featuredProducts(state) {
             return state.featuredProducts
+        },
+        topSellers(state) {
+            return state.topSellers
         },
         product(state) {
             return state.product

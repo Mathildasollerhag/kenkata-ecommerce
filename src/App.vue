@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
@@ -30,9 +31,22 @@ export default {
   Navigation,
   Brands,
   Footer,
-  Quickview,
- 
-  }
+  Quickview, 
+  },
+  // methods: {
+  //   checkUser() {
+  //     firebase.auth().onAuthStateChanged(user => {
+  //       if(user){
+  //         console.log('user logged in:', user);
+  //       } else {
+  //         console.log('user logged out');
+  //       }
+  //     })
+  //   }
+  // },
+  // created() {
+  //   this.checkUser()
+  // }
   
 }
 </script>

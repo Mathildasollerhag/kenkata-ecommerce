@@ -5,22 +5,37 @@ export default {
    state: {
       isLoggedIn: false,
       currentUser: null,
+      currentUserId: null
    },
 
 
    mutations: {
       SET_USER(state, user) {
          state.isLoggedIn = true
-         state.currentUser = user
+         state.currentUser = user.data()
+         state.currentUserId = user.id
       }
    },
 
    actions: {
       getCurrentUser({commit}, userId) {
-         // console.log(userId);
          firebase.firestore().collection('users').doc(userId).get().then(res => {
-            commit('SET_USER', res.data())
+            commit('SET_USER', res)
          })
+      },
+      addProductToWishlist({ commit }, { currentUserId, product }) {
+         console.log(product);
+         console.log(currentUserId);
+         const wishlist = firebase.firestore().collection("users").doc(currentUserId)
+
+         wishlist.update({
+            wishlist: firebase.firestore.FieldValue.arrayUnion(product)
+         }).then(() => {
+            console.log("Product successfully added to wishlist!");
+         }).catch(err => {
+            console.log(err);
+         })
+         console.log(wishlist);
       }
    },
 
@@ -30,6 +45,9 @@ export default {
       },
       currentUser(state) {
          return state.currentUser
+      },
+      currentUserId(state) {
+         return state.currentUserId
       }
    }
 

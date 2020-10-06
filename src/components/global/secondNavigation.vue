@@ -46,10 +46,14 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import { mapActions, mapGetters } from 'vuex';
 export default {
     computed: {
-        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser'])
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser']),
+        currentUser() {
+            return firebase.auth().currentUser
+        }
     },
     methods: {
         ...mapActions(['getProducts', 'getProductsByCategory'])

@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "start": "vue-cli-service serve --open"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "uuidv4": "^6.2.3",
     "vue": "^2.6.12",
     "vue-browser-geolocation": "^1.8.0",
+    "vue-i18n": "^8.17.3",
     "vue-owl-carousel": "^2.0.3",
     "vue-range-slider": "^0.6.0",
     "vue-router": "^3.2.0",
@@ -28,6 +30,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "vue-cli-plugin-i18n": "~1.0.1",
     "vue-template-compiler": "^2.6.11",
     "vue2-google-maps": "^0.10.7"
   }

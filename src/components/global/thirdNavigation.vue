@@ -146,7 +146,6 @@ import { mapActions } from 'vuex'
 </script>
 
 <style scoped>
-
 .green {
   background-color: #20d3c2;
 }

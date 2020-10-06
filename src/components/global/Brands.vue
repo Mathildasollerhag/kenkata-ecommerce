@@ -18,4 +18,11 @@
 
 <style scoped>
 
+@media (max-width: 576px) {
+    .container {
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
+    }
+}
+
 </style>

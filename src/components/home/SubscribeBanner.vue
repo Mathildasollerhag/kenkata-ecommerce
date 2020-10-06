@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="my-auto col-12 col-sm-12 col-md-6 col-lg-6 d-none d-sm-block">
-                <img src="@/images/pexels-subscribe-img.jpg" alt="">
+                <img id="subscribe-img" src="@/images/pexels-subscribe-img.jpg" alt="">
             </div>
 		</div>
 	</div>
@@ -33,22 +33,6 @@
 </script>
 
 <style scoped>
-
-@media (min-width: 300px) { 
-    
-    .centered {
-        text-align: center!important;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 768px) { 
-    
-    .centered {
-        text-align: left!important;
-        justify-content: start;
-    }
-}
 
 img {
     width: 100%;
@@ -99,6 +83,29 @@ button:hover {
     font-family: 'Play', sans-serif;
     font-weight: bold;
     color: #20D3C2;
+}
+
+@media (min-width: 300px) { 
+    
+    .centered {
+        text-align: center!important;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) { 
+    
+    .centered {
+        text-align: left!important;
+        justify-content: start;
+    }
+}
+
+@media (max-width: 768px) { 
+    
+    #subscribe-img {
+        margin-bottom: 50px;
+    }
 }
 
 </style>

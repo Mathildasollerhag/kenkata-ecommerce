@@ -165,7 +165,9 @@
                   </div>
                   <!-- Place Order -->
                   <!-- <button v-if="!billingDetails" disabled class="btn btn-block btn-kenkata-blue mx-4 m-auto">Place Order</button> -->
-                  <button class="btn btn-block btn-kenkata-blue mx-4 m-auto">Place Order</button>
+                  <button class="btn btn-block btn-kenkata-blue mx-4 m-auto">
+                    <router-link class="text-white" to="/complete">PLACE ORDER</router-link>
+                  </button>
                 </div>
             </div>        
           </div>

@@ -8,11 +8,11 @@
 			</div>			
 
 		<div class="col-center m-auto">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div id="review-carousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#review-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#review-carousel" data-slide-to="1"></li>
+                <li data-target="#review-carousel" data-slide-to="2"></li>
             </ol>
  
 				<!-- Wrapper for carousel items -->
@@ -46,10 +46,10 @@
 
 				</div>
 				<!-- Carousel controls -->
-				<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<a class="carousel-control left carousel-control-prev" href="#review-carousel" data-slide="prev">
 					<i id="right-arrow" class="fas fa-2x fa-chevron-left"></i>
 				</a>
-				<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<a class="carousel-control right carousel-control-next" href="#review-carousel" data-slide="next">
 					<i id="right-arrow" class="fas fa-2x fa-chevron-right"></i>
 				</a>
 			</div>

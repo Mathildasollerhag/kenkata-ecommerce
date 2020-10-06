@@ -61,20 +61,16 @@ export default {
 </script>
 
 <style scoped>
-
 i:hover {
     color: #20D3C2;
 }
-
 .fa-chevron-down {
     color: #20D3C2!important;
 }
-
 .hover-green:hover {
  color: #20D3C2!important;
  transition: .1s ease-in-out;
 }
-
 .green{
     background-color: #20D3C2;
 }

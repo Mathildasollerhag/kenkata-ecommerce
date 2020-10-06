@@ -5,10 +5,13 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import axios from "axios";
 import firebase from "firebase/app";
-
 import VueTippy from 'vue-tippy';
+import i18n from './i18n'
 
+
+Vue.prototype.$axios = axios;
 Vue.use(VueTippy);
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
@@ -40,10 +43,14 @@ firebase.auth().onAuthStateChanged(user => {
     app = new Vue({
       router,
       store,
+       i18n,
       render: h => h(App)
     }).$mount('#app')
   }
 })
+
+
+
 
 
 

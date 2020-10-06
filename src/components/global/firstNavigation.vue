@@ -41,24 +41,20 @@ export default {
 </script>
 
 <style scoped>
-
 .currency {
     color: #0E153D;
 }
 .currency:hover {
     color: #20D3C2!important;
 }
-
 a {
     color: white;
     text-decoration: none;
 }
-
 a:hover {
     color: #0e153d!important;
     transition: 0.2s ease-in-out;
 }
-
 .socialmedia {
     color: white; 
 }
@@ -85,5 +81,4 @@ a:hover {
         display: none
     }
 }
-
 </style>

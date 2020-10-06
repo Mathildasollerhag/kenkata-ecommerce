@@ -9,8 +9,8 @@
               <img class="pr-3" src="@/images/Shipping-Icon.svg" alt="">
           </div>
           <div class="pb-2">
-              <strong class="card-title mt-3 mb-3">Free shipping</strong>
-              <p class="card-text mt-2">For a local customer, we provide <br> free shipping facility</p>
+              <strong class="card-title mt-3 mb-3">{{ $t('translated.freeShipping') }}</strong>
+              <p class="card-text mt-2">{{ $t('translated.1') }} <br> {{ $t('translated.2') }} </p>
           </div>
         </div>
 
@@ -23,8 +23,8 @@
               <img class="pr-3" src="@/images/Clock-Icon.svg" alt="">
           </div>
           <div class="pb-2">
-              <strong class="card-title mt-3 mb-3">24/7 support</strong>
-              <p class="card-text mt-2">For any inquiry, we are available 24 <br> hours every day</p>
+              <strong class="card-title mt-3 mb-3">{{ $t('translated.24/7') }} </strong>
+              <p class="card-text mt-2"> {{ $t('translated.3') }}<br> {{ $t('translated.4') }}</p>
           </div>
         </div>  
   </div>
@@ -37,8 +37,8 @@
               <img class="pr-3" src="@/images/Payment-Icon.svg" alt="">
           </div>
           <div class="pb-2">
-              <strong class="card-title mt-3 mb-3">Online payment</strong>
-              <p class="card-text mt-2">You can pay quickly and easily with <br> our online payment system</p>
+              <strong class="card-title mt-3 mb-3">{{ $t('translated.onlinePayment') }}</strong>
+              <p class="card-text mt-2">{{ $t('translated.5') }} <br> {{ $t('translated.6') }}</p>
           </div>
         </div> 
   </div>
@@ -51,8 +51,8 @@
               <img class="pr-3" src="@/images/Delivery-Icon.svg" alt="">
           </div>
           <div class="pb-2">
-              <strong class="card-title mt-3 mb-3">Fast delivery</strong>
-              <p class="card-text mt-2">We understand your urgency and we deliver in a fast way</p>
+              <strong class="card-title mt-3 mb-3">{{ $t('translated.fastDelivery') }}</strong>
+              <p class="card-text mt-2">{{ $t('translated.7') }}</p>
           </div>
         </div> 
       </div>

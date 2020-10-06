@@ -9,6 +9,9 @@
                         <a class="form-control myclass6 col-5 col-md-5 col-xl-5" href="#">
 
                             <div class="dropdown myclass1">
+
+                                <a id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p>{{ $t('translated.categories') }} <i class="fas fa-chevron-down smaller margin"></i></p></a>
+
                                 <div class="d-flex hover-green" id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div>
                                         Categories
@@ -19,6 +22,7 @@
                                 </div>
                                 
                                 
+
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
                                     <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
@@ -31,7 +35,13 @@
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
+                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><router-link to="/account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link></div>
+                    <div class=" iconsextra ml-4"><i class="far fa-heart icon-size"></i></div>
+
+                
+
                 <div class="col-xl-4 d-flex user-icons"><div class="iconsextra class2 classmargin">
+
                     <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
                     <router-link class="hover-green" v-else to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
                 </div>

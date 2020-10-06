@@ -9,7 +9,7 @@
         </b-tooltip>
         
         <!-- Heart -->
-        <b-button v-on:click="addProductToWishlist({ currentUserId, product })" class="p-0" variant="transparent" id="tooltip-wish">
+        <b-button v-on:click="addProductToWishlist({ currentUserId, product, id })" class="p-0" variant="transparent" id="tooltip-wish">
             <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
                 <path class="hoverbar-svg" id="Heart_icon" data-name="Heart icon" d="M295.565,309.457a5,5,0,0,1,10,0v2.753c0,4.509-10,12.247-10,12.247s-10-7.738-10-12.247v-2.753a5,5,0,0,1,10,0" transform="translate(-284.815 -303.707)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
             </svg>

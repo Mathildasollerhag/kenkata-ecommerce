@@ -11,7 +11,7 @@
                 <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
                   <div class="arxayox d-flex  flex-row justify-content-center round bg-white align-items-center">
                     
-                    <a class="mr-1 green arxayox" href="">Home </a>/<a class="ml-1 arxayox ag" href="">Wishlist</a>
+                    <router-link to="/" class="mr-1 text-white arxayox">Home</router-link><span class="text-white"> / </span><router-link to="/wishlist" active-class="active" class="ml-1 arxayox ag">Wishlist</router-link>
                   </div>                 
                 </div>       
               </div>
@@ -32,60 +32,44 @@
                 </div>
             </div>  
             
-            <div class="row row-cols-1 row-cols-md-3">
-                <div class="col mb-4 mt-5" v-for="(item, index) in currentUserWishlist" :key="index">
+            <div v-if="currentUserWishlist.length > 0" class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col mt-5" v-for="(item, index) in currentUserWishlist" :key="index">
                     <div class="card">
                         <p class="mb-0 p-2"><a class="pr-2 pl-2" href="">X</a> Remove item</p>
-                        <ProductCardWishlist class="productcard" :item="item"/>
+                        <ProductCard class="productcard" :item="item"/>
                     </div>
                 </div>
             </div>
-            
-            <!-- <div v-if="currentUserWishlist.length > 0" class="card-deck pt-5">
-
-
-                <div class="border">
-                    <div v-for="(item, index) in currentUserWishlist" :key="index">
-                        <p class="menim p-2"><a class="pr-2 pl-2" href="">X</a> Remove item</p>
-                        <ProductCardWishlist :item="item"/>
-                    </div>
-                </div>
-
-            </div> -->
        </div>
     </div>
 </template>
 
 <script>
 import firebase from 'firebase'
-import ProductCardWishlist from '@/components/products/ProductCardWishlist'
+import ProductCard from '@/components/products/ProductCard'
 import { mapActions, mapGetters } from 'vuex'
 export default {
     components: {
-        ProductCardWishlist
+        ProductCard
     },
     created() {
-        const currentUserId = firebase.auth().currentUser.uid
-        this.getCurrentUser(currentUserId)
-        // console.log(this.currentUserWishlist)
+        this.getCurrentUser(firebase.auth().currentUser.uid)
     },
     methods: {
         ...mapActions(["getCurrentUser"])
     },
     computed: {
-        ...mapGetters(["currentUserWishlist"]),
-        // currenUserId() {
-        //     return firebase.auth().currentUser.uid
-        // }
+        ...mapGetters(["currentUserWishlist"])
     }
 }
 
 </script>
 
 <style scoped>
-    
 
-
+    .active {
+        color: var(--theme) !important;
+    }
 
     .arxafon{
         background-color: #585f7c;

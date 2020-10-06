@@ -6,7 +6,7 @@
 
             <div class=" align-items-center my-4">
                 <div class="form-group">
-                    <input type="range" min="0" max="20000"  value="1000" v-model="value" class="form-control-range"  >
+                    <input type="range" min="10" max="20000"   v-model="value" class="form-control-range"  >
                      
 
                 </div>
@@ -14,7 +14,7 @@
    
                 <div class="d-flex justify-content-between" >
                     <p class="my-auto"> price : ${{value}}</p>
-                    <button id="filter-btn" class="btn" @click="getProductsByPrice( {value} )">Filter</button>
+                    <button id="filter-btn" class="btn" @click="getProductsByPrice(value)">Filter</button>
                 </div>
             </div>
 
@@ -27,19 +27,24 @@ export default {
   name:('priceFilter'),
   data(){
     return {
-       value:  10
+     value:''
+      
     }
   },
     computed: {
       ...mapGetters(['productsPrice']),
+          ...mapGetters(['productsCatalog']),
+     
      
       },
       methods: {
    
     ...mapActions(["getProductsByPrice"]),
-   
+  
   
   },
+ 
+  
    
   
   // computed: {

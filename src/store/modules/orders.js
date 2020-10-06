@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import router from '@/router';
 
 export default {
     
@@ -20,6 +21,7 @@ export default {
 
             orders.add(order).then(() => {
                 console.log("Order successfully placed!");
+                router.push('/complete')
             }).catch(err => {
                 console.log(err);
             })

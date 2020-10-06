@@ -9,12 +9,18 @@
         </b-tooltip>
         
         <!-- Heart -->
-        <b-button v-on:click="addProductToWishlist({ currentUserId, product, id })" class="p-0" variant="transparent" id="tooltip-wish">
+        <b-button v-if="currentUserId" v-on:click="addProductToWishlist({ currentUserId, product, id })" class="p-0" variant="transparent" id="tooltip-wish">
             <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
                 <path class="hoverbar-svg" id="Heart_icon" data-name="Heart icon" d="M295.565,309.457a5,5,0,0,1,10,0v2.753c0,4.509-10,12.247-10,12.247s-10-7.738-10-12.247v-2.753a5,5,0,0,1,10,0" transform="translate(-284.815 -303.707)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
             </svg>
         </b-button>
-        <b-tooltip target="tooltip-wish" triggers="hover" placement="left" custom-class="tooltip-class">Add to wishlist</b-tooltip>
+        <b-button v-else class="p-0" variant="transparent" id="tooltip-wish">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
+                <path class="hoverbar-svg" id="Heart_icon" data-name="Heart icon" d="M295.565,309.457a5,5,0,0,1,10,0v2.753c0,4.509-10,12.247-10,12.247s-10-7.738-10-12.247v-2.753a5,5,0,0,1,10,0" transform="translate(-284.815 -303.707)" fill="none" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            </svg>
+        </b-button>
+        <b-tooltip v-if="currentUserId" target="tooltip-wish" triggers="hover" placement="left" custom-class="tooltip-class">Add to wishlist</b-tooltip>
+        <b-tooltip v-else target="tooltip-wish" triggers="hover" placement="left" custom-class="tooltip-class">Login to add to wishlist</b-tooltip>
 
         <!-- Compare -->
         <b-button v-on:click="addProductToCompare({product, quantity: 1, id})" class="p-0" variant="transparent" id="tooltip-compare">
@@ -76,15 +82,10 @@ export default {
     components: {
         Quickview
     },
-    created() {
-        // console.log(this.currentUserId)
-        
-    },
     methods: {
         ...mapActions(["getProductById", "addProductToCart", "addProductToCompare", "addProductToWishlist"])
     },
     computed: {
-        // ...mapGetters(["currentUserId"]),
         currentUserId() {
             return sessionStorage.getItem('userId')
         }

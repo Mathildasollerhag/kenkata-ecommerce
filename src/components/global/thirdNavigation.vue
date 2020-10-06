@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler my-2"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
@@ -15,7 +15,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <button id="mybutton2" class="btn nav-item dropdown green">
+            <button id="mybutton2" class="btn nav-item dropdown green text-left">
               <a
                 class="nav-link myclass10"
                 href="#"
@@ -37,8 +37,8 @@
                 <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
               </div>
             </button>
-            <li class="nav-item active myclass7">
-              <router-link class="nav-link" to="/">Home</router-link>
+            <li class="nav-item myclass7">
+              <router-link active-class="active" exact class="nav-link" to="/">Home</router-link>
             </li>
 
             <li class="nav-item dropdown myclass7">
@@ -187,7 +187,7 @@ i {
   padding-left: 1.2px;
 }
 #mybutton2:hover {
-  background-color: #20d3c2 !important;
+  background-color: #1db4a5 !important;
 }
 .margin {
   margin-left: 0rem !important;
@@ -214,9 +214,8 @@ i {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0.1rem;
-  left: 0px;
   height: 4px;
+  bottom: -4px;
   width: 45px;
   background-color: #20d3c2;
 }
@@ -229,5 +228,12 @@ i {
     height: 4px;
     width: 85%;
   }
+}
+
+@media (max-width: 992px) {
+  .specialoffer {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 }
 </style>

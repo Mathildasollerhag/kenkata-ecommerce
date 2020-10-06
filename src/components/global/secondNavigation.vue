@@ -2,7 +2,7 @@
     <div>
         <div class="container pt-4 pb-4">
             <div class="row">
-                <div class="col-12 col-xl-2 text-center"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/logo.png" alt=""></router-link></div>
+                <div class="col-12 col-xl-2 text-center"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/Logo.svg" alt=""></router-link></div>
                 <div class="col-12 col-xl-6">
                     <div class="input-group class1">
                         <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0"><input id="myclass5" type="text" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2"></div>
@@ -30,9 +30,9 @@
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
-                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
+                <div class="col-xl-4 d-flex justify-content-center justify-content-xl-end"><div class="iconsextra class2 classmargin">
                     <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
-                    <router-link v-else to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
+                    <router-link v-else to="/account" class="my-account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
                 </div>
                     <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
 
@@ -61,6 +61,11 @@ export default {
 </script>
 
 <style scoped>
+
+.my-account:hover {
+    color: #20D3C2;
+}
+
 i:hover {
     color: #20D3C2;
 }

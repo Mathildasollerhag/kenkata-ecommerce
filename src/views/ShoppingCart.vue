@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Toprow />
+    <Toprow v-if="shoppingCart.length > 0" />
     <div class="container-fluid container-md d-flex flex-column flex-xl-row align-items-start mb-custom">
       <!-- Product List -->
       <div class="cart-left col-xl-8">
@@ -31,6 +31,7 @@
     </div>
     <div v-if="shoppingCart.length === 0" class="text-center">
       <h2>Your shoppingcart is empty</h2>
+      <router-link to="/shop"><button class="btn theme-bg text-white custom-radius mt-3 font-weight-bold px-4">SHOP NOW</button></router-link>
     </div>
 
     <!-- You May Also Like -->
@@ -82,5 +83,9 @@ button {
 }
 a:hover {
   text-decoration: none;
+}
+
+.custom-radius {
+  border-radius: 30px;
 }
 </style>

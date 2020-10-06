@@ -16,8 +16,7 @@
                                     <div class="ml-auto">
                                         <i class="fas fa-chevron-down pr-2"></i>
                                     </div>
-                                </div>
-                                
+                                </div>                               
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>

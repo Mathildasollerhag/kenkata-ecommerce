@@ -43,22 +43,22 @@
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i>
-              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
-                <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                <div @click="getProductsByGender('men')"><router-link to="/shop" class="dropdown-item">Men's</router-link></div>
-                <div @click="getProductsByGender('women')"><router-link to="/shop" class="dropdown-item">Women's</router-link></div>
-                <div @click="getProductsByCategory('kids')"><router-link to="/shop" class="dropdown-item">Kids's</router-link></div>
-              </div>
+                <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+                  <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                  <div @click="getProductsByGender('men')"><router-link to="/shop" class="dropdown-item">Men's</router-link></div>
+                  <div @click="getProductsByGender('women')"><router-link to="/shop" class="dropdown-item">Women's</router-link></div>
+                  <div @click="getProductsByCategory('kids')"><router-link to="/shop" class="dropdown-item">Kids's</router-link></div>
+                </div>
               </div>
             </li>
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class="fas fa-chevron-down pl-2"></i>
-              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
-                    <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                    <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">Clothes</router-link></div>
-                    <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">Accessories</router-link></div>
-                  </div>
+                <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+                  <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                  <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">Clothes</router-link></div>
+                  <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">Accessories</router-link></div>
+                </div>
               </div>
             </li>
 

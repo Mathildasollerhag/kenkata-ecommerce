@@ -1,30 +1,32 @@
 <template>
-<div class="product-page">
+<div class="product-page" >
 
   <!-- Shop By Category -->
-  <div v-if="shopByCategory" class="d-flex flex-wrap">
+  <!-- <div v-if="shopByCategory" class="d-flex flex-wrap">
     <div v-for="item in shopByCategory" :key="item.id">
       <ProductCard class="productcard" :item="item"/>
     </div>
-  </div>
+  </div> -->
 
   <!-- Products Catalog -->
-  <div v-else class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap">
     <div v-for="item in productsCatalog" :key="item.id">
-      <ProductCard class="productcard" :item="item"/>
+      <ProductCard class="productcard" :item="item" />       
     </div>
   </div>
+   
+  
 
   <ul class="pagination justify-content-center pt-4">
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="left-arrow" class="fas fa-2x fa-chevron-left"></i></a></li>
     <div class="d-flex my-auto">
-      <li class="page-item"><a class="p-2 pl-3 mt-1" href="javascript:void(0);">8</a></li>
+      <li class="page-item"><a class="p-2 pl-3 mt-1" href="javascript:void(0);">1</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">2</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">3</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">...</a></li>
       <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">9</a></li>
       <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">10</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">...</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">24</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">25</a></li>
-      <li class="page-item"><a class="p-2 pr-3 mt-1" href="javascript:void(0);">26</a></li>
+      <li class="page-item"><a class="p-2 pr-3 mt-1" href="javascript:void(0);">11</a></li>
     </div>
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="right-arrow" class="fas fa-2x fa-chevron-right"></i></a></li>
   </ul>
@@ -35,38 +37,51 @@
 
 <script>
 
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import ProductCard from '../products/ProductCard'
 
 export default {
     name: 'ProductsCatalog',
     components: { ProductCard },
-    props: ["category", "gender", "mainCategory"],
     created() {
       this.$store.dispatch("getProducts")
-      // this.shopByCategory()
+      // console.log(this.byCategory)
+    },
+    methods: {
+      ...mapActions(["getProductsByCategory", "getProductsByGender", "getProductsByMainCategory"])
     },
     computed: {
       ...mapGetters(['productsCatalog']),
-
-      shopByCategory() {
-        if(this.category || this.gender || this.mainCategory) {
-          if(this.category) {
-            return this.productsCatalog.filter(item => { return item.product.category == this.category })
-          }
-          else if (this.gender){
-            return this.productsCatalog.filter(item => { return item.product.gender == this.gender })
-          }
-          else {
-            return this.productsCatalog.filter(item => { return item.product.mainCategory == this.mainCategory })
-          }          
-        }        
-      }     
+    
+      // shopByCategory() {
+      //   if(this.category || this.gender || this.mainCategory) {
+      //     if(this.category) {
+      //       return this.getProductsByCategory(this.category)
+      //     }
+      //     else if (this.gender) {
+      //       return this.getProductsByGender(this.gender)
+      //     }
+      //     else {
+      //       return this.getProductsByMainCategory(this.mainCategory)
+      //     }
+      //   } 
+      //   else {
+      //     return this.productsCatalog
+      //   } 
+      // }
+      // checkCategory() { return this.byCategory },   
     }
 }
 </script>
 
 <style scoped>
+.box{
+display: flex;
+}
+.list{
+  display: table-column;
+  color: green;
+}
 
 .card-hover-body {
     position: absolute;

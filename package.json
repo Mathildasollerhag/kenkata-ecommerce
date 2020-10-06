@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
+    "start": "vue-cli-service serve --open"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -19,6 +20,7 @@
     "vue-browser-geolocation": "^1.8.0",
     "vue-i18n": "^8.17.3",
     "vue-owl-carousel": "^2.0.3",
+    "vue-range-slider": "^0.6.0",
     "vue-router": "^3.2.0",
     "vue-tippy": "^4.7.0",
     "vuex": "^3.4.0"

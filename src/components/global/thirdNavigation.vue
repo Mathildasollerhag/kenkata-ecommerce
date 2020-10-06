@@ -40,7 +40,7 @@
 =======
       <nav class="navbar navbar-expand-lg navbar-light p-0">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler my-2"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
@@ -52,7 +52,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <button id="mybutton2" class="btn nav-item dropdown green">
+            <button id="mybutton2" class="btn nav-item dropdown green text-left">
               <a
                 class="nav-link myclass10"
                 href="#"
@@ -65,36 +65,43 @@
                 <i class="fas fa-chevron-down myclass8 myclass10"></i
               ></a>
               <div class="dropdown-menu pl-2" aria-labelledby="navbarDropdown">
-                <router-link to="/shop" class="dropdown-item">All</router-link>
-                <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'clothes'}}" class="dropdown-item">Clothes</router-link>
-                <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'accessories'}}" class="dropdown-item">Accessories</router-link>
-                <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}" class="dropdown-item" href="#">Hats</router-link>
-                <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}" class="dropdown-item" href="#">Sunglasses</router-link>
-                <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}" class="dropdown-item" href="#">Shoes</router-link>
-                <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
+                <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">Clothes</router-link></div>
+                <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">Accessories</router-link></div>
+                <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
+                <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
+                <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
+                <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
               </div>
             </button>
-            <li class="nav-item active myclass7">
-              <router-link class="nav-link" to="/">Home</router-link>
+            <li class="nav-item myclass7">
+              <router-link active-class="active" exact class="nav-link" to="/">Home</router-link>
             </li>
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i>
-              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+
+              <div  class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
                 <router-link to="/shop" class="dropdown-item">All</router-link>
                 <router-link :to="{name: 'ShopByGender', params: {gender: 'men'}}" class="dropdown-item">Men's</router-link>
                 <router-link :to="{name: 'ShopByGender', params: {gender: 'women'}}" class="dropdown-item">Women's</router-link>
                 <router-link :to="{name: 'ShopByCategory', params: {category: 'kids'}}" class="dropdown-item">Kid's</router-link>
-              </div>
+
+              <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+                <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                <div @click="getProductsByGender('men')"><router-link to="/shop" class="dropdown-item">Men's</router-link></div>
+                <div @click="getProductsByGender('women')"><router-link to="/shop" class="dropdown-item">Women's</router-link></div>
+                <div @click="getProductsByCategory('kids')"><router-link to="/shop" class="dropdown-item">Kids's</router-link></div>
+
               </div>
             </li>
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class="fas fa-chevron-down pl-2"></i>
               <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
-                    <router-link to="/shop" class="dropdown-item">All</router-link>
-                    <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'clothes'}}" class="dropdown-item">Clothes</router-link>
-                    <router-link :to="{name: 'ShopByMainCategory', params: {mainCategory: 'accessories'}}" class="dropdown-item">Accessories</router-link>
+                    <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                    <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">Clothes</router-link></div>
+                    <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">Accessories</router-link></div>
                   </div>
               </div>
             </li>
@@ -112,11 +119,11 @@
                   <div
                     class="dropdown-menu pl-2"
                     aria-labelledby="dropdownMenuButton"
-                  > <router-link to="/shop" class="dropdown-item">All</router-link>
-                    <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}" class="dropdown-item" href="#">Hats</router-link>
-                    <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}" class="dropdown-item" href="#">Sunglasses</router-link>
-                    <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}" class="dropdown-item" href="#">Shoes</router-link>
-                    <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
+                  > <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                      <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
+                      <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
+                      <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
+                      <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
                   </div>
                 </div></a
               >
@@ -159,13 +166,14 @@
               </a>
             </li>
             <li class="nav-item myclass7">
-              <router-link class="nav-link" to="/">Blog</router-link>
+              <router-link class="nav-link" to="/*">Blog</router-link>
             </li>
           </ul>
         </div>
-        <div class="">
+
+        <div>
           <button class="btn green specialoffer" type="submit">
-            SPECIAL OFFER
+            <router-link class="text-white" to="/shop">SPECIAL OFFER</router-link>
           </button>
         </div>
       </nav>
@@ -175,10 +183,28 @@
 </template>
 
 <script>
-
+import { mapActions } from 'vuex'
+  export default {
+    methods: {
+      ...mapActions(["getProducts", "getProductsByMainCategory", "getProductsByGender", "getProductsByCategory"])
+    }
+  }
 </script>
 
 <style scoped>
+
+.active {
+  position: relative;
+}
+.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  height: 4px;
+  width: 85%;
+  background-color: #20d3c2;
+}
 
 .green {
   background-color: #20d3c2;
@@ -204,7 +230,7 @@ i {
 }
 .nav-link {
   padding-bottom: 5px;
-  color: #313131 !important;
+  color: #0E153D !important;
   font-weight: 400;
 }
 .nav-link:hover {
@@ -241,27 +267,17 @@ i {
 .nav-item:hover {
   text-decoration: none;
 }
-.active {
-  position: relative;
-}
-.active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0px;
-  height: 4px;
-  width: 45px;
-  background-color: #20d3c2;
-}
+
 @media (min-width: 992px) {
   .myclass7 {
     margin-left: 1rem;
   }
-  .active::after {
-    left: 0px;
-    height: 4px;
-    width: 85%;
-  }
+}
+
+@media (max-width: 992px) {
+  .specialoffer {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 }
 </style>

@@ -25,13 +25,10 @@
     export default {
         name: 'FeaturedProducts',
         components: { carousel, ProductCard },
-        created() {
-            this.$store.dispatch("getProducts")
-        },
         computed: {
             ...mapGetters(['featuredProducts'])
+        }
     }
-}
 </script>
 
 <style scoped>

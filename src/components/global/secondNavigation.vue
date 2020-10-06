@@ -20,11 +20,11 @@
                                 
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <router-link to="/shop" class="dropdown-item">All</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}" class="dropdown-item" href="#">Hats</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}" class="dropdown-item" href="#">Sunglasses</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}" class="dropdown-item" href="#">Shoes</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
+                                    <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                                    <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
+                                    <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
+                                    <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
+                                    <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
                                 </div>
                             </div>
                         </a>
@@ -46,11 +46,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import firebase from 'firebase'
+import { mapActions, mapGetters } from 'vuex';
 export default {
     computed: {
-        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser'])
-    },  
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser']),
+        currentUser() {
+            return firebase.auth().currentUser
+        }
+    },
+    methods: {
+        ...mapActions(['getProducts', 'getProductsByCategory'])
+    }
 }
 </script>
 
@@ -175,6 +182,9 @@ a {
     height: 4px;
     width: 70%;
     background-color: #20D3C2;
+}
+input:focus, input:active, .form-control {
+  border-color: #cccccc !important;
 }
 @media (min-width: 1200px) { 
     .classmargin {

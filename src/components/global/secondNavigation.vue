@@ -2,13 +2,16 @@
     <div>
         <div class="container pt-4 pb-4">
             <div class="row">
-                <div class="col-12 col-xl-2"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/logo.png" alt=""></router-link></div>
+                <div class="col-12 col-xl-2 text-center"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/logo.png" alt=""></router-link></div>
                 <div class="col-12 col-xl-6">
                     <div class="input-group class1">
                         <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0"><input id="myclass5" type="text" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2"></div>
                         <a class="form-control myclass6 col-5 col-md-5 col-xl-5" href="#">
 
                             <div class="dropdown myclass1">
+
+                                <a id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><p>{{ $t('translated.categories') }} <i class="fas fa-chevron-down smaller margin"></i></p></a>
+
                                 <div class="d-flex hover-green" id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div>
                                         Categories
@@ -19,21 +22,28 @@
                                 </div>
                                 
                                 
+
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <router-link to="/shop" class="dropdown-item">All</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'hats'}}" class="dropdown-item" href="#">Hats</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'sunglasses'}}" class="dropdown-item" href="#">Sunglasses</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'shoes'}}" class="dropdown-item" href="#">Shoes</router-link>
-                                    <router-link :to="{name: 'ShopByCategory', params: {category: 'watches'}}" class="dropdown-item" href="#">Watches</router-link>
+                                    <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
+                                    <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
+                                    <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
+                                    <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
+                                    <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
                                 </div>
                             </div>
                         </a>
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
-                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
+                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin"><router-link to="/account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link></div>
+                    <div class=" iconsextra ml-4"><i class="far fa-heart icon-size"></i></div>
+
+                
+
+                <div class="col-xl-4 d-flex user-icons"><div class="iconsextra class2 classmargin">
+
                     <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
-                    <router-link v-else to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
+                    <router-link class="hover-green" v-else to="/account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
                 </div>
                     <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
 
@@ -46,11 +56,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import firebase from 'firebase'
+import { mapActions, mapGetters } from 'vuex';
 export default {
     computed: {
-        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser'])
-    },  
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser']),
+        currentUser() {
+            return firebase.auth().currentUser
+        }
+    },
+    methods: {
+        ...mapActions(['getProducts', 'getProductsByCategory'])
+    }
 }
 </script>
 
@@ -176,6 +193,9 @@ a {
     width: 70%;
     background-color: #20D3C2;
 }
+input:focus, input:active, .form-control {
+  border-color: #cccccc !important;
+}
 @media (min-width: 1200px) { 
     .classmargin {
         margin-left: 3.5rem;
@@ -185,6 +205,12 @@ a {
     }
     .class1 {
         padding-top: 0rem;; 
+    }
+}
+
+@media (max-width: 1200px) { 
+    .user-icons {
+        justify-content: center;
     }
 }
 </style>

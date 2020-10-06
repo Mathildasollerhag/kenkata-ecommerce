@@ -58,6 +58,9 @@ export default {
     DiscountBanner,
     FlashBanner
 
+  },
+  created() {
+    this.$store.dispatch('getProducts')
   }
 }
 </script>

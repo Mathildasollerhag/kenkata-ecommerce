@@ -1,3 +1,5 @@
+// import 'bootstrap-css-only/css/bootstrap.min.css'
+// import 'vue-range-slider/dist/vue-range-slider.css'
 import Vue from 'vue';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import App from './App.vue';
@@ -5,10 +7,11 @@ import router from './router';
 import store from './store';
 import axios from "axios";
 import firebase from "firebase/app";
-
 import VueTippy from 'vue-tippy';
+import i18n from './i18n'
 
-// Vue.prototype.$axios = axios;
+
+Vue.prototype.$axios = axios;
 Vue.use(VueTippy);
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
@@ -29,14 +32,25 @@ firebase.initializeApp(firebaseConfig);
 
 let app
 firebase.auth().onAuthStateChanged(user => {
+  if(user){
+    sessionStorage.setItem('userId', user.uid)
+    console.log('user logged in:', user);
+  } else {
+    sessionStorage.removeItem('userId')
+    console.log('user logged out');
+  }
   if(!app) {
     app = new Vue({
       router,
       store,
+       i18n,
       render: h => h(App)
     }).$mount('#app')
   }
 })
+
+
+
 
 
 

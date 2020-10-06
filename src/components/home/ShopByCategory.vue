@@ -154,6 +154,7 @@ a {
 .item6 {
   grid-area: 3 / 3 / span 1 / span 2;
   background-image: url("../../images/pexels-sunglasses.jpg");
+  background-size: cover;
   height: 214px;
   width: 438px;
 }
@@ -167,6 +168,7 @@ a {
 .item3 {
   grid-area: 1 / 2 / span 1 / span 2;
   background-image: url("../../images/pexels-women.jpg");
+  background-size: cover;
   height: 214px;
   width: 438px;
 }

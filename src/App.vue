@@ -35,7 +35,9 @@ export default {
   Quickview, 
   },
   created() {
-    this.getCurrentUser(firebase.auth().currentUser.uid)
+    if(firebase.auth().currentUser !== null) {
+      this.getCurrentUser(firebase.auth().currentUser.uid)
+    }
   },
   methods: {
     ...mapActions(["getCurrentUser"])

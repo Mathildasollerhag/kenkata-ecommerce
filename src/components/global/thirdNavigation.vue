@@ -38,8 +38,8 @@
                 <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
               </div>
             </button>
-            <li class="nav-item active myclass7">
-              <router-link class="nav-link" to="/">{{ $t('translated.home') }}</router-link>
+            <li class="nav-item myclass7">
+              <router-link active-class="active" exact class="nav-link" to="/">{{ $t('translated.home') }}</router-link>
 
             </li>
 

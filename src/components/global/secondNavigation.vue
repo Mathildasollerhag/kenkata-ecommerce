@@ -34,9 +34,9 @@
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
-                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
-                    <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
-                    <router-link v-else to="/account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
+                <div class="col-xl-4 d-flex justify-content-center justify-content-xl-end"><div class="iconsextra class2 classmargin">
+                    <router-link v-if="currentUser" to="/myaccount" class="my-account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
+                    <router-link v-else to="/account" class="my-account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
 
                 </div>
                     <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
@@ -72,7 +72,7 @@ i:hover {
 }
 
 .my-account:hover {
-    color: #20D3C2;
+    color: #20D3C2!important;
 }
 
 .fa-chevron-down {

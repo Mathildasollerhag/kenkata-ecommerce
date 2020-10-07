@@ -25,7 +25,7 @@
                 <div class="margintop"><a href="/*">{{ $t('translated.newsletter') }}</a></div>
 
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
-                <div class="margintop ml-3"><router-link to="/contact">Contact us</router-link></div>
+                <div class="margintop ml-3"><router-link to="/contact">{{ $t('translated.contactUs') }}</router-link></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
                 <div class="margintop ml-3"><a href="/*">FAQs</a></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>

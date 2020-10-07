@@ -5,9 +5,23 @@
                 <div class="col-12 col-xl-2 text-center"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/Logo.svg" alt=""></router-link></div>
                 <div class="col-12 col-xl-6">
                     <div class="input-group class1">
-                        <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0"><input id="myclass5" type="text" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2"></div>
+                        <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0">
+                            <form id="searchForm">
+                                <input id="myclass5" type="text" v-model="search" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2" autocomplete="off">
+                                <div v-if="this.search !== ''" class="search-results">
+                                    <div v-for="item in filteredProducts" :key="item.id">
+                                        <div @click="clearInput" >
+                                            <router-link :to="{name: 'ProductDetails', params: {id: item.id}}" class="d-flex align-items-center py-1">
+                                                <img class="mr-2" :src="item.product.images[0]" alt="">
+                                                <p class="mb-0">{{item.product.name}}</p>
+                                            </router-link>    
+                                        </div>                                
+                                    </div>                                
+                                </div>
+                            </form>
+                        </div>
+                        
                         <a class="form-control myclass6 col-5 col-md-5 col-xl-5" href="#">
-
                             <div class="dropdown myclass1">
                                 <div class="d-flex hover-green" id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div>
@@ -19,15 +33,11 @@
                                 </div>                               
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
                                     <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
                                     <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.hats') }}</router-link></div>
                                     <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.sunglasses') }}</router-link></div>
                                     <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.shoes') }}</router-link></div>
-                                    <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
-
-                                    
-
+                                    <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>                                  
                                 </div>
                             </div>
                         </a>
@@ -53,19 +63,47 @@
 import firebase from 'firebase'
 import { mapActions, mapGetters } from 'vuex';
 export default {
+    data() {
+        return {
+            search: ''
+        }
+    },
     computed: {
-        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser']),
+        ...mapGetters(['shoppingCartItemCount', 'shoppingCartTotal', 'compareCount', 'currentUser', 'productsCatalog']),
         currentUser() {
             return firebase.auth().currentUser
+        },
+
+        filteredProducts() {
+            return this.productsCatalog.filter((item) => {
+                return item.product.name.toLowerCase().match(this.search.toLowerCase())
+            })
         }
     },
     methods: {
-        ...mapActions(['getProducts', 'getProductsByCategory'])
+        ...mapActions(['getProducts', 'getProductsByCategory']),
+        clearInput() {
+            document.getElementById('searchForm').reset()
+        }
     }
 }
 </script>
 
 <style scoped>
+
+.search-results {
+    z-index: 100;
+    position: absolute;
+    top: 4em;
+    padding: 0.5em 1em;
+    background: white;
+    border-radius: 5px;
+    width: 100%;
+}
+.search-results img {
+    height: 35px;
+    width: 35px;
+}
 
 i:hover {
     color: #20D3C2;

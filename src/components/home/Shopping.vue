@@ -10,7 +10,7 @@
                                         <h1 class="size1 mt-5 font-weight-normal">{{ $t('translated.shoppingIs') }}</h1>
                                         <h1 class="theme-text size1 font-weight-bold">{{ $t('translated.moreFun') }}</h1>
                                         <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
-                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">{{ $t('translated.shopNow') }}</button></router-link>
+                                        <router-link to="/shop"><button class="btn-hover mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">{{ $t('translated.shopNow') }}</button></router-link>
                                     </div>
                                     <div class="col-lg-7">
                                         <img class="img-fluid w-100 rounded" src="@/images/carousel1.jpg" alt="Shopping" />
@@ -23,7 +23,7 @@
                                         <h1 class="size1 mt-5 font-weight-normal">{{ $t('translated.newIn') }}</h1>
                                         <h1 class="theme-text size1 font-weight-bold">{{ $t('translated.forKids') }}</h1>
                                         <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
-                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">{{ $t('translated.shopNow') }}</button></router-link>
+                                        <router-link to="/shop"><button class="btn-hover mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">{{ $t('translated.shopNow') }}</button></router-link>
                                     </div>
                                     <div class="col-lg-7">
                                         <img class="img-fluid w-100 rounded" src="@/images/carousel5.jpg" alt="Shopping" />
@@ -36,7 +36,7 @@
                                         <h1 class="size1 mt-5 font-weight-normal">{{ $t('translated.latest') }}</h1>
                                         <h1 class="theme-text size1 font-weight-bold">{{ $t('translated.mensFashion') }}</h1>
                                         <p>Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed.</p>
-                                        <router-link to="/shop"><button class="mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">{{ $t('translated.shopNow') }}</button></router-link>
+                                        <router-link to="/shop"><button class="lbtn-hover mt-4 btn bg-white py-2 px-4 _radius theme-text font-weight-bold">{{ $t('translated.shopNow') }}</button></router-link>
                                     </div>
                                     <div class="col-lg-7">
                                         <img class="img-fluid w-100 rounded" src="@/images/carousel3.jpg" alt="Shopping" />
@@ -53,6 +53,11 @@
 
 
 <style scoped>
+
+.btn-hover:hover {
+    background-color: var(--blue-theme) !important;
+    color: white;
+}
 
 .size1 {
   font-size: 3.7rem;

@@ -32,6 +32,11 @@ export default {
 
 <style scoped>
 
+button:hover {
+  background-color: var(--theme) !important;
+  color: white;
+}
+
 img {
   height: 100%;
   width: 100%;

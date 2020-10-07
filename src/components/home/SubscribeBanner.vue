@@ -65,7 +65,7 @@ button{
   font-weight: 600;
 }
 button:hover {
-  background-color: #2da79a;
+  background-color: var(--blue-theme);
   color: white;
 }
 

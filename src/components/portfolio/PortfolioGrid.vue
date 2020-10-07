@@ -109,7 +109,7 @@ p {
     font-weight: 500;
 }
 #load-more-btn:hover {
-    background-color: #2baa9d;
+    background-color: var(--blue-theme);
     color: white;
     transition: .1s ease-in-out;
 }

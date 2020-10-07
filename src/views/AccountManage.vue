@@ -39,6 +39,11 @@ export default {
 </script>
 
 <style scoped>
+
+button:hover {
+  background-color: var(--blue-theme) !important;
+}
+
 .btn-kenkata-blue {
   border: none;
 }

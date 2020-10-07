@@ -5,7 +5,7 @@
             <p class="mb-2">{{ portfolio.name }}</p>
             <small>{{ portfolio.tag }}</small>
         </div>
-        <div class="plus-icon"><router-link :to="{name: 'PortfolioDetails', params: {id: id}}"><img src="@/images/Plus-Icon-Small.svg" alt=""></router-link></div>
+        <div class="plus-icon"><a :href="$router.resolve({name: 'PortfolioDetails', params: {id: id}}).href"><img src="@/images/Plus-Icon-Small.svg" alt=""></a></div>
     </div>
     <img class="img-box" :src="portfolio.images[0]" alt="">
 </div>
@@ -13,7 +13,7 @@
 
 <script>
     export default {
-        props: ['portfolio']
+        props: ['portfolio', 'id'],
     }
 </script>
 

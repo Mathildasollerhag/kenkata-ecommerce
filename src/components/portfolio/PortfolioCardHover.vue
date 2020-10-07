@@ -20,7 +20,6 @@ import { mapGetters } from 'vuex'
 
     created() {
     this.$store.dispatch("getPortfolio")
-    console.log(this.portfolioCatalog)
     },
 
     computed: {

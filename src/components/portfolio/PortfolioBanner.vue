@@ -5,9 +5,9 @@
                 <h3>Portfolio</h3>
                 <div>
                     <div class="d-flex align-items-center">
-                        <a href="/"><router-link id="home" to="/">Home</router-link></a>
+                        <router-link to="/" id="home">Home</router-link>
                         <div id="slash" class="px-2">/</div>
-                        <a href="/portfolio"><router-link id="compare" to="/portfolio">Portfolio</router-link></a>
+                        <router-link active-class="active" to="/portfolio" id="compare">Portfolio</router-link>
                     </div>
                 </div>
             </div>
@@ -22,32 +22,33 @@
 </script>
 
 <style scoped>
+
+.active {
+    color: white;
+}
     
-    #banner-bg {
-        background-color: #0E153D;
-        opacity: 65%;
-        padding-top: 35px;
-        padding-bottom: 35px;
-    }
-    h3 {
-        color: #25ac9e;
-    }
-    #home {
-        color: #25ac9e!important;
-    }
-    #home:hover {
-        color: white!important;
-    }
-    #compare {
-        color: white;
-    }
-    #compare:hover {
-        color: #25ac9e!important;
-    }
-    #slash {
-        color: white;
-    }
-    a {
-        text-decoration: none;
-    }
+#banner-bg {
+    background-color: #0E153D;
+    opacity: 65%;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+h3 {
+    color: #25ac9e;
+}
+#home {
+    color: #25ac9e!important;
+}
+#home:hover {
+    color: white!important;
+}
+#compare:hover {
+    color: white!important;
+}
+#slash {
+    color: white;
+}
+a {
+    text-decoration: none;
+}
 </style>

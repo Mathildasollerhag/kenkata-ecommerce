@@ -2,6 +2,7 @@
     <div class="navbar navbar-dark green firstnavbar">
         <div class="container">
             <div class="d-flex">
+
                 <div class="dropdown margintop language">
                     <select class="green language" id="" v-model="$i18n.locale">
                         <option class="green" value="en" id="dropdownMenuButton" 
@@ -9,6 +10,7 @@
                             >ENG <i class="fas fa-chevron-down pill"></i></option>
                         <option value="se" class="green dropdown-item">SWE</option>
                     </select>
+
                 </div>
                 <div class="dropdown ml-2 margintop">
                     <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#/">USD</a> <i class="fas fa-chevron-down pill"></i></a>
@@ -19,9 +21,11 @@
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
             </div>
             <div class="d-flex flex-right">
+
                 <div class="margintop"><a href="/*">{{ $t('translated.newsletter') }}</a></div>
+
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
-                <div class="margintop ml-3"><router-link to="/contact">{{ $t('translated.contactUs') }}</router-link></div>
+                <div class="margintop ml-3"><router-link to="/contact">Contact us</router-link></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
                 <div class="margintop ml-3"><a href="/*">FAQs</a></div>
                 <div><img class="ml-3" src="../../images/line.png" alt=""></div>
@@ -43,10 +47,12 @@ export default {
 </script>
 
 <style scoped>
+
 .language{
     color: white;
     border: 1px solid transparent;
 }
+
 .currency {
     color: #0E153D;
 }

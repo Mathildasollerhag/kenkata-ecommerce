@@ -1,9 +1,9 @@
 <template>
     <div v-if="featuredProducts.length > 0" class="position-relative container my-5">
         <div class="text-center">
-            <div class="d-flex justify-content-center text-uppercase">
-                <h1 id="new" class="font-weight-bold">Featured</h1>
-                <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Products</h1>
+            <div class="d-flex flex-wrap justify-content-center text-uppercase">
+                <h1 class="font-weight-bold">Featured</h1>
+                <h1 class="pl-2 font-weight-bold theme-text">Products</h1>
             </div>
             <img src="@/images/ZigZag.svg" alt="">
             <p class="pt-3 mb-4">Check out our monthly featured products from top brands</p>
@@ -25,13 +25,10 @@
     export default {
         name: 'FeaturedProducts',
         components: { carousel, ProductCard },
-        created() {
-            this.$store.dispatch("getProducts")
-        },
         computed: {
             ...mapGetters(['featuredProducts'])
+        }
     }
-}
 </script>
 
 <style scoped>

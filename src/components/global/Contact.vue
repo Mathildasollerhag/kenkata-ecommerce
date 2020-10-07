@@ -1,28 +1,20 @@
 <template>
     <div>
-        <div class="arxafon">
+      <div id="banner-bg">
         <div class="container">
-          <div class="row ">
-            <div class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-start">
-                <h3 class="big-text green font-weight-bold pt-5 pb-5">Contact</h3>                
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Contact</h3>
+                <div>
+                    <div class="d-flex align-items-center"><router-link id="home" to="/">Home</router-link>
+                        <div id="slash" class="px-2">/</div>
+                        <router-link id="compare" to="/contact">Contact</router-link>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-lg-9 d-flex justify-content-center flex-column ">
-              <div class="text-center ml-lg-auto">
-                <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
-                  <div class="arxayox d-flex  flex-row justify-content-center round bg-white align-items-center">
-                    
-                    <router-link to="/" class="mr-1 green arxayox">Home </router-link><p class="my-auto text-white px-1">/</p><a class="ml-1 arxayox ag" href="#">Contact</a>
-                  </div>                 
-                </div>       
-              </div>
-            </div>
-          </div>
         </div>
-        </div>
+    </div>
         <!--<img class="googleMap" src="../../images/Maps-Gray.png" alt="">-->
 
-
-          
         <div class="mapouter">
           <div class="gmap_canvas">
             <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Chhagalnaiya%20%20city%20center%2C%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -31,10 +23,6 @@
           </div>
         </div>
 
-         
-          
-    
-        
         <div class="container">
       <form class="formclass">
         <div class="formclass1 d-flex flex-column py-4 flex-md-row justify-content-between">
@@ -99,6 +87,28 @@ export default {
 </script>
 
 <style scoped>
+
+#banner-bg {
+  background-color: #0E153D;
+  opacity: 65%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+h3 {
+    color: #25ac9e;
+}
+#home {
+    color: #25ac9e!important;
+}
+#home:hover {
+    color: white!important;
+}
+#slash {
+    color: white;
+}
+a {
+    text-decoration: none;
+}
 
 .mapouter {
   position:relative;text-align:right;height:500px; width:100%;

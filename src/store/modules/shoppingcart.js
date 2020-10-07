@@ -37,6 +37,10 @@ export default {
       },
       SET_SHIPPING(state, shipping) {
         state.shipping = shipping
+      },
+      CLEAR_CART(state) {
+        state.shoppingcart = []
+        sessionStorage.setItem('shoppingcart', JSON.stringify(state.shoppingcart))
       }
     },
 
@@ -66,6 +70,9 @@ export default {
             return item.quantity = 0
           }
           commit('DECREMENT', item)
+      },
+      clearCart({commit}) {
+        commit('CLEAR_CART')
       }
     },
 

@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler my-2"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
@@ -15,7 +15,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <button id="mybutton2" class="btn nav-item dropdown green">
+            <button id="mybutton2" class="btn nav-item dropdown green text-left">
               <a
                 class="nav-link myclass10"
                 href="#"
@@ -28,6 +28,7 @@
                 <i class="fas fa-chevron-down myclass8 myclass10"></i
               ></a>
               <div class="dropdown-menu pl-2" aria-labelledby="navbarDropdown">
+
                 <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
                 <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.clothes') }}</router-link></div>
                 <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.accessories') }}</router-link></div>
@@ -39,25 +40,30 @@
             </button>
             <li class="nav-item active myclass7">
               <router-link class="nav-link" to="/">{{ $t('translated.home') }}</router-link>
+
             </li>
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i>
                 <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
+
                   <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
                   <div @click="getProductsByGender('men')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.men') }}</router-link></div>
                   <div @click="getProductsByGender('women')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.women') }}</router-link></div>
                   <div @click="getProductsByCategory('kids')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.kid') }}</router-link></div>
+
                 </div>
               </div>
             </li>
 
             <li class="nav-item dropdown myclass7">
+
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $t('translated.products') }}<i class="fas fa-chevron-down pl-2"></i>
                 <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
                   <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
                   <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.clothes') }}</router-link></div>
                   <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.accessories') }}</router-link></div>
+
                 </div>
               </div>
             </li>
@@ -75,11 +81,13 @@
                   <div
                     class="dropdown-menu pl-2"
                     aria-labelledby="dropdownMenuButton"
+
                   > <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
                       <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.hats') }}</router-link></div>
                       <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.sunglasses') }}</router-link></div>
                       <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.shoes') }}</router-link></div>
                       <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
+
                   </div>
                 </div></a
               >
@@ -128,7 +136,9 @@
         </div>
         <div>
           <button class="btn green specialoffer" type="submit">
+
             <router-link class="text-white" to="/shop">{{ $t('translated.specialOffer') }}</router-link>
+
           </button>
         </div>
       </nav>
@@ -187,7 +197,7 @@ i {
   padding-left: 1.2px;
 }
 #mybutton2:hover {
-  background-color: #20d3c2 !important;
+  background-color: #1db4a5 !important;
 }
 .margin {
   margin-left: 0rem !important;
@@ -214,9 +224,8 @@ i {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0.1rem;
-  left: 0px;
   height: 4px;
+  bottom: -4px;
   width: 45px;
   background-color: #20d3c2;
 }
@@ -229,5 +238,12 @@ i {
     height: 4px;
     width: 85%;
   }
+}
+
+@media (max-width: 992px) {
+  .specialoffer {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 }
 </style>

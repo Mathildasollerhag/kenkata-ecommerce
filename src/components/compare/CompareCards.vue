@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex px-3 justify-content-center">
     <div class="mt-auto d-none d-xl-block">
 
       <div>

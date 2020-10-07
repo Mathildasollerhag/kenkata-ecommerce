@@ -57,7 +57,7 @@
             <img class="mx-2" src="@/images/icons/CompareCircle.png" />
           </span>
           
-          <span class="c-pointer" v-b-tooltip.hover title="Add To Wishlist">
+          <span v-on:click="addProductToWishlist({currentUserId, product, id})" class="c-pointer" v-b-tooltip.hover title="Add To Wishlist">
             <img src="@/images/icons/HeartCircle.png" />
           </span>
         </div>
@@ -115,10 +115,13 @@ export default {
     currentRoute() {
       return this.$route.name;
     },
+    currentUserId() {
+      return sessionStorage.getItem('userId')
+    },
     ...mapGetters(["shoppingCart"]),
   }, 
   methods: {
-    ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement", "addProductToCompare"]),
+    ...mapActions(["getProductById", "addProductToCart", "productIncrement", "productDecrement", "addProductToCompare", "addProductToWishlist"]),
     
     itemQuantityCount() {
       let item = this.shoppingCart.find(item => item.id == this.id)

@@ -19,10 +19,12 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
 import Quickview from '@/components/quickview/Quickview.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name: "App",
@@ -30,10 +32,14 @@ export default {
   Navigation,
   Brands,
   Footer,
-  Quickview,
- 
-  }
-  
+  Quickview, 
+  },
+  created() {
+    this.getCurrentUser(firebase.auth().currentUser.uid)
+  },
+  methods: {
+    ...mapActions(["getCurrentUser"])
+  }  
 }
 </script>
 
@@ -43,7 +49,6 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -54,6 +59,10 @@ html, body {
   --gray-theme: #CCCCCC;
   --light-gray-theme: #EEEEEE;
   --lighter-gray-theme: #F6F6F6;
+}
+
+button, input, .form-control {
+  box-shadow: none !important;
 }
 
 .theme-bg {

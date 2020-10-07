@@ -2,20 +2,20 @@
 <div>
     <footer class="footer py-5">
       <div class="row d-flex mr-auto pr-5 justify-content-end">
-          <button @click="scrollToTop" id="scroll-up-btn" class="btn btn-primary d-none d-sm-block"><img src="@/images/Arrow-Up.svg" alt=""></button>
+          <button @click="scrollToTop" id="scroll-up-btn" class="btn btn-primary d-none d-lg-block"><img src="@/images/Arrow-Up.svg" alt=""></button>
       </div>
   <div id="centered" class="container">
     <div class="row d-flex justify-content-between">
       <div class="col-sm-3">
         <div>
-          <img class="pb-4" src="@/images/Logo-White.svg" alt="">
+          <img class="pb-4 mt-1" src="@/images/Logo-White.svg" alt="">
           <div>
             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim quam, ullamcorper vel tellus vitae, tempus fringilla lectus. Donec maximus justo eu nisl convallis iaculis. Aenean laoreet.</p>
             <div>
             <div class="text-white">
               <div id="follow-centered" class="d-flex pt-3">
                 <p class="mb-0 pb-1">Follow Us</p>
-                <div id="follow-border" class="ml-4 mt-1"></div>
+                <div id="follow-border" class="ml-4 mt-1 d-none d-md-block"></div>
               </div>
                 <a href=""><i class="pr-2 pl-0 fab fa-facebook-f"></i></a>
                 <a href=""><i class="p-2 fab fa-twitter"></i></a>
@@ -82,7 +82,7 @@
 </footer>
 
 <div id="copyright">
-        <div class="container d-flex justify-content-md-between justify-content-center py-3">
+        <div class="container d-flex flex-wrap justify-content-md-between justify-content-center py-3">
             <div class="my-auto">
                 <small id="copyright-text">© Copyright 2020 KenKata</small>
             </div>
@@ -221,6 +221,17 @@ li:nth-child(3n) {
 }
 
 @media (min-width: 768px) { 
+    
+    #centered {
+        text-align: left;
+    }
+
+    #follow-centered {
+  justify-content: start;
+}
+}
+
+@media (min-width: 576px) { 
     
     #centered {
         text-align: left;

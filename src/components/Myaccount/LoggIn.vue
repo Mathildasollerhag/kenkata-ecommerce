@@ -13,7 +13,7 @@
           <input v-model="password" type="password" class="form-control rounded" id="password" required autocomplete="off">
         </div>
         <button type="submit" class="btn  rounded-pill lightgreen text-white btn-lg btn-block mb-1">LOG IN</button>
-        <span v-if="errorMessage" class="position-absolute error-message text-muted">Wrong email or password, try again!</span>
+        <span v-if="errorMessage" class="position-absolute error-message text-danger">Wrong email or password, try again!</span>
         <div class="form-group form-check mt-4 pt-3">
           <input type="checkbox" class="form-check-input rounded" id="exampleCheck1">
           <div class="d-flex justify-content-between">

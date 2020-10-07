@@ -2,7 +2,7 @@
     <div>
         <div class="container pt-4 pb-4">
             <div class="row">
-                <div class="col-12 col-xl-2"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/logo.png" alt=""></router-link></div>
+                <div class="col-12 col-xl-2 text-center"><router-link class="navbar-brand" id="brand" to="/"><img src="../../images/Logo.svg" alt=""></router-link></div>
                 <div class="col-12 col-xl-6">
                     <div class="input-group class1">
                         <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0"><input id="myclass5" type="text" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2"></div>
@@ -19,11 +19,15 @@
                                 </div>                               
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
                                     <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
                                     <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.hats') }}</router-link></div>
                                     <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.sunglasses') }}</router-link></div>
                                     <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.shoes') }}</router-link></div>
                                     <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
+
+                                    
+
                                 </div>
                             </div>
                         </a>
@@ -33,6 +37,7 @@
                 <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
                     <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
                     <router-link v-else to="/account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
+
                 </div>
                     <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
 
@@ -61,9 +66,15 @@ export default {
 </script>
 
 <style scoped>
+
 i:hover {
     color: #20D3C2;
 }
+
+.my-account:hover {
+    color: #20D3C2;
+}
+
 .fa-chevron-down {
     color: #20D3C2!important;
 }

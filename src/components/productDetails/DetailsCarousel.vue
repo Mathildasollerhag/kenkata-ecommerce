@@ -30,7 +30,6 @@ export default {
   components: { carousel, Enlarge }, 
   created() {
     this.carouselImages()
-    console.log(this.currentImage)
   },
   updated() {
     this.carouselImages()
@@ -44,17 +43,11 @@ export default {
             $('#detailsCarousel .owl-theme .owl-dots .owl-dot ~ .owl-dot ~ .owl-dot ~ .owl-dot span').css('background-image', 'url("' + this.product.images[3] + '")') 
         }       
     },
-    click() {
-        
+    click() {        
         this.currentImage=$('#detailsCarousel .owl-item.active')[0].children[0].currentSrc
     },
     ...mapActions(["getProductById"])
-  },
-//   computed: {
-//       currentImage() {
-//           return $('#detailsCarousel .owl-item.active')[0].children[0].currentSrc
-//       }
-//   }
+  }
 }
 </script>
 

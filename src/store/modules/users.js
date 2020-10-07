@@ -5,7 +5,8 @@ export default {
    state: {
       isLoggedIn: false,
       currentUser: null,
-      currentUserId: null
+      currentUserId: null,
+      currentUserWishlist: []
    },
 
 
@@ -14,7 +15,10 @@ export default {
          state.isLoggedIn = true
          state.currentUser = user.data()
          state.currentUserId = user.id
-         sessionStorage.setItem('wishlist', JSON.stringify(user.data().wishlist))
+         state.currentUserWishlist = user.data().wishlist
+      },
+      UPDATE_WISHLIST(state, wishlist) {
+         state.currentUserWishlist = wishlist
       }
    },
 
@@ -34,6 +38,21 @@ export default {
          }).catch(err => {
             console.log(err);
          })
+      },
+      removeFromWishlist({ commit }, { currentUserId, item }) {
+         const wishlist = firebase.firestore().collection("users").doc(currentUserId)
+
+         wishlist.update({
+            // Remove product from wishlist
+            wishlist: firebase.firestore.FieldValue.arrayRemove(item)
+         }).then(() => {
+            // Update wishlist state
+            firebase.firestore().collection("users").doc(currentUserId).get().then(res => {
+               commit('UPDATE_WISHLIST', res.data().wishlist)
+            })
+         }).catch(err => {
+            console.log(err);
+         })
       }
    },
 
@@ -45,7 +64,7 @@ export default {
          return state.currentUser
       },
       currentUserWishlist(state) {
-         return state.currentUser.wishlist
+         return state.currentUserWishlist
       },
       currentUserId(state) {
          return state.currentUserId

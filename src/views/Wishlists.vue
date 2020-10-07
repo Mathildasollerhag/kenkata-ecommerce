@@ -35,7 +35,7 @@
             <div v-if="currentUserWishlist.length > 0" class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col mt-5" v-for="(item, index) in currentUserWishlist" :key="index">
                     <div class="card">
-                        <p class="mb-0 p-2"><a class="pr-2 pl-2" href="">X</a> Remove item</p>
+                        <p class="mb-0 p-2"><span v-on:click="removeFromWishlist({currentUserId, item})" class="pr-1 pl-2 c-pointer"><i class="fas fa-times"></i></span> Remove item</p>
                         <ProductCard class="productcard" :item="item"/>
                     </div>
                 </div>
@@ -49,6 +49,11 @@ import firebase from 'firebase'
 import ProductCard from '@/components/products/ProductCard'
 import { mapActions, mapGetters } from 'vuex'
 export default {
+    data() {
+        return {
+            currentUserId: firebase.auth().currentUser.uid
+        }
+    },
     components: {
         ProductCard
     },
@@ -56,7 +61,7 @@ export default {
         this.getCurrentUser(firebase.auth().currentUser.uid)
     },
     methods: {
-        ...mapActions(["getCurrentUser"])
+        ...mapActions(["getCurrentUser", "removeFromWishlist"])
     },
     computed: {
         ...mapGetters(["currentUserWishlist"])

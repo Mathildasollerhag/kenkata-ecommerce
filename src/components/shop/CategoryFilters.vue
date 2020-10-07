@@ -2,31 +2,31 @@
 <div class="list-group list-group-flush">
                 <a href="#" class="list-group-item"  @click.prevent="getProductsByGender('men')">
                   Men's
-                  <span class="float-right badge badge-light round">18</span>
+                  <span class="float-right badge badge-light round">{{getMen.length}}</span>
                 </a>
                 <a href="#" class="list-group-item"   @click.prevent="getProductsByGender('women')">
                   Women's
-                  <span class="float-right badge badge-light round">23</span>
+                  <span class="float-right badge badge-light round">{{getWomen.length}} </span>
                 </a>
                 <a href="#" class="list-group-item ab"  @click.prevent="getProductsByCategory('kids')">
                   Kids
-                  <span class="float-right badge badge-light round">32</span>
+                  <span class="float-right badge badge-light round">{{getKids.length}}</span>
                 </a>
                 <a href="#" class="list-group-item"  @click.prevent="getProductsByCategory('hats')" >
                   Hats
-                  <span class="float-right badge badge-light round">12</span>
+                  <span class="float-right badge badge-light round">{{getHats.length}}</span>
                 </a>
                 <a href="#" class="list-group-item"  @click.prevent="getProductsByCategory('sunglasses')">
                   Sunglasses
-                  <span class="float-right badge badge-light round">15</span>
+                  <span class="float-right badge badge-light round">{{getSunglasses.length}}</span>
                 </a>
                 <a href="#" class="list-group-item"  @click.prevent="getProductsByCategory('shoes')" >
                   Shoes
-                  <span class="float-right badge badge-light round">12</span>
+                  <span class="float-right badge badge-light round">{{getShoes.length}}</span>
                 </a>
                 <a href="#" class="list-group-item"  @click.prevent="getProductsByCategory('watches')">
                   Watches
-                  <span class="float-right badge badge-light round">20</span>
+                  <span class="float-right badge badge-light round">{{getWatches.length}}</span>
                 </a>
 </div>
               <!-- list-group .// -->
@@ -38,10 +38,14 @@ import { mapActions , mapGetters} from "vuex";
 export default {
   name: "CategoryFilters",
   methods: {
-    ...mapActions(["getProductsByCategory", "getProductsByGender"])    
+    ...mapActions(["getProductsByCategory", "getProductsByGender"])  
+     
   },
   computed:{
-      ...mapGetters(['productsCatalog'])
+      ...mapGetters(['productsCatalog']),
+      
+      ...mapGetters(['getShoes', 'getMen', 'getWomen', 'getKids', 'getHats', 'getSunglasses', 'getWatches', ])
+    
     
   },
   created(){

@@ -6,7 +6,7 @@
                 <label class="customcheck">Black
                     <input type="checkbox" @click.prevent="getProductsByColor('black')">
                     <span id="checkmark-black" class="checkmark"></span>
-                    <span class="float-right badge badge-light round">12</span>
+                    <span class="float-right badge badge-light round">8</span>
                 </label>
                 <label class="customcheck">Gray
                     <input type="checkbox" @click.prevent="getProductsByColor('gray')">
@@ -49,7 +49,8 @@ export default {
    
     computed: {
       ...mapGetters(['productsColor']),
-     
+       ...mapGetters(['productsCatalog']),
+      ...mapGetters(['getShoes', 'getMen', 'getWomen', 'getKids', 'getHats', 'getSunglasses', 'getWatches']),
       },
       methods: {
    

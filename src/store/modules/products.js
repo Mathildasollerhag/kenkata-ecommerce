@@ -4,6 +4,7 @@ export default {
 
    state: {
       productsCatalog: [],
+      productsBrand:[],
       newArrivals: [],
       featuredProducts: [],
       topSellers: [],
@@ -16,6 +17,8 @@ export default {
       watches: [],
       clothes: [],
       product: null,
+      black:[],
+      minvalue:''
    },
 
    mutations: {
@@ -40,7 +43,7 @@ export default {
          state.watches = items.filter(item => item.product.category === 'watches')
          state.clothes = items.filter(item => item.product.mainCategory === 'clothes')
       },
-
+     
       SET_PRODUCT(state, product) {
          // Set product
          state.product = product.data()
@@ -164,22 +167,41 @@ export default {
                items.push(data)
             });
 
-
             commit('SET_PRODUCTS', items)
             console.log('alaa');
-
-
 
          })
       },
       // Get all getProductsByPrice
       getProductsByPrice({ commit }, value) {
-         firebase.firestore().collection('products').orderByChild('price').limitToFirst(1).once('value').then(snapshot => {
-            snapshot.forEach(function (child) {
-               console.log(child.val());
-               console.log(child.val().price);
-            })
+         console.log(value)
+         firebase.firestore().collection('products').where("price", "<=", parseInt(value)).get().then(res => {
+            let items = [];
+            res.forEach(doc => {
+               const data = {
+                  id: doc.id,
+                  product: doc.data(),
+
+               }
+               items.push(data)
+            });
+            console.log(items)
+            commit('SET_PRODUCTS', items)
+            console.log('alaa');
+
          })
+    /*      firebase.firestore().collection('products').orderByChild('price').limitToFirst(1).once('value').then(snapshot => {
+            snapshot.forEach(function (child) {
+               const data = {
+                  id: doc.id,
+                  product: doc.data(),
+
+               }
+               items.push(data)
+         
+            })
+            commit('SET_PRODUCTS', items)
+         }) */
 
 
          //  firebase.firestore().collection('products').where("price", ">=",price).get().then(res => {
@@ -217,8 +239,6 @@ export default {
 
             commit('SET_PRODUCTS', items)
 
-
-
          })
       },
 
@@ -237,6 +257,7 @@ export default {
             });
 
             commit('SET_PRODUCTS', items)
+           
 
 
 
@@ -295,6 +316,7 @@ export default {
       product(state) {
          return state.product
       },
+     
    }
 
 }

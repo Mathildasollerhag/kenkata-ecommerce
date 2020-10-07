@@ -45,6 +45,12 @@ export default {
 
 <style scoped>
 
+button:hover {
+    color: white;
+    background-color: var(--theme) !important;
+    transition: .2s ease-in-out;
+}
+
 .container {
     width: 85%;
 }

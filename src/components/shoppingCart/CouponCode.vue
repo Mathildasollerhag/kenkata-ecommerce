@@ -15,6 +15,10 @@ export default {
 </script>
 
 <style scoped>
+
+button:hover {
+    background-color: var(--blue-theme) !important;
+}
 #couponBox {
     border: 2px dotted #e3e3e3;
     padding: 1em;

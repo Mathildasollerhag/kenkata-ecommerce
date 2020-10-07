@@ -65,6 +65,10 @@ export default {
 </script>
 
 <style scoped>
+
+button:hover {
+  background-color: var(--blue-theme) !important;
+}
 .cart-heading {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;

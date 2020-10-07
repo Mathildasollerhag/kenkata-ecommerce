@@ -31,6 +31,11 @@ export default {
 
 <style scoped>
 
+button:hover {
+    background-color: var(--theme) !important;
+    color: white;
+}
+
 .row {
     margin-right: 0!important;
 }

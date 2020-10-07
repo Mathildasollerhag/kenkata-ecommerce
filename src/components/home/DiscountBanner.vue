@@ -10,7 +10,7 @@
                                     <span class="h3-size">OFF</span>
                                     <p>FOR NEW CUSTOMER</p>
                                 </div>
-                                    <router-link to="/shop"><button class="btn blue-theme-bg text-white custom-radius px-4">SHOP NOW</button></router-link>
+                                    <router-link to="/shop"><button class="btn-hover btn blue-theme-bg text-white custom-radius px-4">SHOP NOW</button></router-link>
                             </div>
                                 
                         </div>
@@ -31,6 +31,17 @@ export default {
 </script>
 
 <style scoped>
+
+.btn-hover:hover {
+  background-color: white;
+  color: var(--theme) !important;
+}
+
+.learn-more-btn:hover {
+  color: white;
+  background-color: #0E153D !important;
+  transition: .2s ease-in-out;
+}
 
 .h1-size {
   font-size: 4rem;

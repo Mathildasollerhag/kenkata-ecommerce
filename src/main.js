@@ -49,8 +49,3 @@ firebase.auth().onAuthStateChanged(user => {
   }
 })
 
-
-
-
-
-

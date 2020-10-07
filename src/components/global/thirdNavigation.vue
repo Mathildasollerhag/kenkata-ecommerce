@@ -24,40 +24,46 @@
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                ><i class="fas fa-bars myclass10 px-2"></i>Browse Categories
+                ><i class="fas fa-bars myclass10 px-2"></i>{{ $t('translated.browseCategories') }}
                 <i class="fas fa-chevron-down myclass8 myclass10"></i
               ></a>
               <div class="dropdown-menu pl-2" aria-labelledby="navbarDropdown">
-                <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">Clothes</router-link></div>
-                <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">Accessories</router-link></div>
-                <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
-                <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
-                <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
-                <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
+
+                <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
+                <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.clothes') }}</router-link></div>
+                <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.accessories') }}</router-link></div>
+                <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.hats') }}</router-link></div>
+                <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.sunglasses') }}</router-link></div>
+                <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.shoes') }}</router-link></div>
+                <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
               </div>
             </button>
-            <li class="nav-item myclass7">
-              <router-link active-class="active" exact class="nav-link" to="/">Home</router-link>
+            <li class="nav-item active myclass7">
+              <router-link class="nav-link" to="/">{{ $t('translated.home') }}</router-link>
+
             </li>
 
             <li class="nav-item dropdown myclass7">
               <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop<i class="fas fa-chevron-down pl-2"></i>
                 <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
-                  <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                  <div @click="getProductsByGender('men')"><router-link to="/shop" class="dropdown-item">Men's</router-link></div>
-                  <div @click="getProductsByGender('women')"><router-link to="/shop" class="dropdown-item">Women's</router-link></div>
-                  <div @click="getProductsByCategory('kids')"><router-link to="/shop" class="dropdown-item">Kids's</router-link></div>
+
+                  <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
+                  <div @click="getProductsByGender('men')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.men') }}</router-link></div>
+                  <div @click="getProductsByGender('women')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.women') }}</router-link></div>
+                  <div @click="getProductsByCategory('kids')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.kid') }}</router-link></div>
+
                 </div>
               </div>
             </li>
 
             <li class="nav-item dropdown myclass7">
-              <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products<i class="fas fa-chevron-down pl-2"></i>
+
+              <div class="dropdown nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $t('translated.products') }}<i class="fas fa-chevron-down pl-2"></i>
                 <div class="dropdown-menu pl-2" aria-labelledby="dropdownMenuButton">
-                  <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                  <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">Clothes</router-link></div>
-                  <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">Accessories</router-link></div>
+                  <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
+                  <div @click="getProductsByMainCategory('clothes')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.clothes') }}</router-link></div>
+                  <div @click="getProductsByMainCategory('accessories')"><router-link to="/shop" class="dropdown-item">{{ $t('translated.accessories') }}</router-link></div>
+
                 </div>
               </div>
             </li>
@@ -70,16 +76,18 @@
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    >Categories <i class="fas fa-chevron-down myclass9"></i
+                    >{{ $t('translated.categories') }} <i class="fas fa-chevron-down myclass9"></i
                   ></a>
                   <div
                     class="dropdown-menu pl-2"
                     aria-labelledby="dropdownMenuButton"
-                  > <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                      <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
-                      <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
-                      <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
-                      <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
+
+                  > <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
+                      <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.hats') }}</router-link></div>
+                      <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.sunglasses') }}</router-link></div>
+                      <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.shoes') }}</router-link></div>
+                      <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
+
                   </div>
                 </div></a
               >
@@ -93,7 +101,7 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Pages <i class="fas fa-chevron-down myclass9"></i>
+                    {{ $t('translated.pages') }} <i class="fas fa-chevron-down myclass9"></i>
                   </a>
                   <div
                     class="dropdown-menu pl-2"
@@ -103,19 +111,19 @@
                       >Shop</router-link
                     >
                     <router-link to="/wishlist" class="dropdown-item"
-                      >Wishlist</router-link
+                      >{{ $t('translated.wishlist') }}</router-link
                     >
                     <router-link to="/contact" class="dropdown-item"
-                      >Contact Us</router-link
+                      >{{ $t('translated.contactUs') }}</router-link
                     >
                     <router-link to="/about" class="dropdown-item"
-                      >About Us</router-link
+                      >{{ $t('translated.aboutUs') }}</router-link
                     >
                     <router-link to="/team" class="dropdown-item"
                       >Team</router-link
                     >
                     <router-link to="/portfolio" class="dropdown-item"
-                      >Portfolio</router-link
+                      >{{ $t('translated.portfolio') }}</router-link
                     >
                   </div>
                 </div>
@@ -128,7 +136,9 @@
         </div>
         <div>
           <button class="btn green specialoffer" type="submit">
-            <router-link class="text-white" to="/shop">SPECIAL OFFER</router-link>
+
+            <router-link class="text-white" to="/shop">{{ $t('translated.specialOffer') }}</router-link>
+
           </button>
         </div>
       </nav>

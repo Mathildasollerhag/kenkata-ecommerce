@@ -11,7 +11,7 @@
                             <div class="dropdown myclass1">
                                 <div class="d-flex hover-green" id="downmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div>
-                                        Categories
+                                        {{ $t('translated.categories') }}
                                     </div>
                                     <div class="ml-auto">
                                         <i class="fas fa-chevron-down pr-2"></i>
@@ -19,20 +19,25 @@
                                 </div>                               
                                 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">All</router-link></div>
-                                    <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">Hats</router-link></div>
-                                    <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">Sunglasses</router-link></div>
-                                    <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">Shoes</router-link></div>
-                                    <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">Watches</router-link></div>
+
+                                    <div @click="getProducts()"><router-link to="/shop" class="dropdown-item">{{ $t('translated.all') }}</router-link></div>
+                                    <div @click="getProductsByCategory('hats')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.hats') }}</router-link></div>
+                                    <div @click="getProductsByCategory('sunglasses')" ><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.sunglasses') }}</router-link></div>
+                                    <div @click="getProductsByCategory('shoes')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.shoes') }}</router-link></div>
+                                    <div @click="getProductsByCategory('watches')"><router-link to="/shop" class="dropdown-item" href="#">{{ $t('translated.watches') }}</router-link></div>
+
+                                    
+
                                 </div>
                             </div>
                         </a>
                         <div class="input-group-append green btnextra2 "><button class="btn pr-3 pt-2" type="button"><i class="fas fa-search white btnextra"></i></button></div>
                     </div>
                 </div>
-                <div class="col-xl-4 d-flex justify-content-center justify-content-xl-end"><div class="iconsextra class2 classmargin">
-                    <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
-                    <router-link v-else to="/account" class="my-account"><i class="far fa-user icon-size mr-1"></i>My account</router-link>
+                <div class="col-xl-4 d-flex"><div class="iconsextra class2 classmargin">
+                    <router-link v-if="currentUser" to="/myaccount"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
+                    <router-link v-else to="/account"><i class="far fa-user icon-size mr-1"></i>{{ $t('translated.myAccount') }}</router-link>
+
                 </div>
                     <div class=" iconsextra ml-4"><router-link to="/wishlist"><i class="far fa-heart icon-size"></i></router-link></div>
 
@@ -62,13 +67,14 @@ export default {
 
 <style scoped>
 
+i:hover {
+    color: #20D3C2;
+}
+
 .my-account:hover {
     color: #20D3C2;
 }
 
-i:hover {
-    color: #20D3C2;
-}
 .fa-chevron-down {
     color: #20D3C2!important;
 }

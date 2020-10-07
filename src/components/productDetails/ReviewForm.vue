@@ -77,9 +77,12 @@ export default {
                     review: this.review
                 })
                 this.reviewSuccess = true
+                this.review.text = ""
+                this.review.name = ""
+                this.review.email = ""
                 setTimeout(() => {
-                    window.location.reload()
-                }, 1000);
+                    this.reviewSuccess = false
+                }, 4000);
             }
             else {
                 this.reviewFailed = true

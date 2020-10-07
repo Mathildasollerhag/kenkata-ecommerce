@@ -17,6 +17,7 @@ export default {
       watches: [],
       clothes: [],
       product: null,
+      productReviews: [],
       black:[],
       minvalue:''
    },
@@ -47,8 +48,11 @@ export default {
       SET_PRODUCT(state, product) {
          // Set product
          state.product = product.data()
-
       },
+
+      SET_REVIEWS(state, reviews) {
+         state.productReviews = reviews
+      }
    },
    
    actions: {
@@ -75,6 +79,7 @@ export default {
       getProductById({ commit }, id) {
          firebase.firestore().collection('products').doc(id).get().then(res => {
             commit('SET_PRODUCT', res)
+            commit('SET_REVIEWS', res.data().reviews)
          })
       },
 
@@ -85,6 +90,10 @@ export default {
          reviews.update({
             reviews: firebase.firestore.FieldValue.arrayUnion(review)
          }).then(() => {
+            // Update reviews
+            firebase.firestore().collection('products').doc(productId).get().then(res => {
+               commit('SET_REVIEWS', res.data().reviews)
+            })
             console.log("Review successfully added!");
          }).catch(err => {
             console.log(err);
@@ -316,6 +325,10 @@ export default {
       product(state) {
          return state.product
       },
+      productReviews(state) {
+         const reviews = state.productReviews.reverse()
+         return reviews
+      }
      
    }
 

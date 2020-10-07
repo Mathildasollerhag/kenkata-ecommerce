@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ReviewCard from './ReviewCard'
 import ReviewForm from './ReviewForm'
 export default {
@@ -22,9 +23,10 @@ export default {
       ReviewCard, ReviewForm
   },
   computed: {
-    productReviews() {
-      return this.product.reviews.reverse()
-    }
+    ...mapGetters(["productReviews"])
+    // productReviews() {
+    //   return this.product.reviews.reverse()
+    // }
   }
 }
 </script>

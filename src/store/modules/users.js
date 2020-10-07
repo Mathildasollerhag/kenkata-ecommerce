@@ -24,19 +24,16 @@ export default {
             commit('SET_USER', res)
          })
       },
-      addProductToWishlist({ commit }, { currentUserId, product }) {
-         console.log(product);
-         console.log(currentUserId);
+      addProductToWishlist({ commit }, { currentUserId, product, id }) {
          const wishlist = firebase.firestore().collection("users").doc(currentUserId)
 
          wishlist.update({
-            wishlist: firebase.firestore.FieldValue.arrayUnion(product)
+            wishlist: firebase.firestore.FieldValue.arrayUnion({product, id})
          }).then(() => {
             console.log("Product successfully added to wishlist!");
          }).catch(err => {
             console.log(err);
          })
-         console.log(wishlist);
       }
    },
 

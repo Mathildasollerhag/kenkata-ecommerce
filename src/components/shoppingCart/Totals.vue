@@ -11,7 +11,7 @@
         <div class="mb-2">
           <p class="d-flex align-items-center">
             <label class="m-0 mr-1" for="flatrate">Flat rate: <span class="theme-text">$20.00</span></label>
-            <input type="radio" name="shipping" id="flatrate" value="20" :checked="shipping === 20" @change="updateShipping(20)">
+            <input type="radio" name="shipping" id="flatrate" value="20" :checked="shipping === 20" @change="updateShipping(20)" required>
           </p>
         </div>
         <!-- Free shipping -->

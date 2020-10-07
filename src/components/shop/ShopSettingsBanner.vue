@@ -33,9 +33,9 @@
                             Default sorting <i class="pl-5 fas fa-chevron-down"></i>
                         </a>
                         <div  class="dropdown-menu mt-3" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item text-dark" href="#">Men's</a>
-                            <a class="dropdown-item text-dark" href="#">Women's</a>
-                            <a class="dropdown-item text-dark" href="#">Kids</a>
+                            <a class="dropdown-item text-dark" href="#" @click.prevent="getProductsByGender('men')">Men's</a>
+                            <a class="dropdown-item text-dark" href="#" @click.prevent="getProductsByGender('women')">Women's</a>
+                            <a class="dropdown-item text-dark" href="#" @click.prevent="getProductsByCategory('kids')">Kids</a>
                         </div>
                     </div>
 
@@ -199,11 +199,11 @@
                   Filter by Brand
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a href="#" class="dropdown-item">
-                          <div class="img-div" @click.prevent="getProductsByBrand('Bexim')">
-                              <img src="@/images/Bexim.svg"  alt="">
+                 
+                          <div class="img-div">
+                              <img src="@/images/Bexim.svg"  alt="" @click.stop="getProductsByBrand('Bexim')" >
                           </div>
-                        </a>
+                     
                         <a href="#" class="dropdown-item">
                             <div class="img-div">
                               <img src="@/images/Dismis.svg" alt="">
@@ -239,36 +239,36 @@
               <div class="list-group list-group-flush">
                   <div class="d-flex">
                       <div class="">
-                      <a href="#" class="">
+                
                           <div class="img-div mr-4">
-                              <img src="@/images/Bexim.svg" alt="">
+                              <img src="@/images/Bexim.svg" alt="" @click.stop="getProductsByBrand('Bexim')">
                           </div>
-                        </a>
+                      
                         <a href="#" class="">
                             <div class="img-div">
-                              <img src="@/images/Dismis.svg" alt="">
+                              <img src="@/images/Dismis.svg" alt="" @click.stop="getProductsByBrand('Enkalda')" >
                           </div>
                         </a>
                       <a href="#" class="">
                           <div class="img-div">
-                              <img src="@/images/Dallas.svg" alt="">
+                              <img src="@/images/Dallas.svg" alt="" @click.stop="getProductsByBrand('Apparis')">
                           </div>
                       </a>
                   </div>
                   <div class="">
-                      <a href="#" class="">
+                    
                           <div class="img-div">
-                              <img src="@/images/Lighton.svg" alt="">
+                              <img src="@/images/Lighton.svg" alt="" @click.stop="getProductsByBrand('Kenkata')" >
                           </div>
-                        </a>
-                      <a href="#" class="">
+                       
+                     
                           <div class="img-div">
-                              <img src="@/images/Rosimo.svg" alt="">
+                              <img src="@/images/Rosimo.svg" alt="" @click.stop="getProductsByBrand('Throne')">
                           </div>
-                        </a>
+                       
                       <a href="#" class="">
                           <div class="img-div">
-                              <img src="@/images/Concord.svg" alt="">
+                              <img src="@/images/Concord.svg" alt=""  @click.stop="getProductsByBrand('Ghost') ">
                           </div>
                         </a>
                   </div>
@@ -362,18 +362,9 @@
                    </div>
             </div>
 
-                 <!--
-                <div v-for="item in productsCatalog" :key="item.id">
-                    <div class="d-flex">
-                        <img :src="item.product.images[0]"  :item="item" />
-                        <p>{{item.product.name}}</p>
-
-                    </div> 
-                </div>
-                -->
             </div>
              <div  v-show="isVShowVisible()"> 
-                 <div class="r" v-for="item in productsCatalog" :key="item.id">
+                  <div class="row"  v-for="item in productsCatalog" :key="item.id">
                     <div  class="col-6">
                          <ProductCard class="productcard" :item="item" />
                     </div>
@@ -381,11 +372,7 @@
                          <ProductCard class="productcard" :item="item" />
                     </div>
                    
-                   
-                </div>
-              
-                    
-                
+                  </div>
             </div>
              <div  v-show="isshowGrid()"> 
                     <div class="d-flex justify-content-center mx-auto"> <ProductCardsList /></div>
@@ -427,6 +414,11 @@ export default {
     computed: {
       ...mapGetters(['productsCatalog']),
       ...mapGetters(['productsBrand']),
+      ...mapGetters(['productsCatalog' , ' getProductsByColor']),
+      
+      ...mapGetters(['getShoes', 'getMen', 'getWomen', 'getKids', 'getHats', 'getSunglasses', 'getWatches', ]),
+     
+    
      
       },
     
@@ -438,12 +430,12 @@ export default {
                 isshowGrid:false,
                
             },
-        
-
+   
 }  
         },
          methods: {
-              ...mapActions(["getProductsByBrand"]),
+            ...mapActions(["getProductsByCategory", "getProductsByGender" , "getProductsByBrand"]),  
+     
             toggleVIfVisible(){
                 this.$data.local.isVIfVisible = !(this.$data.local.isVIfVisible);
                 this.$data.local.isVShowVisible = null;

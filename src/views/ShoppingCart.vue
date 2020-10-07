@@ -1,22 +1,22 @@
 <template>
   <div>
-    <Toprow />
+    <Toprow v-if="shoppingCart.length > 0" />
     <div class="container-fluid container-md d-flex flex-column flex-xl-row align-items-start mb-custom">
       <!-- Product List -->
       <div class="cart-left col-xl-8">
-        <ProductList v-if="shoppingCart != 0"/>        
+        <ProductList v-if="shoppingCart.length > 0"/>        
         <div class="d-flex flex-column flex-md-row justify-content-between">
           <div class="col-md-8 order-1 order-md-0 pl-0">
-            <CouponCode v-if="shoppingCart != 0"/>
+            <CouponCode v-if="shoppingCart.length > 0"/>
           </div>
-          <div v-if="shoppingCart != 0">
+          <div v-if="shoppingCart.length > 0">
             <button class="btn btn-kenkata-dark update-cart order-0 order-md-1 mb-4 mb-md-0">Update Cart</button>
           </div>
         </div>
       </div>
 
       <!-- Cart Totals -->
-      <div v-if="shoppingCart != 0" class="cart-right col-xl-4 mt-4 mt-xl-0">
+      <div v-if="shoppingCart.length > 0" class="cart-right col-xl-4 mt-4 mt-xl-0">
         <div class="cart-heading blue-theme-bg text-center py-2">
           <h4 class="theme-text text-uppercase my-1">Cart Totals</h4>
         </div>
@@ -29,12 +29,13 @@
         </div>
       </div>      
     </div>
-    <div v-if="shoppingCart == 0" class="text-center">
+    <div v-if="shoppingCart.length === 0" class="text-center">
       <h2>Your shoppingcart is empty</h2>
+      <router-link to="/shop"><button class="btn theme-bg text-white custom-radius mt-3 font-weight-bold px-4">SHOP NOW</button></router-link>
     </div>
 
     <!-- You May Also Like -->
-    <div class="container mb-custom">
+    <div v-if="shoppingCart.length > 0" class="container mb-custom">
       <div class="mt-5">
         <YouMayAlsoLike :gender="shoppingCart[0].product.gender"/>
       </div>
@@ -82,5 +83,9 @@ button {
 }
 a:hover {
   text-decoration: none;
+}
+
+.custom-radius {
+  border-radius: 30px;
 }
 </style>

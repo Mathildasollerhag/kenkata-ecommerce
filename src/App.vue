@@ -24,6 +24,7 @@ import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
 import Quickview from '@/components/quickview/Quickview.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name: "App",
@@ -33,21 +34,12 @@ export default {
   Footer,
   Quickview, 
   },
-  // methods: {
-  //   checkUser() {
-  //     firebase.auth().onAuthStateChanged(user => {
-  //       if(user){
-  //         console.log('user logged in:', user);
-  //       } else {
-  //         console.log('user logged out');
-  //       }
-  //     })
-  //   }
-  // },
-  // created() {
-  //   this.checkUser()
-  // }
-  
+  created() {
+    this.getCurrentUser(firebase.auth().currentUser.uid)
+  },
+  methods: {
+    ...mapActions(["getCurrentUser"])
+  }  
 }
 </script>
 

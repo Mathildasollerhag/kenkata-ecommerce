@@ -3,7 +3,7 @@
       <form v-on:submit.prevent="userRegister" class="pb-3">
 
         <h2 class="font">REGISTER</h2>
-        <p class="text-muted mt-2">Register for this site allos you to access your order status and history.<br>just fill in the fields below , and we will get a new account.set up foe you in no <br>time.we will only ask you for information necessary to make the purchase<br> process faster and easeri </p>
+        <p class="text-muted register-text1 mt-2">Register for this site allows you to access your order status and history. Just fill in the fields below, and we'll get a new account set up for you in no time. We will only ask you for information necessary to make the purchase process faster and easier.</p>
         <div class="form-group position-relative">
           <label for="username">Username <span class=" position-absolute star color"><i class="fas fa-star-of-life fa-xs"></i></span></label>
           <input v-model="username" type="text" class="form-control" aria-describedby="emailHelp" required autocomplete="off">
@@ -22,7 +22,7 @@
         <button type="submit" class="btn rounded-pill lightgreen text-white btn-lg btn-block d-flex justify-content-center align-items-center">REGISTER <LoadingSpinner v-if="isLoading"/></button>
 
         <div class="d-flex justify-content-center mt-3">
-          <span v-show="errorMessage" class="text-muted">{{errorMessage}}</span>
+          <span v-show="errorMessage" class="text-danger">{{errorMessage}}</span>
           <span v-show="accountCreated" class="text-muted">Account created, you're now being redirected...</span>
         </div>
       </form> 
@@ -152,5 +152,9 @@ margin-bottom: 10px;
 
 input, .form-control {
   border: none;
+}
+.register-text1 {
+  font-size: 14px;
+  line-height: 1.8;
 }
 </style>

@@ -165,8 +165,8 @@
                   </div>
                   <!-- Place Order -->
                   <!-- <button v-if="!billingDetails" disabled class="btn btn-block btn-kenkata-blue mx-4 m-auto">Place Order</button> -->
-                  <button class="btn btn-block btn-kenkata-blue mx-4 m-auto">
-                    <router-link class="text-white" to="/complete">PLACE ORDER</router-link>
+                  <button @click="clearCart()" type="submit" class="btn btn-block btn-kenkata-blue mx-4 m-auto">
+                    <span class="text-white">PLACE ORDER</span>
                   </button>
                 </div>
             </div>        
@@ -215,7 +215,7 @@ export default {
     Payments
   },
   methods: {
-    ...mapActions(["placeOrder"]),
+    ...mapActions(["placeOrder", "clearCart"]),
     orderSubmit() {
       this.placeOrder({
         details: this.order.details,

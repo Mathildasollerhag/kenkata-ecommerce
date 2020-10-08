@@ -8,9 +8,9 @@
                         <div class="col-5 col-md-6 col-xl-7 pr-0 pl-0">
                             <form id="searchForm">
                                 <input id="myclass5" type="text" v-model="search" class="form-control" placeholder="Search products..." aria-label="Search products..." aria-describedby="basic-addon2" autocomplete="off">
-                                <div v-if="this.search !== ''" class="search-results">
+                                <div v-if="this.search !== ''" class="search-results pb-2">
                                     <div v-for="item in filteredProducts" :key="item.id">
-                                        <div @click="clearInput" >
+                                        <div @click="clearInput">
                                             <router-link :to="{name: 'ProductDetails', params: {id: item.id}}" class="d-flex align-items-center py-1">
                                                 <img class="mr-2" :src="item.product.images[0]" alt="">
                                                 <p class="mb-0">{{item.product.name}}</p>
@@ -94,8 +94,7 @@ export default {
 .search-results {
     z-index: 100;
     position: absolute;
-    top: 4em;
-    padding: 0.5em 1em;
+    top: 3.5em;
     background: white;
     border-radius: 5px;
     width: 100%;
@@ -103,6 +102,13 @@ export default {
 .search-results img {
     height: 35px;
     width: 35px;
+}
+.search-results a{
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+.search-results a:hover {
+    background: #f5f5f5;
 }
 
 i:hover {

@@ -4,19 +4,19 @@
     <div class="d-flex pt-5 mt-5">
         <div class="row">
             <div class=" col-lg-6">
-            <h2 class="mb-3 grey">In these days women's fashion became great!</h2>
+            <h2 class="mb-3 grey">{{ portfolio.title }}</h2>
             <span class="pt-2">
                 <small>Date: </small>
-                <small class="grey">30 July 2020</small>
+                <small class="grey">{{ portfolio.date }}</small>
                 <small>, Category: </small>
-                <small class="grey">Fashion</small>
+                <small class="grey">{{ portfolio.tag }}</small>
             </span>
             <p class="pt-3 pb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
             <p class="left-border pl-3 grey">Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed lacus elementum feugiat. Vivamus ac sagittis justo. Suspendisse in purus lobortis, accumsan urna et.</p>
             <p class="pt-3">Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed lacus elementum feugiat. Vivamus ac sagittis justo. Suspendisse in purus lobortis, accumsan urna et, fermentum dolor. In hac habitasse platea dictumst.</p>
         </div>
         <div class="col-lg-6 d-flex flex-wrap">
-            <img class="mx-auto mb-auto" src="@/images/Portfolio-Img.svg" alt="">
+            <img class="mx-auto mb-auto img-big" :src="portfolio.images[0]" alt="">
         </div>
       </div>
     </div>
@@ -25,12 +25,12 @@
         <div class="row">
             <div class="col-12 col-xl-6 d-flex flex-wrap">
                 <div class="grid-container mx-auto pb-4">
-                    <div class="one"><img class="" src="@/images/Portfolio-Details-Small-Img.svg" alt=""></div>
-                    <div class="two"><img class="" src="@/images/Portfolio-Details-Small-Img.svg" alt=""></div>
-                    <div class="three"><img class="" src="@/images/Portfolio-Details-Long-Img.svg" alt=""></div>
+                    <div class="one"><img class="img-double" :src="portfolio.images[0]" alt=""></div>
+                    <div class="two"><img class="img-double" :src="portfolio.images[0]" alt=""></div>
+                    <div class="three"><img class="img-solo" :src="portfolio.images[0]" alt=""></div>
                 </div>
             </div>
-            <div class="col-12 col-xl-6">
+            <div class="col-12 col-xl-6 img-text">
                 <p class=" pb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                 <p class="left-border pl-3 grey">Vivamus dignissim a ex eu ornare. Ut fermentum orci vel diam ultricies faucibus. Quisque quis erat sed lacus elementum feugiat. Vivamus ac sagittis justo. Suspendisse in purus lobortis, accumsan urna et.</p>
                 <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim quam, ullamcorper vel tellus vitae, tempus fringilla lectus. Donec maximus justo eu nisl convallis iaculis. Aenean laoreet ullamcorper congue. Nam lobortis eros in risus rhoncus gravida. Pellentesque enim lectus, laoreet sit amet rhoncus in, semper vitae odio. Proin congue malesuada posuere. Aenean dapibus et magna non dictum. Praesent ut lacinia dui, ac malesuada nisi. Nullam pharetra, dui ac tincidunt pellentesque, diam elit dapibus augue, vel lobortis tortor neque eu velit.</p>
@@ -57,12 +57,33 @@
 </template>
 
 <script>
-    export default {
-        
-    }
+
+export default {
+
+    props: ['portfolio'],
+    
+}
+
 </script>
 
 <style scoped>
+
+.img-solo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.img-double {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.img-big {
+    border-radius: 6px;
+}
 
 .badges {
     border: 1.5px solid #AAAAAA;
@@ -113,14 +134,6 @@ a:hover {
     padding: 10px 20px;
 }
 
-.two {
-    padding-top: 13px;
-}
-
-.three {
-    padding-left: 30px;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -131,11 +144,19 @@ a:hover {
     "two three";
 }
 
-.one { grid-area: one; }
+.one { 
+    grid-area: one;
+}
 
-.two { grid-area: two; }
+.two { 
+    grid-area: two;
+    padding-top: 13px;
+}
 
-.three { grid-area: three; }
+.three { 
+    grid-area: three;
+    padding-left: 30px;
+}
 
 
 .grey {
@@ -153,6 +174,11 @@ p {
 @media (max-width: 576px) { 
     div img {
     width: 90%;
+    }
+}
+@media (max-width: 992px) { 
+    .img-text {
+        margin-top: 20px;
     }
 }
 

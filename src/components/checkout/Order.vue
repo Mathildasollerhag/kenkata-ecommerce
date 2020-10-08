@@ -7,38 +7,33 @@
         <p>Subtotal</p>
     </div>
     <div class="order-list">
-        <OrderProduct title="Women smart high heel shoe" subtotal="$380.00" />
-        <OrderProduct title="Gents half t-shirt" subtotal="$280.00" />
-        <OrderProduct title="Gents winter yellow jacket" subtotal="$160.00" />
-        <OrderProduct title="Men's Watches Brown Leather" subtotal="$90.00" />
+      <OrderProduct v-for="item in shoppingCart" :key="item.id" :item="item"/>
     </div>
 
     <!-- Order Totals -->
     <Totals />
     
     <div class="py-4 border-top">
-        <!-- Payments -->
-        <div class="border-bottom">
-            <Payments />
-        </div>
-        <div class="border-bottom py-3">
-            <span>
-                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <span class="theme-text">privacy policy.</span></p>
-            </span>
-        </div>
+      <!-- Payments -->
+      <div class="border-bottom">
+          <Payments />
+      </div>
+      <div class="border-bottom py-3">
+          <span>
+              <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <span class="theme-text">privacy policy.</span></p>
+          </span>
+      </div>
 
-        <!-- Terms and conditions  -->
-        <div class="custom-control custom-checkbox py-3">
-            <input type="checkbox" class="custom-control-input" id="agreeCheck">
-            <label class="custom-control-label" for="agreeCheck">I have read and agree to the website <span class="theme-text">terms and conditions *</span></label>
-        </div>
+      <!-- Terms and conditions  -->
+      <div class="custom-control custom-checkbox py-3">
+          <input type="checkbox" class="custom-control-input" id="agreeCheck">
+          <label class="custom-control-label" for="agreeCheck">I have read and agree to the website <span class="theme-text">terms and conditions *</span></label>
+      </div>
 
-        <!-- Place Order -->
-        <router-link to="/checkout"><button class="btn btn-block btn-kenkata-blue mx-4 m-auto">Place Order</button></router-link>      
-    </div>
-
-
-    
+      <!-- Place Order -->
+      <button v-if="!billingDetails" disabled class="btn btn-block btn-kenkata-blue mx-4 m-auto">Place Order</button>
+      <button v-else class="btn btn-block btn-kenkata-blue mx-4 m-auto">Place Order</button>
+    </div>    
 </div>
 </template>
 
@@ -46,11 +41,15 @@
 import Totals from '@/components/shoppingCart/Totals'
 import OrderProduct from '@/components/checkout/OrderProduct'
 import Payments from '@/components/checkout/Payments'
+import { mapGetters } from 'vuex'
 export default {
     components: {
         Totals,
         OrderProduct,
         Payments
+    },
+    computed: {
+      ...mapGetters(["shoppingCart"])
     }
 }
 </script>

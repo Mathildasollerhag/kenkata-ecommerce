@@ -2,20 +2,20 @@
 <div>
     <footer class="footer py-5">
       <div class="row d-flex mr-auto pr-5 justify-content-end">
-          <button @click="scrollToTop" id="scroll-up-btn" class="btn btn-primary d-none d-sm-block"><img src="@/images/Arrow-Up.svg" alt=""></button>
+          <button @click="scrollToTop" id="scroll-up-btn" class="btn btn-primary d-none d-lg-block"><img src="@/images/Arrow-Up.svg" alt=""></button>
       </div>
   <div id="centered" class="container">
     <div class="row d-flex justify-content-between">
       <div class="col-sm-3">
         <div>
-          <img class="pb-4" src="@/images/Logo-White.svg" alt="">
+          <img class="pb-4 mt-1" src="@/images/Logo-White.svg" alt="">
           <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim quam, ullamcorper vel tellus vitae, tempus fringilla lectus. Donec maximus justo eu nisl convallis iaculis. Aenean laoreet.</p>
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim quam, ullamcorper vel tellus vitae, tempus fringilla lectus. Donec maximus justo eu nisl convallis iaculis. Aenean laoreet.</p>
             <div>
             <div class="text-white">
               <div id="follow-centered" class="d-flex pt-3">
                 <p class="mb-0 pb-1">Follow Us</p>
-                <div id="follow-border" class="ml-4 mt-1"></div>
+                <div id="follow-border" class="ml-4 mt-1 d-none d-md-block"></div>
               </div>
                 <a href=""><i class="pr-2 pl-0 fab fa-facebook-f"></i></a>
                 <a href=""><i class="p-2 fab fa-twitter"></i></a>
@@ -48,7 +48,7 @@
           <div class="nav-item d-flex flex-column">
             <a id="privacy-policy" class="useful-links pt-4" href="">Privacy Policy</a>
             <a class="terms pt-1 pb-1" href="">Terms &amp; Conditions</a>
-            <a class="useful-links pt-1 pb-1" href="">Contact Us</a>
+            <router-link to="/contact" class="useful-links pt-1 pb-1" href="">Contact Us</router-link>
             <a class="useful-links pt-1 pb-1" href="">Our Sitemap</a>
             <a class="useful-links pt-1 pb-1" href="">Latest News</a>
             <a class="useful-links pt-1 pb-1" href="">Returns</a>
@@ -63,15 +63,15 @@
         <div>
           <div class="images-gallery">
             <ul>
-              <li data-aos="flip-left" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="400" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="500" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="600" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Instagram-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="700" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="800" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="900" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
-              <li data-aos="flip-left" data-aos-delay="1000" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"><a href="#"><img src="@/images/Grey-Footer-Box.svg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel4.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel8.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel5.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel7.jpg" alt=""></a></li>
+              <li><a href="#"><img src="@/images/Grey-Instagram-Box.svg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel2.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel10.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel11.jpg" alt=""></a></li>
+              <li><a href="#"><img class="w-78 rounded" src="@/images/carousel9.jpg" alt=""></a></li>
             </ul>
           </div>
         </div>
@@ -82,7 +82,7 @@
 </footer>
 
 <div id="copyright">
-        <div class="container d-flex justify-content-md-between justify-content-center py-3">
+        <div class="container d-flex flex-wrap justify-content-md-between justify-content-center py-3">
             <div class="my-auto">
                 <small id="copyright-text">© Copyright 2020 KenKata</small>
             </div>
@@ -114,6 +114,12 @@
 </script>
 
 <style scoped>
+
+.w-78 {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+}
 
 #copyright {
     background-color: #080C24;
@@ -153,7 +159,7 @@ a i:hover {
 }
 a:hover {
   color: #24afa1;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a p:hover {
   color: #24afa1!important;
@@ -164,10 +170,8 @@ a p:hover {
 }
 
 .terms {
-    color: #20D3C2;
-    text-decoration: underline;
+    color: white;
 }
-
 
 .images-gallery ul{
       padding-left: 0;
@@ -217,6 +221,17 @@ li:nth-child(3n) {
 }
 
 @media (min-width: 768px) { 
+    
+    #centered {
+        text-align: left;
+    }
+
+    #follow-centered {
+  justify-content: start;
+}
+}
+
+@media (min-width: 576px) { 
     
     #centered {
         text-align: left;

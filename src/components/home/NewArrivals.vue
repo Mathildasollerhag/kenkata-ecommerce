@@ -2,16 +2,16 @@
   <div v-if="newArrivals.length > 0" id="newArrivals" class="position-relative container my-5">
     <div class="text-center">
       <div class="d-flex justify-content-center text-uppercase">
-        <h1 id="new" class="font-weight-bold">New</h1>
-        <h1 id="arrivals" class="pl-2 font-weight-bold theme-text">Arrivals</h1>
+        <h1 class="font-weight-bold">New</h1>
+        <h1 class="pl-2 font-weight-bold theme-text">Arrivals</h1>
       </div>
       <img src="@/images/ZigZag.svg" alt="">
       <p class="pt-3 mb-4">Check out our latest products from top fashion designers</p>
     </div>
 
     <carousel :margin="25" :responsive="{0:{items:1,nav:false,dots:false},760:{items:2,nav:false,dots:true},1000:{items:3,nav:false,dots:true}}">
-      <div class="carousel-height" v-for="product in newArrivals" :key="product._id">
-        <ProductCard :product="product"/>
+      <div v-for="item in newArrivals" :key="item.id">
+        <ProductCard :item="item"/>
       </div>
       <template slot="prev"><span class="d-none d-xl-flex owl-prev"><i class="fas fa-chevron-left"></i></span></template>
       <template slot="next"><span class="d-none d-xl-flex owl-next"><i class="fas fa-chevron-right"></i></span></template>
@@ -26,9 +26,6 @@ import ProductCard from '../products/ProductCard'
 export default {
     name: 'NewArrivals',
     components: { carousel, ProductCard },
-    created() {
-      this.$store.dispatch("getProducts")
-    },
     computed: {
       ...mapGetters(['newArrivals'])
     }

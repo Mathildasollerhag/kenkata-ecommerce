@@ -8,17 +8,17 @@
 			</div>			
 
 		<div class="col-center m-auto">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div id="review-carousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#review-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#review-carousel" data-slide-to="1"></li>
+                <li data-target="#review-carousel" data-slide-to="2"></li>
             </ol>
  
 				<!-- Wrapper for carousel items -->
 				<div class="carousel-inner">
 					<div class="item carousel-item active">
-						<div class="img-box"><img src="@/images/Testimonial-Img.svg" alt=""></div>
+						<div class="img-box"><img class="img-border" src="@/images/pexels-johny.jpg" alt=""></div>
 						<div><img class="mt-4" src="@/images/Rating-Stars.svg" alt=""></div>
                         <h6 class="carousel-title">JOHNY WESMULLAR</h6>
 						<p class="text-white">CEO, Biotech Inc.</p>
@@ -27,7 +27,7 @@
 					</div>
 
 					<div class="item carousel-item">
-						<div class="img-box"><img src="@/images/Testimonial-Img.svg" alt=""></div>
+						<div class="img-box"><img class="img-border" src="@/images/pexels-zack.jpg" alt=""></div>
 						<div><img class="mt-4" src="@/images/Rating-Stars.svg" alt=""></div>
                         <h6 class="carousel-title">ZACK ANDERSON</h6>
 						<p class="text-white">CEO, Biotech Inc.</p>
@@ -36,7 +36,7 @@
 					</div>
 
 					<div class="item carousel-item">
-						<div class="img-box"><img src="@/images/Testimonial-Img.svg" alt=""></div>
+						<div class="img-box"><img class="img-border" src="@/images/pexels-men.jpg" alt=""></div>
 						<div><img class="mt-4" src="@/images/Rating-Stars.svg" alt=""></div>
                         <h6 class="carousel-title">STEVE BROWNBEARD</h6>
 						<p class="text-white">CEO, Biotech Inc.</p>
@@ -46,10 +46,10 @@
 
 				</div>
 				<!-- Carousel controls -->
-				<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<a class="carousel-control left carousel-control-prev" href="#review-carousel" data-slide="prev">
 					<i id="right-arrow" class="fas fa-2x fa-chevron-left"></i>
 				</a>
-				<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<a class="carousel-control right carousel-control-next" href="#review-carousel" data-slide="next">
 					<i id="right-arrow" class="fas fa-2x fa-chevron-right"></i>
 				</a>
 			</div>
@@ -69,6 +69,11 @@
 </script>
 
 <style scoped>
+
+.img-border {
+  border: 3px solid white;
+  border-radius: 6px;
+}
 
 .carousel-indicators > li {
   border-radius: 40%;

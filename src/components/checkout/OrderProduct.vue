@@ -1,13 +1,13 @@
 <template>
     <div class="d-flex justify-content-between align-items-center border-bottom py-2">
-        <p>{{ title }}</p>
-        <p>{{ subtotal }}</p>
+        <p>{{ item.product.name }}</p>
+        <p>${{ item.product.price * item.quantity }}.00</p>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['title', 'subtotal']
+    props: ["item"]
 }
 </script>
 

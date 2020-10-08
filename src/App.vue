@@ -2,31 +2,29 @@
   <div id="app">
     <Navigation/>
     
-    <router-view/>
-
-
+    <transition 
+      enter-active-class="animate__animated animate__fadeIn animate__faster">
+      <router-view/>
+    </transition> 
   <Brands/>
   <Footer/>
 
 
   <!-- Quickview Product Modal -->
-  <div class="modal fade" id="quickviewModal" tabindex="-1" aria-labelledby="quickviewModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content d-flex align-items-center bg-transparent">
-        <Quickview />
-      </div>
-    </div>
-  </div>
+  <Quickview />
+
+  
   
   </div>
 </template>
 
 <script>
-
+import firebase from 'firebase'
 import Navigation from '../src/components/global/Navigation'
 import Brands from '@/components/global/Brands.vue'
 import Footer from '@/components/global/Footer.vue'
-import Quickview from '@/components/quickview/Quickview'
+import Quickview from '@/components/quickview/Quickview.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name: "App",
@@ -34,9 +32,16 @@ export default {
   Navigation,
   Brands,
   Footer,
-  Quickview
-  }
-  
+  Quickview, 
+  },
+  created() {
+    if(firebase.auth().currentUser !== null) {
+      this.getCurrentUser(firebase.auth().currentUser.uid)
+    }
+  },
+  methods: {
+    ...mapActions(["getCurrentUser"])
+  }  
 }
 </script>
 
@@ -46,6 +51,7 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -56,7 +62,10 @@ html, body {
   --gray-theme: #CCCCCC;
   --light-gray-theme: #EEEEEE;
   --lighter-gray-theme: #F6F6F6;
+}
 
+button, input, .form-control {
+  box-shadow: none !important;
 }
 
 .theme-bg {
@@ -83,6 +92,10 @@ html, body {
   color: var(--blue-theme);
 }
 
+.blue-theme-text-op {
+  color: var(--blue-theme-op);
+}
+
 .gray-bg {
   background-color: var(--gray-theme);
 }
@@ -96,14 +109,10 @@ html, body {
 }
 
 /* Owl Carousel Style */
-/* .carousel-height {
-    height: 380px !important;
-} */
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     transition: all 0.3s ease;
     background-color: #20D3C2 !important;
 }
-
 /* Utilities */
 .mb-custom {
     margin-bottom: 5em;
@@ -121,7 +130,6 @@ html, body {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid;
 }
 .btn-kenkata-dark {
     padding: 0.4em 1.5em;
@@ -135,14 +143,15 @@ html, body {
     color: white;
 }
 
+
+/* Product Quickview */
 .modal-backdrop {
   background-color: var(--blue-theme);
   opacity: 0.85 !important;
 }
-.modal-content{
+.modal-content {
   border: none;
 }
-
 </style>
 
 

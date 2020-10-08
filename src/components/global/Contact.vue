@@ -1,25 +1,28 @@
 <template>
     <div>
-        <div class="arxafon">
+      <div id="banner-bg">
         <div class="container">
-          <div class="row ">
-            <div class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-start">
-                <h3 class="big-text green font-weight-bold pt-5 pb-5">Contact</h3>                
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Contact</h3>
+                <div>
+                    <div class="d-flex align-items-center"><router-link id="home" to="/">Home</router-link>
+                        <div id="slash" class="px-2">/</div>
+                        <router-link id="compare" to="/contact">Contact</router-link>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-lg-9 d-flex justify-content-center flex-column ">
-              <div class="text-center ml-lg-auto">
-                <div class="d-flex justify-content-lg-end justify-content-center flex-wrap">
-                  <div class="arxayox d-flex  flex-row justify-content-center round bg-white align-items-center">
-                    
-                    <a class="mr-1 green arxayox" href="">Home </a>/<a class="ml-1 arxayox ag" href="">Contact</a>
-                  </div>                 
-                </div>       
-              </div>
-            </div>
+        </div>
+    </div>
+        <!--<img class="googleMap" src="../../images/Maps-Gray.png" alt="">-->
+
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Chhagalnaiya%20%20city%20center%2C%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
+             frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe><a href="https://www.embedgooglemap.net"></a>
           </div>
         </div>
-        </div>
-        <img class="googleMap" src="../../images/Maps-Gray.png" alt="">
+
         <div class="container">
       <form class="formclass">
         <div class="formclass1 d-flex flex-column py-4 flex-md-row justify-content-between">
@@ -40,8 +43,8 @@
           <span class="d-flex align-items-center">
             <i class="fas fa-envelope formclass2 green"></i>
             <span>
-              <p>vanilla@website.com</p>
-              <p>info@website.com</p>
+              <a href="#"><p>vanilla@website.com</p></a>
+              <a href="#"><p>info@website.com</p></a>
             </span>
           </span>
         </div>
@@ -51,14 +54,14 @@
             <h3 class="text-size-24 green mb-4">Get in Touch</h3>
             <p>We have world-class, flexible support via live chat, email <br> and phone. We guarantee that you’ll be able to have any <br> issue resolved within 24 hours. You can contact support <br> immediately here.</p>
             <div class="mt-4 mb-4 mb-md-0">
-              <span class="weight-bold">Follow us</span>
+              <span class="font-weight-bold">Follow us</span>
               <hr class="formclass4">
               <div class="text-theme-color mt-2">
-                <i class="green fab fa-facebook-f pr-2"></i>
-                <i class="green fab fa-twitter px-2"></i>
-                <i class="green fab fa-instagram px-2"></i>
-                <i class="fas fa-envelope px-2"></i>
-                <i class="fab green fa-google-plus-g px-2"></i>
+                <a href="#"><i class="green fab fa-facebook-f pr-2"></i></a>
+                <a href="#"><i class="green fab fa-twitter px-2"></i></a>
+                <a href="#"><i class="green fab fa-instagram px-2"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p px-2"></i></a>
+                <a href="#"><i class="fab green fa-google-plus-g px-2"></i></a>
               </div>
             </div>
           </div>
@@ -80,10 +83,53 @@
 <script>
 export default {
     
-}
+};
 </script>
 
 <style scoped>
+
+#banner-bg {
+  background-color: #0E153D;
+  opacity: 65%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+h3 {
+    color: #25ac9e;
+}
+#home {
+    color: #25ac9e!important;
+}
+#home:hover {
+    color: white!important;
+}
+#slash {
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+
+.mapouter {
+  position:relative;text-align:right;height:500px; width:100%;
+ }
+ 
+.gmap_canvas {
+overflow:hidden;background:none!important;height:500px; width: 100%;
+}
+
+a {
+  color: white;
+}
+
+.fa-pinterest-p {
+  color: white;
+}
+
+.fab:hover {
+  color: white!important;
+}
+
 .arxafon{
     background-color: #585f7c;
 }
@@ -105,6 +151,7 @@ width: 100%;
   position: relative;
   background-color: #0E153D;
   color: white;
+  border-radius: 6px;
 }
 .formclass2{
   font-size: 1.3rem;

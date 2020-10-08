@@ -1,19 +1,19 @@
 <template>
-    <div class="container-overlay">
+<div class="container-overlay">
 <div class="overlay">
         <div class="text">
-            <div class="plus-icon"><a href=""><img src="@/images/Plus-Icon-Small.svg" alt=""></a></div>
-            <p class="mb-2">Kids fashion are great</p>
-            <small>Fashion</small>
+            <p class="mb-2">{{ portfolio.name }}</p>
+            <small>{{ portfolio.tag }}</small>
         </div>
+        <div class="plus-icon"><a :href="$router.resolve({name: 'PortfolioDetails', params: {id: id}}).href"><img src="@/images/Plus-Icon-Small.svg" alt=""></a></div>
     </div>
-    <img class="img-box" src="@/images/Portfolio-Img.svg" alt="">
+    <img class="img-box" :src="portfolio.images[0]" alt="">
 </div>
 </template>
 
 <script>
     export default {
-        
+        props: ['portfolio', 'id'],
     }
 </script>
 
@@ -22,9 +22,8 @@
 .plus-icon {
     position: absolute;
     font-size: 20px;
-    position: absolute;
-    bottom: 310%;
-    left: 105%;
+    bottom: 65%;
+    left: 65%;
 }
 
 p {
@@ -77,6 +76,7 @@ p {
 
 .img-box {
     width: 100%;
+    border-radius: 6px;
 }
 
 #new {

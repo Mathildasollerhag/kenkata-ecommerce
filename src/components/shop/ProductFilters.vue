@@ -2,7 +2,7 @@
   <div class="container mt-5 mb-5 pb-5">
 
     <div class="flex-row d-md-flex">
-        <aside class="pr-3">
+        <aside class="pr-2">
 
         <div class="card">
           <article class="card-group-item">
@@ -10,27 +10,27 @@
             <div class="filter-content">
 
               <div class="dropdown d-lg-none mb-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                   Product Categories
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a href="#" class="dropdown-item">
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+                  <a href="#" class="dropdown-item" >
                   Men's
                   <span class="float-right badge badge-light round">18</span>
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item" >
                   Women's
                   <span class="float-right badge badge-light round">23</span>
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item" >
                   Kids
                   <span class="float-right badge badge-light round">32</span>
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item" >
                   Hats
                   <span class="float-right badge badge-light round">12</span>
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item" >
                   Sunglasses
                   <span class="float-right badge badge-light round">15</span>
                 </a>
@@ -38,7 +38,7 @@
                   Shoes
                   <span class="float-right badge badge-light round">12</span>
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item" >
                   Watches
                   <span class="float-right badge badge-light round">20</span>
                 </a>
@@ -46,31 +46,31 @@
               </div>
 
               <div class="list-group list-group-flush d-none d-lg-block">
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)">
                   Men's
                   <span class="float-right badge badge-light round">18</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)">
                   Women's
                   <span class="float-right badge badge-light round">23</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)">
                   Kids
                   <span class="float-right badge badge-light round">32</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)" >
                   Hats
                   <span class="float-right badge badge-light round">12</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)" >
                   Sunglasses
                   <span class="float-right badge badge-light round">15</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)" >
                   Shoes
                   <span class="float-right badge badge-light round">12</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" @click="filteredProducts(props)">
                   Watches
                   <span class="float-right badge badge-light round">20</span>
                 </a>
@@ -134,25 +134,24 @@
               </div>
 
           <article class="card-group-item d-none d-lg-block ">
-              <p class="list-title">Filter by Color</p>
+              <p class="list-title" >Filter by Color</p>
             <div class="filter-content">
               <div class="card-body pl-0 pr-0">
-                <label class="customcheck">Black
-                    <input type="checkbox">
+                <label class="customcheck">
                     <span id="checkmark-black" class="checkmark"></span>
                     <span class="float-right badge badge-light round">12</span>
                 </label>
-                <label class="customcheck">Gray
+                <label class="customcheck" >Gray
                     <input type="checkbox">
                     <span id="checkmark-gray" class="checkmark"></span>
                     <span class="float-right badge badge-light round">20</span>
                 </label>
-                <label class="customcheck">Red
+                <label class="customcheck" >Red
                     <input type="checkbox">
                     <span id="checkmark-red" class="checkmark"></span>
                     <span class="float-right badge badge-light round">18</span>
                 </label>
-                <label class="customcheck">Green
+                <label class="customcheck" >Green
                     <input type="checkbox">
                      <span id="checkmark-green" class="checkmark"></span>
                      <span class="float-right badge badge-light round">25</span>
@@ -162,7 +161,7 @@
                      <span id="checkmark-orange" class="checkmark"></span>
                      <span class="float-right badge badge-light round">9</span>
                 </label>
-                <label class="customcheck">Brown
+                <label class="customcheck" >Brown
                     <input type="checkbox">
                      <span id="checkmark-brown" class="checkmark"></span>
                      <span class="float-right badge badge-light round">7</span>
@@ -232,7 +231,7 @@
                   XL
                   <span class="float-right badge badge-light round">15</span>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" >
                   XXL
                   <span class="float-right badge badge-light round">12</span>
                 </a>
@@ -368,7 +367,7 @@
             <div class="filter-content">
               <div class="list-group list-group-flush">
                 <div class="d-flex">
-                    <div class="img-bg">
+                    <div class="img-bg mb-auto py-3">
                         <img class="" src="@/images/Top-Rated-Shirt.svg" alt="">
                     </div>
                     <div>
@@ -378,7 +377,7 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <div class="img-bg">
+                    <div class="img-bg mb-auto py-3">
                         <img class="" src="@/images/Top-Rated-Shoes.svg" alt="">
                     </div>
                     <div>
@@ -388,7 +387,7 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <div class="img-bg">
+                    <div class="img-bg mb-auto py-3">
                         <img class="" src="@/images/Top-Rated-Clock.svg" alt="">
                     </div>
                     <div>
@@ -406,7 +405,7 @@
       <!-- col.// -->
 
     <div id="product-cards-list" class="d-flex justify-content-center mx-auto">
-        <ProductCardsList/>
+        <ProductCardsList :category="category" :gender="gender" :mainCategory="mainCategory"/>
     </div>
     </div>
     <!-- row.// -->
@@ -417,13 +416,17 @@
 <script>
 import ProductCardsList from '@/components/shop/ProductCardsList.vue'
 
+
 export default {
-  components: {
+ components: {
       ProductCardsList
-  }
+  },
+  props: ["category", "gender", "mainCategory"]
 }
 
 </script>
+     
+      
 
 <style scoped>
 

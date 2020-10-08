@@ -8,7 +8,7 @@
     <NewArrivals />
   
     <DiscountBanner />
-    <featuredProducts/>
+    <FeaturedProducts/>
     <FlashBanner />
     <TopSellers/>
     <ReviewCarousel/>
@@ -33,7 +33,7 @@ import Shopping from '@/components/home/Shopping.vue'
 
 
 import NewArrivals from '@/components/home/NewArrivals';
-import featuredProducts from '../components/global/featuredProducts';
+import FeaturedProducts from '../components/home/FeaturedProducts';
 import InfoCards from '../components/home/InfoCards';
 import ShopByCategory from '../components/home/ShopByCategory';
 import DiscountBanner from '../components/home/DiscountBanner';
@@ -52,12 +52,15 @@ export default {
 
 
     NewArrivals,
-    featuredProducts,
+    FeaturedProducts,
     InfoCards,
     ShopByCategory,
     DiscountBanner,
     FlashBanner
 
+  },
+  created() {
+    this.$store.dispatch('getProducts')
   }
 }
 </script>

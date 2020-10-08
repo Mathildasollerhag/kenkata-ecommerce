@@ -1,15 +1,30 @@
 <template>
     <div class="overlay">
+        <div class="plus-icon">
+          <router-link :to="{name: 'PortfolioDetails', params: {id: id}}"><img src="@/images/Plus-Icon.svg" alt=""></router-link>
+        </div>
         <div class="text">
-            <div class="plus-icon"><router-link to="/portfolio/portfolio-details"><img src="@/images/Plus-Icon.svg" alt=""></router-link></div>
-            <p class="mb-2">Women's fashion</p>
-            <small>Fashion</small>
+            <p class="mb-2">{{ portfolio.name }}</p>
+            <small>{{ portfolio.tag }}</small>
         </div>
     </div>
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex'
+
     export default {
+
+    props: ['portfolio', 'id'],
+
+    created() {
+    this.$store.dispatch("getPortfolio")
+    },
+
+    computed: {
+    ...mapGetters(['portfolioCatalog'])
+    },
         
     }
 </script>
@@ -19,9 +34,8 @@
 .plus-icon {
     position: absolute;
     font-size: 20px;
-    position: absolute;
-    bottom: 495%;
-    left: 220%;
+    bottom: 65%;
+    left: 65%;
 }
 
 p {

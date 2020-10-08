@@ -1,87 +1,32 @@
 <template>
-    <div class="product-page">
+<div class="product-page" >
 
-    <div class="card-deck pb-4">
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
+  <!-- Shop By Category -->
+  <!-- <div v-if="shopByCategory" class="d-flex flex-wrap">
+    <div v-for="item in shopByCategory" :key="item.id">
+      <ProductCard class="productcard" :item="item"/>
     </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-</div>
+  </div> -->
 
-<div class="card-deck pb-4">
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
+  <!-- Products Catalog -->
+  <div class="d-flex flex-wrap">
+    <div v-for="item in productsCatalog" :key="item.id">
+      <ProductCard class="productcard" :item="item" />       
     </div>
   </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-</div>
+   
+  
 
-<div class="card-deck pb-4">
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-</div>
-
-<div class="card-deck">
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-  <div class="card">
-      <div class=" container-overlay">
-        <ShopOverlay />
-    </div>
-  </div>
-</div>
-<ul class="pagination justify-content-center pt-4">
+  <ul class="pagination justify-content-center pt-4">
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="left-arrow" class="fas fa-2x fa-chevron-left"></i></a></li>
     <div class="d-flex my-auto">
-      <li class="page-item"><a class="p-2 pl-3 mt-1" href="javascript:void(0);">8</a></li>
+      <li class="page-item"><a class="p-2 pl-3 mt-1" href="javascript:void(0);">1</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">2</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">3</a></li>
+      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">...</a></li>
       <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">9</a></li>
       <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">10</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">...</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">24</a></li>
-      <li class="page-item"><a class="p-2 mt-1" href="javascript:void(0);">25</a></li>
-      <li class="page-item"><a class="p-2 pr-3 mt-1" href="javascript:void(0);">26</a></li>
+      <li class="page-item"><a class="p-2 pr-3 mt-1" href="javascript:void(0);">11</a></li>
     </div>
     <li class="page-item"><a class="" href="javascript:void(0);"><i id="right-arrow" class="fas fa-2x fa-chevron-right"></i></a></li>
   </ul>
@@ -92,19 +37,75 @@
 
 <script>
 
-  import ShopOverlay from "@/components/shop/ShopOverlay.vue";
+import { mapActions, mapGetters } from 'vuex'
+import ProductCard from '../products/ProductCard'
 
-    export default {
-        components: {
-          ShopOverlay
-        }
+export default {
+    name: 'ProductsCatalog',
+    components: { ProductCard },
+    created() {
+      this.$store.dispatch("getProducts")
+      // console.log(this.byCategory)
+    },
+    methods: {
+      ...mapActions(["getProductsByCategory", "getProductsByGender", "getProductsByMainCategory"])
+    },
+    computed: {
+      ...mapGetters(['productsCatalog']),
+    
+      // shopByCategory() {
+      //   if(this.category || this.gender || this.mainCategory) {
+      //     if(this.category) {
+      //       return this.getProductsByCategory(this.category)
+      //     }
+      //     else if (this.gender) {
+      //       return this.getProductsByGender(this.gender)
+      //     }
+      //     else {
+      //       return this.getProductsByMainCategory(this.mainCategory)
+      //     }
+      //   } 
+      //   else {
+      //     return this.productsCatalog
+      //   } 
+      // }
+      // checkCategory() { return this.byCategory },   
     }
+}
 </script>
 
 <style scoped>
+.box{
+display: flex;
+}
+.list{
+  display: table-column;
+  color: green;
+}
 
-.product-page {
-  margin-right: -35px;
+.card-hover-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+::v-deep .card-text-body {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+::v-deep .rating {
+    color: #20D3C2;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
+.productcard {
+  width: 290px;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
 
 a {
@@ -133,28 +134,12 @@ i:hover {
     transition: .2s ease-in-out;
 }
 
-.card-footer {
-    padding: 0;
-}
-
-.card-p {
-    background-color: #0e153d;
-    width: 100%;
-    color: white;
-    padding: 10px 0;
-    padding-left: 18px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    text-align: left;
-    font-size: 13.5px;
-}
-
 @media (max-width: 768px) {
 
   .product-page {
   margin-right: 0px;
 }
 
- }
+}
 
 </style>

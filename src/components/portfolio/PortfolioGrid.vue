@@ -22,15 +22,7 @@
         </ul>
 
     <div class="grid-container d-flex flex-wrap justify-content-center pt-5">
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
-        <div class="one"><img src="@/images/Portfolio-Img.svg" alt=""><PortfolioCardHover/></div>
+        <div v-for="item in portfolioCatalog" :key="item.id" class="one"><img :src="item.portfolio.images[0]"><PortfolioCardHover :portfolio="item.portfolio" :id="item.id"/></div>
     </div>
 
     <div class="text-center pt-5">
@@ -42,13 +34,22 @@
 
 <script>
 
-    import PortfolioCardHover from '@/components/portfolio/PortfolioCardHover.vue'
+import { mapGetters } from 'vuex'
+import PortfolioCardHover from '@/components/portfolio/PortfolioCardHover.vue'
 
-    export default {
-        components: {
-            PortfolioCardHover,
-        }
-    }
+export default {
+    components: {
+        PortfolioCardHover,
+    },
+
+    created() {
+    this.$store.dispatch("getPortfolio")
+    },
+
+    computed: {
+    ...mapGetters(['portfolioCatalog'])
+    },
+}
 </script>
 
 <style scoped>
@@ -67,6 +68,10 @@ p {
 
 .one {
   position: relative;
+}
+.one img {
+  position: relative;
+  width: 538px;
 }
 
 .overlay {
@@ -104,7 +109,7 @@ p {
     font-weight: 500;
 }
 #load-more-btn:hover {
-    background-color: #2baa9d;
+    background-color: var(--blue-theme);
     color: white;
     transition: .1s ease-in-out;
 }

@@ -51,6 +51,7 @@ export default {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {

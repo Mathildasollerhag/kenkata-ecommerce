@@ -2,9 +2,9 @@
   <div class="container-fluid lighter-gray-bg">
             <div class="container">
                 <div class="row mx-auto my-auto">
-                    <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                    <div id="shoppingCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
+                            <div class="active carousel-item">
                                 <div class="row">
                                     <div class="col-lg-5 align-self-center mb-5">
                                         <h1 class="size1 mt-5 font-weight-normal">{{ $t('translated.shoppingIs') }}</h1>

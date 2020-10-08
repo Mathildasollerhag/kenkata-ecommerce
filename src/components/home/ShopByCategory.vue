@@ -13,13 +13,13 @@
           
   <div class="card item1 pb-0">
     <div @click.prevent="getProductsByCategory('shoes')" class="mt-auto">
-        <router-link to="/shop"><button @mouseover="shoes = true" @mouseleave="shoes = false" class="card-p card-text p-y-1 text-left">Shoes <br> <small v-if="shoes">{{getShoes.length}} Products</small></button></router-link>
+        <router-link to="/shop"><button @mouseover="shoes = true" @mouseleave="shoes = false" class="card-p card-text p-y-1 text-left">Shoes <small class="hidden-text">ss</small><br> <small v-if="shoes">{{getShoes.length}} Products</small></button></router-link>
     </div>
   </div>
 
   <div class="card item2 pb-0">
     <div @click.prevent="getProductsByGender('men')" class="mt-auto">
-        <router-link to="/shop"><button @mouseover="men = true" @mouseleave="men = false" class="card-p card-text p-y-1 text-left">Men <br> <small v-if="men">{{getMen.length}} Products</small></button></router-link>
+        <router-link to="/shop"><button @mouseover="men = true" @mouseleave="men = false" class="card-p card-text p-y-1 text-left">Men <small class="hidden-text">ssss</small><br> <small v-if="men">{{getMen.length}} Products</small></button></router-link>
     </div>
   </div>
 
@@ -37,7 +37,7 @@
 
   <div class="card item5 pb-0">
     <div @click.prevent="getProductsByCategory('hats')" class="mt-auto">
-        <router-link to="/shop"><button @mouseover="hats = true" @mouseleave="hats = false" class="card-p card-text p-y-1 text-left">Hats <br> <small v-if="hats">{{getHats.length}} Products</small></button></router-link>
+        <router-link to="/shop"><button @mouseover="hats = true" @mouseleave="hats = false" class="card-p card-text p-y-1 text-left">Hats <small class="hidden-text">ssss</small> <br> <small v-if="hats">{{getHats.length}} Products</small></button></router-link>
     </div>
   </div>
 
@@ -87,6 +87,10 @@ export default {
 </script>
 
 <style scoped>
+
+.hidden-text {
+  visibility: hidden;
+}
 
 button {
   border: none;
